@@ -1,0 +1,535 @@
+fileFormatVersion: 2
+guid: 86aa3d37cd81d7247a6f413ab152ab0d
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 64
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638481678128081919
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Pulo_personagem_Frame_0
+    originalName: 
+    pivot: {x: 0.48576376, y: 0.45057943}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 51
+      y: 4
+      width: 39
+      height: 63
+    spriteID: bfc2c20512b3ecb42bc2b97484074e37
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 51, y: 4}
+  - name: Pulo_personagem_Frame_1
+    originalName: 
+    pivot: {x: 0.4946074, y: 0.53559387}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 130
+      width: 39
+      height: 53
+    spriteID: 3fabb6fba2d489842839efcf034a69cb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 145, y: 130}
+  - name: Pulo_personagem_Frame_2
+    originalName: 
+    pivot: {x: 0.48788765, y: 0.48299482}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 51
+      y: 75
+      width: 39
+      height: 62
+    spriteID: f64692497b56fe84387806cf2523a405
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 51, y: 75}
+  - name: Pulo_personagem_Frame_3
+    originalName: 
+    pivot: {x: 0.5290907, y: 0.44602844}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 4
+      width: 39
+      height: 61
+    spriteID: 14c0d339f0785214a81e64299db08331
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 4}
+  - name: Pulo_personagem_Frame_4
+    originalName: 
+    pivot: {x: 0.5290907, y: 0.414937}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 73
+      width: 39
+      height: 61
+    spriteID: fae8399f742d9e84482ec6eff84daa02
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 73}
+  - name: Pulo_personagem_Frame_5
+    originalName: 
+    pivot: {x: 0.50680953, y: 0.4200336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 51
+      y: 145
+      width: 39
+      height: 62
+    spriteID: c9a4fcab78e4f4c4d949ddd542f7847d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 51, y: 145}
+  - name: Pulo_personagem_Frame_6
+    originalName: 
+    pivot: {x: 0.51759624, y: 0.4565829}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 39
+      height: 64
+    spriteID: c9b7e49d04f479f49a81456b349375b6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Pulo_personagem_Frame_7
+    originalName: 
+    pivot: {x: 0.5101691, y: 0.43179643}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 76
+      width: 39
+      height: 64
+    spriteID: 7187fbb2312806b4883d77d4f18cbfde
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 76}
+  - name: Pulo_personagem_Frame_8
+    originalName: 
+    pivot: {x: 0.50274193, y: 0.5086274}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 148
+      width: 39
+      height: 64
+    spriteID: d90af8dcd5ac16a45be9d5ce34112caa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 148}
+  - name: Pulo_personagem_Frame_9
+    originalName: 
+    pivot: {x: 0.48452798, y: 0.34758994}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 142
+      width: 39
+      height: 55
+    spriteID: 59bb4345671565849bafd24b72c53a2e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 142}
+  - name: Pulo_personagem_Frame_10
+    originalName: 
+    pivot: {x: 0.51423687, y: 0.421321}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 4
+      width: 39
+      height: 55
+    spriteID: 79f7b65486b6f3948b62df83e75cf8f0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 145, y: 4}
+  - name: Pulo_personagem_Frame_11
+    originalName: 
+    pivot: {x: 0.52166396, y: 0.36865568}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 67
+      width: 39
+      height: 55
+    spriteID: 0993bea7b033c4d46b7cdff489939b09
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 145, y: 67}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -1671235654
+    name: Pulo_personagem
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Pulo_personagem_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 41
+        y: 0
+        width: 39
+        height: 63
+      spriteId: bfc2c20512b3ecb42bc2b97484074e37
+    - name: Pulo_personagem_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 45
+        y: 0
+        width: 39
+        height: 53
+      spriteId: 3fabb6fba2d489842839efcf034a69cb
+    - name: Pulo_personagem_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 47
+        y: 50
+        width: 39
+        height: 62
+      spriteId: f64692497b56fe84387806cf2523a405
+    - name: Pulo_personagem_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 48
+        y: 51
+        width: 39
+        height: 61
+      spriteId: 14c0d339f0785214a81e64299db08331
+    - name: Pulo_personagem_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 48
+        y: 50
+        width: 39
+        height: 61
+      spriteId: fae8399f742d9e84482ec6eff84daa02
+    - name: Pulo_personagem_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 48
+        y: 40
+        width: 39
+        height: 62
+      spriteId: c9a4fcab78e4f4c4d949ddd542f7847d
+    - name: Pulo_personagem_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 47
+        y: 29
+        width: 39
+        height: 64
+      spriteId: c9b7e49d04f479f49a81456b349375b6
+    - name: Pulo_personagem_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 47
+        y: 19
+        width: 39
+        height: 64
+      spriteId: 7187fbb2312806b4883d77d4f18cbfde
+    - name: Pulo_personagem_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 47
+        y: 8
+        width: 39
+        height: 64
+      spriteId: d90af8dcd5ac16a45be9d5ce34112caa
+    - name: Pulo_personagem_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 48
+        y: 0
+        width: 39
+        height: 55
+      spriteId: 59bb4345671565849bafd24b72c53a2e
+    - name: Pulo_personagem_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 48
+        y: 0
+        width: 39
+        height: 55
+      spriteId: 79f7b65486b6f3948b62df83e75cf8f0
+    - name: Pulo_personagem_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 48
+        y: 0
+        width: 39
+        height: 55
+      spriteId: 0993bea7b033c4d46b7cdff489939b09
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: iPhone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 128, y: 128}

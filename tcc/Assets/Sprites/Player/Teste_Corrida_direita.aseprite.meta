@@ -1,0 +1,363 @@
+fileFormatVersion: 2
+guid: 0b61fb85216747747ad5411c300068a6
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Teste_Corrida_direita_Frame_0
+    originalName: 
+    pivot: {x: 0.5365177, y: 0.47484952}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 76
+      width: 39
+      height: 61
+    spriteID: 98aac7b08f7fd684583d7dae4341b076
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 76}
+  - name: Teste_Corrida_direita_Frame_1
+    originalName: 
+    pivot: {x: 0.4893036, y: 0.45292026}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 68
+      width: 39
+      height: 55
+    spriteID: 5c810bb9a55c8444287b5a8455933e56
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 68}
+  - name: Teste_Corrida_direita_Frame_2
+    originalName: 
+    pivot: {x: 0.48258424, y: 0.48216933}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 51
+      y: 139
+      width: 39
+      height: 58
+    spriteID: 254c490a20d925b47a44ec59ab19da95
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 51, y: 139}
+  - name: Teste_Corrida_direita_Frame_3
+    originalName: 
+    pivot: {x: 0.5075171, y: 0.5047182}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 51
+      y: 4
+      width: 39
+      height: 60
+    spriteID: c50fd9093b63e57409ff35755301358d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 51, y: 4}
+  - name: Teste_Corrida_direita_Frame_4
+    originalName: 
+    pivot: {x: 0.50344986, y: 0.5056743}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 51
+      y: 72
+      width: 39
+      height: 59
+    spriteID: 8f8a2912986bffb49a32aa73a50127fd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 51, y: 72}
+  - name: Teste_Corrida_direita_Frame_5
+    originalName: 
+    pivot: {x: 0.51087695, y: 0.48103952}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 4
+      width: 39
+      height: 56
+    spriteID: 8d3834d288ba66c4da9ca181ca8cad97
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 4}
+  - name: Teste_Corrida_direita_Frame_6
+    originalName: 
+    pivot: {x: 0.52838284, y: 0.47478902}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 39
+      height: 64
+    spriteID: 3287a37c0d9cd624985b79c173619b51
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Teste_Corrida_direita_Frame_7
+    originalName: 
+    pivot: {x: 0.52838284, y: 0.47010103}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 145
+      width: 39
+      height: 61
+    spriteID: a089b5aef85da2242ac733a33f2f5466
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 145}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 711573173
+    name: Teste_Corrida_direita
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Teste_Corrida_direita_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 16
+        y: 0
+        width: 39
+        height: 61
+      spriteId: 98aac7b08f7fd684583d7dae4341b076
+    - name: Teste_Corrida_direita_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 19
+        y: 0
+        width: 39
+        height: 55
+      spriteId: 5c810bb9a55c8444287b5a8455933e56
+    - name: Teste_Corrida_direita_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 21
+        y: 1
+        width: 39
+        height: 58
+      spriteId: 254c490a20d925b47a44ec59ab19da95
+    - name: Teste_Corrida_direita_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 18
+        y: 1
+        width: 39
+        height: 60
+      spriteId: c50fd9093b63e57409ff35755301358d
+    - name: Teste_Corrida_direita_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 17
+        y: 0
+        width: 39
+        height: 59
+      spriteId: 8f8a2912986bffb49a32aa73a50127fd
+    - name: Teste_Corrida_direita_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 17
+        y: 0
+        width: 39
+        height: 56
+      spriteId: 8d3834d288ba66c4da9ca181ca8cad97
+    - name: Teste_Corrida_direita_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 14
+        y: -2
+        width: 39
+        height: 64
+      spriteId: 3287a37c0d9cd624985b79c173619b51
+    - name: Teste_Corrida_direita_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 14
+        y: 0
+        width: 39
+        height: 61
+      spriteId: a089b5aef85da2242ac733a33f2f5466
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 64, y: 64}
