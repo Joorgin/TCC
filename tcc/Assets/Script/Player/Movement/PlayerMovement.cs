@@ -1,13 +1,16 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement Instance;
+
     public float moveSpeed = 5f; 
     public Rigidbody2D rb;
 
-    private bool isGrounded;
+    public bool isGrounded;
     private float horizontalMove = 0f;
 
     public static int verticalMove;
@@ -33,7 +36,34 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 EndTowards;
 
     public static string ChestName;
+    public static bool isInFinalScene;
+    public static bool isAttacking;
 
+    public CinemachineConfiner cinemachine;
+
+    public GameObject ConfigMenu;
+    bool setactive;
+    float TimeOfSlow;
+    public float TimeToSetNormalSpeed;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if(isInFinalScene)
+        {
+            Destroy(gameObject);
+        }
+
+        cinemachine = GameObject.FindGameObjectWithTag("Camera").GetComponent<CinemachineConfiner>();
+        cinemachine.m_BoundingShape2D = GameObject.FindGameObjectWithTag("CameraConfiner").GetComponent<PolygonCollider2D>();
+
+        Physics2D.IgnoreLayerCollision(6,7, true);
+        Physics2D.IgnoreLayerCollision(8,7, true);
+    }
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -43,37 +73,73 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         AnimatorControllers();
+
+        rb.sharedMaterial.friction = isGrounded ?  0.24f : 0f;
+
+        if (isInFinalScene)
+        {
+            Destroy(gameObject);
+            isInFinalScene = false;
+        }
+
         if (PlayerHealth.isAlive)
         {
-
-            if (isDashing)
-            {
-                return;
-            }
-
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+            if (!isAttacking)
+            {
+                if (isDashing)
+                {
+                    return;
+                }
 
-            if (isGrounded && Input.GetKeyDown(KeyCode.Space))
-            {
-                Jump();
-            }
+                if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow)))
+                {
+                    Jump();
+                }
 
-            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
-            {
-                Debug.Log("dashing");
-                StartCoroutine(Dash());
-            }
+                if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+                {
+                    anim.SetTrigger("Dash");
+                    StartCoroutine(Dash());
+                }
 
-            horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
-            if (horizontalMove > 0f)
-            {
-                verticalMove = 1;
-                anim.SetInteger("VerticalMove", verticalMove);
+                horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
+                if (horizontalMove > 0f)
+                {
+                    verticalMove = 1;
+                    anim.SetInteger("VerticalMove", verticalMove);
+                }
+                else if (horizontalMove < 0f)
+                {
+                    verticalMove = -1;
+                    anim.SetInteger("VerticalMove", verticalMove);
+                }
             }
-            else if(horizontalMove < 0f)
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            setactive = !setactive;
+            switch (setactive)
             {
-                verticalMove = -1;
-                anim.SetInteger("VerticalMove", verticalMove);
+                case true:
+                    Time.timeScale = 0;
+                    break;
+                case false:
+                    Time.timeScale = 1.5f;
+                    break;
+            }
+            ConfigMenu.SetActive(setactive);
+        }
+
+        if(moveSpeed == 100)
+        {
+            TimeToSetNormalSpeed += Time.deltaTime;
+
+            if (TimeToSetNormalSpeed >= TimeOfSlow)
+            {
+                moveSpeed = 300;
+                TimeToSetNormalSpeed = 0;
             }
         }
     }
@@ -82,45 +148,54 @@ public class PlayerMovement : MonoBehaviour
     {
         if (PlayerHealth.isAlive)
         {
-            if (KBCounter <= 0)
-            {
-                if (isDashing)
+            
+                if (KBCounter <= 0)
                 {
-                    return;
+                    if (isDashing)
+                        return;
+                if (!isAttacking)
+                    rb.velocity = new Vector2(horizontalMove * Time.fixedDeltaTime, rb.velocity.y);
+                else if(isAttacking && isGrounded)
+                    rb.velocity = new Vector2(0, rb.velocity.y);
+                
                 }
+                else
+                {
+                    if (KnockFromRight == true)
+                    {
+                        rb.velocity = new Vector2(-KBForce, KBForce);
+                    }
+                    if (KnockFromRight == false)
+                    {
+                        rb.velocity = new Vector2(KBForce, KBForce);
+                    }
 
-                Vector2 movement = new Vector2(horizontalMove * Time.fixedDeltaTime, rb.velocity.y);
-                rb.velocity = movement;
-            }
-            else
-            {
-                if (KnockFromRight == true)
-                {
-                    rb.velocity = new Vector2(-KBForce, KBForce);
+                    KBCounter -= Time.deltaTime;
                 }
-                if (KnockFromRight == false)
-                {
-                    rb.velocity = new Vector2(KBForce, KBForce);
-                }
-
-                KBCounter -= Time.deltaTime;
-            }
         }
 
     }
 
+    public void StopAttack()
+    {
+        isAttacking = false;
+    }
+
     void Jump()
     {
+        anim.SetTrigger("IsJumping");
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
 
     public void AnimatorControllers()
     {
         anim.SetBool("isGrounded", isGrounded);
-        anim.SetBool("IsJumping", isGrounded && Input.GetKeyDown(KeyCode.Space));
+        
 
         if (isGrounded)
             anim.SetFloat("RunDirection", Input.GetAxisRaw("Horizontal"));
+
+        if(PlayerHealth.isAlive == false && isGrounded) anim.SetBool("Dead", true);
 
     }
 
@@ -138,22 +213,31 @@ public class PlayerMovement : MonoBehaviour
         canDash = true;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        if(collision.gameObject.CompareTag("Chest"))
+        if(other.gameObject.CompareTag("Chest"))
         {
-            ChestName = collision.gameObject.name;
+            ChestName = other.gameObject.name;
+            Debug.Log("ChestName : " + ChestName);
+
             Chest.isInRange = true;
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Chest"))
         {
             ChestName = "";
             Chest.isInRange = false;
         }
+    }
+
+    public void TakeSlow(float TimeSlow)
+    {
+        Debug.Log("TAKE SLOW");
+         TimeOfSlow = TimeSlow;
+         moveSpeed = 100;
     }
 
 }

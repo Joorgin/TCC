@@ -23,17 +23,15 @@ public class InventorySlot_UI : MonoBehaviour
         ParentDisplay = transform.parent.GetComponent<InventoryDisplay>();
     }
 
+   
+
     public void Init(InventorySlot slot)
     {
         assignedInventorySlot = slot;
         UpdateUISlot(slot);
     }
 
-    public void OnServerInitialized(InventorySlot slot)
-    {
-        assignedInventorySlot = slot;
-        UpdateUISlot(slot);
-    }
+    
 
     public void UpdateUISlot(InventorySlot slot)
     {
@@ -45,6 +43,18 @@ public class InventorySlot_UI : MonoBehaviour
             if (slot.stackSize > 1) itemCount.text = slot.stackSize.ToString();
             else itemCount.text = "";
         }
+        else
+        {
+            ClearSlot();
+        }
+    }
+
+    public void ClearSlot()
+    {
+        assignedInventorySlot?.ClearSlot();
+        itemsprite.sprite = null;
+        itemsprite.color= Color.clear;
+        itemCount.text= "";
     }
 
     public void UpdateUISlot()

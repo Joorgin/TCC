@@ -8,6 +8,14 @@ TagManager:
   - Respown
   - Ledge
   - Chest
+  - Inventory_Slot_UI
+  - CameraConfiner
+  - Camera
+  - ContadorDeAlmas
+  - EnemyBoby
+  - Watch
+  - Trap
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -16,9 +24,9 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - 
-  - 
-  - 
+  - Player
+  - Trap
+  - FeetMonster
   - 
   - 
   - 

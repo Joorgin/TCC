@@ -9,6 +9,10 @@ public class Traps : MonoBehaviour
 
     public GameObject enemyName;
 
+    public Animator anim;
+    bool armed;
+
+
     private void Update()
     {
         trapCooldownDestroy -= Time.deltaTime;
@@ -21,18 +25,19 @@ public class Traps : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Enemy"))
+        if(collision.gameObject.CompareTag("EnemyBoby") && !armed)
         {
             enemyName = collision.gameObject;
+            Debug.Log(enemyName);
             StartCoroutine(Trapped());
         }
     }
 
     public IEnumerator Trapped()
     {
-        enemyName.GetComponent<ENemyBasicMovement>().isTrapped = true;
+        armed = true;
+        anim.SetBool("Armed", true);
         yield return new WaitForSeconds(trapCooldownAfterClick);
-        enemyName.GetComponent<ENemyBasicMovement>().isTrapped = false;
         Destroy(gameObject);
     }
 }

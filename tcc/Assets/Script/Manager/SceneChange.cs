@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,7 +10,17 @@ public class SceneChange : MonoBehaviour
     public string[] SceneNames;
     string SceneToChange;
     public Animator anim;
-    bool isInRange, portalReady;
+    bool isInRange, portalReady, canCharge, hasSpawnedBoss;
+    public GameObject Boss, BossSpawn;
+    public bool isInMainScene;
+    int RandomScene;
+
+    private void Start()
+    {
+        canCharge = false;
+        FadeScript.HideUI();
+        Debug.Log(GameManager.LastMapName);
+    }
     private void Update()
     {
         if(changeScene) 
@@ -21,79 +30,77 @@ public class SceneChange : MonoBehaviour
         // da Fade e escolhe o proximo mapa
         if (TimeToLoad >= 1)
         {
-            int RandomScene = Random.Range(0, 12);
-
-            if (GameManager.LastMap != RandomScene)
+            RandomScene = Random.Range(0, 3);
+            SceneToChange = SceneNames[RandomScene];
+            Debug.Log("Maps Passed: " + GameManager.MapsPassed);
+            GameManager.MapsPassed++;
+            if(SceneToChange == GameManager.LastMapName)
             {
-                if (GameManager.MapsPassed <= 3)
+                if(RandomScene == 2)
                 {
-                    GameManager.MapsPassed++;
-                    GameManager.LastMap = RandomScene;
+                    RandomScene -= 1;
                     SceneToChange = SceneNames[RandomScene];
+                    SceneManager.LoadScene(SceneToChange);
                 }
-                else
+                else if(RandomScene == 0)
                 {
-                    GameManager.MapsPassed = 0;
-                    GameManager.LastMapPassed = true;
-                    SceneManager.LoadScene("MainScene");
+                    RandomScene += 1;
+                    SceneToChange = SceneNames[RandomScene];
+                    SceneManager.LoadScene(SceneToChange);
                 }
-            }
-            else
+               
+            }else
             {
-                if (GameManager.MapsPassed <= 3)
-                {
-                    if (RandomScene == 11)
-                    {                   
-                        GameManager.MapsPassed++;
-                        RandomScene -= 1;
-                        GameManager.LastMap = RandomScene;
-                        SceneToChange = SceneNames[RandomScene];
-                    }
-                    else
-                    {
-                        GameManager.MapsPassed++;
-                        RandomScene += 1;
-                        GameManager.LastMap = RandomScene;
-                        SceneToChange = SceneNames[RandomScene];
-                    }
-                }
-                else
-                {
-                    GameManager.MapsPassed = 0;
-                    GameManager.LastMapPassed = true;
-                    SceneManager.LoadScene("MainScene");
-                }
+                GameManager.LastMapName = SceneToChange;
+                SceneManager.LoadScene(SceneToChange);
             }
+        } 
 
-            SceneManager.LoadScene(SceneToChange);
-        }
-
-       CounterPercent += isInRange ? Time.deltaTime : 0 ;
-       
-        if(CounterPercent >= 10)
+        if (isInRange && Input.GetKey(KeyCode.E) && !hasSpawnedBoss)
         {
-            ContAnim();
-        }
-       
+            canCharge = true;
 
+            if (!isInMainScene)
+            {
+                Instantiate(Boss, BossSpawn.transform.position, Quaternion.identity);
+                hasSpawnedBoss = true;
+            }
+        }
+            
+        if(isInRange && canCharge) 
+        {
+            anim.SetBool("Start_Portal", true);
+            anim.speed = 1;
+        }
+
+        CounterPercent += isInRange && canCharge ? Time.deltaTime : 0 ;
+       
+        if(CounterPercent >= 13)
+        {
+           ContAnim();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isInRange = true;
-        anim.SetBool("Start_Portal", true);
-        anim.speed = 1;
+        if (collision.CompareTag("Player"))
+        {
+            isInRange = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isInRange = false;
-        anim.speed = 0;
+        if (collision.CompareTag("Player"))
+        {
+            isInRange = false;
+            anim.speed = 0;
+        }
     }
 
     public void ContAnim()
     {
-        if(isInRange)
+        if(isInRange && !BIrd_Boss_Health.isAlive && Input.GetKey(KeyCode.E) || isInMainScene)
         {
             anim.SetBool("End_Portal", true);   
             FadeScript.ShowUI();

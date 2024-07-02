@@ -11,7 +11,8 @@ public class InventorySlot
 
     public Itens itemData => ItemData;
     public int stackSize => StackSize;
-    
+
+
     public void UpdateInventorySlot(Itens data, int amount)
     {
         ItemData = data;
@@ -26,8 +27,13 @@ public class InventorySlot
 
     public InventorySlot() 
     { 
-       ItemData = null;
-       StackSize = -1;
+       ClearSlot();
+    }
+
+    public void ClearSlot()
+    {
+        ItemData = null;
+        StackSize = -1;
     }
 
     public void AddToStack(int amount) 

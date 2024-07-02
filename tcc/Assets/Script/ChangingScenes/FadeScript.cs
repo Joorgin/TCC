@@ -19,7 +19,6 @@ public class FadeScript : MonoBehaviour
         {
             if(myUiGroup.alpha <= 1)
             {
-                Debug.Log("AlphaOut");
                 myUiGroup.alpha += Time.deltaTime;
                 if (myUiGroup.alpha == 1)
                 {
@@ -43,7 +42,6 @@ public class FadeScript : MonoBehaviour
 
     public static void ShowUI()
     {
-        
         fadeIn = true;
     }
 

@@ -8,11 +8,20 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackPos, attackPos2;//para as direções de ataque
     public float attackRange;
     public LayerMask WhatIsEnemies;
+    public LayerMask WhatIsEnemies2;
 
-    public float Damage;
+    public static float Damage;
     Collider2D[] enemiesToDamage;
+    Collider2D[] enemiesToDamage2;
+    public Animator anim;
 
+    public int weaponIsUsing;
 
+    private void Start()
+    {
+        Damage = 10;
+        anim = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -21,6 +30,7 @@ public class PlayerAttack : MonoBehaviour
         attackPos2.gameObject.SetActive(!direcaoVerticalMove);
         Vector3 ataquePosicao = direcaoVerticalMove ? attackPos.position : attackPos2.position;
         enemiesToDamage = Physics2D.OverlapCircleAll(ataquePosicao, attackRange, WhatIsEnemies);
+        enemiesToDamage2 = Physics2D.OverlapCircleAll(ataquePosicao, attackRange, WhatIsEnemies2);
 
         if (PlayerHealth.isAlive)
         {
@@ -35,26 +45,106 @@ public class PlayerAttack : MonoBehaviour
     {
         if (timeBtwAttack < 0)
         {
-            if (Input.GetKey(KeyCode.Mouse0) && enemiesToDamage != null)
+            if ((Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.X)) && (enemiesToDamage != null || enemiesToDamage2 !=null))
             {
-                Debug.Log("Damage");
-                foreach (Collider2D etd in enemiesToDamage)
+                switch (weaponIsUsing)
                 {
-                    etd.GetComponent<EnemyHeatlh>().TakeDamage(Damage);
-                    etd.GetComponent<ENemyBasicMovement>().KBCounter = etd.GetComponent<ENemyBasicMovement>().KBTotalTime;
-                    etd.GetComponent<FlyingEnemy>().KBCounter = etd.GetComponent<FlyingEnemy>().KBTotalTime;
-
-                    etd.GetComponent<ENemyBasicMovement>().KnockFromRight = !direcao;//inverte pq direcao foi feito com PlayerMovement.verticalMove == 1
-                    etd.GetComponent<FlyingEnemy>().KnockFromRight = !direcao;
+                    case 0:
+                         anim.SetTrigger("Attack");
+                         PlayerMovement.isAttacking = true;
+                         StartCoroutine(AttackHand1(direcao));
+                         timeBtwAttack = startTimeBtwAttack;
+                        break;
                 }
-                timeBtwAttack = startTimeBtwAttack;
+        
             }
         }
         else
         {
             timeBtwAttack -= Time.deltaTime;
         }
+    }
 
+    public IEnumerator AttackHand1(bool direcao)
+    {
+        foreach (Collider2D etd in enemiesToDamage)
+        {
+            
+
+            //basic Enemy
+            if (etd.GetComponent<ENemyBasicMovement>() != null)
+            {
+                etd.GetComponent<EnemyHeatlh>().TakeDamage(Damage);
+                etd.GetComponent<ENemyBasicMovement>().KBCounter = etd.GetComponent<ENemyBasicMovement>().KBTotalTime;
+                etd.GetComponent<ENemyBasicMovement>().KBForce = 1;
+                etd.GetComponent<ENemyBasicMovement>().KnockFromRight = !direcao;//inverte pq direcao foi feito com PlayerMovement.verticalMove == 1
+            }
+
+            //Explosive Enemy
+            if (etd.GetComponent<ExplosiveEnemyMovement>() != null)
+            {
+                etd.GetComponent<ExplosiveEnemyHealth>().TakeDamage(Damage);
+                etd.GetComponent<ExplosiveEnemyMovement>().KBCounter = etd.GetComponent<ExplosiveEnemyMovement>().KBTotalTime;
+                etd.GetComponent<ExplosiveEnemyMovement>().KBForce = 1;
+                etd.GetComponent<ExplosiveEnemyMovement>().KnockFromRight = !direcao;
+            }
+
+            
+
+            //Flying Enemy
+            //etd.GetComponent<FlyingEnemy>().KBCounter = etd.GetComponent<FlyingEnemy>().KBTotalTime;
+           // etd.GetComponent<FlyingEnemy>().KnockFromRight = !direcao;
+
+        }
+
+        foreach (Collider2D etd in enemiesToDamage2)
+        {
+            if (etd.GetComponent<FlyingBirdboss>() != null)
+            {
+                etd.GetComponent<BIrd_Boss_Health>().TakeDamage(Damage);
+            }
+        }
+
+        yield return new WaitForSeconds(0.5f);
+        AttackHand2(direcao);
+    }
+
+    public void AttackHand2(bool direcao)
+    {
+        foreach (Collider2D etd in enemiesToDamage)
+        {
+
+            //Basic Enemy
+            if (etd.GetComponent<ENemyBasicMovement>() != null)
+            {
+                etd.GetComponent<EnemyHeatlh>().TakeDamage(Damage);
+                etd.GetComponent<ENemyBasicMovement>().KBCounter = etd.GetComponent<ENemyBasicMovement>().KBTotalTime;
+                etd.GetComponent<ENemyBasicMovement>().KBForce = 3;
+                etd.GetComponent<ENemyBasicMovement>().KnockFromRight = !direcao;//inverte pq direcao foi feito com PlayerMovement.verticalMove == 1
+            }
+
+            //ExplosiveEnemy 
+            if (etd.GetComponent<ExplosiveEnemyMovement>() != null)
+            {
+                etd.GetComponent<ExplosiveEnemyHealth>().TakeDamage(Damage);
+                etd.GetComponent<ExplosiveEnemyMovement>().KBCounter = etd.GetComponent<ExplosiveEnemyMovement>().KBTotalTime;
+                etd.GetComponent<ExplosiveEnemyMovement>().KBForce = 1;
+                etd.GetComponent<ExplosiveEnemyMovement>().KnockFromRight = !direcao;
+            }
+
+            //FlyingEnemy
+            //etd.GetComponent<FlyingEnemy>().KBCounter = etd.GetComponent<FlyingEnemy>().KBTotalTime;
+            // etd.GetComponent<FlyingEnemy>().KnockFromRight = !direcao;
+
+        }
+
+        foreach (Collider2D etd in enemiesToDamage2)
+        {
+            if (etd.GetComponent<FlyingBirdboss>() != null)
+            {
+                etd.GetComponent<BIrd_Boss_Health>().TakeDamage(Damage);
+            }
+        }
     }
 
     /// <summary>
@@ -66,8 +156,9 @@ public class PlayerAttack : MonoBehaviour
         Gizmos.DrawSphere(attackPos.position, attackRange);
     }
 
-    public void SacrificarKiumbas()
+    public static void SacrificarKiumbas()
     {
-        Contador_de_Almas.instance.ZerarAlmas();
+        Damage += 10;
+        Debug.Log(Damage);
     }
 }

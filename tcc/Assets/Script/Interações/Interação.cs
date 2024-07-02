@@ -5,21 +5,24 @@ using UnityEngine;
 public class Interação : MonoBehaviour
 {
     public GameObject button;
+    public static bool buttonOff;
 
-    
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void FixedUpdate()
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if(buttonOff) button.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player") && !buttonOff)
         {
-            Debug.Log("BUtton");
             button.SetActive(true);
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && !buttonOff)
         {
             button.SetActive(false);
         }

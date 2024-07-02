@@ -6,11 +6,13 @@ public class StaticInventoryDisplay : InventoryDisplay
 {
     [SerializeField] private InventoryHolder inventoryHolder;
     [SerializeField] private InventorySlot_UI[] slots;
-
+    //SpawnChest
 
     protected override void Start()
     {
         base.Start();
+
+        inventoryHolder = GameObject.FindGameObjectWithTag("Player").GetComponent<InventoryHolder>();
 
         if (inventoryHolder != null)
         {
@@ -20,6 +22,16 @@ public class StaticInventoryDisplay : InventoryDisplay
         else Debug.LogWarning($"No inventory assigned to {this.gameObject}");
 
         AssignSlot(inventorySystem);
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+
+        if (inventoryHolder == null) 
+        {
+            inventoryHolder = GameObject.FindGameObjectWithTag("Player").GetComponent<InventoryHolder>();
+        }
     }
     public override void AssignSlot(InventorySystem invToDisplay)
     {

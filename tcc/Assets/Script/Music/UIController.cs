@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
@@ -25,5 +26,16 @@ public class UIController : MonoBehaviour
     public void SFXVolume()
     {
         AudioManager.Instance.SFXVolume(_sfxSlider.value);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    public void GoToMenu()
+    {
+        PlayerMovement.isInFinalScene = true;
+        SceneManager.LoadScene("Menu");
     }
 }

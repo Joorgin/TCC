@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Concha
   m_EditorClassIdentifier: 
   ID: 2
-  DisplayName: 
+  DisplayName: Colar de Concha
   Description: "Concha de Prote\xE7\xE3o"
   Icon: {fileID: 21300000, guid: 6413ca337a0d3b34792d779d728622c9, type: 3}
   MaxStackSise: 99

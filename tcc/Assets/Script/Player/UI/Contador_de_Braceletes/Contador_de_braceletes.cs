@@ -17,12 +17,17 @@ public class Contador_de_braceletes : MonoBehaviour
 
     void Start()
     {
-        coinText.text = "Braceletes: " + currentCoins.ToString();
+        coinText.text = currentCoins.ToString();
     }
 
     public void AlmentarBraceletes(int v)
     {
         currentCoins += v;
-        coinText.text = "Braceletes: " + currentCoins.ToString();
+        coinText.text = currentCoins.ToString();
+    }
+
+    public void DiminuirBraceletes(int v)
+    {
+        coinText.text = currentCoins.ToString();
     }
 }

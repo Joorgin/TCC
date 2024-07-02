@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     
-    public int Maxhealth;
+    public static int Maxhealth;
     public int Currenthealth;
 
     public PlayerHealthUI healthUI;
@@ -17,9 +18,24 @@ public class PlayerHealth : MonoBehaviour
 
     public GameObject DeathPanel;
 
+    public static int HealthRegen;
+    public float TimetoRegenarateHealth;
+
+    public static bool canShield;
+    public static bool shieldBroken;
+    float TimeToReDo;
+    public static float TimeToShieldRemake = 20f;
+    bool canTakeaDamage = true;
+    public float TimeToTakeDamage;
+
     void Start()
     {
+
+        Maxhealth = GameManager.PlayerMaxhealth;
+        Debug.Log(Maxhealth);
         Currenthealth = Maxhealth;
+        HealthRegen = 2;
+        TimetoRegenarateHealth = 3.0f;
         healthUI.SetMaxHealth(Maxhealth);
         isAlive = true;
     }
@@ -27,7 +43,7 @@ public class PlayerHealth : MonoBehaviour
     
     void Update()
     {
-        if(Input.GetKeyUp(KeyCode.R)) 
+        if(Input.GetKeyUp(KeyCode.R) && canShield && !shieldBroken) 
         { 
           hasShildUp = true;
         }
@@ -41,16 +57,52 @@ public class PlayerHealth : MonoBehaviour
             shield.SetActive(false);
         }
 
+        if(shieldBroken) 
+        { 
+            TimeToReDo += Time.deltaTime;
+
+            if(TimeToReDo >= TimeToShieldRemake)
+            {
+                shieldBroken = false;
+            }
+        }
+
        if(Currenthealth <= 0)
         {
             Dead();
         }
+
+       if(isAlive)
+        {
+            TimetoRegenarateHealth -= Time.deltaTime;
+            if(TimetoRegenarateHealth <= 0f && Currenthealth < Maxhealth)
+            {
+                Currenthealth += HealthRegen;
+                healthUI.SetHealth(Currenthealth);
+                TimetoRegenarateHealth = 1.5f;
+            }
+        }
+
+       if(!canTakeaDamage)
+        {
+            TimeToTakeDamage += Time.deltaTime;
+
+            if(TimeToTakeDamage >= 1f)
+            {
+                canTakeaDamage = true;
+            }
+        }
+
     }
 
     public void TakeDamage(int damage)
     {
-       Currenthealth -= damage;
-       healthUI.SetHealth(Currenthealth);
+        if (canTakeaDamage)
+        {
+            Currenthealth -= damage;
+            healthUI.SetHealth(Currenthealth);
+            canTakeaDamage = false;
+        }
     }
 
     public void LibertarKiumbas()
@@ -68,6 +120,15 @@ public class PlayerHealth : MonoBehaviour
     public void Dead()
     {
         isAlive = false;
-        DeathPanel.SetActive(true);
+        StartCoroutine(ShowUI("MainScene"));
+    }
+
+    public IEnumerator ShowUI(string scene)
+    {
+        yield return new WaitForSeconds(1f);
+        FadeScript.ShowUI();
+        yield return new WaitForSeconds(1f);
+        PlayerMovement.isInFinalScene = true;   
+        SceneManager.LoadScene(scene);
     }
 }

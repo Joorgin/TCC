@@ -18,6 +18,11 @@ public abstract class InventoryDisplay : MonoBehaviour
 
     }
 
+    protected virtual void Update()
+    {
+
+    }
+
     protected virtual void updateSlot(InventorySlot updatedSlot)
     {
         foreach(var slot in SlotDictionary)
@@ -26,5 +31,6 @@ public abstract class InventoryDisplay : MonoBehaviour
                 slot.Key.UpdateUISlot(updatedSlot);
         }
     }
+
 
 }

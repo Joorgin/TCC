@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class PlayerInstantiate : MonoBehaviour
 {
-    public GameObject InstantiatePrefab;
+    public Transform InstantiatePrefabPosition;
+    public GameObject InstantiatePrefab2;
 
     private void Awake()
     {
-        Instantiate(InstantiatePrefab, gameObject.transform.position, Quaternion.identity);
+        if (GameObject.FindGameObjectWithTag("Player") == null)
+        {
+            Instantiate(InstantiatePrefab2, InstantiatePrefabPosition.transform.position, Quaternion.identity);
+            GameManager.ChangePlayerPosition(InstantiatePrefabPosition);
+        }
+        else
+        {
+            GameManager.ChangePlayerPosition(InstantiatePrefabPosition);
+        }
     }
 }
