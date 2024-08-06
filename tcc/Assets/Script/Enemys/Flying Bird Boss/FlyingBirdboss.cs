@@ -247,18 +247,14 @@ public class FlyingBirdboss : MonoBehaviour
     {
         Vector3 currentScale = gameObject.transform.localScale;
 
-        
-
         if (transform.position.x > player.transform.position.x && facingRight)
         {
             currentScale.y = -1;
-            //currentScale.x = 1;
             gameObject.transform.localScale = currentScale;
         }
         else
         {
             currentScale.y = 1;
-            //currentScale.x = 1;
             gameObject.transform.localScale = currentScale;
         }
 
