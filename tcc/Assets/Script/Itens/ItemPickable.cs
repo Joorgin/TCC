@@ -31,7 +31,7 @@ public class ItemPickable : MonoBehaviour
         myCollider.radius = PickUpRadius;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         DescriptionObject.SetActive(isInRange);
 
@@ -43,26 +43,26 @@ public class ItemPickable : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && isInRange) AddThing();
     }
-
+    // Verifica se o player entra na range do item
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("InRange");
         if (collision.CompareTag("Player")) isInRange = true;
         inventory = collision.transform.GetComponent<InventoryHolder>();
     }
-
+    // Verifica se o player se mantem na range do item
     private void OnTriggerStay2D(Collider2D collision)
     {
         Debug.Log("InRange IN Stay"); 
         if (collision.CompareTag("Player")) isInRange = true;
         inventory = collision.transform.GetComponent<InventoryHolder>();
     }
-
+    // Verifica se o player saiu da range do item
     private void OnTriggerExit2D(Collider2D collision)
     {
         isInRange = false;
     }
-
+    // Adiciona o item no inventário e adiciona seu efeito
     public void AddThing()
     {
         if (!inventory) return;
@@ -82,6 +82,7 @@ public class ItemPickable : MonoBehaviour
                     if (PlayerHealth.canShield) PlayerHealth.TimeToShieldRemake -= 2;
                     break;
             }
+            Debug.Log("Adicionou O Item");
             Destroy(this.gameObject);
         }
     }

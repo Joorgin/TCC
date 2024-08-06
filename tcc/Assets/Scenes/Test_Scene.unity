@@ -6923,11 +6923,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3956622754882606876, guid: 6bc23b4da6d487a44b1967d7a9ff227e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4566653886737648308, guid: 6bc23b4da6d487a44b1967d7a9ff227e, type: 3}
       propertyPath: m_Name
       value: Explosive Enemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4566653886737648308, guid: 6bc23b4da6d487a44b1967d7a9ff227e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7464922761044198775, guid: 6bc23b4da6d487a44b1967d7a9ff227e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17148,11 +17152,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3956622754882606876, guid: 6bc23b4da6d487a44b1967d7a9ff227e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4566653886737648308, guid: 6bc23b4da6d487a44b1967d7a9ff227e, type: 3}
       propertyPath: m_Name
       value: Explosive Enemy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4566653886737648308, guid: 6bc23b4da6d487a44b1967d7a9ff227e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7464922761044198775, guid: 6bc23b4da6d487a44b1967d7a9ff227e, type: 3}
       propertyPath: m_LocalPosition.x
