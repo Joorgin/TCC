@@ -6,6 +6,10 @@ public class Flecha : MonoBehaviour
 {
     public Rigidbody2D rb;
     float time;
+    [Header("Item Damage")]
+    public int damage;
+    [Space]
+    [Header("Enemy health")]
     EnemyHeatlh enemyHealth;
     ExplosiveEnemyHealth explosiveEnemyHealth;
 
@@ -39,7 +43,15 @@ public class Flecha : MonoBehaviour
     {
         if (collision.CompareTag("EnemyBoby"))
         {
-            Debug.Log(gameObject.name);
+            if (collision.gameObject.GetComponent<EnemyHeatlh>() != null)
+            {
+                collision.gameObject.GetComponent<EnemyHeatlh>().TakeDamage(damage);
+            }
+
+            if(collision.gameObject.GetComponent<ExplosiveEnemyHealth>() != null)
+            {
+                collision.gameObject.GetComponent<ExplosiveEnemyHealth>().TakeDamage(damage);
+            }
         }
     }
 }
