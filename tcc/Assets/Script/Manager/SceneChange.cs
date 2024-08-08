@@ -9,6 +9,7 @@ public class SceneChange : MonoBehaviour
     public float TimeToLoad = 0f, CounterPercent;
     public string[] SceneNames;
     string SceneToChange;
+    public static string SceneToChangeMusic;
     public Animator anim;
     bool isInRange, portalReady, canCharge, hasSpawnedBoss;
     public GameObject Boss, BossSpawn;
@@ -40,18 +41,24 @@ public class SceneChange : MonoBehaviour
                 {
                     RandomScene -= 1;
                     SceneToChange = SceneNames[RandomScene];
+                    SceneToChangeMusic = SceneToChange;
+                    AudioManager.hasChangedscene = true;
                     SceneManager.LoadScene(SceneToChange);
                 }
                 else if(RandomScene == 0)
                 {
                     RandomScene += 1;
                     SceneToChange = SceneNames[RandomScene];
+                    SceneToChangeMusic = SceneToChange;
+                    AudioManager.hasChangedscene = true;
                     SceneManager.LoadScene(SceneToChange);
                 }
                
             }else
             {
                 GameManager.LastMapName = SceneToChange;
+                SceneToChangeMusic = SceneToChange;
+                AudioManager.hasChangedscene = true;
                 SceneManager.LoadScene(SceneToChange);
             }
         } 
