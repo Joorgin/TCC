@@ -92,6 +92,9 @@ public class ItemPickable : MonoBehaviour
                     PlayerAttack.setHabilitStatus();
                     TrapSet.SetHabilitStatus();
                     break;
+                case 6:
+                    PlayerHealth.SetMirror();
+                    break;
             }
             Debug.Log("Adicionou O Item");
             Destroy(this.gameObject);

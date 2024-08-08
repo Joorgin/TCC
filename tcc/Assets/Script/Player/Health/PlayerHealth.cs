@@ -17,10 +17,12 @@ public class PlayerHealth : MonoBehaviour
     float TimeToReDo;
     public static float TimeToShieldRemake = 20f;
 
-    // tudo sobre o espelho e sua realcao com a vida
+    // tudo sobre o escudo e sua realcao com a vida
     public static bool hasArmorUp;
     public static int percentOfProtection;
 
+    // tudo sobre o espelho e sua relacao com a vida
+    public static bool hasMirrorUp;
 
     public static bool isAlive;
 
@@ -39,7 +41,6 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
-
         Maxhealth = GameManager.PlayerMaxhealth;
         Debug.Log(Maxhealth);
         Currenthealth = Maxhealth;
@@ -154,8 +155,14 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("tempo do shield: " +  TimeToShieldRemake);
     }
 
+    public static void SetMirror()
+    {
+        hasMirrorUp = true;
+        EnemyDamage.PercentOfDamage += 5;
+    }
 
-public void CurarPorRespown()
+
+    public void CurarPorRespown()
     {
         Currenthealth = Maxhealth;
         healthUI.SetHealth(Currenthealth);
