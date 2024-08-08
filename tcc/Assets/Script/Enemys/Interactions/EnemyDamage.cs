@@ -11,6 +11,10 @@ public class EnemyDamage : MonoBehaviour
    public PlayerMovement playerMovement;
    public static bool isAttacking;
 
+    public EnemyHeatlh thisHealth;
+
+    public static int PercentOfDamage;
+
     private void Start()
     {
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
@@ -38,6 +42,12 @@ public class EnemyDamage : MonoBehaviour
                 if (PlayerHealth.hasShildUp == false)
                 {
                     playerHealth.TakeDamage(damage);
+                    if(PlayerHealth.hasMirrorUp)
+                    {
+                        float DamagePercent = (damage * (30 + PercentOfDamage)) / 100;
+                        Debug.Log("DOI :" + DamagePercent);
+                        thisHealth.TakeDamage(DamagePercent);
+                    }
                 }
                 if (PlayerHealth.hasShildUp == true)
                 {
