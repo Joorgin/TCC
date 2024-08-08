@@ -78,6 +78,10 @@ public class Chest : MonoBehaviour
                             Instantiate(ItemToDrop[RandomNumber], gameObject.transform.position, Quaternion.identity);
                             isOpen = true;
                             break;
+                        case 5:
+                            Instantiate(ItemToDrop[RandomNumber], gameObject.transform.position, Quaternion.identity);
+                            isOpen = true;
+                            break;
                     }
                     CoinNecessaryText.text = " ";
                     gameObject.SetActive(false);

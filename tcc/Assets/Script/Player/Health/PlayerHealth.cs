@@ -150,6 +150,8 @@ public class PlayerHealth : MonoBehaviour
         float TimePercentOfShield = (TimeToShieldRemake / 100) * 10;
 
         if(TimeToShieldRemake > 10f) TimeToShieldRemake -= TimePercentOfShield;
+
+        Debug.Log("tempo do shield: " +  TimeToShieldRemake);
     }
 
 

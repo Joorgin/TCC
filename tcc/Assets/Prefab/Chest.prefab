@@ -378,4 +378,5 @@ MonoBehaviour:
   - {fileID: 7214274126071365269, guid: 033fe07dd4455b74993666f5e8ee0249, type: 3}
   - {fileID: 4384518963497001761, guid: 4002c334dc776084d8b2d0490ee5a885, type: 3}
   - {fileID: 4384518963497001761, guid: 8f6ec3aab0b84294bbb9877721ff0a7d, type: 3}
+  - {fileID: 4384518963497001761, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
   CoinNecessaryText: {fileID: 8919581426015558504}

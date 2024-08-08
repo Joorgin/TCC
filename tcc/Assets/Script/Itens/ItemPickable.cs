@@ -90,7 +90,7 @@ public class ItemPickable : MonoBehaviour
                 case 5:
                     PlayerHealth.SetHabilitStatus();
                     PlayerAttack.setHabilitStatus();
-
+                    TrapSet.SetHabilitStatus();
                     break;
             }
             Debug.Log("Adicionou O Item");

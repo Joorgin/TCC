@@ -184,6 +184,8 @@ public class PlayerAttack : MonoBehaviour
         float cooldownPercent = (cooldownForFlecha / 100) * 10;
 
         if(cooldownForFlecha >= 14f) cooldownForFlecha -= cooldownPercent;
+
+        Debug.Log("Time da flecha:" + cooldownForFlecha);
     }
 
     /// Desenha um circulo em volta no attackPos.position
