@@ -179,6 +179,13 @@ public class PlayerAttack : MonoBehaviour
 
     }
 
+    public static void setHabilitStatus()
+    {
+        float cooldownPercent = (cooldownForFlecha / 100) * 10;
+
+        if(cooldownForFlecha >= 14f) cooldownForFlecha -= cooldownPercent;
+    }
+
     /// Desenha um circulo em volta no attackPos.position
     private void OnDrawGizmosSelected()
     {
