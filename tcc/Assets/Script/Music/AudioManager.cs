@@ -10,6 +10,20 @@ public class AudioManager : MonoBehaviour
     public Music[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource;
 
+    [Space]
+    [Header("Bool for has changed Scene")]
+    public static bool hasChangedscene, isInBossFight;
+
+    [Space]
+    [Header("Scenes Name")]
+    public string SceneToChangeMusic;
+
+    [Space]
+    [Header("Name of the Boss")]
+    public string[] bossName;
+
+
+
     private void Awake()
     {
         if(Instance == null)
@@ -25,6 +39,35 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         PlayMusic("Music_Theme");
+    }
+
+    private void Update()
+    {
+       if(hasChangedscene)
+        {
+            SceneToChangeMusic = SceneChange.SceneToChangeMusic;
+
+            switch(SceneToChangeMusic) 
+            {
+                case "Floresta":
+                    Debug.Log("Play FlorestMusic");
+                    //PlayMusic("Night Forest Music");
+                    PlaySfx("Night Forest Sfx");
+                    hasChangedscene = false;
+                    break;
+                case "Mapa 3":
+                    PlayMusic("Music Beach");
+                    PlaySfx("Wave Sfx");
+                    hasChangedscene = false;
+                    break;
+                case "Mapa 4":
+                    Debug.Log("Play FlorestMusic 2");
+                    //PlayMusic("Day Forest Music");
+                    PlaySfx("Day Forest Sfx");
+                    hasChangedscene = false;
+                    break;
+            }
+        }
     }
 
     public void PlayMusic(string name)
@@ -52,7 +95,8 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            sfxSource.PlayOneShot(s.clip);
+            sfxSource.clip = s.clip;
+            sfxSource.Play();
         }
     }
 

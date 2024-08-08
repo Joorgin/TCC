@@ -20,6 +20,10 @@ public class PlayerAttack : MonoBehaviour
     public GameObject Arrow;
     bool hasShoot;
 
+    [Space]
+    [Header("CoolDown para atirar a flecha")]
+    public static float cooldownForFlecha = 20f;
+
     private void Start()
     {
         Damage = 10;
@@ -61,7 +65,7 @@ public class PlayerAttack : MonoBehaviour
                 }
         
             }
-            else if(Input.GetKey(KeyCode.Q) && (enemiesToDamage != null || enemiesToDamage2 != null))
+            else if(Input.GetKey(KeyCode.Q) && !hasShoot)
             {
                 //enquanto nao houver animacao manter isAttacking comentado
                // PlayerMovement.isAttacking = true;
@@ -169,8 +173,10 @@ public class PlayerAttack : MonoBehaviour
             Instantiate(Arrow, attackPos2.transform.position, Quaternion.identity);
             hasShoot = true;
         }
-        yield return new WaitForSeconds(0.5f);
+
+        yield return new WaitForSeconds(cooldownForFlecha);
         hasShoot = false;
+
     }
 
     /// Desenha um circulo em volta no attackPos.position
