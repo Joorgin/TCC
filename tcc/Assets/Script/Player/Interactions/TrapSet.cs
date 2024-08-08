@@ -7,6 +7,7 @@ public class TrapSet : MonoBehaviour
     public GameObject trap;
     public Transform LeftTrap;
     public Transform RightTrap;
+    public static float CooldownFortrap = 10f;
 
     private void Update()
     {
@@ -31,6 +32,12 @@ public class TrapSet : MonoBehaviour
             Debug.Log(PlayerMovement.verticalMove);
             Instantiate(trap, LeftTrap.transform.position, Quaternion.identity);
         }
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(CooldownFortrap);
+    }
+
+    public static void SetHabilitStatus()
+    {
+        float cooldownPercent = (CooldownFortrap / 100) * 10;
+        if(CooldownFortrap > 5) CooldownFortrap -= cooldownPercent;
     }
 }

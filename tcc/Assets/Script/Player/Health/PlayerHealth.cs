@@ -11,8 +11,16 @@ public class PlayerHealth : MonoBehaviour
 
     public PlayerHealthUI healthUI;
 
-    public static bool hasShildUp;
+    // Tudo sobre o shield e sua relacao com a vida
+    public static bool hasShildUp, canShield, shieldBroken;
     public GameObject shield;
+    float TimeToReDo;
+    public static float TimeToShieldRemake = 20f;
+
+    // tudo sobre o espelho e sua realcao com a vida
+    public static bool hasArmorUp;
+    public static int percentOfProtection;
+
 
     public static bool isAlive;
 
@@ -21,14 +29,13 @@ public class PlayerHealth : MonoBehaviour
     public static int HealthRegen;
     public float TimetoRegenarateHealth;
 
-    public static bool canShield;
-    public static bool shieldBroken;
-    float TimeToReDo;
-    public static float TimeToShieldRemake = 20f;
+   
     bool canTakeaDamage = true;
     public float TimeToTakeDamage;
 
     public static bool setMaxHealth;
+
+    
 
     void Start()
     {
@@ -108,9 +115,21 @@ public class PlayerHealth : MonoBehaviour
     {
         if (canTakeaDamage)
         {
-            Currenthealth -= damage;
-            healthUI.SetHealth(Currenthealth);
-            canTakeaDamage = false;
+            if(hasArmorUp) 
+            {
+                int damageReflet = (damage / 100) * percentOfProtection;
+                damage -= damageReflet;
+                Currenthealth -= damage;
+                healthUI.SetHealth(Currenthealth);
+                canTakeaDamage = false;
+            }
+            else
+            {
+                Currenthealth -= damage;
+                healthUI.SetHealth(Currenthealth);
+                canTakeaDamage = false;
+            }
+            
         }
     }
 
@@ -120,7 +139,21 @@ public class PlayerHealth : MonoBehaviour
         setMaxHealth = true;
     }
 
-    public void CurarPorRespown()
+    public static void ArmorUP()
+    {
+        hasArmorUp = true;
+        percentOfProtection += 2;
+    }
+
+    public static void SetHabilitStatus()
+    {
+        float TimePercentOfShield = (TimeToShieldRemake / 100) * 10;
+
+        if(TimeToShieldRemake > 10f) TimeToShieldRemake -= TimePercentOfShield;
+    }
+
+
+public void CurarPorRespown()
     {
         Currenthealth = Maxhealth;
         healthUI.SetHealth(Currenthealth);

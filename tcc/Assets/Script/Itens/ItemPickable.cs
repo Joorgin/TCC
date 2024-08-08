@@ -84,6 +84,14 @@ public class ItemPickable : MonoBehaviour
                 case 3:
                     PlayerHealth.LibertarKiumbas();
                     break;
+                case 4:
+                    PlayerHealth.ArmorUP();
+                    break;
+                case 5:
+                    PlayerHealth.SetHabilitStatus();
+                    PlayerAttack.setHabilitStatus();
+
+                    break;
             }
             Debug.Log("Adicionou O Item");
             Destroy(this.gameObject);
