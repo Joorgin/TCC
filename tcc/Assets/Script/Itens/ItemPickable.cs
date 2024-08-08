@@ -81,6 +81,9 @@ public class ItemPickable : MonoBehaviour
                     if(!PlayerHealth.canShield) PlayerHealth.canShield = true;
                     if (PlayerHealth.canShield) PlayerHealth.TimeToShieldRemake -= 2;
                     break;
+                case 3:
+                    PlayerHealth.LibertarKiumbas();
+                    break;
             }
             Debug.Log("Adicionou O Item");
             Destroy(this.gameObject);

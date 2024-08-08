@@ -28,6 +28,8 @@ public class PlayerHealth : MonoBehaviour
     bool canTakeaDamage = true;
     public float TimeToTakeDamage;
 
+    public static bool setMaxHealth;
+
     void Start()
     {
 
@@ -78,6 +80,7 @@ public class PlayerHealth : MonoBehaviour
             if(TimetoRegenarateHealth <= 0f && Currenthealth < Maxhealth)
             {
                 Currenthealth += HealthRegen;
+                if(Currenthealth > Maxhealth) { Currenthealth = Maxhealth; }
                 healthUI.SetHealth(Currenthealth);
                 TimetoRegenarateHealth = 1.5f;
             }
@@ -93,6 +96,12 @@ public class PlayerHealth : MonoBehaviour
             }
         }
 
+       if(setMaxHealth)
+        {
+            healthUI.SetMaxHealth(Maxhealth);
+            setMaxHealth = false;
+        }
+
     }
 
     public void TakeDamage(int damage)
@@ -105,10 +114,10 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void LibertarKiumbas()
+    public static void LibertarKiumbas()
     {
-        Maxhealth += 1 * Contador_de_Almas.currentCoins;
-        Contador_de_Almas.instance.ZerarAlmas();
+        Maxhealth += 25;
+        setMaxHealth = true;
     }
 
     public void CurarPorRespown()

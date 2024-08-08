@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd67622ffbef98a42a2084ed00f3ab6e, type: 3}
-  m_Name: Cabaca
+  m_Name: Pipoca
   m_EditorClassIdentifier: 
-  ID: 0
-  DisplayName: Cabaca
-  Description: "Caba\xE7a com poder de Rengenera\xE7\xE3o de vida"
+  ID: 3
+  DisplayName: Pipoca
+  Description: Almenta a vida do jogador em +25
   Icon: {fileID: 21300000, guid: 06b6832e2b0aef74bb43c7fcf10767bc, type: 3}
   MaxStackSise: 99
