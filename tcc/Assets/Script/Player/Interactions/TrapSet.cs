@@ -39,5 +39,7 @@ public class TrapSet : MonoBehaviour
     {
         float cooldownPercent = (CooldownFortrap / 100) * 10;
         if(CooldownFortrap > 5) CooldownFortrap -= cooldownPercent;
+
+        Debug.Log("Time da trap: " + CooldownFortrap);
     }
 }
