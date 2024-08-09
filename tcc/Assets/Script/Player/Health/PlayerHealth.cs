@@ -24,6 +24,12 @@ public class PlayerHealth : MonoBehaviour
     // tudo sobre o espelho e sua relacao com a vida
     public static bool hasMirrorUp;
 
+    // Tudo sobre Patua e como ele desvia o dano do adversario
+    bool hasPatuaUP;
+    public static int chanceForLiving;
+    
+
+
     public static bool isAlive;
 
     public GameObject DeathPanel;
@@ -114,7 +120,10 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (canTakeaDamage)
+        int chanceOfLive = Random.Range(0, 100);
+        if (chanceOfLive <= chanceForLiving) hasPatuaUP = true;
+
+        if (canTakeaDamage && !hasPatuaUP)
         {
             if(hasArmorUp) 
             {
@@ -132,6 +141,7 @@ public class PlayerHealth : MonoBehaviour
             }
             
         }
+        hasPatuaUP = false;
     }
 
     public static void LibertarKiumbas()
@@ -159,6 +169,11 @@ public class PlayerHealth : MonoBehaviour
     {
         hasMirrorUp = true;
         EnemyDamage.PercentOfDamage += 5;
+    }
+
+    public static void ChanceOfPatua()
+    {
+        chanceForLiving += 2;
     }
 
 
