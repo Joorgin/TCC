@@ -95,6 +95,9 @@ public class ItemPickable : MonoBehaviour
                 case 6:
                     PlayerHealth.SetMirror();
                     break;
+                case 7:
+                    PlayerAttack.SetCritChance();
+                    break;
             }
             Debug.Log("Adicionou O Item");
             Destroy(this.gameObject);

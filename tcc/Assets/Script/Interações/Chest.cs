@@ -56,33 +56,9 @@ public class Chest : MonoBehaviour
                     int RandomNumber = Random.Range(0, ItemToDrop.Length);
                     Debug.Log("Raridade deste bau: Nome: " + ChestID + " Raridade : " + Rarity);
 
-                    switch (RandomNumber)
-                    {
-                        case 0:
-                            Instantiate(ItemToDrop[RandomNumber], gameObject.transform.position, Quaternion.identity);
-                            isOpen = true;
-                            break;
-                        case 1:
-                            Instantiate(ItemToDrop[RandomNumber], gameObject.transform.position, Quaternion.identity);
-                            isOpen = true;
-                            break;
-                        case 2:
-                            Instantiate(ItemToDrop[RandomNumber], gameObject.transform.position, Quaternion.identity);
-                            isOpen = true;
-                            break;
-                        case 3:
-                            Instantiate(ItemToDrop[RandomNumber], gameObject.transform.position, Quaternion.identity);
-                            isOpen = true;
-                            break;
-                        case 4:
-                            Instantiate(ItemToDrop[RandomNumber], gameObject.transform.position, Quaternion.identity);
-                            isOpen = true;
-                            break;
-                        case 5:
-                            Instantiate(ItemToDrop[RandomNumber], gameObject.transform.position, Quaternion.identity);
-                            isOpen = true;
-                            break;
-                    }
+                    Instantiate(ItemToDrop[RandomNumber], gameObject.transform.position, Quaternion.identity);
+                    isOpen = true;
+                            
                     CoinNecessaryText.text = " ";
                     gameObject.SetActive(false);
                 }
