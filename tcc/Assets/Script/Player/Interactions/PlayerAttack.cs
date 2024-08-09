@@ -20,9 +20,14 @@ public class PlayerAttack : MonoBehaviour
     public GameObject Arrow;
     bool hasShoot;
 
+    // Tudo sobre a flecha e sua relacao com dono
     [Space]
     [Header("CoolDown para atirar a flecha")]
     public static float cooldownForFlecha = 20f;
+
+    // Porcentagem sobre o crit do ataque do player
+    public static int CritPercent;
+    bool Crited;
 
     private void Start()
     {
@@ -80,6 +85,12 @@ public class PlayerAttack : MonoBehaviour
     // Enumerator para o primeiro soco detectando quantos e quais inimigos estao na range do player
     public IEnumerator AttackHand1(bool direcao)
     {
+        int percentForCrit = Random.Range(0, 100);
+        if (percentForCrit <= CritPercent)
+        {
+            Crited = true;
+            Damage *= 2;
+        }
         foreach (Collider2D etd in enemiesToDamage)
         {
             //basic Enemy
@@ -154,6 +165,11 @@ public class PlayerAttack : MonoBehaviour
                 etd.GetComponent<BIrd_Boss_Health>().TakeDamage(Damage);
             }
         }
+        if (Crited)
+        {
+            Damage -= Damage / 2;
+            Crited = false;
+        }
     }
     //Enumerator para atirar a flecha apartir do ponto de ataque 
     public IEnumerator SHOOTARROW()
@@ -186,6 +202,12 @@ public class PlayerAttack : MonoBehaviour
         if(cooldownForFlecha >= 14f) cooldownForFlecha -= cooldownPercent;
 
         Debug.Log("Time da flecha:" + cooldownForFlecha);
+    }
+
+    // Aumenta a chance de Critico do Player
+    public static void SetCritChance()
+    {
+        CritPercent += 5;
     }
 
     /// Desenha um circulo em volta no attackPos.position
