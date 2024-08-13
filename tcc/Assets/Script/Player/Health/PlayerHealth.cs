@@ -27,8 +27,9 @@ public class PlayerHealth : MonoBehaviour
     // Tudo sobre Patua e como ele desvia o dano do adversario
     bool hasPatuaUP;
     public static int chanceForLiving;
-    
 
+    // Tudo sobre Stamina e sua relacao com a vida
+    public static bool deadByStamina;
 
     public static bool isAlive;
 
@@ -114,6 +115,11 @@ public class PlayerHealth : MonoBehaviour
         {
             healthUI.SetMaxHealth(Maxhealth);
             setMaxHealth = false;
+        }
+
+       if(deadByStamina)
+        {
+            Dead();
         }
 
     }

@@ -16,10 +16,6 @@ public class Contador_De_Tempo : MonoBehaviour
     public static float specificFrame;
     public float totalAnimationFrames;
 
-    private void Start()
-    {
-        //anim.Play("Troca de Dificuldade", 0, specificFrame / (float)totalAnimationFrames);
-    }
 
     void Update()
     {

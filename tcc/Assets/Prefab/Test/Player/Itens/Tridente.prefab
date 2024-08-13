@@ -464,11 +464,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PickUpRadius: 1
-  ItemData: {fileID: 11400000, guid: d67d441c78cb9ea459d91394a5d8694c, type: 2}
+  ItemData: {fileID: 11400000, guid: e010b4ab6cbb19f4287bbb02ae009c03, type: 2}
   ItemID: 5
   DescriptionObject: {fileID: 2322410898279894195}
   Icon: {fileID: 2356596884205626481}
-  IconReference: {fileID: 582780061, guid: 2cc0169c7cef67141b168f5b1d67f62c, type: 3}
+  IconReference: {fileID: 21300000, guid: da28146a4ae05434280d70d035294e30, type: 3}
   Description: Diminui 10% do cooldown de todas as habilidades
   descricao: {fileID: 5300613069378460175}
 --- !u!1 &6868077928272260175

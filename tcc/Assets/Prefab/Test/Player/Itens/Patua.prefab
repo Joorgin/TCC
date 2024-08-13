@@ -424,7 +424,7 @@ MonoBehaviour:
   ItemID: 8
   DescriptionObject: {fileID: 2455294550802806799}
   Icon: {fileID: 102609317121237459}
-  IconReference: {fileID: 21300000, guid: 6413ca337a0d3b34792d779d728622c9, type: 3}
+  IconReference: {fileID: 151888080, guid: 96ad6f42496318944b9deba79ce28837, type: 3}
   Description: Aumenta a chace de esquiva em 2%
   descricao: {fileID: 7357387676747497432}
 --- !u!1 &7863228385702267465
