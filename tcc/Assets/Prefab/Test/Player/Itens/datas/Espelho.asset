@@ -15,5 +15,5 @@ MonoBehaviour:
   ID: 6
   DisplayName: Espelho
   Description: Reflete 5% do dano recebido
-  Icon: {fileID: 21300000, guid: 988ac6de490cf2d43996cbdf0e1d3373, type: 3}
+  Icon: {fileID: -1572481025, guid: 295187239e287454fbda76828adc830b, type: 3}
   MaxStackSise: 99
