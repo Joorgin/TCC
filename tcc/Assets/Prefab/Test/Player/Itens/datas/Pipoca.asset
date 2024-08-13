@@ -15,5 +15,5 @@ MonoBehaviour:
   ID: 3
   DisplayName: Pipoca
   Description: Almenta a vida do jogador em +25
-  Icon: {fileID: 21300000, guid: 06b6832e2b0aef74bb43c7fcf10767bc, type: 3}
+  Icon: {fileID: 21300000, guid: 18a6e3f3072af4a4eb1c92dc8a8d0038, type: 3}
   MaxStackSise: 99
