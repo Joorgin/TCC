@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,9 +106,287 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Patua_Iansa-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9049388ec74fe1a43af0ac8d124ace34
+      internalID: -1446258177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patua_Iansa-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81aa8ca284bc8354694d27bccec30c81
+      internalID: -1450209534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patua_Iansa-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c58217f76d4e52a48b7c03de28de434d
+      internalID: -313787520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patua_Iansa-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8857b5fe6c482554cb4ec087f04710c1
+      internalID: 1446038765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patua_Iansa-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44d161e285d587c48b7439e676e9e936
+      internalID: -2061622573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patua_Iansa-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c9cc975ecf93c84fbff9d9462e4f2da
+      internalID: 480178986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patua_Iansa-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58fa36c5547d0a84199585cfd737bb89
+      internalID: 683735964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patua_Iansa-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d1d4e29287fb2e4282cdd27c74f24bc
+      internalID: -1954866921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patua_Iansa-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 291bce3a4f7e19e48b10b8b29d89d09d
+      internalID: -1445488001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patua_Iansa-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e68d1ac302bb60440a2d640859fc4c0c
+      internalID: -278081133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patua_Iansa-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b024fa6bc072910429ecbe42fda0ef3d
+      internalID: -895245586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patua_Iansa-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 1
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f3ff35d11ae7bf43ba0e33f6d7715f3
+      internalID: 151888080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +397,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Patua_Iansa-Sheet_0: -1446258177
+      Patua_Iansa-Sheet_1: -1450209534
+      Patua_Iansa-Sheet_10: -895245586
+      Patua_Iansa-Sheet_11: 151888080
+      Patua_Iansa-Sheet_2: -313787520
+      Patua_Iansa-Sheet_3: 1446038765
+      Patua_Iansa-Sheet_4: -2061622573
+      Patua_Iansa-Sheet_5: 480178986
+      Patua_Iansa-Sheet_6: 683735964
+      Patua_Iansa-Sheet_7: -1954866921
+      Patua_Iansa-Sheet_8: -1445488001
+      Patua_Iansa-Sheet_9: -278081133
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
