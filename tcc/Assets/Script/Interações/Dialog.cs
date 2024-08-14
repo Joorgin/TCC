@@ -35,7 +35,7 @@ public class Dialog : MonoBehaviour
     public static bool hasStartTalking;
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.E) && inRange && !isInDialog)
+        if (Input.GetKey(KeyCode.E) && inRange && !isInDialog)
         {
             ReadyToTalk = true;
             isInDialog = true;
@@ -43,7 +43,7 @@ public class Dialog : MonoBehaviour
             StartCoroutine(hasStartedTalking());
         }
 
-        if (Input.GetKeyUp(KeyCode.E) && inRange && isInDialog && hasStartTalking)
+        if (Input.GetKey(KeyCode.Space) && inRange && isInDialog && hasStartTalking)
         {
             StartCoroutine(SpeedTalk());
             Interação.buttonOff = true;

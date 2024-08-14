@@ -42,6 +42,10 @@ public class DialogManager : MonoBehaviour
         DisplayNextDialogueLine();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E)) DisplayNextDialogueLine();
+    }
     public void DisplayNextDialogueLine()
     {
         if (!Dialog.ReadyToTalk) return;
@@ -76,8 +80,14 @@ public class DialogManager : MonoBehaviour
         isDialogActive = false;
         anim.Play("Hide");
         Dialog.ReadyToTalk = false;
-        Dialog.isInDialog = false;
         Dialog.hasStartTalking = false;
         Interação.buttonOff = false;
+        StartCoroutine(EndOfDialog());
+    }
+
+    IEnumerator EndOfDialog()
+    {
+        yield return new WaitForSeconds(1f);
+        Dialog.isInDialog = false;
     }
 }
