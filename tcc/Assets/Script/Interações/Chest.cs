@@ -21,7 +21,7 @@ public class Chest : MonoBehaviour
 
         int RarityChest = Random.Range(0, 100);
 
-        if (RarityChest >= 0 && RarityChest <= 49) Rarity = "Normal";
+        if (RarityChest <= 49) Rarity = "Normal";
         if (RarityChest >= 50 && RarityChest <= 89) Rarity = "Rare";
         if (RarityChest >= 90) Rarity = "Legendary";
 
@@ -55,6 +55,7 @@ public class Chest : MonoBehaviour
                     Contador_de_braceletes.instance.DiminuirBraceletes(NumberNecesseryOfBraceletsToOpen);
                     int RandomNumber = Random.Range(0, ItemToDrop.Length);
                     Debug.Log("Raridade deste bau: Nome: " + ChestID + " Raridade : " + Rarity);
+
 
                     Instantiate(ItemToDrop[RandomNumber], gameObject.transform.position, Quaternion.identity);
                     isOpen = true;
