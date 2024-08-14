@@ -5,12 +5,19 @@ using UnityEngine;
 public class Stamina : MonoBehaviour
 {
     // Stamina do Player
-    public static float stamina = 240f;
+    public static float stamina = 60f;
 
-    // Update is called once per frame
+    // Ui Da Stamina
+    public Stamina_UI staminaUI;
+    private void Start()
+    {
+        staminaUI.SetMaxStamina(stamina);
+    }
     void Update()
     {
         stamina -= Time.deltaTime;
+
+        staminaUI.SetStamina(stamina);
 
         if (stamina <= 0) PlayerHealth.deadByStamina = true;
     }
