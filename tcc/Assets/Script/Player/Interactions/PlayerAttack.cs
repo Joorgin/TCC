@@ -14,7 +14,6 @@ public class PlayerAttack : MonoBehaviour
     public static float Damage;
     Collider2D[] enemiesToDamage;
     Collider2D[] enemiesToDamage2;
-    public Animator anim;
 
     public int weaponIsUsing;
     public GameObject Arrow;
@@ -28,6 +27,15 @@ public class PlayerAttack : MonoBehaviour
     // Porcentagem sobre o crit do ataque do player
     public static int CritPercent;
     bool Crited;
+
+    // combo System
+    [Space]
+    [Header("Sistema de Combo e animacao")]
+    public Animator anim;
+    public int noOfClicks = 0;
+    float lastClickedTime = 0;
+    public float maxComboDelay = 0.9f;
+
 
     private void Start()
     {
@@ -44,6 +52,11 @@ public class PlayerAttack : MonoBehaviour
         enemiesToDamage = Physics2D.OverlapCircleAll(ataquePosicao, attackRange, WhatIsEnemies);
         enemiesToDamage2 = Physics2D.OverlapCircleAll(ataquePosicao, attackRange, WhatIsEnemies2);
 
+        if(Time.time - lastClickedTime > maxComboDelay) 
+        {
+            noOfClicks = 0;
+        }
+
         if (PlayerHealth.isAlive)
         {
             Atacar(direcaoVerticalMove);
@@ -55,20 +68,27 @@ public class PlayerAttack : MonoBehaviour
     /// </summary>
     void Atacar(bool direcao)
     {
-        if (timeBtwAttack < 0)
-        {
-            if ((Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.X)) && (enemiesToDamage != null || enemiesToDamage2 !=null))
+            if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.X)) && (enemiesToDamage != null || enemiesToDamage2 !=null))
             {
-                switch (weaponIsUsing)
+                lastClickedTime = Time.time;
+                noOfClicks++;
+
+                if(noOfClicks == 1)
                 {
-                    case 0:
-                         anim.SetTrigger("Attack");
-                         PlayerMovement.isAttacking = true;
-                         StartCoroutine(AttackHand1(direcao));
-                         timeBtwAttack = startTimeBtwAttack;
-                        break;
+                
+                    switch (weaponIsUsing)
+                    {
+                        case 0:
+                            Debug.Log("ATAQUEDOFI");
+                            anim.SetBool("Attack1", true);
+                            //anim.SetTrigger("Attack");
+                            PlayerMovement.isAttacking = true;
+                            StartCoroutine(AttackHand1(direcao));
+                            timeBtwAttack = startTimeBtwAttack;
+                            break;
+                    }
                 }
-        
+                noOfClicks = Mathf.Clamp(noOfClicks, 0, 2);
             }
             else if(Input.GetKey(KeyCode.Q) && !hasShoot)
             {
@@ -76,15 +96,19 @@ public class PlayerAttack : MonoBehaviour
                // PlayerMovement.isAttacking = true;
                 StartCoroutine(SHOOTARROW());
             }
-        }
         else
         {
             timeBtwAttack -= Time.deltaTime;
         }
     }
+
+    
+
     // Enumerator para o primeiro soco detectando quantos e quais inimigos estao na range do player
     public IEnumerator AttackHand1(bool direcao)
     {
+       
+
         int percentForCrit = Random.Range(0, 100);
         if (percentForCrit <= CritPercent)
         {
@@ -126,11 +150,22 @@ public class PlayerAttack : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.5f);
-        AttackHand2(direcao);
+        if (noOfClicks >= 2)
+        {
+            anim.SetBool("Attack2", true);
+            StartCoroutine(AttackHand2(direcao));
+        }
+        else
+        {
+            anim.SetBool("Attack1", false);
+            noOfClicks = 0;
+            PlayerMovement.isAttacking = false;
+        }
     }
     // Funcao para o segundo soco detectando quantos e quais inimigos estao na range do player
-    public void AttackHand2(bool direcao)
+    public IEnumerator AttackHand2(bool direcao)
     {
+       
         foreach (Collider2D etd in enemiesToDamage)
         {
 
@@ -170,6 +205,10 @@ public class PlayerAttack : MonoBehaviour
             Damage -= Damage / 2;
             Crited = false;
         }
+        yield return new WaitForSeconds(0.5f);
+        anim.SetBool("Attack1", false);
+        anim.SetBool("Attack2", false);
+        PlayerMovement.isAttacking = false;
     }
     //Enumerator para atirar a flecha apartir do ponto de ataque 
     public IEnumerator SHOOTARROW()

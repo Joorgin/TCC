@@ -98,7 +98,7 @@ public class PlayerHealth : MonoBehaviour
                 Currenthealth += HealthRegen;
                 if(Currenthealth > Maxhealth) { Currenthealth = Maxhealth; }
                 healthUI.SetHealth(Currenthealth);
-                TimetoRegenarateHealth = 1.5f;
+                TimetoRegenarateHealth = 3.5f;
             }
         }
 
