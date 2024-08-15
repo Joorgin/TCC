@@ -658,9 +658,11 @@ MonoBehaviour:
   WhatIsEnemies2:
     serializedVersion: 2
     m_Bits: 512
-  anim: {fileID: 0}
   weaponIsUsing: 0
   Arrow: {fileID: 5888800189523828868, guid: 44b16a5419900604792d801908111cf5, type: 3}
+  anim: {fileID: 465859047248884024}
+  noOfClicks: 0
+  maxComboDelay: 0.9
 --- !u!114 &2142194139717347802
 MonoBehaviour:
   m_ObjectHideFlags: 0
