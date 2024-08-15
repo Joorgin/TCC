@@ -81,6 +81,7 @@ public class PlayerHealth : MonoBehaviour
             if(TimeToReDo >= TimeToShieldRemake)
             {
                 shieldBroken = false;
+                TimeToReDo = 0;
             }
         }
 
