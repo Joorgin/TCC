@@ -53,11 +53,25 @@ public class Chest : MonoBehaviour
                 {
                     Contador_de_braceletes.currentCoins -= NumberNecesseryOfBraceletsToOpen;
                     Contador_de_braceletes.instance.DiminuirBraceletes(NumberNecesseryOfBraceletsToOpen);
-                    int RandomNumber = Random.Range(0, ItemToDrop.Length);
                     Debug.Log("Raridade deste bau: Nome: " + ChestID + " Raridade : " + Rarity);
 
+                    switch (Rarity)
+                    {
+                        case "Normal":
+                            int RandomNumber = Random.Range(0, 3);
+                            Instantiate(ItemToDrop[RandomNumber], gameObject.transform.position, Quaternion.identity);
+                            break;
+                        case "Rare":
+                            int RandomNumber2 = Random.Range(3, 6);
+                            Instantiate(ItemToDrop[RandomNumber2], gameObject.transform.position, Quaternion.identity);
+                            break;
+                        case "Legendary":
+                            int RandomNumber3 = Random.Range(6, 8);
+                            Instantiate(ItemToDrop[RandomNumber3], gameObject.transform.position, Quaternion.identity);
+                            break;
+                    }
 
-                    Instantiate(ItemToDrop[RandomNumber], gameObject.transform.position, Quaternion.identity);
+                    
                     isOpen = true;
                             
                     CoinNecessaryText.text = " ";
