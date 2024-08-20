@@ -31,7 +31,7 @@ public class ENemyBasicMovement : MonoBehaviour
     private void Start()
     {
         PlayerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        Physics2D.IgnoreLayerCollision(6,6, true);
+        Physics2D.IgnoreLayerCollision(6, 6, true);
     }
 
     private void FixedUpdate()
@@ -44,8 +44,6 @@ public class ENemyBasicMovement : MonoBehaviour
 
     private void Update()
     {
-
-
         if (transform.position.x > PlayerTransform.position.x && facingRight)
         {
             Flip();
@@ -58,7 +56,7 @@ public class ENemyBasicMovement : MonoBehaviour
 
         if (!isTrapped && PlayerHealth.isAlive)
         {
-            
+
             if (isChansing)
             {
                 isgrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
@@ -77,8 +75,8 @@ public class ENemyBasicMovement : MonoBehaviour
                         CountToDamage();
                     }
 
-                    if (transform.position.x > PlayerTransform.position.x && !EnemyDamage.isAttacking && 
-                        Vector2.Distance(transform.position, PlayerTransform.position) > 1.5f )
+                    if (transform.position.x > PlayerTransform.position.x && !EnemyDamage.isAttacking &&
+                        Vector2.Distance(transform.position, PlayerTransform.position) > 1.5f)
                     {
                         transform.position += Vector3.left * movementSpeed * Time.deltaTime;
                         KnockFromRight = false;
@@ -86,7 +84,7 @@ public class ENemyBasicMovement : MonoBehaviour
                         anim.SetBool("WALK", true);
                     }
                     if (transform.position.x < PlayerTransform.position.x && !EnemyDamage.isAttacking &&
-                        Vector2.Distance(transform.position, PlayerTransform.position) > 1.5f )
+                        Vector2.Distance(transform.position, PlayerTransform.position) > 1.5f)
                     {
                         transform.position += Vector3.right * movementSpeed * Time.deltaTime;
                         KnockFromRight = true;
@@ -98,12 +96,12 @@ public class ENemyBasicMovement : MonoBehaviour
                 {
                     if (KnockFromRight == true)
                     {
-                        rb.velocity = new Vector2(-KBForce,0);
+                        rb.velocity = new Vector2(-KBForce, 0);
                         Debug.Log(KnockFromRight);
                     }
                     if (KnockFromRight == false)
                     {
-                        rb.velocity = new Vector2(KBForce,0);
+                        rb.velocity = new Vector2(KBForce, 0);
                         Debug.Log(KnockFromRight);
                     }
                     KBCounter -= Time.deltaTime;
@@ -117,8 +115,8 @@ public class ENemyBasicMovement : MonoBehaviour
                 }
             }
         }
-        else 
-        { 
+        else
+        {
             isChansing = false;
             anim.SetBool("IDLE", true);
             anim.SetBool("WALK", false);
@@ -141,9 +139,9 @@ public class ENemyBasicMovement : MonoBehaviour
 
     public void SetAttackFalse()
     {
-      anim.SetBool("IDLE", true);
-      EnemyDamage.isAttacking = false;
-      isChansing = true;
+        anim.SetBool("IDLE", true);
+        EnemyDamage.isAttacking = false;
+        isChansing = true;
     }
 
     void Flip()

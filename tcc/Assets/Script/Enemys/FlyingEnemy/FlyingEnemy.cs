@@ -24,7 +24,7 @@ public class FlyingEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(chasing == true) 
+        if (chasing == true)
         {
             if (KBCounter <= 0)
             {
@@ -54,7 +54,7 @@ public class FlyingEnemy : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
 
-        if(Vector2.Distance(transform.position, player.transform.position) <= 0.5f)
+        if (Vector2.Distance(transform.position, player.transform.position) <= 0.5f)
         {
             // Change animation speed or something else
         }
@@ -71,13 +71,13 @@ public class FlyingEnemy : MonoBehaviour
 
     private void Flip()
     {
-        if(transform.position.x > player.transform.position.x)
-        { 
-           transform.rotation = Quaternion.Euler(0,0,0);
+        if (transform.position.x > player.transform.position.x)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         else
         {
-            transform.rotation = Quaternion.Euler(0,180,0);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
         }
     }
 }
