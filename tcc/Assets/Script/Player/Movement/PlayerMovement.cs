@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement Instance;
 
-    public float moveSpeed = 5f; 
+    public float moveSpeed = 5f;
     public Rigidbody2D rb;
 
     public bool isGrounded;
@@ -46,6 +46,15 @@ public class PlayerMovement : MonoBehaviour
     float TimeOfSlow;
     public float TimeToSetNormalSpeed;
 
+    // bool que controla a paixao do player
+    [Space]
+    [Header("Tudo Sobre a paixao do player")]
+    public static bool apaixonado;
+    public float tempoApaixonado;
+    public GameObject Sereia;
+    bool hasSetSide = true;
+    bool direita, esquerda;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -53,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Instance = this;
         }
-        else if(isInFinalScene)
+        else if (isInFinalScene)
         {
             Destroy(gameObject);
         }
@@ -61,20 +70,21 @@ public class PlayerMovement : MonoBehaviour
         cinemachine = GameObject.FindGameObjectWithTag("Camera").GetComponent<CinemachineConfiner>();
         cinemachine.m_BoundingShape2D = GameObject.FindGameObjectWithTag("CameraConfiner").GetComponent<PolygonCollider2D>();
 
-        Physics2D.IgnoreLayerCollision(6,7, true);
-        Physics2D.IgnoreLayerCollision(8,7, true);
+        Physics2D.IgnoreLayerCollision(6, 7, true);
+        Physics2D.IgnoreLayerCollision(8, 7, true);
+        Physics2D.IgnoreLayerCollision(7, 11, true);
     }
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();   
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
         AnimatorControllers();
 
-        rb.sharedMaterial.friction = isGrounded ?  0.24f : 0f;
+        rb.sharedMaterial.friction = isGrounded ? 0.24f : 0f;
 
         if (isInFinalScene)
         {
@@ -82,7 +92,44 @@ public class PlayerMovement : MonoBehaviour
             isInFinalScene = false;
         }
 
-        if (PlayerHealth.isAlive)
+        if (apaixonado)
+        {
+            StartCoroutine(paixao());
+
+            if (Sereia_Movement.RightSide && hasSetSide)
+            {
+                esquerda = true;
+                hasSetSide = false;
+            }
+            // Vira a flecha para a esquerda 
+            if (!Sereia_Movement.RightSide && hasSetSide)
+            {
+                direita = true;
+                hasSetSide = false;
+            }
+
+            if (esquerda)
+            {
+                transform.position += Vector3.left * moveSpeed / 100 * Time.deltaTime;
+                verticalMove = -1;
+                anim.SetInteger("VerticalMove", verticalMove);
+                anim.SetFloat("RunDirection", verticalMove);
+
+                if (Vector2.Distance(transform.position, Sereia.transform.position) <= 3.5f) esquerda = false;
+            }
+            if (direita)
+            {
+                transform.position += Vector3.right * moveSpeed / 100 * Time.deltaTime;
+                verticalMove = 1;
+                anim.SetInteger("VerticalMove", verticalMove);
+                anim.SetFloat("RunDirection", verticalMove);
+
+                Sereia = GameObject.FindGameObjectWithTag("Chefe");
+                if (Vector2.Distance(transform.position, Sereia.transform.position) <= 3.5f) direita = false;
+            }
+        }
+
+        if (PlayerHealth.isAlive && !apaixonado)
         {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
             if (!isAttacking)
@@ -132,7 +179,7 @@ public class PlayerMovement : MonoBehaviour
             ConfigMenu.SetActive(setactive);
         }
 
-        if(moveSpeed == 100)
+        if (moveSpeed == 100)
         {
             TimeToSetNormalSpeed += Time.deltaTime;
 
@@ -148,32 +195,38 @@ public class PlayerMovement : MonoBehaviour
     {
         if (PlayerHealth.isAlive)
         {
-            
-                if (KBCounter <= 0)
-                {
-                    if (isDashing)
-                        return;
+
+            if (KBCounter <= 0)
+            {
+                if (isDashing)
+                    return;
                 if (!isAttacking)
                     rb.velocity = new Vector2(horizontalMove * Time.fixedDeltaTime, rb.velocity.y);
-                else if(isAttacking && isGrounded)
+                else if (isAttacking && isGrounded)
                     rb.velocity = new Vector2(0, rb.velocity.y);
-                
-                }
-                else
-                {
-                    if (KnockFromRight == true)
-                    {
-                        rb.velocity = new Vector2(-KBForce, KBForce);
-                    }
-                    if (KnockFromRight == false)
-                    {
-                        rb.velocity = new Vector2(KBForce, KBForce);
-                    }
 
-                    KBCounter -= Time.deltaTime;
+            }
+            else
+            {
+                if (KnockFromRight == true)
+                {
+                    rb.velocity = new Vector2(-KBForce, KBForce);
                 }
+                if (KnockFromRight == false)
+                {
+                    rb.velocity = new Vector2(KBForce, KBForce);
+                }
+
+                KBCounter -= Time.deltaTime;
+            }
         }
 
+    }
+
+    IEnumerator paixao()
+    {
+        yield return new WaitForSeconds(tempoApaixonado);
+        apaixonado = false;
     }
 
     public void StopAttack()
@@ -190,12 +243,12 @@ public class PlayerMovement : MonoBehaviour
     public void AnimatorControllers()
     {
         anim.SetBool("isGrounded", isGrounded);
-        
+
 
         if (isGrounded)
             anim.SetFloat("RunDirection", Input.GetAxisRaw("Horizontal"));
 
-        if(PlayerHealth.isAlive == false && isGrounded) anim.SetBool("Dead", true);
+        if (PlayerHealth.isAlive == false && isGrounded) anim.SetBool("Dead", true);
 
     }
 
@@ -215,7 +268,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Chest"))
+        if (other.gameObject.CompareTag("Chest"))
         {
             ChestName = other.gameObject.name;
             Debug.Log("ChestName : " + ChestName);
@@ -236,8 +289,8 @@ public class PlayerMovement : MonoBehaviour
     public void TakeSlow(float TimeSlow)
     {
         Debug.Log("TAKE SLOW");
-         TimeOfSlow = TimeSlow;
-         moveSpeed = 100;
+        TimeOfSlow = TimeSlow;
+        moveSpeed = 100;
     }
 
 }

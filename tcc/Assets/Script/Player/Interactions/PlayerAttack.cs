@@ -79,7 +79,6 @@ public class PlayerAttack : MonoBehaviour
                     switch (weaponIsUsing)
                     {
                         case 0:
-                            Debug.Log("ATAQUEDOFI");
                             anim.SetBool("Attack1", true);
                             //anim.SetTrigger("Attack");
                             PlayerMovement.isAttacking = true;

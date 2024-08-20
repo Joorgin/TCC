@@ -16,6 +16,7 @@ TagManager:
   - Watch
   - Trap
   - Ground
+  - Chefe
   layers:
   - Default
   - TransparentFX
@@ -27,9 +28,9 @@ TagManager:
   - Player
   - Trap
   - FeetMonster
-  - 
-  - 
-  - 
+  - Onda
+  - Chest
+  - Chefe
   - 
   - 
   - 
