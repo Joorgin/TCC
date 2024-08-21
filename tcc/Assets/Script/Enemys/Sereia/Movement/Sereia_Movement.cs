@@ -17,8 +17,11 @@ public class Sereia_Movement : MonoBehaviour
 
     // Animacao na sereia
     [Space]
-    [Header("Animator")]
+    [Header("Informacoes da animacao da sereia")]
     public Animator anim;
+    public float ondaAnimationTime;
+    public float paixaoAnimationTime;
+
 
     // Tudo sobre a onda
     [Space]
@@ -165,7 +168,7 @@ public class Sereia_Movement : MonoBehaviour
     {
         Debug.Log("ATTACK1");
         //anim.SetBool("Attack", true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(ondaAnimationTime);
         if (canAttack) Instantiate(onda, ondaStartLocation.transform.position, Quaternion.identity);
         canAttack = false;
         state = States.Idle;
@@ -173,6 +176,13 @@ public class Sereia_Movement : MonoBehaviour
 
     void Attack2()
     {
+        StartCoroutine(ApaixonarPlayer());
+    }
+
+    IEnumerator ApaixonarPlayer()
+    {
+        //anim.SetBool("Paixao", true);
+        yield return new WaitForSeconds(paixaoAnimationTime);
         if (canAttack) Instantiate(Beijo, saidaDoBeijo.transform.position, Quaternion.identity);
         canAttack = false;
         state = States.Idle;

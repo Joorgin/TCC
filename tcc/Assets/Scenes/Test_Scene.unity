@@ -6830,6 +6830,8 @@ MonoBehaviour:
   movementSpeed: 3
   chaseDistance: 5.5
   anim: {fileID: 0}
+  ondaAnimationTime: 1
+  paixaoAnimationTime: 1
   onda: {fileID: 1876738109636745228, guid: 78b27b943303b844c8baadbe3b3f8677, type: 3}
   ondaStartLocation: {fileID: 252682300}
   timeToAttack: 2
