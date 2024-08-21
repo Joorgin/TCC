@@ -130,7 +130,11 @@ public class PlayerMovement : MonoBehaviour
                 verticalMove = -1;
                 anim.SetInteger("VerticalMove", verticalMove);
                 anim.SetFloat("RunDirection", verticalMove);
-                if (Vector2.Distance(transform.position, Sereia.transform.position) <= 3.5f) esquerda = false;
+                if (Vector2.Distance(transform.position, Sereia.transform.position) <= 3.5f)
+                {
+                    esquerda = false;
+                    anim.SetBool("Apaixonado", true);
+                }
             }
             if (direita)
             {
@@ -138,7 +142,11 @@ public class PlayerMovement : MonoBehaviour
                 verticalMove = 1;
                 anim.SetInteger("VerticalMove", verticalMove);
                 anim.SetFloat("RunDirection", verticalMove);
-                if (Vector2.Distance(transform.position, Sereia.transform.position) <= 3.5f) direita = false;
+                if (Vector2.Distance(transform.position, Sereia.transform.position) <= 3.5f)
+                {
+                    direita = false;
+                    anim.SetBool("Apaixonado", true);
+                }
             }
         }
 
@@ -259,7 +267,7 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("isGrounded", isGrounded);
 
 
-        if (isGrounded)
+        if (isGrounded && !apaixonado)
             anim.SetFloat("RunDirection", Input.GetAxisRaw("Horizontal"));
 
         if (PlayerHealth.isAlive == false && isGrounded) anim.SetBool("Dead", true);
