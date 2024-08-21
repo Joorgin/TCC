@@ -20,29 +20,45 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
     public float groundCheckRadius = 0.1f;
 
+    // Tudo sobre o dash do Player
     private bool canDash = true;
     public static bool isDashing;
     private float dashPower = 24f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
 
+    // define tudo sobre knockback que o player sofre
+    [Space]
+    [Header("Tudo sobre o KnockBack que o Player sofre")]
     public float KBForce;
     public float KBCounter;
     public float KBTotalTime;
-
     public bool KnockFromRight;
+
     public Animator anim;
     private Vector3 upTowards;
     private Vector3 EndTowards;
 
+    // Define qual bau o player esta interagindo.... para não abrir todos de uma vez
     public static string ChestName;
+
+    // Aqui define se o player sera Destruido para não ir na mainScene
     public static bool isInFinalScene;
+
+    // Define se a movimentacao do player deve ou não parar para atacar
     public static bool isAttacking;
 
+    // configura o limite que a camera do player pode ir
     public CinemachineConfiner cinemachine;
 
+
+    // Sim o config do menu esta aqui, não me pergunte o pq....
+    [Space]
+    [Header("Config do Menu")]
     public GameObject ConfigMenu;
     bool setactive;
+
+    // Configura o slow que o inimigo explosivo ou qualquer outro inimigo que aplique o mesmo efeito
     float TimeOfSlow;
     public float TimeToSetNormalSpeed;
 
