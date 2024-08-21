@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
     public static bool apaixonado;
     public float tempoApaixonado;
     public GameObject Sereia;
-    bool hasSetSide = true;
+    bool hasSetSide;
     bool direita, esquerda;
 
     private void Awake()
@@ -94,18 +94,18 @@ public class PlayerMovement : MonoBehaviour
 
         if (apaixonado)
         {
+            Sereia = GameObject.FindGameObjectWithTag("Chefe");
             StartCoroutine(paixao());
 
-            if (Sereia_Movement.RightSide && hasSetSide)
+            if (Sereia_Movement.RightSide && !hasSetSide)
             {
                 esquerda = true;
-                hasSetSide = false;
+                hasSetSide = true;
             }
-            // Vira a flecha para a esquerda 
-            if (!Sereia_Movement.RightSide && hasSetSide)
+            if (!Sereia_Movement.RightSide && !hasSetSide)
             {
                 direita = true;
-                hasSetSide = false;
+                hasSetSide = true;
             }
 
             if (esquerda)
@@ -114,7 +114,6 @@ public class PlayerMovement : MonoBehaviour
                 verticalMove = -1;
                 anim.SetInteger("VerticalMove", verticalMove);
                 anim.SetFloat("RunDirection", verticalMove);
-
                 if (Vector2.Distance(transform.position, Sereia.transform.position) <= 3.5f) esquerda = false;
             }
             if (direita)
@@ -123,8 +122,6 @@ public class PlayerMovement : MonoBehaviour
                 verticalMove = 1;
                 anim.SetInteger("VerticalMove", verticalMove);
                 anim.SetFloat("RunDirection", verticalMove);
-
-                Sereia = GameObject.FindGameObjectWithTag("Chefe");
                 if (Vector2.Distance(transform.position, Sereia.transform.position) <= 3.5f) direita = false;
             }
         }
@@ -227,6 +224,7 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(tempoApaixonado);
         apaixonado = false;
+        hasSetSide = false;
     }
 
     public void StopAttack()
@@ -288,7 +286,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void TakeSlow(float TimeSlow)
     {
-        Debug.Log("TAKE SLOW");
         TimeOfSlow = TimeSlow;
         moveSpeed = 100;
     }
