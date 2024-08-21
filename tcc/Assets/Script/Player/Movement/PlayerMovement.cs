@@ -74,14 +74,9 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else if (isInFinalScene)
-        {
-            Destroy(gameObject);
-        }
+
+        if (Instance == null) Instance = this;
+        else if (isInFinalScene) Destroy(gameObject);
 
         cinemachine = GameObject.FindGameObjectWithTag("Camera").GetComponent<CinemachineConfiner>();
         cinemachine.m_BoundingShape2D = GameObject.FindGameObjectWithTag("CameraConfiner").GetComponent<PolygonCollider2D>();
@@ -142,6 +137,7 @@ public class PlayerMovement : MonoBehaviour
                 verticalMove = 1;
                 anim.SetInteger("VerticalMove", verticalMove);
                 anim.SetFloat("RunDirection", verticalMove);
+
                 if (Vector2.Distance(transform.position, Sereia.transform.position) <= 3.5f)
                 {
                     direita = false;
@@ -155,15 +151,9 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
             if (!isAttacking)
             {
-                if (isDashing)
-                {
-                    return;
-                }
+                if (isDashing) return;
 
-                if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow)))
-                {
-                    Jump();
-                }
+                if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))) Jump();
 
                 if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
                 {
@@ -199,11 +189,9 @@ public class PlayerMovement : MonoBehaviour
             }
             ConfigMenu.SetActive(setactive);
         }
-
         if (moveSpeed == 100)
         {
             TimeToSetNormalSpeed += Time.deltaTime;
-
             if (TimeToSetNormalSpeed >= TimeOfSlow)
             {
                 moveSpeed = 300;
@@ -216,32 +204,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if (PlayerHealth.isAlive)
         {
-
             if (KBCounter <= 0)
             {
-                if (isDashing)
-                    return;
-                if (!isAttacking)
-                    rb.velocity = new Vector2(horizontalMove * Time.fixedDeltaTime, rb.velocity.y);
-                else if (isAttacking && isGrounded)
-                    rb.velocity = new Vector2(0, rb.velocity.y);
-
+                if (isDashing) return;
+                if (!isAttacking) rb.velocity = new Vector2(horizontalMove * Time.fixedDeltaTime, rb.velocity.y);
+                else if (isAttacking && isGrounded) rb.velocity = new Vector2(0, rb.velocity.y);
             }
             else
             {
-                if (KnockFromRight == true)
-                {
-                    rb.velocity = new Vector2(-KBForce, KBForce);
-                }
-                if (KnockFromRight == false)
-                {
-                    rb.velocity = new Vector2(KBForce, KBForce);
-                }
-
+                if (KnockFromRight == true) rb.velocity = new Vector2(-KBForce, KBForce);
+                if (KnockFromRight == false) rb.velocity = new Vector2(KBForce, KBForce);
                 KBCounter -= Time.deltaTime;
             }
         }
-
     }
 
     IEnumerator paixao()
@@ -265,13 +240,8 @@ public class PlayerMovement : MonoBehaviour
     public void AnimatorControllers()
     {
         anim.SetBool("isGrounded", isGrounded);
-
-
-        if (isGrounded && !apaixonado)
-            anim.SetFloat("RunDirection", Input.GetAxisRaw("Horizontal"));
-
+        if (isGrounded && !apaixonado) anim.SetFloat("RunDirection", Input.GetAxisRaw("Horizontal"));
         if (PlayerHealth.isAlive == false && isGrounded) anim.SetBool("Dead", true);
-
     }
 
     private IEnumerator Dash()
@@ -282,9 +252,11 @@ public class PlayerMovement : MonoBehaviour
         rb.gravityScale = 0f;
         rb.velocity = new Vector2(verticalMove * dashPower, 0f);
         yield return new WaitForSeconds(dashingTime);
+
         rb.gravityScale = originalGravity;
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
+
         canDash = true;
     }
 
@@ -293,8 +265,6 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Chest"))
         {
             ChestName = other.gameObject.name;
-            Debug.Log("ChestName : " + ChestName);
-
             Chest.isInRange = true;
         }
     }
