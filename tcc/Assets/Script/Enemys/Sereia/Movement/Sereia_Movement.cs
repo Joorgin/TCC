@@ -21,6 +21,7 @@ public class Sereia_Movement : MonoBehaviour
     public Animator anim;
     public float ondaAnimationTime;
     public float paixaoAnimationTime;
+    public float cajadadaAnimationTime;
 
 
     // Tudo sobre a onda
@@ -34,6 +35,7 @@ public class Sereia_Movement : MonoBehaviour
     [Header("Tempo Entre Ataques")]
     public float timeToAttack;
     public bool canAttack = true;
+    bool hasAttacked1;
 
     // Beijo
     [Space]
@@ -91,16 +93,6 @@ public class Sereia_Movement : MonoBehaviour
                 Dead();
                 break;
         }
-
-        if (!canAttack)
-        {
-            timeToAttack -= Time.deltaTime;
-            if (timeToAttack <= 0)
-            {
-                canAttack = true;
-                timeToAttack = 10f;
-            }
-        }
     }
 
     void Idle()
@@ -114,6 +106,15 @@ public class Sereia_Movement : MonoBehaviour
             Flip();
         }
 
+        if (!canAttack)
+        {
+            timeToAttack -= Time.deltaTime;
+            if (timeToAttack <= 0)
+            {
+                canAttack = true;
+                timeToAttack = 10f;
+            }
+        }
 
         if (Vector2.Distance(transform.position, PlayerTransform.position) > chaseDistance)
         {
@@ -121,7 +122,8 @@ public class Sereia_Movement : MonoBehaviour
         }
         if (Vector2.Distance(transform.position, PlayerTransform.position) <= chaseDistance && canAttack)
         {
-            state = States.Attack2;
+            if (hasAttacked1) state = States.Attack2;
+            else state = States.Attack1;
         }
     }
 
@@ -136,6 +138,16 @@ public class Sereia_Movement : MonoBehaviour
         if (transform.position.x < PlayerTransform.position.x && !facingRight)
         {
             Flip();
+        }
+
+        if (!canAttack)
+        {
+            timeToAttack -= Time.deltaTime;
+            if (timeToAttack <= 0)
+            {
+                canAttack = true;
+                timeToAttack = 10f;
+            }
         }
 
         if (transform.position.x > PlayerTransform.position.x && Vector2.Distance(transform.position, PlayerTransform.position) > 5.5f)
@@ -155,7 +167,8 @@ public class Sereia_Movement : MonoBehaviour
 
         if (Vector2.Distance(transform.position, PlayerTransform.position) <= 5.5f && canAttack)
         {
-            state = States.Attack2;
+            if (hasAttacked1) state = States.Attack2;
+            else state = States.Attack1;
         }
     }
 
@@ -171,6 +184,7 @@ public class Sereia_Movement : MonoBehaviour
         yield return new WaitForSeconds(ondaAnimationTime);
         if (canAttack) Instantiate(onda, ondaStartLocation.transform.position, Quaternion.identity);
         canAttack = false;
+        hasAttacked1 = true;
         state = States.Idle;
     }
 
@@ -185,12 +199,22 @@ public class Sereia_Movement : MonoBehaviour
         yield return new WaitForSeconds(paixaoAnimationTime);
         if (canAttack) Instantiate(Beijo, saidaDoBeijo.transform.position, Quaternion.identity);
         canAttack = false;
-        state = States.Idle;
+        if (Vector2.Distance(transform.position, PlayerTransform.position) <= 3.5f) state = States.Attack3;
+        else state = States.Idle;
     }
 
     void Attack3()
     {
         Debug.Log("ATTACK3");
+        StartCoroutine(Cajadada());
+    }
+
+    IEnumerator Cajadada()
+    {
+        //anim.SetBool("Cajadada", true);
+        yield return new WaitForSeconds(cajadadaAnimationTime);
+        state = States.Idle;
+        hasAttacked1 = false;
     }
 
     void Dead()
