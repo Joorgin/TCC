@@ -102,7 +102,16 @@ public class Sereia_Movement : MonoBehaviour
 
     void Idle()
     {
-        Debug.Log("IDLE");
+        if (transform.position.x > PlayerTransform.position.x && facingRight)
+        {
+            Flip();
+        }
+        if (transform.position.x < PlayerTransform.position.x && !facingRight)
+        {
+            Flip();
+        }
+
+
         if (Vector2.Distance(transform.position, PlayerTransform.position) > chaseDistance)
         {
             state = States.Andando;
@@ -115,6 +124,7 @@ public class Sereia_Movement : MonoBehaviour
 
     void Andando()
     {
+        Debug.Log(state);
 
         if (transform.position.x > PlayerTransform.position.x && facingRight)
         {
@@ -163,8 +173,9 @@ public class Sereia_Movement : MonoBehaviour
 
     void Attack2()
     {
-       if(canAttack) Instantiate(Beijo, saidaDoBeijo.transform.position, Quaternion.identity);
-       canAttack = false;
+        if (canAttack) Instantiate(Beijo, saidaDoBeijo.transform.position, Quaternion.identity);
+        canAttack = false;
+        state = States.Idle;
     }
 
     void Attack3()
@@ -184,5 +195,7 @@ public class Sereia_Movement : MonoBehaviour
         gameObject.transform.localScale = currentScale;
 
         facingRight = !facingRight;
+
+        Debug.Log("Facing Right: " + facingRight);
     }
 }
