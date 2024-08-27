@@ -6813,7 +6813,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &308751048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6832,6 +6832,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   ondaAnimationTime: 1
   paixaoAnimationTime: 1
+  cajadadaAnimationTime: 0
   onda: {fileID: 1876738109636745228, guid: 78b27b943303b844c8baadbe3b3f8677, type: 3}
   ondaStartLocation: {fileID: 252682300}
   timeToAttack: 2
