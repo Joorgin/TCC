@@ -20,6 +20,7 @@ public class Beijo : MonoBehaviour
             currentScale.x = -1;
             gameObject.transform.localScale = currentScale;
         }
+
     }
     void Update()
     {
@@ -43,7 +44,7 @@ public class Beijo : MonoBehaviour
         if (time > 5) Destroy(gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -52,4 +53,8 @@ public class Beijo : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+
+
+
 }
