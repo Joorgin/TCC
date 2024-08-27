@@ -202,7 +202,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (PlayerHealth.isAlive)
+        if (PlayerHealth.isAlive && !apaixonado)
         {
             if (KBCounter <= 0)
             {
