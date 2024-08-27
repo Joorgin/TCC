@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
         Physics2D.IgnoreLayerCollision(6, 7, true);
         Physics2D.IgnoreLayerCollision(8, 7, true);
-        Physics2D.IgnoreLayerCollision(7, 11, true);
+        //Physics2D.IgnoreLayerCollision(7, 11, true);
     }
     private void Start()
     {
@@ -264,6 +264,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Chest"))
         {
+            Debug.Log("NOSSA BAU");
             ChestName = other.gameObject.name;
             Chest.isInRange = true;
         }
