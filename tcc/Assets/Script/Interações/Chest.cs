@@ -14,16 +14,15 @@ public class Chest : MonoBehaviour
     bool isOpen;
     int NumberNecesseryOfBraceletsToOpen;
     public TextMeshProUGUI CoinNecessaryText;
+    int RarityChest;
 
     private void Awake()
     {
         ChestID = gameObject.name;
 
-        int RarityChest = Random.Range(0, 100);
+        RarityChest = Random.Range(0, 100);
 
-        if (RarityChest <= 49) Rarity = "Normal";
-        if (RarityChest >= 50 && RarityChest <= 89) Rarity = "Rare";
-        if (RarityChest >= 90) Rarity = "Legendary";
+        ChangeChanceOfAGoodChest();
 
         switch (GameManager.MapsPassed)
         {
@@ -81,6 +80,41 @@ public class Chest : MonoBehaviour
             }
         
         }
+    }
+
+    public void ChangeChanceOfAGoodChest()
+    {
+        switch (PlayerMovement.chanceForAGoodChest)
+        {
+            case 0:
+                if (RarityChest <= 50) Rarity = "Normal";
+                if (RarityChest > 50 && RarityChest < 90) Rarity = "Rare";
+                if (RarityChest >= 90) Rarity = "Legendary";
+                break;
+            case 1:
+                if (RarityChest <= 50) Rarity = "Normal";
+                if (RarityChest > 50 && RarityChest < 85) Rarity = "Rare";
+                if (RarityChest >= 85) Rarity = "Legendary";
+                break;
+            case 2:
+                if (RarityChest <= 45) Rarity = "Normal";
+                if (RarityChest > 45 && RarityChest < 80) Rarity = "Rare";
+                if (RarityChest >= 80) Rarity = "Legendary";
+                break;
+            case 3:
+                if (RarityChest <= 40) Rarity = "Normal";
+                if (RarityChest > 40 && RarityChest < 75) Rarity = "Rare";
+                if (RarityChest >= 75) Rarity = "Legendary";
+                break;
+            case 4:
+                if (RarityChest <= 35) Rarity = "Normal";
+                if (RarityChest > 35 && RarityChest < 70) Rarity = "Rare";
+                if (RarityChest >= 70) Rarity = "Legendary";
+                break;
+        
+        }
+
+        Debug.Log("RARITYCHANCE: " + PlayerMovement.chanceForAGoodChest);
     }
 
 
