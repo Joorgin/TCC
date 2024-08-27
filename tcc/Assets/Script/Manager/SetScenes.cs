@@ -12,6 +12,11 @@ public class SetScenes : MonoBehaviour
         FadeScript.HideUI();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E)) MainScene();
+    }
+
     public void MainScene()
     {
         StartCoroutine(mainScene());
