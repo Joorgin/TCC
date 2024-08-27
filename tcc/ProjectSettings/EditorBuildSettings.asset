@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Mapas/Mapa 6.unity
     guid: fd8b593c34262084caa0e1ab80be07ad
   - enabled: 1
-    path: Assets/Scenes/Mapas/Mapa 7.unity
+    path: Assets/Scenes/Mapas/Cidade.unity
     guid: f40f5087ac854e1478e9a03fbf076cc4
   - enabled: 1
     path: Assets/Scenes/Mapas/Mapa 8.unity
