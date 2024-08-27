@@ -199,19 +199,24 @@ public class Sereia_Movement : MonoBehaviour
         yield return new WaitForSeconds(paixaoAnimationTime);
         if (canAttack) Instantiate(Beijo, saidaDoBeijo.transform.position, Quaternion.identity);
         canAttack = false;
+        yield return new WaitForSeconds(3f);
         if (Vector2.Distance(transform.position, PlayerTransform.position) <= 3.5f) state = States.Attack3;
-        else state = States.Idle;
+        else
+        {
+            state = States.Idle;
+            hasAttacked1 = false;
+        }
     }
 
     void Attack3()
     {
-        Debug.Log("ATTACK3");
         StartCoroutine(Cajadada());
     }
 
     IEnumerator Cajadada()
     {
         //anim.SetBool("Cajadada", true);
+        Debug.Log("ATTACK3");
         yield return new WaitForSeconds(cajadadaAnimationTime);
         state = States.Idle;
         hasAttacked1 = false;
