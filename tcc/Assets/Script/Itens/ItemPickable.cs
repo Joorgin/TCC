@@ -98,6 +98,12 @@ public class ItemPickable : MonoBehaviour
                 case 7:
                     PlayerAttack.SetCritChance();
                     break;
+                case 8:
+                    PlayerHealth.ChanceOfPatua();
+                    break;
+                case 9:
+                    PlayerMovement.AddChanceOfAChest();
+                    break;
             }
             Debug.Log("Adicionou O Item");
             Destroy(this.gameObject);

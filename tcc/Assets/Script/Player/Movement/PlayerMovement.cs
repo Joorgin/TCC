@@ -71,6 +71,9 @@ public class PlayerMovement : MonoBehaviour
     bool hasSetSide;
     bool direita, esquerda;
 
+    // Define qual a chance do bau bom
+    public static int chanceForAGoodChest;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -283,6 +286,15 @@ public class PlayerMovement : MonoBehaviour
     {
         TimeOfSlow = TimeSlow;
         moveSpeed = 100;
+    }
+
+    public static void AddChanceOfAChest()
+    {
+        chanceForAGoodChest++;
+
+        if (chanceForAGoodChest >= 4) return;
+
+        Debug.Log("RARITYCHANCE: " + PlayerMovement.chanceForAGoodChest);
     }
 
 }
