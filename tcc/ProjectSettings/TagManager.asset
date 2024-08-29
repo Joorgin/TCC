@@ -18,6 +18,7 @@ TagManager:
   - Ground
   - Chefe
   - Toggle
+  - ItemUpgrade
   layers:
   - Default
   - TransparentFX

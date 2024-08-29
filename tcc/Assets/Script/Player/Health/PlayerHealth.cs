@@ -204,6 +204,7 @@ public class PlayerHealth : MonoBehaviour
         deadByStamina = false;
         SceneChange.SceneToChangeMusic = scene;
         AudioManager.hasChangedscene = true;
+        Destroy(gameObject);
         SceneManager.LoadScene(scene);
     }
 }

@@ -5,12 +5,13 @@ using UnityEngine;
 public class Stamina : MonoBehaviour
 {
     // Stamina do Player
-    public static float stamina = 60f;
+    public static float stamina;
     float staminaStay;
     // Ui Da Stamina
     public Stamina_UI staminaUI;
     private void Start()
     {
+        stamina = GameManager.PlayerStamina;
         staminaStay = stamina;
         staminaUI.SetMaxStamina(staminaStay);
         Debug.Log("Stamina: " + staminaStay);

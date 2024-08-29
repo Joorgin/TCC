@@ -7,14 +7,15 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public static int LastMap, MapsPassed;
     public static bool LastMapPassed;
-    public static int NumberOfSouls;
-    public static bool upgradeLevel;
-    public static int CurrentLevelItemUpgrade = 1;
+    public static int NumberOfSouls, NumberOfSoulsStamina;
+    public static bool upgradeLevel, UpgradeLevelStamina;
+    public static int CurrentLevelItemUpgrade, CurrentLevelItemStaminaUpgrade = 1;
     public static int BraceletesNecessariosPorBau;
     public static string LastMapName;
 
     #region Player 
     public static int PlayerMaxhealth = 100;
+    public static float PlayerStamina = 60;
     #endregion
 
     private void Awake()

@@ -51,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
     // configura o limite que a camera do player pode ir
     public CinemachineConfiner cinemachine;
 
+    // Item upgrade inteacoes
+    public static string IntemName;
 
     // Sim o config do menu esta aqui, não me pergunte o pq....
     [Space]
@@ -269,6 +271,11 @@ public class PlayerMovement : MonoBehaviour
         {
             ChestName = other.gameObject.name;
             Chest.isInRange = true;
+        }
+
+        if(other.gameObject.CompareTag("ItemUpgrade"))
+        {
+            IntemName = other.gameObject.name;
         }
     }
 
