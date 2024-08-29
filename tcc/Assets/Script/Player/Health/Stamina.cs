@@ -6,19 +6,25 @@ public class Stamina : MonoBehaviour
 {
     // Stamina do Player
     public static float stamina = 60f;
-
+    float staminaStay;
     // Ui Da Stamina
     public Stamina_UI staminaUI;
     private void Start()
     {
-        staminaUI.SetMaxStamina(stamina);
+        staminaStay = stamina;
+        staminaUI.SetMaxStamina(staminaStay);
+        Debug.Log("Stamina: " + staminaStay);
     }
     void Update()
     {
-        stamina -= Time.deltaTime;
+        staminaStay -= Time.deltaTime;
 
-        staminaUI.SetStamina(stamina);
+        staminaUI.SetStamina(staminaStay);
 
-        if (stamina <= 0) PlayerHealth.deadByStamina = true;
+        if (staminaStay <= 0)
+        {
+            PlayerHealth.deadByStamina = true;
+            staminaStay = stamina;
+        }
     }
 }

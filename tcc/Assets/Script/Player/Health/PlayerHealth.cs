@@ -49,7 +49,6 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         Maxhealth = GameManager.PlayerMaxhealth;
-        Debug.Log(Maxhealth);
         Currenthealth = Maxhealth;
         HealthRegen = 2;
         TimetoRegenarateHealth = 3.0f;
@@ -201,7 +200,8 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(1f);
         FadeScript.ShowUI();
         yield return new WaitForSeconds(1f);
-        PlayerMovement.isInFinalScene = true;   
+        PlayerMovement.isInFinalScene = true; 
+        deadByStamina = false; 
         SceneManager.LoadScene(scene);
     }
 }
