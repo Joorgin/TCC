@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour
 {
     public Slider _musicSlider, _sfxSlider;
     public GameObject XTogglebutton;
+    public GameObject XMusicOnToggler;
     bool _playing;
 
     public void ToggleMusic()
@@ -15,6 +16,7 @@ public class UIController : MonoBehaviour
         AudioManager.Instance.ToggleMusic();
         _playing = !_playing;
         XTogglebutton.SetActive(_playing);
+        XMusicOnToggler.SetActive(!_playing);
     }
 
     public void ToggleSFX()
@@ -40,6 +42,7 @@ public class UIController : MonoBehaviour
     public void GoToMenu()
     {
         PlayerMovement.isInFinalScene = true;
+        Time.timeScale = 1.5f;
         SceneManager.LoadScene("Menu");
     }
 }
