@@ -267,7 +267,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Chest"))
         {
-            Debug.Log("NOSSA BAU");
             ChestName = other.gameObject.name;
             Chest.isInRange = true;
         }

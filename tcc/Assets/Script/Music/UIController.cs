@@ -48,6 +48,8 @@ public class UIController : MonoBehaviour
     {
         PlayerMovement.isInFinalScene = true;
         Time.timeScale = 1.5f;
+        SceneChange.SceneToChangeMusic = "Menu";
+        AudioManager.hasChangedscene = true;   
         SceneManager.LoadScene("Menu");
     }
 }

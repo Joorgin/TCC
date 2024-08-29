@@ -18,7 +18,7 @@ public class AudioManager : MonoBehaviour
 
     [Space]
     [Header("Scenes Name")]
-    public string SceneToChangeMusic;
+    public static string SceneToChangeMusic;
 
     [Space]
     [Header("Name of the Boss")]
@@ -67,6 +67,17 @@ public class AudioManager : MonoBehaviour
                     Debug.Log("Play FlorestMusic 2");
                     //PlayMusic("Day Forest Music");
                     PlaySfx("Day Forest Sfx");
+                    hasChangedscene = false;
+                    break;
+                case "MainScene":
+                    Debug.Log("Main scene");
+                    sfxSource.Stop();
+                    hasChangedscene = false;
+                    break;
+                case "Menu":
+                    Debug.Log("Menu");
+                    PlayMusic("Music_Theme");
+                    sfxSource.Stop();
                     hasChangedscene = false;
                     break;
             }
