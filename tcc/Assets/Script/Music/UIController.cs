@@ -7,10 +7,14 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     public Slider _musicSlider, _sfxSlider;
+    public GameObject XTogglebutton;
+    bool _playing;
 
     public void ToggleMusic()
     {
         AudioManager.Instance.ToggleMusic();
+        _playing = !_playing;
+        XTogglebutton.SetActive(_playing);
     }
 
     public void ToggleSFX()

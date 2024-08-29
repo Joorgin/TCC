@@ -17,6 +17,7 @@ TagManager:
   - Trap
   - Ground
   - Chefe
+  - Toggle
   layers:
   - Default
   - TransparentFX
