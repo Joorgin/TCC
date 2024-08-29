@@ -1735,7 +1735,6 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: be51863596b0a1d42bf699b0093c94e6, type: 3}
   musicSource: {fileID: 1256788453}
   sfxSource: {fileID: 1062907102}
-  SceneToChangeMusic: 
   bossName: []
 --- !u!4 &782764886
 Transform:

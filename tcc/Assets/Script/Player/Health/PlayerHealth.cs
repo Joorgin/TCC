@@ -201,7 +201,9 @@ public class PlayerHealth : MonoBehaviour
         FadeScript.ShowUI();
         yield return new WaitForSeconds(1f);
         PlayerMovement.isInFinalScene = true; 
-        deadByStamina = false; 
+        deadByStamina = false;
+        SceneChange.SceneToChangeMusic = scene;
+        AudioManager.hasChangedscene = true;
         SceneManager.LoadScene(scene);
     }
 }

@@ -118,6 +118,8 @@ public class SceneChange : MonoBehaviour
     public void SceneChangeVoid(string scene)
     {
         StartCoroutine(ShowUI(scene));
+        SceneChange.SceneToChangeMusic = scene;
+        AudioManager.hasChangedscene = true;
     }
 
     public IEnumerator ShowUI(string scene)
