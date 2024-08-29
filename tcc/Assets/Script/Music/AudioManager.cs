@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
 
     public Music[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource;
+    public static float musicVolume;
+    public static bool isToggled;
 
     [Space]
     [Header("Bool for has changed Scene")]
@@ -38,6 +40,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        musicVolume = 1.0f;
         PlayMusic("Music_Theme");
     }
 
@@ -103,6 +106,7 @@ public class AudioManager : MonoBehaviour
     public void ToggleMusic()
     {
         musicSource.mute = !musicSource.mute;
+        isToggled = !isToggled;
     }
 
     public void ToggleSfx() 
@@ -113,6 +117,7 @@ public class AudioManager : MonoBehaviour
     public void MusicVolume(float volume)
     {
         musicSource.volume = volume;
+        musicVolume = volume;
     }
 
     public void SFXVolume(float volume)

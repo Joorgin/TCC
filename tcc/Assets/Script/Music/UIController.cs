@@ -9,14 +9,19 @@ public class UIController : MonoBehaviour
     public Slider _musicSlider, _sfxSlider;
     public GameObject XTogglebutton;
     public GameObject XMusicOnToggler;
-    bool _playing;
+
+    private void Start()
+    {
+        _musicSlider.value = AudioManager.musicVolume;
+        XTogglebutton.SetActive(AudioManager.isToggled);
+        XMusicOnToggler.SetActive(!AudioManager.isToggled);
+    }
 
     public void ToggleMusic()
     {
         AudioManager.Instance.ToggleMusic();
-        _playing = !_playing;
-        XTogglebutton.SetActive(_playing);
-        XMusicOnToggler.SetActive(!_playing);
+        XTogglebutton.SetActive(AudioManager.isToggled);
+        XMusicOnToggler.SetActive(!AudioManager.isToggled);
     }
 
     public void ToggleSFX()

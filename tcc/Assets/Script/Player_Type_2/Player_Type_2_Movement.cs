@@ -46,6 +46,7 @@ public class Player_Type_2_Movement : MonoBehaviour
 
         cinemachine = GameObject.FindGameObjectWithTag("Camera").GetComponent<CinemachineConfiner>();
         cinemachine.m_BoundingShape2D = GameObject.FindGameObjectWithTag("CameraConfiner").GetComponent<PolygonCollider2D>();
+        PlayerMovement.isInFinalScene = false;
     }
 
     void Update()
