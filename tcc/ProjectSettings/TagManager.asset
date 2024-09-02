@@ -19,6 +19,7 @@ TagManager:
   - Chefe
   - Toggle
   - ItemUpgrade
+  - OneWayPlataform
   layers:
   - Default
   - TransparentFX
