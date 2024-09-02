@@ -467,6 +467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 101902929}
   - component: {fileID: 101902930}
+  - component: {fileID: 101902931}
   m_Layer: 3
   m_Name: Plataforma Predio (Rosa)
   m_TagString: Ground
@@ -519,7 +520,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -1.7099323, y: 0.00077450275}
   m_SpriteTilingProperty:
@@ -534,6 +535,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.788492, y: 0.38848853}
   m_EdgeRadius: 0
+--- !u!251 &101902931
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101902928}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &102725630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,6 +1124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 196531380}
   - component: {fileID: 196531381}
+  - component: {fileID: 196531382}
   m_Layer: 3
   m_Name: Plataforma Predio 1(Verde)
   m_TagString: Ground
@@ -1156,7 +1177,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.029193878, y: -0.020300746}
   m_SpriteTilingProperty:
@@ -1171,6 +1192,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.538792, y: 0.34633803}
   m_EdgeRadius: 0
+--- !u!251 &196531382
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196531379}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &214023592
 GameObject:
   m_ObjectHideFlags: 0
@@ -2313,6 +2353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 390126874}
   - component: {fileID: 390126875}
+  - component: {fileID: 390126876}
   m_Layer: 3
   m_Name: Plataforma Predio (Marrom) (1)
   m_TagString: Ground
@@ -2365,7 +2406,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -1.0270357, y: 0.103539586}
   m_SpriteTilingProperty:
@@ -2380,6 +2421,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.525324, y: 0.5940187}
   m_EdgeRadius: 0
+--- !u!251 &390126876
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390126873}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &435901657
 GameObject:
   m_ObjectHideFlags: 0
@@ -2817,6 +2877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 539555317}
   - component: {fileID: 539555318}
+  - component: {fileID: 539555319}
   m_Layer: 3
   m_Name: Plataforma Predio (Rosa) (1)
   m_TagString: Ground
@@ -2869,7 +2930,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.88549805, y: 0.00077450275}
   m_SpriteTilingProperty:
@@ -2884,6 +2945,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.815521, y: 0.38848853}
   m_EdgeRadius: 0
+--- !u!251 &539555319
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539555316}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &543957912
 GameObject:
   m_ObjectHideFlags: 0
@@ -15664,6 +15744,7 @@ GameObject:
   m_Component:
   - component: {fileID: 704385096}
   - component: {fileID: 704385097}
+  - component: {fileID: 704385098}
   m_Layer: 3
   m_Name: Plataforma Predio (Azul)
   m_TagString: Ground
@@ -15716,7 +15797,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0.029392242, y: 0.22066367}
   m_SpriteTilingProperty:
@@ -15731,6 +15812,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.877434, y: 0.82826686}
   m_EdgeRadius: 0
+--- !u!251 &704385098
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704385095}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &744938079
 GameObject:
   m_ObjectHideFlags: 0
@@ -16265,6 +16365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 798144561}
   - component: {fileID: 798144562}
+  - component: {fileID: 798144563}
   m_Layer: 3
   m_Name: 'Plataforma Predio 3(Verde) '
   m_TagString: Ground
@@ -16317,7 +16418,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 1.4257736, y: 0.32818174}
   m_SpriteTilingProperty:
@@ -16332,6 +16433,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.484985, y: 0.3370657}
   m_EdgeRadius: 0
+--- !u!251 &798144563
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798144560}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &806858745
 GameObject:
   m_ObjectHideFlags: 0
@@ -16779,6 +16899,7 @@ GameObject:
   m_Component:
   - component: {fileID: 914206295}
   - component: {fileID: 914206296}
+  - component: {fileID: 914206297}
   m_Layer: 3
   m_Name: Plataforma Predio (Rosa) (3)
   m_TagString: Ground
@@ -16831,7 +16952,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.7942543, y: -0.07088745}
   m_SpriteTilingProperty:
@@ -16846,6 +16967,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.294823, y: 0.24516463}
   m_EdgeRadius: 0
+--- !u!251 &914206297
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914206294}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &951114116
 GameObject:
   m_ObjectHideFlags: 0
@@ -17421,6 +17561,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1066592962}
   - component: {fileID: 1066592963}
+  - component: {fileID: 1066592964}
   m_Layer: 3
   m_Name: Plataforma Predio (Marrom)
   m_TagString: Ground
@@ -17473,7 +17614,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -1.280735, y: 0.103539586}
   m_SpriteTilingProperty:
@@ -17488,6 +17629,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.194412, y: 0.5940187}
   m_EdgeRadius: 0
+--- !u!251 &1066592964
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066592961}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1001 &1067256843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17655,6 +17815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1104780245}
   - component: {fileID: 1104780246}
+  - component: {fileID: 1104780247}
   m_Layer: 3
   m_Name: Plataforma Predio (Rosa) (4)
   m_TagString: Ground
@@ -17707,7 +17868,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -1.0290318, y: -0.47474384}
   m_SpriteTilingProperty:
@@ -17722,6 +17883,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.469265, y: 2.7058659}
   m_EdgeRadius: 0
+--- !u!251 &1104780247
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104780244}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1144183508
 GameObject:
   m_ObjectHideFlags: 0
@@ -18500,6 +18680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1258267332}
   - component: {fileID: 1258267333}
+  - component: {fileID: 1258267334}
   m_Layer: 3
   m_Name: Plataforma Predio (Rosa) (2)
   m_TagString: Ground
@@ -18552,7 +18733,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -1.0220442, y: -0.18633413}
   m_SpriteTilingProperty:
@@ -18567,6 +18748,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.763966, y: 0.7627058}
   m_EdgeRadius: 0
+--- !u!251 &1258267334
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258267331}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1260583478
 GameObject:
   m_ObjectHideFlags: 0
@@ -18813,6 +19013,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1282243107}
   - component: {fileID: 1282243108}
+  - component: {fileID: 1282243109}
   m_Layer: 3
   m_Name: 'Plataforma Predio 2(Verde) '
   m_TagString: Ground
@@ -18865,7 +19066,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.029193878, y: 0.47950935}
   m_SpriteTilingProperty:
@@ -18880,6 +19081,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.538792, y: 0.40881348}
   m_EdgeRadius: 0
+--- !u!251 &1282243109
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282243106}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1001 &1286056453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19770,6 +19990,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1346231340}
   - component: {fileID: 1346231341}
+  - component: {fileID: 1346231342}
   m_Layer: 3
   m_Name: Plataforma Predio (Azul) (1)
   m_TagString: Ground
@@ -19822,7 +20043,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -1.3939743, y: 0.05995953}
   m_SpriteTilingProperty:
@@ -19837,6 +20058,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.494598, y: 0.5068586}
   m_EdgeRadius: 0
+--- !u!251 &1346231342
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346231339}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!4 &1354412167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2105209992182882859, guid: 1d43874d8c712d94fa30fed44bda0306, type: 3}
@@ -26316,6 +26556,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1567729968}
   - component: {fileID: 1567729969}
+  - component: {fileID: 1567729970}
   m_Layer: 3
   m_Name: Plataforma Predio (Marrom) (2)
   m_TagString: Ground
@@ -26368,7 +26609,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -1.0270357, y: 0.3217969}
   m_SpriteTilingProperty:
@@ -26383,6 +26624,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.525324, y: 0.5503683}
   m_EdgeRadius: 0
+--- !u!251 &1567729970
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567729967}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1587149860
 GameObject:
   m_ObjectHideFlags: 0
