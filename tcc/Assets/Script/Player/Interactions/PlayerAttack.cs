@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public float timeBtwAttack,startTimeBtwAttack;//para manipular o tempo de ataque
+    public float timeBtwAttack, startTimeBtwAttack;//para manipular o tempo de ataque
     public Transform attackPos, attackPos2;//para as direções de ataque
     public float attackRange;
     public LayerMask WhatIsEnemies;
@@ -36,6 +36,14 @@ public class PlayerAttack : MonoBehaviour
     float lastClickedTime = 0;
     public float maxComboDelay = 0.9f;
 
+    // freeze no momento do ataque
+    [Space]
+    [Header("Freeze When Attack")]
+    public float durationFreeze;
+    bool _isFrozen = false;
+    float _pendingFreezeDuration = 0f;
+    bool _isThereMonsters;
+
 
     private void Start()
     {
@@ -52,7 +60,7 @@ public class PlayerAttack : MonoBehaviour
         enemiesToDamage = Physics2D.OverlapCircleAll(ataquePosicao, attackRange, WhatIsEnemies);
         enemiesToDamage2 = Physics2D.OverlapCircleAll(ataquePosicao, attackRange, WhatIsEnemies2);
 
-        if(Time.time - lastClickedTime > maxComboDelay) 
+        if (Time.time - lastClickedTime > maxComboDelay)
         {
             noOfClicks = 0;
         }
@@ -61,6 +69,12 @@ public class PlayerAttack : MonoBehaviour
         {
             Atacar(direcaoVerticalMove);
         }
+
+        if (_pendingFreezeDuration > 0f && !_isFrozen)
+        {
+            
+            StartCoroutine(SetTimeForAtackEffect());
+        }
     }
     /// <summary>
     /// Ataca quando tempo entre os ataques for menor que zero
@@ -68,45 +82,45 @@ public class PlayerAttack : MonoBehaviour
     /// </summary>
     void Atacar(bool direcao)
     {
-            if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.X)) && (enemiesToDamage != null || enemiesToDamage2 !=null))
-            {
-                lastClickedTime = Time.time;
-                noOfClicks++;
+        if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.X)) && (enemiesToDamage != null || enemiesToDamage2 != null))
+        {
+            lastClickedTime = Time.time;
+            noOfClicks++;
 
-                if(noOfClicks == 1)
-                {
-                
-                    switch (weaponIsUsing)
-                    {
-                        case 0:
-                            anim.SetBool("Attack1", true);
-                            //anim.SetTrigger("Attack");
-                            PlayerMovement.isAttacking = true;
-                            StartCoroutine(AttackHand1(direcao));
-                            timeBtwAttack = startTimeBtwAttack;
-                            break;
-                    }
-                }
-                noOfClicks = Mathf.Clamp(noOfClicks, 0, 2);
-            }
-            else if(Input.GetKey(KeyCode.Q) && !hasShoot)
+            if (noOfClicks == 1)
             {
-                //enquanto nao houver animacao manter isAttacking comentado
-               // PlayerMovement.isAttacking = true;
-                StartCoroutine(SHOOTARROW());
+
+                switch (weaponIsUsing)
+                {
+                    case 0:
+                        anim.SetBool("Attack1", true);
+                        //anim.SetTrigger("Attack");
+                        PlayerMovement.isAttacking = true;
+                        StartCoroutine(AttackHand1(direcao));
+                        timeBtwAttack = startTimeBtwAttack;
+                        break;
+                }
             }
+            noOfClicks = Mathf.Clamp(noOfClicks, 0, 2);
+        }
+        else if (Input.GetKey(KeyCode.Q) && !hasShoot)
+        {
+            //enquanto nao houver animacao manter isAttacking comentado
+            // PlayerMovement.isAttacking = true;
+            StartCoroutine(SHOOTARROW());
+        }
         else
         {
             timeBtwAttack -= Time.deltaTime;
         }
     }
 
-    
+
 
     // Enumerator para o primeiro soco detectando quantos e quais inimigos estao na range do player
     public IEnumerator AttackHand1(bool direcao)
     {
-       
+
 
         int percentForCrit = Random.Range(0, 100);
         if (percentForCrit <= CritPercent)
@@ -123,6 +137,7 @@ public class PlayerAttack : MonoBehaviour
                 etd.GetComponent<ENemyBasicMovement>().KBCounter = etd.GetComponent<ENemyBasicMovement>().KBTotalTime;
                 etd.GetComponent<ENemyBasicMovement>().KBForce = 1;
                 etd.GetComponent<ENemyBasicMovement>().KnockFromRight = !direcao;//inverte pq direcao foi feito com PlayerMovement.verticalMove == 1
+                _isThereMonsters = true;
             }
 
             //Explosive Enemy
@@ -132,11 +147,12 @@ public class PlayerAttack : MonoBehaviour
                 etd.GetComponent<ExplosiveEnemyMovement>().KBCounter = etd.GetComponent<ExplosiveEnemyMovement>().KBTotalTime;
                 etd.GetComponent<ExplosiveEnemyMovement>().KBForce = 1;
                 etd.GetComponent<ExplosiveEnemyMovement>().KnockFromRight = !direcao;
+                _isThereMonsters = true;
             }
 
             //Flying Enemy
             //etd.GetComponent<FlyingEnemy>().KBCounter = etd.GetComponent<FlyingEnemy>().KBTotalTime;
-           // etd.GetComponent<FlyingEnemy>().KnockFromRight = !direcao;
+            // etd.GetComponent<FlyingEnemy>().KnockFromRight = !direcao;
 
         }
 
@@ -164,7 +180,7 @@ public class PlayerAttack : MonoBehaviour
     // Funcao para o segundo soco detectando quantos e quais inimigos estao na range do player
     public IEnumerator AttackHand2(bool direcao)
     {
-       
+
         foreach (Collider2D etd in enemiesToDamage)
         {
 
@@ -175,6 +191,7 @@ public class PlayerAttack : MonoBehaviour
                 etd.GetComponent<ENemyBasicMovement>().KBCounter = etd.GetComponent<ENemyBasicMovement>().KBTotalTime;
                 etd.GetComponent<ENemyBasicMovement>().KBForce = 3;
                 etd.GetComponent<ENemyBasicMovement>().KnockFromRight = !direcao;//inverte pq direcao foi feito com PlayerMovement.verticalMove == 1
+                _isThereMonsters = true;
             }
 
             //ExplosiveEnemy 
@@ -184,6 +201,7 @@ public class PlayerAttack : MonoBehaviour
                 etd.GetComponent<ExplosiveEnemyMovement>().KBCounter = etd.GetComponent<ExplosiveEnemyMovement>().KBTotalTime;
                 etd.GetComponent<ExplosiveEnemyMovement>().KBForce = 1;
                 etd.GetComponent<ExplosiveEnemyMovement>().KnockFromRight = !direcao;
+                _isThereMonsters = true;
             }
 
             //FlyingEnemy
@@ -209,14 +227,37 @@ public class PlayerAttack : MonoBehaviour
         anim.SetBool("Attack2", false);
         PlayerMovement.isAttacking = false;
     }
+
+    public void Freeze()
+    {
+        _pendingFreezeDuration = durationFreeze;
+    }
+
+    public void SeeIfThereIsAMonster()
+    {
+        if (_isThereMonsters) Freeze();
+
+        _isThereMonsters = false;
+    }
+
+    IEnumerator SetTimeForAtackEffect()
+    {
+        _isFrozen = true;
+        var original = Time.timeScale;
+        Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(durationFreeze);
+        Time.timeScale = original;
+        _pendingFreezeDuration = 0f;
+        _isFrozen = false;
+    }
     //Enumerator para atirar a flecha apartir do ponto de ataque 
     public IEnumerator SHOOTARROW()
     {
         // toca a animacao de atirar a flecha
-       // anim.SetTrigger("Shoot");
+        // anim.SetTrigger("Shoot");
         yield return new WaitForSeconds(0.5f);
         // Invoca a flecha
-        
+
         if (PlayerMovement.verticalMove > 0 && !hasShoot)
         {
             Instantiate(Arrow, attackPos.transform.position, Quaternion.identity);
@@ -237,7 +278,7 @@ public class PlayerAttack : MonoBehaviour
     {
         float cooldownPercent = (cooldownForFlecha / 100) * 10;
 
-        if(cooldownForFlecha >= 14f) cooldownForFlecha -= cooldownPercent;
+        if (cooldownForFlecha >= 14f) cooldownForFlecha -= cooldownPercent;
 
         Debug.Log("Time da flecha:" + cooldownForFlecha);
     }

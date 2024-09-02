@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 101902931}
   m_Layer: 3
   m_Name: Plataforma Predio (Rosa)
-  m_TagString: Ground
+  m_TagString: OneWayPlataform
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1127,7 +1127,7 @@ GameObject:
   - component: {fileID: 196531382}
   m_Layer: 3
   m_Name: Plataforma Predio 1(Verde)
-  m_TagString: Ground
+  m_TagString: OneWayPlataform
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2356,7 +2356,7 @@ GameObject:
   - component: {fileID: 390126876}
   m_Layer: 3
   m_Name: Plataforma Predio (Marrom) (1)
-  m_TagString: Ground
+  m_TagString: OneWayPlataform
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2880,7 +2880,7 @@ GameObject:
   - component: {fileID: 539555319}
   m_Layer: 3
   m_Name: Plataforma Predio (Rosa) (1)
-  m_TagString: Ground
+  m_TagString: OneWayPlataform
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15747,7 +15747,7 @@ GameObject:
   - component: {fileID: 704385098}
   m_Layer: 3
   m_Name: Plataforma Predio (Azul)
-  m_TagString: Ground
+  m_TagString: OneWayPlataform
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16368,7 +16368,7 @@ GameObject:
   - component: {fileID: 798144563}
   m_Layer: 3
   m_Name: 'Plataforma Predio 3(Verde) '
-  m_TagString: Ground
+  m_TagString: OneWayPlataform
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16902,7 +16902,7 @@ GameObject:
   - component: {fileID: 914206297}
   m_Layer: 3
   m_Name: Plataforma Predio (Rosa) (3)
-  m_TagString: Ground
+  m_TagString: OneWayPlataform
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17564,7 +17564,7 @@ GameObject:
   - component: {fileID: 1066592964}
   m_Layer: 3
   m_Name: Plataforma Predio (Marrom)
-  m_TagString: Ground
+  m_TagString: OneWayPlataform
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17818,7 +17818,7 @@ GameObject:
   - component: {fileID: 1104780247}
   m_Layer: 3
   m_Name: Plataforma Predio (Rosa) (4)
-  m_TagString: Ground
+  m_TagString: OneWayPlataform
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17902,6 +17902,83 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!1001 &1117990540
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2128633159897440636, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775723029833481024, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
+      propertyPath: m_Name
+      value: Monster (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775723029833481024, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720163435102389529, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720163435102389529, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720163435102389529, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720163435102389529, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720163435102389529, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.9769133
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720163435102389529, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720163435102389529, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720163435102389529, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720163435102389529, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720163435102389529, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720163435102389529, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720163435102389529, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720163435102389529, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
 --- !u!1 &1144183508
 GameObject:
   m_ObjectHideFlags: 0
@@ -18683,7 +18760,7 @@ GameObject:
   - component: {fileID: 1258267334}
   m_Layer: 3
   m_Name: Plataforma Predio (Rosa) (2)
-  m_TagString: Ground
+  m_TagString: OneWayPlataform
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19016,7 +19093,7 @@ GameObject:
   - component: {fileID: 1282243109}
   m_Layer: 3
   m_Name: 'Plataforma Predio 2(Verde) '
-  m_TagString: Ground
+  m_TagString: OneWayPlataform
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19993,7 +20070,7 @@ GameObject:
   - component: {fileID: 1346231342}
   m_Layer: 3
   m_Name: Plataforma Predio (Azul) (1)
-  m_TagString: Ground
+  m_TagString: OneWayPlataform
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26559,7 +26636,7 @@ GameObject:
   - component: {fileID: 1567729970}
   m_Layer: 3
   m_Name: Plataforma Predio (Marrom) (2)
-  m_TagString: Ground
+  m_TagString: OneWayPlataform
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29180,3 +29257,4 @@ SceneRoots:
   - {fileID: 1716158620}
   - {fileID: 2064208936}
   - {fileID: 326821893}
+  - {fileID: 1117990540}
