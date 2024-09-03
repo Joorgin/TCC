@@ -31,6 +31,9 @@ public class PlayerHealth : MonoBehaviour
     // Tudo sobre Stamina e sua relacao com a vida
     public static bool deadByStamina;
 
+    // Onde se encaixa o flashSprite
+    public FleashMaterial fleashMaterialScript;
+
     public static bool isAlive;
 
     public GameObject DeathPanel;
@@ -145,7 +148,7 @@ public class PlayerHealth : MonoBehaviour
                 healthUI.SetHealth(Currenthealth);
                 canTakeaDamage = false;
             }
-            
+            fleashMaterialScript.Flash();
         }
         hasPatuaUP = false;
     }

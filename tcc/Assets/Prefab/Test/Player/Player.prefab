@@ -424,6 +424,7 @@ GameObject:
   - component: {fileID: 6363744360501179168}
   - component: {fileID: 7054268754085506165}
   - component: {fileID: 6681949177978419138}
+  - component: {fileID: 7558916736182006413}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -620,6 +621,7 @@ MonoBehaviour:
   Currenthealth: 0
   healthUI: {fileID: 6714778990207214318}
   shield: {fileID: 7938332452256962927}
+  fleashMaterialScript: {fileID: 7558916736182006413}
   DeathPanel: {fileID: 5590209255537700534}
   TimetoRegenarateHealth: 0
   TimeToTakeDamage: 0
@@ -784,6 +786,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCollider: {fileID: 6347502671995852733}
+--- !u!114 &7558916736182006413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148110851201987522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a9e1386bac4ccf4abf34de473244f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: ef0fca970b7ad964c9c0b8271c0e1f1c, type: 2}
+  duration: 0.3
 --- !u!1 &174109096023153676
 GameObject:
   m_ObjectHideFlags: 0
