@@ -68,7 +68,7 @@ public class ENemyBasicMovement : MonoBehaviour
                 }
                 if (KBCounter <= 0)
                 {
-                    if (Vector2.Distance(transform.position, PlayerTransform.position) <= 1.5f)
+                    if (Vector2.Distance(transform.position, PlayerTransform.position) < 1f)
                     {
                         anim.SetBool("IDLE", true);
                         anim.SetBool("WALK", false);
