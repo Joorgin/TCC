@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 5984036346307016660}
   - component: {fileID: 2450681365389200967}
   - component: {fileID: 1789395498279563026}
+  - component: {fileID: -1659484679279558315}
   m_Layer: 6
   m_Name: Explosive Enemy
   m_TagString: EnemyBoby
@@ -207,6 +208,7 @@ MonoBehaviour:
   Currenthealth: 0
   healthUI: {fileID: 8490706888535432889}
   Bracelete: {fileID: 4593072821139420700, guid: 1d43874d8c712d94fa30fed44bda0306, type: 3}
+  fleashMaterialScript: {fileID: -1659484679279558315}
 --- !u!50 &682736896569056084
 Rigidbody2D:
   serializedVersion: 4
@@ -342,6 +344,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0.01838684, y: -0.116135955}
   m_Size: {x: 0.42788696, y: 0.9666469}
   m_Direction: 0
+--- !u!114 &-1659484679279558315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4566653886737648308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a9e1386bac4ccf4abf34de473244f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: ef0fca970b7ad964c9c0b8271c0e1f1c, type: 2}
+  duration: 0.3
 --- !u!1 &5656754910990398599
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,9 @@ public class EnemyHeatlh : MonoBehaviour
     bool isAlive;
     float timeToDie;
 
+    // Onde se encaixa o flashSprite
+    public FleashMaterial fleashMaterialScript;
+
     private void Awake()
     {
         m_List.Add(this);
@@ -65,6 +68,7 @@ public class EnemyHeatlh : MonoBehaviour
                 isAlive = false;
             }
             timeToDie = 0.5f;
+            fleashMaterialScript.Flash();
         }
     }
 

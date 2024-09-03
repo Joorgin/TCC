@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,8 +35,18 @@ public class PlayerHealth : MonoBehaviour
     // Onde se encaixa o flashSprite
     public FleashMaterial fleashMaterialScript;
 
+
+    // freeze no momento do Dano
+    [Space]
+    [Header("Freeze When Attacked")]
+    public float durationFreeze;
+    bool _isFrozen = false;
+    float _pendingFreezeDuration = 0f;
+    bool _isThereMonsters;
+
     public static bool isAlive;
 
+    [Space]
     public GameObject DeathPanel;
 
     public static int HealthRegen;
@@ -125,6 +136,12 @@ public class PlayerHealth : MonoBehaviour
             Dead();
         }
 
+        if (_pendingFreezeDuration > 0f && !_isFrozen)
+        {
+
+            StartCoroutine(SetTimeForAtackEffect());
+        }
+
     }
 
     public void TakeDamage(int damage)
@@ -151,6 +168,29 @@ public class PlayerHealth : MonoBehaviour
             fleashMaterialScript.Flash();
         }
         hasPatuaUP = false;
+        StartCoroutine(ShackCamera());
+        Freeze();
+    }
+
+    public void Freeze()
+    {
+        _pendingFreezeDuration = durationFreeze;
+    }
+
+    IEnumerator SetTimeForAtackEffect()
+    {
+        _isFrozen = true;
+        var original = Time.timeScale;
+        Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(durationFreeze);
+        Time.timeScale = original;
+        _pendingFreezeDuration = 0f;
+        _isFrozen = false;
+    }
+
+    IEnumerator ShackCamera()
+    {
+        yield return new WaitForSeconds(0.3f);
     }
 
     public static void LibertarKiumbas()
