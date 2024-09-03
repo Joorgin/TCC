@@ -6,6 +6,7 @@ public class Paralax : MonoBehaviour
 {
 
     public GameObject MainCamera;
+    public Transform cam;
     private float lenght, startPos;
     public float speedParalax;
    
@@ -14,25 +15,21 @@ public class Paralax : MonoBehaviour
     void Start()
     {
         startPos = transform.position.x;
+        
         lenght = GetComponent<SpriteRenderer>().bounds.size.x;
         MainCamera = GameObject.Find("MainCamera");
+
+        cam = MainCamera.transform;
     }
    
     // Update is called once per frame
     void FixedUpdate()
     {
-        float temp = (MainCamera.transform.position.x * (1f - speedParalax));
-        float dist = (MainCamera.transform.position.x * speedParalax);
-   
-        transform.position = new Vector3(startPos + dist, transform.position.y, transform.position.z);
-   
-        if (temp > startPos + lenght)
-        {
-            startPos += lenght;
-        }
-        else if(temp < startPos - lenght)
-        {
-            startPos -= lenght;
-        }
+        float rePOs = cam.transform.position.x * (1 - speedParalax);
+        float dist = (cam.transform.position.x * speedParalax);
+        transform.position = new Vector3(startPos + dist ,transform.position.y, transform.position.z);
+
+        if (rePOs > startPos + lenght) startPos += lenght;
+        else if(rePOs < startPos - lenght) startPos -= lenght;
     }
 }
