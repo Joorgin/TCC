@@ -150,21 +150,6 @@ public class Sereia_Movement : MonoBehaviour
             }
         }
 
-        if (transform.position.x > PlayerTransform.position.x && Vector2.Distance(transform.position, PlayerTransform.position) > 5.5f)
-        {
-            transform.position += Vector3.left * movementSpeed * Time.deltaTime;
-            RightSide = false;
-            // anim.SetBool("IDLE", false);
-            //  anim.SetBool("WALK", true);
-        }
-        if (transform.position.x < PlayerTransform.position.x && Vector2.Distance(transform.position, PlayerTransform.position) > 5.5f)
-        {
-            transform.position += Vector3.right * movementSpeed * Time.deltaTime;
-            RightSide = true;
-            // anim.SetBool("IDLE", false);
-            // anim.SetBool("WALK", true);
-        }
-
         if (Vector2.Distance(transform.position, PlayerTransform.position) <= 5.5f && canAttack)
         {
             if (hasAttacked1) state = States.Attack2;

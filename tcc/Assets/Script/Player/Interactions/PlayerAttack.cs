@@ -138,6 +138,7 @@ public class PlayerAttack : MonoBehaviour
                 etd.GetComponent<ENemyBasicMovement>().KBForce = 1;
                 etd.GetComponent<ENemyBasicMovement>().KnockFromRight = !direcao;//inverte pq direcao foi feito com PlayerMovement.verticalMove == 1
                 _isThereMonsters = true;
+                durationFreeze = 0.1f;
             }
 
             //Explosive Enemy
@@ -148,6 +149,7 @@ public class PlayerAttack : MonoBehaviour
                 etd.GetComponent<ExplosiveEnemyMovement>().KBForce = 1;
                 etd.GetComponent<ExplosiveEnemyMovement>().KnockFromRight = !direcao;
                 _isThereMonsters = true;
+                durationFreeze = 0.1f;
             }
 
             //Flying Enemy
@@ -192,6 +194,7 @@ public class PlayerAttack : MonoBehaviour
                 etd.GetComponent<ENemyBasicMovement>().KBForce = 3;
                 etd.GetComponent<ENemyBasicMovement>().KnockFromRight = !direcao;//inverte pq direcao foi feito com PlayerMovement.verticalMove == 1
                 _isThereMonsters = true;
+                durationFreeze = 0.3f;
             }
 
             //ExplosiveEnemy 
@@ -202,6 +205,7 @@ public class PlayerAttack : MonoBehaviour
                 etd.GetComponent<ExplosiveEnemyMovement>().KBForce = 1;
                 etd.GetComponent<ExplosiveEnemyMovement>().KnockFromRight = !direcao;
                 _isThereMonsters = true;
+                durationFreeze = 0.3f;
             }
 
             //FlyingEnemy
