@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    
+    public static PlayerHealth Instance {  get; private set; }
+
     public static int Maxhealth;
     public int Currenthealth;
 
@@ -44,6 +45,17 @@ public class PlayerHealth : MonoBehaviour
     float _pendingFreezeDuration = 0f;
     bool _isThereMonsters;
 
+    //CineMachineCamera
+    [Space]
+    [Header("Camera Shake")]
+    public CinemachineVirtualCamera cinemachineVirtualCamera;
+    private float shakeTimer;
+    private CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin;
+    public float intencidadeDoShake;
+    public float duracaoDoShake;
+
+
+
     public static bool isAlive;
 
     [Space]
@@ -62,6 +74,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
+        Instance = this;
         Maxhealth = GameManager.PlayerMaxhealth;
         Currenthealth = Maxhealth;
         HealthRegen = 2;
@@ -168,7 +181,7 @@ public class PlayerHealth : MonoBehaviour
             fleashMaterialScript.Flash();
         }
         hasPatuaUP = false;
-        StartCoroutine(ShackCamera());
+        PlayerHealth.Instance.StartCoroutine(ShackCamera(intencidadeDoShake, duracaoDoShake));
         Freeze();
     }
 
@@ -188,9 +201,13 @@ public class PlayerHealth : MonoBehaviour
         _isFrozen = false;
     }
 
-    IEnumerator ShackCamera()
+    IEnumerator ShackCamera(float intencity, float time)
     {
-        yield return new WaitForSeconds(0.3f);
+        CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intencity;
+        shakeTimer = time;
+        yield return new WaitForSeconds(shakeTimer);
+        cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0f;
     }
 
     public static void LibertarKiumbas()
