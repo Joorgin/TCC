@@ -70,13 +70,14 @@ public class ENemyBasicMovement : MonoBehaviour
                 {
                     if (Vector2.Distance(transform.position, PlayerTransform.position) < 1f)
                     {
+                        Debug.Log("ATTACAR");
                         anim.SetBool("IDLE", true);
                         anim.SetBool("WALK", false);
                         CountToDamage();
                     }
 
                     if (transform.position.x > PlayerTransform.position.x && !EnemyDamage.isAttacking &&
-                        Vector2.Distance(transform.position, PlayerTransform.position) > 1.5f)
+                        Vector2.Distance(transform.position, PlayerTransform.position) > 1f)
                     {
                         transform.position += Vector3.left * movementSpeed * Time.deltaTime;
                         KnockFromRight = false;
@@ -84,7 +85,7 @@ public class ENemyBasicMovement : MonoBehaviour
                         anim.SetBool("WALK", true);
                     }
                     if (transform.position.x < PlayerTransform.position.x && !EnemyDamage.isAttacking &&
-                        Vector2.Distance(transform.position, PlayerTransform.position) > 1.5f)
+                        Vector2.Distance(transform.position, PlayerTransform.position) > 1f)
                     {
                         transform.position += Vector3.right * movementSpeed * Time.deltaTime;
                         KnockFromRight = true;
