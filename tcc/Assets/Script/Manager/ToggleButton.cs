@@ -30,11 +30,10 @@ public class ToggleButton : MonoBehaviour
                 if (result.gameObject.GetComponent<Button>() != null)
                 {
                     gameObjectUnderMouse = result.gameObject;
+                    Debug.Log(gameObjectUnderMouse);
                     break;
                 }
             }
-
-            Debug.Log(gameObjectUnderMouse);
 
             if (gameObjectUnderMouse != null)
             {

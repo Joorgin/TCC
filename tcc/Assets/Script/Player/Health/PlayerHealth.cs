@@ -53,7 +53,10 @@ public class PlayerHealth : MonoBehaviour
     private CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin;
     public float intencidadeDoShake;
     public float duracaoDoShake;
+    public static bool shackCamera;
 
+    // bool que indica se foi atingido ou nem
+    public static bool _HasbeenHit;
 
 
     public static bool isAlive;
@@ -155,14 +158,21 @@ public class PlayerHealth : MonoBehaviour
             StartCoroutine(SetTimeForAtackEffect());
         }
 
+        if(shackCamera)
+        {
+            PlayerHealth.Instance.StartCoroutine(ShackCamera(5, 0.5f));
+            shackCamera = false;
+        }
+
     }
 
     public void TakeDamage(int damage)
     {
         int chanceOfLive = Random.Range(0, 100);
         if (chanceOfLive <= chanceForLiving) hasPatuaUP = true;
+        _HasbeenHit = true;
 
-        if (canTakeaDamage && !hasPatuaUP)
+        if (canTakeaDamage && !hasPatuaUP && !Downdash._isDownDash)
         {
             if(hasArmorUp) 
             {
