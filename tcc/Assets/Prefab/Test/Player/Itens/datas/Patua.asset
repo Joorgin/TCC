@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 8
   DisplayName: Patua
-  Description: Aumenta a chance de esquiva em 2%
+  Description: Aumenta a chace de esquiva em 2%
   Icon: {fileID: 151888080, guid: 96ad6f42496318944b9deba79ce28837, type: 3}
   MaxStackSise: 99

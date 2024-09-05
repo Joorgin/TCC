@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 0
   DisplayName: Machado de Xango
-  Description: Machado de Guera
+  Description: Aumenta 10% do dano
   Icon: {fileID: 202948174, guid: e481814ecf3fb414080e70fc73e58b4f, type: 3}
   MaxStackSise: 99

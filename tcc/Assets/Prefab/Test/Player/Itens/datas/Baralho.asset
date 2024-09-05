@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 9
   DisplayName: Baralho
-  Description: "Aumenta a chance de ba\xFAs bons em 5%"
+  Description: "Aumenta a chance de um Bom Ba\xFA em 5%"
   Icon: {fileID: -1239501329, guid: dcb5841902c036940915105b32b9443f, type: 3}
   MaxStackSise: 99
