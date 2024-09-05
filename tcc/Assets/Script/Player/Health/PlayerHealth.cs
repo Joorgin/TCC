@@ -168,31 +168,34 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        int chanceOfLive = Random.Range(0, 100);
-        if (chanceOfLive <= chanceForLiving) hasPatuaUP = true;
-        _HasbeenHit = true;
-
-        if (canTakeaDamage && !hasPatuaUP && !Downdash._isDownDash)
+        if (!Downdash._isDownDash)
         {
-            if(hasArmorUp) 
+            int chanceOfLive = Random.Range(0, 100);
+            if (chanceOfLive <= chanceForLiving) hasPatuaUP = true;
+            _HasbeenHit = true;
+
+            if (canTakeaDamage && !hasPatuaUP)
             {
-                int damageReflet = (damage / 100) * percentOfProtection;
-                damage -= damageReflet;
-                Currenthealth -= damage;
-                healthUI.SetHealth(Currenthealth);
-                canTakeaDamage = false;
+                if (hasArmorUp)
+                {
+                    int damageReflet = (damage / 100) * percentOfProtection;
+                    damage -= damageReflet;
+                    Currenthealth -= damage;
+                    healthUI.SetHealth(Currenthealth);
+                    canTakeaDamage = false;
+                }
+                else
+                {
+                    Currenthealth -= damage;
+                    healthUI.SetHealth(Currenthealth);
+                    canTakeaDamage = false;
+                }
+                fleashMaterialScript.Flash();
             }
-            else
-            {
-                Currenthealth -= damage;
-                healthUI.SetHealth(Currenthealth);
-                canTakeaDamage = false;
-            }
-            fleashMaterialScript.Flash();
+            hasPatuaUP = false;
+            PlayerHealth.Instance.StartCoroutine(ShackCamera(intencidadeDoShake, duracaoDoShake));
+            Freeze();
         }
-        hasPatuaUP = false;
-        PlayerHealth.Instance.StartCoroutine(ShackCamera(intencidadeDoShake, duracaoDoShake));
-        Freeze();
     }
 
     public void Freeze()
