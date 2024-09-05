@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
 
-    public bool isGrounded;
+    public static bool isGrounded;
     private float horizontalMove = 0f;
 
     public static int verticalMove;
@@ -154,6 +154,16 @@ public class PlayerMovement : MonoBehaviour
         if (PlayerHealth.isAlive && !apaixonado)
         {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+
+            if (Downdash._isDownDash && isGrounded)
+            {
+                rb.velocity = Vector3.zero;
+                Downdash.CanDownDash = true;
+                Downdash._isDownDash = false;
+                PlayerHealth.shackCamera = true;
+                Downdash.Damage();
+            }
+
             if (!isAttacking)
             {
                 if (isDashing) return;
@@ -273,7 +283,7 @@ public class PlayerMovement : MonoBehaviour
             Chest.isInRange = true;
         }
 
-        if(other.gameObject.CompareTag("ItemUpgrade"))
+        if (other.gameObject.CompareTag("ItemUpgrade"))
         {
             IntemName = other.gameObject.name;
         }

@@ -6815,7 +6815,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2128633159897440636, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2775723029833481024, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
       propertyPath: m_Name
@@ -6823,7 +6823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2775723029833481024, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5720163435102389529, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38752,7 +38752,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2128633159897440636, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2775723029833481024, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
       propertyPath: m_Name
@@ -38760,7 +38760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2775723029833481024, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5720163435102389529, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -45357,6 +45357,7 @@ MonoBehaviour:
   Boss: {fileID: 0}
   BossSpawn: {fileID: 0}
   isInMainScene: 0
+  buttonInteraction: {fileID: 0}
 --- !u!1 &1614725381
 GameObject:
   m_ObjectHideFlags: 0
@@ -57390,7 +57391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2433233470371995607, guid: 006001288e2d0af4ebcd9c5f8376d09e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

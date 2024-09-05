@@ -15,12 +15,13 @@ public class SceneChange : MonoBehaviour
     public GameObject Boss, BossSpawn;
     public bool isInMainScene;
     int RandomScene;
-
+    public GameObject buttonInteraction;
     private void Start()
     {
         canCharge = false;
         FadeScript.HideUI();
         Debug.Log(GameManager.LastMapName);
+        Physics.IgnoreLayerCollision(0, 7, true);
     }
     private void Update()
     {
@@ -93,6 +94,7 @@ public class SceneChange : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isInRange = true;
+            buttonInteraction.SetActive(true);
         }
     }
 
@@ -102,6 +104,7 @@ public class SceneChange : MonoBehaviour
         {
             isInRange = false;
             anim.speed = 0;
+            buttonInteraction.SetActive(false);
         }
     }
 
