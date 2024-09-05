@@ -53,67 +53,60 @@ public class ENemyBasicMovement : MonoBehaviour
             Flip();
         }
 
+        if (Vector2.Distance(transform.position, PlayerTransform.position) < chaseDistance) isChansing = true;
 
-        if (!isTrapped && PlayerHealth.isAlive)
+        if(Vector2.Distance(transform.position, PlayerTransform.position) > 15f) isChansing = false;
+
+        if (!isTrapped && PlayerHealth.isAlive && isChansing)
         {
 
-            if (isChansing)
+            isgrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+            if (isgrounded) hasJumped = false;
+            Debug.Log("GroundCheck: " + isgrounded);
+            if (!isgrounded && !hasJumped)
             {
-                isgrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-                if (isgrounded) hasJumped = false;
-                Debug.Log("GroundCheck: " + isgrounded);
-                if (!isgrounded && !hasJumped)
+                Jump();
+            }
+            if (KBCounter <= 0)
+            {
+                if (Vector2.Distance(transform.position, PlayerTransform.position) < 1f)
                 {
-                    Jump();
+                    Debug.Log("ATTACAR");
+                    anim.SetBool("IDLE", true);
+                    anim.SetBool("WALK", false);
+                    CountToDamage();
                 }
-                if (KBCounter <= 0)
-                {
-                    if (Vector2.Distance(transform.position, PlayerTransform.position) < 1f)
-                    {
-                        Debug.Log("ATTACAR");
-                        anim.SetBool("IDLE", true);
-                        anim.SetBool("WALK", false);
-                        CountToDamage();
-                    }
 
-                    if (transform.position.x > PlayerTransform.position.x && !EnemyDamage.isAttacking &&
-                        Vector2.Distance(transform.position, PlayerTransform.position) > 1f)
-                    {
-                        transform.position += Vector3.left * movementSpeed * Time.deltaTime;
-                        KnockFromRight = false;
-                        anim.SetBool("IDLE", false);
-                        anim.SetBool("WALK", true);
-                    }
-                    if (transform.position.x < PlayerTransform.position.x && !EnemyDamage.isAttacking &&
-                        Vector2.Distance(transform.position, PlayerTransform.position) > 1f)
-                    {
-                        transform.position += Vector3.right * movementSpeed * Time.deltaTime;
-                        KnockFromRight = true;
-                        anim.SetBool("IDLE", false);
-                        anim.SetBool("WALK", true);
-                    }
-                }
-                else
+                if (transform.position.x > PlayerTransform.position.x && !EnemyDamage.isAttacking &&
+                    Vector2.Distance(transform.position, PlayerTransform.position) > 1f)
                 {
-                    if (KnockFromRight == true)
-                    {
-                        rb.velocity = new Vector2(-KBForce, 0);
-                        Debug.Log(KnockFromRight);
-                    }
-                    if (KnockFromRight == false)
-                    {
-                        rb.velocity = new Vector2(KBForce, 0);
-                        Debug.Log(KnockFromRight);
-                    }
-                    KBCounter -= Time.deltaTime;
+                    transform.position += Vector3.left * movementSpeed * Time.deltaTime;
+                    KnockFromRight = false;
+                    anim.SetBool("IDLE", false);
+                    anim.SetBool("WALK", true);
+                }
+                if (transform.position.x < PlayerTransform.position.x && !EnemyDamage.isAttacking &&
+                    Vector2.Distance(transform.position, PlayerTransform.position) > 1f)
+                {
+                    transform.position += Vector3.right * movementSpeed * Time.deltaTime;
+                    KnockFromRight = true;
+                    anim.SetBool("IDLE", false);
+                    anim.SetBool("WALK", true);
                 }
             }
             else
             {
-                if (Vector2.Distance(transform.position, PlayerTransform.position) < chaseDistance)
+                if (KnockFromRight == true)
                 {
-                    isChansing = true;
+                    rb.velocity = new Vector2(-KBForce, 0);
+                    Debug.Log(KnockFromRight);
                 }
+                if (KnockFromRight == false)
+                {
+                    rb.velocity = new Vector2(KBForce, 0);
+                    Debug.Log(KnockFromRight);
+                }
+                KBCounter -= Time.deltaTime;
             }
         }
         else
