@@ -6,7 +6,7 @@ public class AudioManagert : MonoBehaviour
 {
     public AudioSource audioSource;
     public AudioClip[] clip;
-
+    
     public void AudioShot()
     {
         audioSource.PlayOneShot(clip[0]);
