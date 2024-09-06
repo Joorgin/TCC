@@ -44,7 +44,7 @@ public class EnemyDamage : MonoBehaviour
                     playerHealth.TakeDamage(damage);
                     if(PlayerHealth.hasMirrorUp)
                     {
-                        float DamagePercent = (damage * (30 + PercentOfDamage)) / 100;
+                        int DamagePercent = (damage * (30 + PercentOfDamage)) / 100;
                         Debug.Log("DOI :" + DamagePercent);
                         thisHealth.TakeDamage(DamagePercent);
                     }

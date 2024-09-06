@@ -1,4 +1,4 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public static int PlayerMaxhealth = 100;
     public static float PlayerStamina = 60;
     #endregion
+
+    public Transform pfDamagePopUp;
 
     private void Awake()
     {

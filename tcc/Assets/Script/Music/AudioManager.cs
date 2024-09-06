@@ -25,7 +25,6 @@ public class AudioManager : MonoBehaviour
     public string[] bossName;
 
 
-
     private void Awake()
     {
         if(Instance == null)

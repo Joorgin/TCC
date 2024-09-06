@@ -11,7 +11,7 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask WhatIsEnemies;
     public LayerMask WhatIsEnemies2;
 
-    public static float Damage;
+    public static int Damage;
     Collider2D[] enemiesToDamage;
     Collider2D[] enemiesToDamage2;
 

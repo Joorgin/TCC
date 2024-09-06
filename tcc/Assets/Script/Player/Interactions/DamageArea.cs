@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DamageArea : MonoBehaviour
 {
-    public float Damage;
+    public int Damage;
     Collider2D[] enemiesToDamage;
     public Transform attackPos;
     public float attackRange;

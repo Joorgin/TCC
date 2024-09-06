@@ -56,7 +56,7 @@ public class EnemyHeatlh : MonoBehaviour
         
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         if (timeToDie <= 0)
         {
@@ -68,6 +68,7 @@ public class EnemyHeatlh : MonoBehaviour
                 isAlive = false;
             }
             timeToDie = 0.5f;
+            DamagePopUp.Create(gameObject.transform.position, damage);
             fleashMaterialScript.Flash();
         }
     }
