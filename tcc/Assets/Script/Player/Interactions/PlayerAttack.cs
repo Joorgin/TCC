@@ -35,7 +35,7 @@ public class PlayerAttack : MonoBehaviour
     public int noOfClicks = 0;
     float lastClickedTime = 0;
     public float maxComboDelay = 0.9f;
-
+    bool canAtack = true;
     // freeze no momento do ataque
     [Space]
     [Header("Freeze When Attack")]
@@ -53,7 +53,11 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        bool direcaoVerticalMove = PlayerMovement.verticalMove == 1;
+        bool direcaoVerticalMove;
+
+        if (!Player_Type_2_Movement.isInMainScene) direcaoVerticalMove = PlayerMovement.verticalMove == 1;
+        else direcaoVerticalMove = Player_Type_2_Movement.verticalMove == 1;
+
         attackPos.gameObject.SetActive(direcaoVerticalMove);
         attackPos2.gameObject.SetActive(!direcaoVerticalMove);
         Vector3 ataquePosicao = direcaoVerticalMove ? attackPos.position : attackPos2.position;
@@ -65,7 +69,7 @@ public class PlayerAttack : MonoBehaviour
             noOfClicks = 0;
         }
 
-        if (PlayerHealth.isAlive)
+        if (PlayerHealth.isAlive || Player_Type_2_Movement.isInMainScene)
         {
             Atacar(direcaoVerticalMove);
         }
@@ -82,12 +86,14 @@ public class PlayerAttack : MonoBehaviour
     /// </summary>
     void Atacar(bool direcao)
     {
-        if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.X)) && (enemiesToDamage != null || enemiesToDamage2 != null))
+        if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.X)) 
+            && (enemiesToDamage != null || enemiesToDamage2 != null) && noOfClicks == 0 && canAtack)
         {
+            
             lastClickedTime = Time.time;
             noOfClicks++;
 
-            if (noOfClicks == 1)
+            if (noOfClicks >= 1)
             {
 
                 switch (weaponIsUsing)
@@ -98,11 +104,15 @@ public class PlayerAttack : MonoBehaviour
                         PlayerMovement.isAttacking = true;
                         StartCoroutine(AttackHand1(direcao));
                         timeBtwAttack = startTimeBtwAttack;
+                        canAtack = false;
                         break;
                 }
             }
             noOfClicks = Mathf.Clamp(noOfClicks, 0, 2);
         }
+        else if((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.X)) &&
+            (enemiesToDamage != null || enemiesToDamage2 != null) && noOfClicks == 1) noOfClicks++;
+
         else if (Input.GetKey(KeyCode.Q) && !hasShoot)
         {
             //enquanto nao houver animacao manter isAttacking comentado
@@ -120,7 +130,7 @@ public class PlayerAttack : MonoBehaviour
     // Enumerator para o primeiro soco detectando quantos e quais inimigos estao na range do player
     public IEnumerator AttackHand1(bool direcao)
     {
-
+       
 
         int percentForCrit = Random.Range(0, 100);
         if (percentForCrit <= CritPercent)
@@ -230,6 +240,8 @@ public class PlayerAttack : MonoBehaviour
         anim.SetBool("Attack1", false);
         anim.SetBool("Attack2", false);
         PlayerMovement.isAttacking = false;
+        noOfClicks = 0;
+        canAtack = true;
     }
 
     public void Freeze()
