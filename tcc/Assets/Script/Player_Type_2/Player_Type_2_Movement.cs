@@ -39,6 +39,8 @@ public class Player_Type_2_Movement : MonoBehaviour
 
     public GameObject ConfigMenu;
     bool setactive;
+
+    public static bool isInMainScene;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -47,6 +49,8 @@ public class Player_Type_2_Movement : MonoBehaviour
         cinemachine = GameObject.FindGameObjectWithTag("Camera").GetComponent<CinemachineConfiner>();
         cinemachine.m_BoundingShape2D = GameObject.FindGameObjectWithTag("CameraConfiner").GetComponent<PolygonCollider2D>();
         PlayerMovement.isInFinalScene = false;
+        isInMainScene = true;
+        Physics2D.IgnoreLayerCollision(6, 7, true);
     }
 
     void Update()
