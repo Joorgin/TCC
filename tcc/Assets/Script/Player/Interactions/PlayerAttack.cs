@@ -35,7 +35,7 @@ public class PlayerAttack : MonoBehaviour
     public int noOfClicks = 0;
     float lastClickedTime = 0;
     public float maxComboDelay = 0.9f;
-    bool canAtack = true;
+    public static bool canAtack = true;
     // freeze no momento do ataque
     [Space]
     [Header("Freeze When Attack")]
@@ -179,14 +179,17 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (noOfClicks >= 2)
         {
+            
             anim.SetBool("Attack2", true);
             StartCoroutine(AttackHand2(direcao));
+            canAtack = true;
         }
         else
         {
             anim.SetBool("Attack1", false);
             noOfClicks = 0;
             PlayerMovement.isAttacking = false;
+            canAtack = true;
         }
     }
     // Funcao para o segundo soco detectando quantos e quais inimigos estao na range do player
