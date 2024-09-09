@@ -28,6 +28,7 @@ public class EnemyDamage : MonoBehaviour
         {
             if (isAttacking)
             {
+                Debug.Log("Sereia Attack");
                 playerMovement.KBCounter = playerMovement.KBTotalTime;
 
                 if (collision.transform.position.x <= transform.position.x)

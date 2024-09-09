@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Idle_sereia-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 0
+        width: 103
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35fe12da11cd0c240aeb299c788f50e8
+      internalID: -2061141519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_sereia-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 0
+        width: 103
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42472a98b7dd2cf479bc26806e0b909f
+      internalID: -1270945662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_sereia-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 0
+        width: 101
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b206897475855c44a01bbe9e730022d
+      internalID: 886163630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_sereia-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 0
+        width: 99
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca335de69224d94bbeea22441bca2e6
+      internalID: -364388932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_sereia-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 0
+        width: 99
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a46c792b8b34c41a1a5cdde6da1eaf
+      internalID: 596126015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_sereia-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 0
+        width: 98
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea46014e7040d75478b6281afb009495
+      internalID: 1368941677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_sereia-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 0
+        width: 100
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d55c11fb40b9b844901a57b48512829
+      internalID: 2011787461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_sereia-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 0
+        width: 101
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef55718f27cee5448897efad3f94cd94
+      internalID: -1982665361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_sereia-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 0
+        width: 99
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d53ea14976da9c409346e848e276ade
+      internalID: -1230057059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_sereia-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 0
+        width: 101
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2655892b35270745bb97773391413b6
+      internalID: -1674130182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +329,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Idle_sereia-Sheet_0: -2061141519
+      Idle_sereia-Sheet_1: -1270945662
+      Idle_sereia-Sheet_2: 886163630
+      Idle_sereia-Sheet_3: -364388932
+      Idle_sereia-Sheet_4: 596126015
+      Idle_sereia-Sheet_5: 1368941677
+      Idle_sereia-Sheet_6: 2011787461
+      Idle_sereia-Sheet_7: -1982665361
+      Idle_sereia-Sheet_8: -1230057059
+      Idle_sereia-Sheet_9: -1674130182
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

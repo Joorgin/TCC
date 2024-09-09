@@ -126,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (esquerda)
             {
-                transform.position += Vector3.left * moveSpeed / 100 * Time.deltaTime;
+                transform.position += Vector3.right * moveSpeed / 100 * Time.deltaTime;
                 verticalMove = -1;
                 anim.SetInteger("VerticalMove", verticalMove);
                 anim.SetFloat("RunDirection", verticalMove);
@@ -138,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
             }
             if (direita)
             {
-                transform.position += Vector3.right * moveSpeed / 100 * Time.deltaTime;
+                transform.position += Vector3.left * moveSpeed / 100 * Time.deltaTime;
                 verticalMove = 1;
                 anim.SetInteger("VerticalMove", verticalMove);
                 anim.SetFloat("RunDirection", verticalMove);

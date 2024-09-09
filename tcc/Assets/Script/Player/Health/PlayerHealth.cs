@@ -195,6 +195,7 @@ public class PlayerHealth : MonoBehaviour
             hasPatuaUP = false;
             PlayerHealth.Instance.StartCoroutine(ShackCamera(intencidadeDoShake, duracaoDoShake));
             Freeze();
+            PlayerAttack.canAtack = true;
         }
     }
 

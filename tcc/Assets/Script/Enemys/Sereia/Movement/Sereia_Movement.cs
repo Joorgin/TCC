@@ -43,6 +43,7 @@ public class Sereia_Movement : MonoBehaviour
     public GameObject saidaDoBeijo;
     public GameObject Beijo;
 
+
     public enum States
     {
         Andando,
@@ -165,12 +166,13 @@ public class Sereia_Movement : MonoBehaviour
     IEnumerator CriarOnda()
     {
         Debug.Log("ATTACK1");
-        //anim.SetBool("Attack", true);
+        anim.SetBool("Onda", true);
         yield return new WaitForSeconds(ondaAnimationTime);
         if (canAttack) Instantiate(onda, ondaStartLocation.transform.position, Quaternion.identity);
         canAttack = false;
         hasAttacked1 = true;
         state = States.Idle;
+        anim.SetBool("Onda", false);
     }
 
     void Attack2()
@@ -180,10 +182,12 @@ public class Sereia_Movement : MonoBehaviour
 
     IEnumerator ApaixonarPlayer()
     {
-        //anim.SetBool("Paixao", true);
+        anim.SetBool("Paixao", true);
         yield return new WaitForSeconds(paixaoAnimationTime);
+        anim.SetBool("Paixao", false);
         if (canAttack) Instantiate(Beijo, saidaDoBeijo.transform.position, Quaternion.identity);
         canAttack = false;
+        state = States.Idle;
         yield return new WaitForSeconds(3f);
         if (Vector2.Distance(transform.position, PlayerTransform.position) <= 3.5f) state = States.Attack3;
         else
@@ -191,6 +195,7 @@ public class Sereia_Movement : MonoBehaviour
             state = States.Idle;
             hasAttacked1 = false;
         }
+        
     }
 
     void Attack3()
@@ -200,9 +205,11 @@ public class Sereia_Movement : MonoBehaviour
 
     IEnumerator Cajadada()
     {
-        //anim.SetBool("Cajadada", true);
+        EnemyDamage.isAttacking = true;
+        anim.SetBool("Cajadada", true);
         Debug.Log("ATTACK3");
         yield return new WaitForSeconds(cajadadaAnimationTime);
+        anim.SetBool("Cajadada", false);
         state = States.Idle;
         hasAttacked1 = false;
     }
@@ -221,5 +228,10 @@ public class Sereia_Movement : MonoBehaviour
         facingRight = !facingRight;
 
         Debug.Log("Facing Right: " + facingRight);
+    }
+
+    public void ShakCamera()
+    {
+        PlayerHealth.shackCamera = true;
     }
 }
