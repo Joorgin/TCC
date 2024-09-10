@@ -266,6 +266,7 @@ public class PlayerHealth : MonoBehaviour
     public void Dead()
     {
         isAlive = false;
+        GameManager.IsInMainScene = true;
         StartCoroutine(ShowUI("MainScene"));
     }
 

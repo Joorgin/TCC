@@ -55,7 +55,7 @@ public class PlayerAttack : MonoBehaviour
     {
         bool direcaoVerticalMove;
 
-        if (!Player_Type_2_Movement.isInMainScene) direcaoVerticalMove = PlayerMovement.verticalMove == 1;
+        if(!GameManager.IsInMainScene) direcaoVerticalMove = PlayerMovement.verticalMove == 1;
         else direcaoVerticalMove = Player_Type_2_Movement.verticalMove == 1;
 
         attackPos.gameObject.SetActive(direcaoVerticalMove);
