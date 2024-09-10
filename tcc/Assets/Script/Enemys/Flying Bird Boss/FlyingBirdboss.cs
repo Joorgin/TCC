@@ -126,9 +126,18 @@ public class FlyingBirdboss : MonoBehaviour
         Vector3 directionToTarget = player.transform.position - transform.position;
 
         // Rotate the object to look at the target
-        transform.right = directionToTarget.normalized;
+        float timeToLook = 0;
+        timeToLook =+ Time.deltaTime;
 
-        ThrowPoint.transform.right = directionToTarget.normalized;
+        if(timeToLook < 10f)
+        {
+            transform.right = directionToTarget.normalized;
+
+            ThrowPoint.transform.right = directionToTarget.normalized;
+
+            timeToLook = 0;
+        }
+
 
         if (transform.position.x > player.transform.position.x && facingRight)
         {

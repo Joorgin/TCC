@@ -12,7 +12,7 @@ public class SceneChange : MonoBehaviour
     public static string SceneToChangeMusic;
     public Animator anim;
     bool isInRange, portalReady, canCharge, hasSpawnedBoss;
-    public GameObject Boss, BossSpawn;
+    public GameObject[] Boss, BossSpawn;
     public bool isInMainScene;
     int RandomScene;
     public GameObject buttonInteraction;
@@ -70,7 +70,19 @@ public class SceneChange : MonoBehaviour
 
             if (!isInMainScene)
             {
-                Instantiate(Boss, BossSpawn.transform.position, Quaternion.identity);
+                int RandomNumber = Random.Range(0, 2);
+
+                switch (RandomNumber)
+                { 
+                   case 0:
+                        Instantiate(Boss[0], BossSpawn[0].transform.position, Quaternion.identity);
+                        break;
+                   case 1:
+                        Instantiate(Boss[1], BossSpawn[0].transform.position, Quaternion.identity);
+                        break;
+                }
+
+                
                 hasSpawnedBoss = true;
             }
             else GameManager.IsInMainScene = false;
