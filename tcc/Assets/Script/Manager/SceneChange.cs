@@ -73,6 +73,7 @@ public class SceneChange : MonoBehaviour
                 Instantiate(Boss, BossSpawn.transform.position, Quaternion.identity);
                 hasSpawnedBoss = true;
             }
+            else GameManager.IsInMainScene = false;
         }
             
         if(isInRange && canCharge) 

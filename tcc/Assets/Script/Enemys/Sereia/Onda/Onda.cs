@@ -9,6 +9,8 @@ public class Onda : MonoBehaviour
     public float movementSpeed;
     bool hasSetSide = true;
     bool direita, esquerda;
+    public float timeToDestroy;
+
 
     void Start()
     {
@@ -36,7 +38,7 @@ public class Onda : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if (time > 2) Destroy(gameObject);
+        if (time > timeToDestroy) Destroy(gameObject);
 
         if (Sereia_Movement.RightSide && hasSetSide)
         {
