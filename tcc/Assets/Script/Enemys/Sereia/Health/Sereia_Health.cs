@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BIrd_Boss_Health : MonoBehaviour
+public class Sereia_Health : MonoBehaviour
 {
-    static List<BIrd_Boss_Health> m_List = new List<BIrd_Boss_Health>();
+    static List<Sereia_Health> m_List = new List<Sereia_Health>();
 
     public int Maxhealth;
     public float Currenthealth;

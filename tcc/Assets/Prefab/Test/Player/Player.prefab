@@ -667,7 +667,7 @@ MonoBehaviour:
     m_Bits: 64
   WhatIsEnemies2:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 4608
   weaponIsUsing: 0
   Arrow: {fileID: 5888800189523828868, guid: 44b16a5419900604792d801908111cf5, type: 3}
   anim: {fileID: 465859047248884024}
