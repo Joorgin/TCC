@@ -12,7 +12,7 @@ public class FlyingBirdboss : MonoBehaviour
 
     public float speed;
     public Rigidbody2D rb;
-   // public Animator anim;
+    // public Animator anim;
     public float dashPower;
     public float dashingTime;
     float TimeToApear;
@@ -52,28 +52,28 @@ public class FlyingBirdboss : MonoBehaviour
 
     private void Update()
     {
-        switch (states) 
-        { 
-          case States.Appering:
+        switch (states)
+        {
+            case States.Appering:
                 Aperring();
                 break;
-          case States.Looking:
+            case States.Looking:
                 Looking();
                 break;
-          case States.Attack1:
+            case States.Attack1:
                 Attaking1();
                 break;
-          case States.Attack2:
+            case States.Attack2:
                 Attaking2();
                 break;
-          case States.Dead:
+            case States.Dead:
                 Dead();
                 break;
         }
 
 
         // Tempo pra atacar
-        if(TimeToAttack)
+        if (TimeToAttack)
         {
 
             timeToAttack += Time.deltaTime;
@@ -97,11 +97,11 @@ public class FlyingBirdboss : MonoBehaviour
             }
         }
 
-        if(TimeToStopAppear)
+        if (TimeToStopAppear)
         {
             TimeToApear += Time.deltaTime;
 
-            if(TimeToApear >= 1)
+            if (TimeToApear >= 1)
             {
                 EndOfAnimationApear();
                 TimeToStopAppear = false;
@@ -112,7 +112,7 @@ public class FlyingBirdboss : MonoBehaviour
 
     public void Aperring()
     {
-       // anim.SetBool("Appear", true);
+        // anim.SetBool("Appear", true);
         TimeToStopAppear = true;
     }
 
@@ -126,17 +126,10 @@ public class FlyingBirdboss : MonoBehaviour
         Vector3 directionToTarget = player.transform.position - transform.position;
 
         // Rotate the object to look at the target
-        float timeToLook = 0;
-        timeToLook =+ Time.deltaTime;
 
-        if(timeToLook < 10f)
-        {
-            transform.right = directionToTarget.normalized;
+        transform.right = directionToTarget.normalized;
 
-            ThrowPoint.transform.right = directionToTarget.normalized;
-
-            timeToLook = 0;
-        }
+        ThrowPoint.transform.right = directionToTarget.normalized;
 
 
         if (transform.position.x > player.transform.position.x && facingRight)
@@ -150,24 +143,24 @@ public class FlyingBirdboss : MonoBehaviour
         TimeToAttack = true;
     }
 
-    public void Attaking1() 
+    public void Attaking1()
     {
-      StartCoroutine(Dash());
+        StartCoroutine(Dash());
     }
 
-    public void Attaking2() 
+    public void Attaking2()
     {
         anim.SetTrigger("Pena");
         for (int i = 0; i < 4; i++)
         {
-            GameObject temp = Instantiate(Pena, ThrowPoint.position,ThrowPoint.transform.rotation);
+            GameObject temp = Instantiate(Pena, ThrowPoint.position, ThrowPoint.transform.rotation);
         }
         states = States.Looking;
     }
 
-    public void Dead() 
-    { 
-    
+    public void Dead()
+    {
+
     }
 
     private IEnumerator Dash()
@@ -230,7 +223,7 @@ public class FlyingBirdboss : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             if (isAttacking && canMakeDamage)
             {
@@ -242,7 +235,7 @@ public class FlyingBirdboss : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             if (isAttacking && canMakeDamage)
             {
@@ -267,7 +260,7 @@ public class FlyingBirdboss : MonoBehaviour
             gameObject.transform.localScale = currentScale;
         }
 
-       facingRight = !facingRight;
+        facingRight = !facingRight;
     }
 
 }

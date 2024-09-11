@@ -1468,6 +1468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 0}
+  cam: {fileID: 0}
   speedParalax: 0.7
 --- !u!1001 &323400012
 PrefabInstance:
@@ -12387,6 +12388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 0}
+  cam: {fileID: 0}
   speedParalax: 0.8
 --- !u!1 &906941996
 GameObject:
@@ -13060,6 +13062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 0}
+  cam: {fileID: 0}
   speedParalax: 0.6
 --- !u!1 &1131449554
 GameObject:
@@ -13535,6 +13538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 0}
+  cam: {fileID: 0}
   speedParalax: 0
 --- !u!1 &1183003682
 GameObject:
@@ -15635,6 +15639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 0}
+  cam: {fileID: 0}
   speedParalax: 0.7
 --- !u!1 &1829891466
 GameObject:
@@ -16144,6 +16149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 0}
+  cam: {fileID: 0}
   speedParalax: 0
 --- !u!1 &2040491786
 GameObject:
@@ -16606,6 +16612,10 @@ PrefabInstance:
     - target: {fileID: 2433233470371995607, guid: 006001288e2d0af4ebcd9c5f8376d09e, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553975774138472405, guid: 006001288e2d0af4ebcd9c5f8376d09e, type: 3}
+      propertyPath: jumpForce
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8008984030584387144, guid: 006001288e2d0af4ebcd9c5f8376d09e, type: 3}
       propertyPath: m_Layer
