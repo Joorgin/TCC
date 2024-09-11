@@ -31,6 +31,7 @@ public class Onda : MonoBehaviour
         Physics2D.IgnoreLayerCollision(10, 7, true);
         Physics2D.IgnoreLayerCollision(10, 6, true);
         Physics2D.IgnoreLayerCollision(10, 11, true);
+        Physics2D.IgnoreLayerCollision(10, 3, true);
     }
 
     // Update is called once per frame
