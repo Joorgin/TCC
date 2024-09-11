@@ -1429,63 +1429,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897898305}
   m_CullTransparentMesh: 1
---- !u!1001 &898091237
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1135049959006584015, guid: 29f01532595fc7f4c8d3f3e624d85a45, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 30.929647
-      objectReference: {fileID: 0}
-    - target: {fileID: 1135049959006584015, guid: 29f01532595fc7f4c8d3f3e624d85a45, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.9605346
-      objectReference: {fileID: 0}
-    - target: {fileID: 1135049959006584015, guid: 29f01532595fc7f4c8d3f3e624d85a45, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.13633175
-      objectReference: {fileID: 0}
-    - target: {fileID: 1135049959006584015, guid: 29f01532595fc7f4c8d3f3e624d85a45, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1135049959006584015, guid: 29f01532595fc7f4c8d3f3e624d85a45, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1135049959006584015, guid: 29f01532595fc7f4c8d3f3e624d85a45, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1135049959006584015, guid: 29f01532595fc7f4c8d3f3e624d85a45, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1135049959006584015, guid: 29f01532595fc7f4c8d3f3e624d85a45, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1135049959006584015, guid: 29f01532595fc7f4c8d3f3e624d85a45, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1135049959006584015, guid: 29f01532595fc7f4c8d3f3e624d85a45, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8796749238498861309, guid: 29f01532595fc7f4c8d3f3e624d85a45, type: 3}
-      propertyPath: m_Name
-      value: GameManager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 29f01532595fc7f4c8d3f3e624d85a45, type: 3}
 --- !u!1 &903137240
 GameObject:
   m_ObjectHideFlags: 0
@@ -5704,6 +5647,7 @@ MonoBehaviour:
         name: "Nan\xE3"
         Icon: {fileID: 0}
       line: "N\xE3o se esque\xE7a que sempre estarei com vc."
+  Name: "M\xE3e de santo"
 --- !u!1 &1857979525
 GameObject:
   m_ObjectHideFlags: 0
@@ -12861,4 +12805,3 @@ SceneRoots:
   - {fileID: 1794762415}
   - {fileID: 590446045}
   - {fileID: 2219372982287177645}
-  - {fileID: 898091237}

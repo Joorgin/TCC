@@ -227,6 +227,8 @@ public class Sereia_Movement : MonoBehaviour
 
         facingRight = !facingRight;
 
+        RightSide = facingRight;
+
         Debug.Log("Facing Right: " + facingRight);
     }
 
