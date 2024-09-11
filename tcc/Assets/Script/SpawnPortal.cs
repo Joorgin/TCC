@@ -9,7 +9,7 @@ public class SpawnPortal : MonoBehaviour
     public GameObject Prefab;
     void Start()
     {
-        RandomIndex = Random.Range(0, SpawnPositions.Length);
+        RandomIndex = Random.Range(0, 4);
         Instantiate(Prefab, SpawnPositions[RandomIndex].transform.position, Quaternion.identity);
     }
 }
