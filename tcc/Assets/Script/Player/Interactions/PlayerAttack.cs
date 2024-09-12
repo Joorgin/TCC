@@ -170,7 +170,7 @@ public class PlayerAttack : MonoBehaviour
 
         foreach (Collider2D etd in enemiesToDamage2)
         {
-            if (etd.GetComponent<FlyingBirdboss>() != null) etd.GetComponent<BIrd_Boss_Health>().TakeDamage(Damage);
+            if (etd.GetComponent<BIrd_Boss_Health>() != null) etd.GetComponent<BIrd_Boss_Health>().TakeDamage(Damage);
 
             if (etd.GetComponent<Sereia_Movement>() != null) etd.GetComponent<Sereia_Health>().TakeDamage(Damage);
         }
