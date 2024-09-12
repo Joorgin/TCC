@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BIrd_Boss_Health : MonoBehaviour
+public class Sereia_Health : MonoBehaviour
 {
-    static List<BIrd_Boss_Health> m_List = new List<BIrd_Boss_Health>();
+    static List<Sereia_Health> m_List = new List<Sereia_Health>();
 
     public int Maxhealth;
     public float Currenthealth;
@@ -14,6 +14,9 @@ public class BIrd_Boss_Health : MonoBehaviour
     public GameObject Bracelete;
     public static bool isAlive;
     float timeToDie;
+
+    // Onde se encaixa o flashSprite
+    public FleashMaterial fleashMaterialScript;
 
     private void Awake()
     {
@@ -38,7 +41,7 @@ public class BIrd_Boss_Health : MonoBehaviour
 
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         if (timeToDie <= 0)
         {
@@ -50,6 +53,8 @@ public class BIrd_Boss_Health : MonoBehaviour
                 isAlive = false;
             }
             timeToDie = 0.5f;
+            DamagePopUp.Create(gameObject.transform.position, damage);
+            fleashMaterialScript.Flash();
         }
     }
 

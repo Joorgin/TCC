@@ -16,6 +16,7 @@ public class SceneChange : MonoBehaviour
     public bool isInMainScene;
     int RandomScene;
     public GameObject buttonInteraction;
+    public static bool HasdefeatedBoss;
     private void Start()
     {
         canCharge = false;
@@ -38,6 +39,7 @@ public class SceneChange : MonoBehaviour
             GameManager.MapsPassed++;
             if(SceneToChange == GameManager.LastMapName)
             {
+                HasdefeatedBoss = false;
                 if(RandomScene == 2)
                 {
                     RandomScene -= 1;
@@ -57,6 +59,7 @@ public class SceneChange : MonoBehaviour
                
             }else
             {
+                HasdefeatedBoss = false;
                 GameManager.LastMapName = SceneToChange;
                 SceneToChangeMusic = SceneToChange;
                 AudioManager.hasChangedscene = true;
@@ -86,7 +89,8 @@ public class SceneChange : MonoBehaviour
        
         if(CounterPercent >= 13)
         {
-           ContAnim();
+            anim.SetBool("End_Portal", true);
+            ContAnim();
         }
     }
 
@@ -111,9 +115,8 @@ public class SceneChange : MonoBehaviour
 
     public void ContAnim()
     {
-        if(isInRange && !BIrd_Boss_Health.isAlive && Input.GetKey(KeyCode.E) || isInMainScene)
+        if(isInRange && HasdefeatedBoss && Input.GetKey(KeyCode.E) || isInMainScene)
         {
-            anim.SetBool("End_Portal", true);   
             FadeScript.ShowUI();
             changeScene = true;
         }

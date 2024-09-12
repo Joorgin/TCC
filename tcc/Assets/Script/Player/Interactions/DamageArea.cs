@@ -20,16 +20,13 @@ public class DamageArea : MonoBehaviour
         foreach (Collider2D etd in enemiesToDamage)
         {
             //basic Enemy
-            if (etd.GetComponent<ENemyBasicMovement>() != null)
-            {
-                etd.GetComponent<EnemyHeatlh>().TakeDamage(Damage);
-            }
+            if (etd.GetComponent<ENemyBasicMovement>() != null) etd.GetComponent<EnemyHeatlh>().TakeDamage(Damage);
 
             //Explosive Enemy
-            if (etd.GetComponent<ExplosiveEnemyMovement>() != null)
-            {
-                etd.GetComponent<ExplosiveEnemyHealth>().TakeDamage(Damage);
-            }
+            if (etd.GetComponent<ExplosiveEnemyMovement>() != null) etd.GetComponent<ExplosiveEnemyHealth>().TakeDamage(Damage);
+
+            // Sereia Enemy
+            if(etd.GetComponent<Sereia_Health>() != null) etd.GetComponent<Sereia_Health>().TakeDamage(Damage); 
 
         }
     }

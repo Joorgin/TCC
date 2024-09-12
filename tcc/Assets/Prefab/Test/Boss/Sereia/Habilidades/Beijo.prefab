@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   plH: {fileID: 0}
-  damage: 10
+  damage: 2
 --- !u!60 &989392300014753943
 PolygonCollider2D:
   m_ObjectHideFlags: 0
