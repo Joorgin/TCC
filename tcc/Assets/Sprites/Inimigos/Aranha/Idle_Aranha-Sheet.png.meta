@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d6520c0032a9d454690fa97c814f9194
+guid: ca6596c8d152ec444b17f1d3c4f6ffc4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -94,7 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Server
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -107,10 +107,10 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -123,160 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Charm_effect-Sheet_0
+      name: Idle_Aranha-Sheet_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ecec45ee563eb04fafc520dcd7df848
-      internalID: -877512279
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 2
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b7d66ab4f239604d858146a2d14e315
-      internalID: -510760118
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 3
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f005a6f9fb23c94ca1187e3ba14f944
-      internalID: -643885318
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 4
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e739bbcb937e6d24892e6d3252fbeb10
-      internalID: 760033258
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 4
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2085bfa486eed1343b8ce87eb35d3746
-      internalID: 1105880478
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 2
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef1be6ad65b6e1d41bce9dce0e6f8700
-      internalID: 1415553837
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 98
-        y: 1
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c417d7e38d30252439d17478d4f21a40
-      internalID: 1625040822
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 114
+        x: 3
         y: 0
-        width: 13
-        height: 12
+        width: 57
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a55d658462d909e4dac004f9f602502c
-      internalID: -1991984102
+      spriteID: 8143694a7719866488a2d24093db8a2b
+      internalID: -1129925578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charm_effect-Sheet_8
+      name: Idle_Aranha-Sheet_1
       rect:
         serializedVersion: 2
-        x: 130
+        x: 67
         y: 0
-        width: 13
-        height: 12
+        width: 57
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,146 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a34da9648589ee34e918cf7e1068dfb0
-      internalID: -1548119027
+      spriteID: 9fa8be3984425944fa83b249b0c9461a
+      internalID: -221371803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charm_effect-Sheet_9
+      name: Idle_Aranha-Sheet_2
       rect:
         serializedVersion: 2
-        x: 146
-        y: 2
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c3ed7c949b88d6543b2796d1a9d34061
-      internalID: -1514370688
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 162
-        y: 3
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6767e05e7425fc947bfa6f29d8ec937f
-      internalID: 609667239
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 178
-        y: 4
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bfe6c3f0cfbda3346b8847b1e4d1317b
-      internalID: -459509933
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 194
-        y: 4
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7ee7c6fe286d004089d0d9fad13f71b
-      internalID: -1678151453
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_13
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 2
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0053bede09e5fc8409a956e89854b489
-      internalID: 795976777
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_14
-      rect:
-        serializedVersion: 2
-        x: 226
-        y: 1
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f6674da62f4adb45b9872ef764f1bac
-      internalID: 1127791246
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_15
-      rect:
-        serializedVersion: 2
-        x: 242
+        x: 131
         y: 0
-        width: 13
-        height: 12
+        width: 57
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -452,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6614e461b828dfd48bec230b78d92cf9
-      internalID: 538165634
+      spriteID: bc02965cf00c50b4b9a3fc87e0dffee6
+      internalID: -244406511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charm_effect-Sheet_16
+      name: Idle_Aranha-Sheet_3
       rect:
         serializedVersion: 2
-        x: 258
+        x: 195
         y: 0
-        width: 13
-        height: 12
+        width: 57
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -473,8 +200,176 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d0ac9befe4444f458a8528b236e5c69
-      internalID: -1598541077
+      spriteID: 75840860a5f61c6458366257ea42b3b1
+      internalID: 178399286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Aranha-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 0
+        width: 57
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7878dac567563114485cfe2fcebffbd9
+      internalID: 794382725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Aranha-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 0
+        width: 57
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb5d0e032a0859543b67a31ed2cf9a14
+      internalID: 246378031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Aranha-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 0
+        width: 57
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba19593d19d5a34489f4b3c7bf90f09
+      internalID: -743911651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Aranha-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 0
+        width: 57
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9595235f01f3ddc43bf1f545f2dc9923
+      internalID: -1094337899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Aranha-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 0
+        width: 57
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f3ef11d5934054dbe0515ad007ba0d
+      internalID: -769460460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Aranha-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 0
+        width: 57
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 457e61e04f8d69448b6f8433de781275
+      internalID: -128971451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Aranha-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 0
+        width: 57
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 130aa342b56f1e446ae03b1cb28397f5
+      internalID: -1646517757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Aranha-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 0
+        width: 57
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20bb927f450233a4d91846278c450e1a
+      internalID: 727672871
       vertices: []
       indices: 
       edges: []
@@ -490,23 +385,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Charm_effect-Sheet_0: -877512279
-      Charm_effect-Sheet_1: -510760118
-      Charm_effect-Sheet_10: 609667239
-      Charm_effect-Sheet_11: -459509933
-      Charm_effect-Sheet_12: -1678151453
-      Charm_effect-Sheet_13: 795976777
-      Charm_effect-Sheet_14: 1127791246
-      Charm_effect-Sheet_15: 538165634
-      Charm_effect-Sheet_16: -1598541077
-      Charm_effect-Sheet_2: -643885318
-      Charm_effect-Sheet_3: 760033258
-      Charm_effect-Sheet_4: 1105880478
-      Charm_effect-Sheet_5: 1415553837
-      Charm_effect-Sheet_6: 1625040822
-      Charm_effect-Sheet_7: -1991984102
-      Charm_effect-Sheet_8: -1548119027
-      Charm_effect-Sheet_9: -1514370688
+      Idle_Aranha-Sheet_0: -1129925578
+      Idle_Aranha-Sheet_1: -221371803
+      Idle_Aranha-Sheet_10: -1646517757
+      Idle_Aranha-Sheet_11: 727672871
+      Idle_Aranha-Sheet_2: -244406511
+      Idle_Aranha-Sheet_3: 178399286
+      Idle_Aranha-Sheet_4: 794382725
+      Idle_Aranha-Sheet_5: 246378031
+      Idle_Aranha-Sheet_6: -743911651
+      Idle_Aranha-Sheet_7: -1094337899
+      Idle_Aranha-Sheet_8: -769460460
+      Idle_Aranha-Sheet_9: -128971451
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
