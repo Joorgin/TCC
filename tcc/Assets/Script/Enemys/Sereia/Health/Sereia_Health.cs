@@ -67,6 +67,7 @@ public class Sereia_Health : MonoBehaviour
             Instantiate(Bracelete, gameObject.transform.position, Quaternion.identity);
         }
         //dá find e tira da lista
+        SceneChange.HasdefeatedBoss = true;
         Destroy(gameObject);
     }
 }
