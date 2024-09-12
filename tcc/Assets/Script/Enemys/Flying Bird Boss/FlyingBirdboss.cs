@@ -1,6 +1,8 @@
+using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class FlyingBirdboss : MonoBehaviour
 {
@@ -20,9 +22,6 @@ public class FlyingBirdboss : MonoBehaviour
     public GameObject Pena;
     public Transform ThrowPoint;
 
-    public float dashDistance = 5f; // The distance the object will dash
-    public float dashDuration = 0.2f; // The duration of the dash
-    public float dashCooldown = 1f; // The cooldown between dashes
     private bool canDash = true; // Whether the object can dash
 
     public PlayerHealth playerHealth;
@@ -31,6 +30,7 @@ public class FlyingBirdboss : MonoBehaviour
     bool canMakeDamage = true;
     bool MakeDash;
     public Animator anim;
+    float Side = 1;
 
     public enum States
     {
@@ -47,7 +47,7 @@ public class FlyingBirdboss : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-        states = States.Appering;
+        states = States.Looking;
     }
 
     private void Update()
@@ -123,14 +123,14 @@ public class FlyingBirdboss : MonoBehaviour
 
     public void Looking()
     {
-        Vector3 directionToTarget = player.transform.position - transform.position;
+        Vector3 vectorToTarget = player.transform.position - transform.position;
 
-        // Rotate the object to look at the target
-
-        transform.right = directionToTarget.normalized;
-
-        ThrowPoint.transform.right = directionToTarget.normalized;
-
+        // Get Angle in Radians
+        float AngleRad = Mathf.Atan2(player.transform.position.y - gameObject.transform.position.y, player.transform.position.x - gameObject.transform.position.x);
+        // Get Angle in Degrees
+        float AngleDeg = (180 / Mathf.PI) * AngleRad;
+        // Rotate Object
+        this.transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
 
         if (transform.position.x > player.transform.position.x && facingRight)
         {
@@ -145,7 +145,7 @@ public class FlyingBirdboss : MonoBehaviour
 
     public void Attaking1()
     {
-        StartCoroutine(Dash());
+        StartCoroutine(Dash(Side));
     }
 
     public void Attaking2()
@@ -163,62 +163,29 @@ public class FlyingBirdboss : MonoBehaviour
 
     }
 
-    private IEnumerator Dash()
+    private IEnumerator Dash(float direction)
     {
         anim.SetBool("Rasante", true);
         canDash = false;
         isAttacking = true;
-
-        // Get the direction the object is facing
-        Vector2 dashDirection = transform.right;
-
-        // Calculate the dash destination
-        Vector2 dashDestination = (Vector2)transform.position + dashDirection * dashDistance;
-
-        float elapsedTime = 0f;
-        Vector2 initialPosition = transform.position;
-
-        // Smoothly move towards the dash destination over dashDuration
-        while (elapsedTime < dashDuration)
-        {
-            transform.position = Vector2.Lerp(initialPosition, dashDestination, elapsedTime / dashDuration);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        // Ensure the object reaches exactly to the dash destination
-        transform.position = dashDestination;
-
+        rb.velocity = new Vector2(transform.localScale.x * (dashPower * Side), 0f);
         yield return new WaitForSeconds(dashingTime);
+        rb.velocity = new Vector2(0, 0);
+        StartCoroutine(Dash2());
+        
+    }
 
-        Vector2 dashDirection2 = transform.right;
-
-        // Calculate the dash destination
-        Vector2 dashDestination2 = (Vector2)transform.position + dashDirection2 * (dashDistance * 2);
-
-        Debug.Log("DASHING BIRD");
-
-        float elapsedTime2 = 0f;
-        Vector2 initialPosition2 = transform.position;
-
-        // Smoothly move towards the dash destination over dashDuration
-        while (elapsedTime2 < dashDuration)
-        {
-            transform.position = Vector2.Lerp(initialPosition2, dashDestination2, elapsedTime2 / dashDuration);
-            elapsedTime2 += Time.deltaTime;
-            yield return null;
-        }
-
-        // Ensure the object reaches exactly to the dash destination
-        transform.position = dashDestination2;
-
+    IEnumerator Dash2()
+    {
+        rb.velocity = new Vector2(transform.localScale.x * (dashPower * Side), 0f);
         yield return new WaitForSeconds(dashingTime);
-
         canDash = true;
         isAttacking = false;
         canMakeDamage = true;
         states = States.Looking;
         anim.SetBool("Rasante", false);
+        yield return new WaitForSeconds(dashingTime + 1);
+        rb.velocity = new Vector2(0, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -252,11 +219,13 @@ public class FlyingBirdboss : MonoBehaviour
         if (transform.position.x > player.transform.position.x && facingRight)
         {
             currentScale.y = -1;
+            Side = -1;
             gameObject.transform.localScale = currentScale;
         }
         else
         {
             currentScale.y = 1;
+            Side = 1;
             gameObject.transform.localScale = currentScale;
         }
 

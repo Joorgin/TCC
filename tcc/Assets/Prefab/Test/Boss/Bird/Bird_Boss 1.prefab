@@ -141,7 +141,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135544019551652927}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.8031, y: 2.8031, z: 2.8031}
   m_ConstrainProportionsScale: 0
@@ -422,14 +422,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6012013238397519176}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.739866, w: 0.6727542}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 9.2317, y: 7.9726996, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7187669202080496775}
   m_Father: {fileID: 5908771393443068032}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 95.44}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &1229166251129732189
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -621,7 +621,7 @@ Transform:
   m_GameObject: {fileID: 8482043281322009497}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -93.31076, y: 6.9246383, z: 0}
+  m_LocalPosition: {x: -128.20686, y: 2.0084686, z: -10.181483}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -645,14 +645,11 @@ MonoBehaviour:
   timeToAttack: 0
   speed: 5
   rb: {fileID: 7403540017452265924}
-  dashPower: 10
+  dashPower: 50
   dashingTime: 0.5
   flipThresholdAngle: 90
   Pena: {fileID: 5888800189523828868, guid: 19110a1e444637c4e868e2a832a55a34, type: 3}
   ThrowPoint: {fileID: 8074549815994047180}
-  dashDistance: 10
-  dashDuration: 0.5
-  dashCooldown: 1
   playerHealth: {fileID: 0}
   anim: {fileID: 8999000988487961565}
   states: 0
@@ -744,26 +741,28 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 6.201027, y: 1.9585905}
-      - {x: 5.3295135, y: 3.3747907}
-      - {x: 2.3934479, y: 2.1706448}
-      - {x: 0.75180817, y: 7.2717013}
-      - {x: -0.369812, y: 7.2089334}
+    - - {x: 5.2268147, y: 1.2422589}
+      - {x: 3.8395417, y: 1.8848233}
+      - {x: 2.8519008, y: 4.0904217}
+      - {x: 1.2409335, y: 5.911371}
+      - {x: 1.9265941, y: 7.2717013}
+      - {x: 0.74773264, y: 7.3854694}
+      - {x: -0.28385156, y: 6.6931787}
       - {x: -3.384903, y: 5.683502}
-      - {x: -6.070137, y: 1.3744354}
-      - {x: -6.0766754, y: 0.15813589}
+      - {x: -2.532249, y: 2.5130618}
+      - {x: -6.645991, y: 1.3780987}
       - {x: -6.286728, y: -1.879314}
-      - {x: -1.7136984, y: -1.1456544}
-      - {x: -2.5704741, y: -3.8945615}
-      - {x: -4.56472, y: -6.317298}
-      - {x: -4.02417, y: -7.1019464}
-      - {x: -3.0503144, y: -7.597132}
-      - {x: -0.9918823, y: -6.114322}
-      - {x: 0.59703827, y: -4.976693}
-      - {x: 3.402832, y: -6.7683105}
-      - {x: 3.3201218, y: -4.8464956}
-      - {x: 4.0284653, y: -4.64111}
-      - {x: 4.0958405, y: -2.691893}
-      - {x: 4.904358, y: -1.9835272}
-      - {x: 7.4624624, y: -1.274992}
+      - {x: -6.447655, y: -2.7601187}
+      - {x: -5.4436846, y: -4.25029}
+      - {x: -4.8930874, y: -5.0859213}
+      - {x: -3.8599865, y: -5.5148416}
+      - {x: -2.9408584, y: -6.5572996}
+      - {x: -0.8276986, y: -7.290973}
+      - {x: 1.5000479, y: -7.1110845}
+      - {x: 0.6117127, y: -1.54181}
+      - {x: 2.0340173, y: -2.7394786}
+      - {x: 3.3170035, y: -2.561452}
+      - {x: 5.5187645, y: -6.687025}
+      - {x: 7.7228413, y: -4.172636}
+      - {x: 5.055584, y: 0.21498251}
   m_UseDelaunayMesh: 0
