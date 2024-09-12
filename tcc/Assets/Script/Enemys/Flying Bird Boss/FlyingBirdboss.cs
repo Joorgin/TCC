@@ -151,7 +151,7 @@ public class FlyingBirdboss : MonoBehaviour
     public void Attaking2()
     {
         anim.SetTrigger("Pena");
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 6; i++)
         {
             GameObject temp = Instantiate(Pena, ThrowPoint.position, ThrowPoint.transform.rotation);
         }
@@ -184,7 +184,7 @@ public class FlyingBirdboss : MonoBehaviour
         canMakeDamage = true;
         states = States.Looking;
         anim.SetBool("Rasante", false);
-        yield return new WaitForSeconds(dashingTime + 1);
+        yield return new WaitForSeconds(dashingTime + 0.5f);
         rb.velocity = new Vector2(0, 0);
     }
 
