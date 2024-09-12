@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d6520c0032a9d454690fa97c814f9194
+guid: e2ae5a76ba806584cbbc5cc318950a63
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -94,7 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Server
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -107,10 +107,10 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -123,160 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Charm_effect-Sheet_0
+      name: Aranha_walking-Sheet_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ecec45ee563eb04fafc520dcd7df848
-      internalID: -877512279
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 2
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b7d66ab4f239604d858146a2d14e315
-      internalID: -510760118
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 3
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f005a6f9fb23c94ca1187e3ba14f944
-      internalID: -643885318
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 4
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e739bbcb937e6d24892e6d3252fbeb10
-      internalID: 760033258
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 4
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2085bfa486eed1343b8ce87eb35d3746
-      internalID: 1105880478
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 2
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef1be6ad65b6e1d41bce9dce0e6f8700
-      internalID: 1415553837
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 98
-        y: 1
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c417d7e38d30252439d17478d4f21a40
-      internalID: 1625040822
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 114
+        x: 0
         y: 0
-        width: 13
-        height: 12
+        width: 60
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a55d658462d909e4dac004f9f602502c
-      internalID: -1991984102
+      spriteID: 112e95697440a4f489a50202c6942565
+      internalID: 774617646
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charm_effect-Sheet_8
+      name: Aranha_walking-Sheet_1
       rect:
         serializedVersion: 2
-        x: 130
+        x: 64
         y: 0
-        width: 13
-        height: 12
+        width: 60
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,146 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a34da9648589ee34e918cf7e1068dfb0
-      internalID: -1548119027
+      spriteID: 277e8a5150cff5d4ca04a985f43fc673
+      internalID: -2031732692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charm_effect-Sheet_9
+      name: Aranha_walking-Sheet_2
       rect:
         serializedVersion: 2
-        x: 146
-        y: 2
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c3ed7c949b88d6543b2796d1a9d34061
-      internalID: -1514370688
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 162
-        y: 3
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6767e05e7425fc947bfa6f29d8ec937f
-      internalID: 609667239
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 178
-        y: 4
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bfe6c3f0cfbda3346b8847b1e4d1317b
-      internalID: -459509933
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 194
-        y: 4
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7ee7c6fe286d004089d0d9fad13f71b
-      internalID: -1678151453
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_13
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 2
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0053bede09e5fc8409a956e89854b489
-      internalID: 795976777
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_14
-      rect:
-        serializedVersion: 2
-        x: 226
-        y: 1
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f6674da62f4adb45b9872ef764f1bac
-      internalID: 1127791246
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charm_effect-Sheet_15
-      rect:
-        serializedVersion: 2
-        x: 242
+        x: 129
         y: 0
-        width: 13
-        height: 12
+        width: 60
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -452,20 +179,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6614e461b828dfd48bec230b78d92cf9
-      internalID: 538165634
+      spriteID: 9218d44889267c747b4c8d085dc28412
+      internalID: 189786067
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charm_effect-Sheet_16
+      name: Aranha_walking-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 0
+        width: 60
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f421d4ca826d4a64e8a8376cedcdfb56
+      internalID: -1235950989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aranha_walking-Sheet_4
       rect:
         serializedVersion: 2
         x: 258
         y: 0
-        width: 13
-        height: 12
+        width: 60
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -473,8 +221,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d0ac9befe4444f458a8528b236e5c69
-      internalID: -1598541077
+      spriteID: 01eac81c930f06346af68c47a6ffa206
+      internalID: -1465317443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aranha_walking-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 0
+        width: 60
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 946d1a1d8f64d874cb319519f9f672a4
+      internalID: 2079514446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aranha_walking-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 0
+        width: 60
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a0b4d6ae05573f408ac5f50eea42c97
+      internalID: -1986559243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aranha_walking-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 0
+        width: 60
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d71284417f906744d988633ed661a5b1
+      internalID: -149968222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aranha_walking-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 0
+        width: 60
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27863a2b106f46845a7ecd3cc6bfa551
+      internalID: 501265422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aranha_walking-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 0
+        width: 60
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64b9061c68f580e44b54f9c46fa1ee03
+      internalID: -1303659302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aranha_walking-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 0
+        width: 60
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7868bb835bcfbd94aa0c737828e6db3e
+      internalID: -523135730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aranha_walking-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 0
+        width: 60
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee96776346c81b49bab4e2e6e426ff7
+      internalID: -1760203933
       vertices: []
       indices: 
       edges: []
@@ -490,23 +385,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Charm_effect-Sheet_0: -877512279
-      Charm_effect-Sheet_1: -510760118
-      Charm_effect-Sheet_10: 609667239
-      Charm_effect-Sheet_11: -459509933
-      Charm_effect-Sheet_12: -1678151453
-      Charm_effect-Sheet_13: 795976777
-      Charm_effect-Sheet_14: 1127791246
-      Charm_effect-Sheet_15: 538165634
-      Charm_effect-Sheet_16: -1598541077
-      Charm_effect-Sheet_2: -643885318
-      Charm_effect-Sheet_3: 760033258
-      Charm_effect-Sheet_4: 1105880478
-      Charm_effect-Sheet_5: 1415553837
-      Charm_effect-Sheet_6: 1625040822
-      Charm_effect-Sheet_7: -1991984102
-      Charm_effect-Sheet_8: -1548119027
-      Charm_effect-Sheet_9: -1514370688
+      Aranha_walking-Sheet_0: 774617646
+      Aranha_walking-Sheet_1: -2031732692
+      Aranha_walking-Sheet_10: -523135730
+      Aranha_walking-Sheet_11: -1760203933
+      Aranha_walking-Sheet_2: 189786067
+      Aranha_walking-Sheet_3: -1235950989
+      Aranha_walking-Sheet_4: -1465317443
+      Aranha_walking-Sheet_5: 2079514446
+      Aranha_walking-Sheet_6: -1986559243
+      Aranha_walking-Sheet_7: -149968222
+      Aranha_walking-Sheet_8: 501265422
+      Aranha_walking-Sheet_9: -1303659302
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
