@@ -1468,7 +1468,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 0}
-  cam: {fileID: 0}
   speedParalax: 0.7
 --- !u!1001 &323400012
 PrefabInstance:
@@ -12388,7 +12387,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 0}
-  cam: {fileID: 0}
   speedParalax: 0.8
 --- !u!1 &906941996
 GameObject:
@@ -13062,7 +13060,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 0}
-  cam: {fileID: 0}
   speedParalax: 0.6
 --- !u!1 &1131449554
 GameObject:
@@ -13538,7 +13535,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 0}
-  cam: {fileID: 0}
   speedParalax: 0
 --- !u!1 &1183003682
 GameObject:
@@ -14215,7 +14211,7 @@ PrefabInstance:
     - target: {fileID: 8429073270123524718, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
       propertyPath: Boss.Array.data[1]
       value: 
-      objectReference: {fileID: 8482043281322009497, guid: 2f3d2e6cf996e7f4fabaef6cd3130d4f, type: 3}
+      objectReference: {fileID: 6318247904167069522, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15704,7 +15700,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 0}
-  cam: {fileID: 0}
   speedParalax: 0.7
 --- !u!1 &1829891466
 GameObject:
@@ -16214,7 +16209,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 0}
-  cam: {fileID: 0}
   speedParalax: 0
 --- !u!1 &2040491786
 GameObject:

@@ -65,6 +65,7 @@ public class ItemPickable : MonoBehaviour
     // Adiciona o item no inventário e adiciona seu efeito
     public void AddThing()
     {
+
         if (!inventory) return;
 
         if (inventory.InventorySystem.AddToInventory(ItemData, 1))
