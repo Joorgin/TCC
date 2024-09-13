@@ -55,6 +55,7 @@ public class InventorySystem
     public bool ContainsItem(Itens ItemToAdd, out List<InventorySlot> invSlot)
     {
         invSlot = InventorySlots.Where(i => i.itemData == ItemToAdd).ToList();
+        Debug.Log(invSlot.Count);
         return invSlot == null ? false : true;
     }
 
