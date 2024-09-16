@@ -631,6 +631,7 @@ MonoBehaviour:
   DeathPanel: {fileID: 5590209255537700534}
   TimetoRegenarateHealth: 0
   TimeToTakeDamage: 0
+  anim: {fileID: 465859047248884024}
 --- !u!114 &5525976261446797557
 MonoBehaviour:
   m_ObjectHideFlags: 0
