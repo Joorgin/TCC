@@ -73,6 +73,8 @@ public class PlayerHealth : MonoBehaviour
 
     public static bool setMaxHealth;
 
+    [Space]
+    public Animator anim;
     
 
     void Start()
@@ -176,6 +178,8 @@ public class PlayerHealth : MonoBehaviour
 
             if (canTakeaDamage && !hasPatuaUP)
             {
+                anim.SetBool("Attack1", false);
+                anim.SetBool("Attack2", false);
                 if (hasArmorUp)
                 {
                     int damageReflet = (damage / 100) * percentOfProtection;

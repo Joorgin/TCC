@@ -164,8 +164,6 @@ public class PlayerMovement : MonoBehaviour
                 Downdash.Damage();
             }
 
-            if (!isAttacking)
-            {
                 if (isDashing) return;
 
                 if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))) Jump();
@@ -187,7 +185,6 @@ public class PlayerMovement : MonoBehaviour
                     verticalMove = -1;
                     anim.SetInteger("VerticalMove", verticalMove);
                 }
-            }
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
