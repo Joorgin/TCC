@@ -27,8 +27,8 @@ public class FlyingBirdboss : MonoBehaviour
     public PlayerHealth playerHealth;
 
     bool isAttacking;
-    bool canMakeDamage = true;
-    bool MakeDash;
+    public bool canMakeDamage = true;
+    public bool MakeDash;
     public Animator anim;
     float Side = 1;
 
@@ -86,6 +86,7 @@ public class FlyingBirdboss : MonoBehaviour
                 {
                     states = States.Attack1;
                     MakeDash = true;
+                    canMakeDamage = true;
                 }
                 else if (MakeDash)
                 {
@@ -145,7 +146,7 @@ public class FlyingBirdboss : MonoBehaviour
 
     public void Attaking1()
     {
-        StartCoroutine(Dash(Side));
+        StartCoroutine(PrepareDash());
     }
 
     public void Attaking2()
@@ -163,8 +164,17 @@ public class FlyingBirdboss : MonoBehaviour
 
     }
 
+
+    private IEnumerator PrepareDash()
+    {
+        anim.SetBool("Preapar_Rasante", true);
+        yield return new WaitForSeconds(2f);
+        anim.SetBool("Preapar_Rasante", false);
+        StartCoroutine(Dash(Side));
+    }
     private IEnumerator Dash(float direction)
     {
+        Debug.Log("IsDAsingYet");
         anim.SetBool("Rasante", true);
         canDash = false;
         isAttacking = true;
@@ -172,7 +182,6 @@ public class FlyingBirdboss : MonoBehaviour
         yield return new WaitForSeconds(dashingTime);
         rb.velocity = new Vector2(0, 0);
         StartCoroutine(Dash2());
-        
     }
 
     IEnumerator Dash2()
@@ -181,11 +190,11 @@ public class FlyingBirdboss : MonoBehaviour
         yield return new WaitForSeconds(dashingTime);
         canDash = true;
         isAttacking = false;
-        canMakeDamage = true;
-        states = States.Looking;
         anim.SetBool("Rasante", false);
         yield return new WaitForSeconds(dashingTime + 0.5f);
         rb.velocity = new Vector2(0, 0);
+        states = States.Looking;
+        canMakeDamage = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
