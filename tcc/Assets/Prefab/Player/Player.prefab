@@ -563,6 +563,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  groundLayer2:
+    serializedVersion: 2
+    m_Bits: 32768
   groundCheckRadius: 0.1
   KBForce: 6
   KBCounter: 0
@@ -832,7 +835,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 148110851201987522}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 98be36ad80a81eb47bad575167a3ecdc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
