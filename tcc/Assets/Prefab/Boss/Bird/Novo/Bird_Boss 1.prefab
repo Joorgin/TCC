@@ -450,7 +450,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -651,6 +651,8 @@ MonoBehaviour:
   Pena: {fileID: 5888800189523828868, guid: 19110a1e444637c4e868e2a832a55a34, type: 3}
   ThrowPoint: {fileID: 8074549815994047180}
   playerHealth: {fileID: 0}
+  canMakeDamage: 1
+  MakeDash: 0
   anim: {fileID: 8999000988487961565}
   states: 0
 --- !u!50 &7403540017452265924
