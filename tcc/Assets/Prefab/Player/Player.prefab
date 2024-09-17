@@ -761,7 +761,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b408075b013f94e9f811f4513f1f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCollider: {fileID: 1806683180404882385}
+  playerCollider: {fileID: 7330042899597215213}
+  playerCollider2: {fileID: 1806683180404882385}
 --- !u!114 &7558916736182006413
 MonoBehaviour:
   m_ObjectHideFlags: 0
