@@ -40,21 +40,21 @@ public class ItemPickable : MonoBehaviour
             descricao.text = Description;
             Icon.sprite = IconReference;
         }
-
+         
         if (Input.GetKeyDown(KeyCode.E) && isInRange) AddThing();
     }
     // Verifica se o player entra na range do item
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("InRange");
         if (collision.CompareTag("Player")) isInRange = true;
+        Debug.Log("InRange : " + isInRange);
         inventory = collision.transform.GetComponent<InventoryHolder>();
     }
     // Verifica se o player se mantem na range do item
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("InRange IN Stay"); 
         if (collision.CompareTag("Player")) isInRange = true;
+        Debug.Log("InRange IN Stay: " + isInRange);
         inventory = collision.transform.GetComponent<InventoryHolder>();
     }
     // Verifica se o player saiu da range do item
@@ -65,10 +65,12 @@ public class ItemPickable : MonoBehaviour
     // Adiciona o item no inventário e adiciona seu efeito
     public void AddThing()
     {
+        
         if (!inventory) return;
 
         if (inventory.InventorySystem.AddToInventory(ItemData, 1))
         {
+            Debug.Log("ADD NOW");
             switch (ItemID)
             {
                 case 0:
@@ -78,7 +80,7 @@ public class ItemPickable : MonoBehaviour
                     PlayerHealth.HealthRegen += 2;
                     break;
                 case 2:
-                    if(!PlayerHealth.canShield) PlayerHealth.canShield = true;
+                    if (!PlayerHealth.canShield) PlayerHealth.canShield = true;
                     if (PlayerHealth.canShield) PlayerHealth.TimeToShieldRemake -= 2;
                     break;
                 case 3:
