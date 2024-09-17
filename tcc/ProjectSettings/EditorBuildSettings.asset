@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Mapas/Floresta.unity
     guid: 818031311a67d194597ef10c676d1b51
   - enabled: 1
-    path: Assets/Scenes/Mapas/Mapa 3.unity
+    path: Assets/Scenes/Mapas/Praia 2.unity
     guid: 745ed552b1e5a8947959b445b7819c3c
   - enabled: 1
     path: Assets/Scenes/Mapas/Mapa 4.unity

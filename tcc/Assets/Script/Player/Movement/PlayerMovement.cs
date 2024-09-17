@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float jumpForce = 10f;
     public Transform groundCheck;
-    public LayerMask groundLayer;
+    public LayerMask groundLayer, groundLayer2;
     public float groundCheckRadius = 0.1f;
 
     // Tudo sobre o dash do Player
