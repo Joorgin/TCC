@@ -40,7 +40,7 @@ public class InventorySlot_UI : MonoBehaviour
             // Check each hit to see if it's a UI element
             foreach (RaycastResult result in raycastResults)
             {
-                if (result.gameObject.GetComponent<Image>() != null)
+                if (result.gameObject.GetComponent<Image>() != null && UIControllerPlayer.SetInventoryOut)
                 {
                     gameObjectUnderMouse = result.gameObject;
                     Debug.Log(gameObjectUnderMouse);

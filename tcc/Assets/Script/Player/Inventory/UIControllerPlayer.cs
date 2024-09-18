@@ -6,8 +6,8 @@ public class UIControllerPlayer : MonoBehaviour
 {
     public GameObject inventory;
     public Animator anim;
-    bool SetInventoryOut;
-    
+    public static bool SetInventoryOut;
+
     void Start()
     {
         anim.SetBool("Out", false);
@@ -16,9 +16,10 @@ public class UIControllerPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Tab)) SetInventoryOut = !SetInventoryOut;
+        if (Input.GetKey(KeyCode.Tab)) SetInventoryOut = true;
+        else SetInventoryOut = false;
 
-        if(SetInventoryOut) anim.SetBool("Out", true);
-        else anim.SetBool("Out", false);
+        if (SetInventoryOut) anim.SetBool("Out", false);
+        else anim.SetBool("Out", true);
     }
 }
