@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 4
   DisplayName: Espelho
-  Description: Almenta a defesa do player em 2%
+  Description: Aumenta a defesa do player em 2%
   Icon: {fileID: 598838708, guid: 708f01e6428af274386a1e832a5cdec8, type: 3}
   MaxStackSise: 99
