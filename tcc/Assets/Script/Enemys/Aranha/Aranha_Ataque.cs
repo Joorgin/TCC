@@ -19,8 +19,14 @@ public class Aranha_Ataque : MonoBehaviour
         if (Vector2.Distance(transform.position, ENemyBasicMovement.PlayerTransform.position) < 1f && canAttack)
         {
             playerHealth.TakeDamage(damage); 
-            canAttack = false; 
-            playerHealth.poisoned = true;
+            canAttack = false;
+            if (!playerHealth.hasbeenPoisoned)
+            {
+                playerHealth.poisoned = true;
+                playerHealth.hasbeenPoisoned = true;
+            }
+            if (playerHealth.hasbeenPoisoned) playerHealth.HitsPoisoned += 1;
+            
         }
 
         if (Vector2.Distance(transform.position, ENemyBasicMovement.PlayerTransform.position) > 1f) canAttack = false;

@@ -79,6 +79,8 @@ public class PlayerHealth : MonoBehaviour
     [Space]
     public float timeOfPoison;
     public bool poisoned;
+    public bool hasbeenPoisoned;
+    public int HitsPoisoned;
     
 
     void Start()
@@ -175,19 +177,45 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator Poisoned()
     {
+        int originalhitpoisoned = HitsPoisoned;
+        int damage = 2;
         poisoned = false;
-        TakeDamageFromPoison(5);
+        TakeDamageFromPoison(damage);
+
         yield return new WaitForSeconds(timeOfPoison);
-        TakeDamageFromPoison(5);
+
+        if (HitsPoisoned > originalhitpoisoned)
+        {
+            damage += 3;
+            originalhitpoisoned = HitsPoisoned;
+        }
+        TakeDamageFromPoison(damage);
+
         yield return new WaitForSeconds(timeOfPoison);
-        TakeDamageFromPoison(5);
+
+        if (HitsPoisoned > originalhitpoisoned)
+        {
+            damage += 3;
+            originalhitpoisoned = HitsPoisoned;
+        }
+        TakeDamageFromPoison(damage);
+
         yield return new WaitForSeconds(timeOfPoison);
-        TakeDamageFromPoison(5);
+
+        if (HitsPoisoned > originalhitpoisoned)
+        {
+            damage += 3;
+            originalhitpoisoned = HitsPoisoned;
+        }
+        TakeDamageFromPoison(damage);
+        damage = 2;
+        HitsPoisoned = 0;
+        hasbeenPoisoned = false;
     }
 
     public void TakeDamageFromPoison(int damage)
     {
-        Debug.Log("POsion");
+        Debug.Log("POsion : " + damage);
         Currenthealth -= damage;
         healthUI.SetHealth(Currenthealth);
         canTakeaDamage = false;
