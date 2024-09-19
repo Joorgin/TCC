@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Aranha_Ataque : MonoBehaviour
+{
+    bool canAttack;
+    public int damage;
+    public PlayerHealth playerHealth;
+
+    void Start()
+    {
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Vector2.Distance(transform.position, ENemyBasicMovement.PlayerTransform.position) < 1f && canAttack)
+        {
+            playerHealth.TakeDamage(damage); 
+            canAttack = false; 
+            playerHealth.poisoned = true;
+        }
+
+        if (Vector2.Distance(transform.position, ENemyBasicMovement.PlayerTransform.position) > 1f) canAttack = false;
+    }
+
+
+
+    public void SetAttackTrue()
+    {
+        canAttack = true;
+    }
+}

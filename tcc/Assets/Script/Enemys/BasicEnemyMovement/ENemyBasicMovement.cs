@@ -7,7 +7,7 @@ public class ENemyBasicMovement : MonoBehaviour
 {
     public float movementSpeed;
 
-    public Transform PlayerTransform;
+    public static Transform PlayerTransform;
     public bool isChansing;
     public float chaseDistance;
     public Animator anim;
@@ -28,10 +28,13 @@ public class ENemyBasicMovement : MonoBehaviour
     public LayerMask groundLayer;
     public float groundCheckRadius = 0.1f;
 
+    [Space]
+    public bool canJump;
+
     private void Start()
     {
         PlayerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        Physics2D.IgnoreLayerCollision(6, 6, true);
+        Physics2D.IgnoreLayerCollision(6, 7, true);
     }
 
     private void FixedUpdate()
@@ -59,14 +62,11 @@ public class ENemyBasicMovement : MonoBehaviour
 
         if (!isTrapped && PlayerHealth.isAlive && isChansing)
         {
+            if(canJump) isgrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-            isgrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
             if (isgrounded) hasJumped = false;
-            Debug.Log("GroundCheck: " + isgrounded);
-            if (!isgrounded && !hasJumped)
-            {
-                Jump();
-            }
+            if (!isgrounded && !hasJumped && canJump) Jump();
+
             if (KBCounter <= 0)
             {
                 if (Vector2.Distance(transform.position, PlayerTransform.position) < 1f)

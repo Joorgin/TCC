@@ -75,6 +75,10 @@ public class PlayerHealth : MonoBehaviour
 
     [Space]
     public Animator anim;
+
+    [Space]
+    public float timeOfPoison;
+    public bool poisoned;
     
 
     void Start()
@@ -166,6 +170,28 @@ public class PlayerHealth : MonoBehaviour
             shackCamera = false;
         }
 
+        if (poisoned) StartCoroutine(Poisoned());
+    }
+
+    IEnumerator Poisoned()
+    {
+        poisoned = false;
+        TakeDamageFromPoison(5);
+        yield return new WaitForSeconds(timeOfPoison);
+        TakeDamageFromPoison(5);
+        yield return new WaitForSeconds(timeOfPoison);
+        TakeDamageFromPoison(5);
+        yield return new WaitForSeconds(timeOfPoison);
+        TakeDamageFromPoison(5);
+    }
+
+    public void TakeDamageFromPoison(int damage)
+    {
+        Debug.Log("POsion");
+        Currenthealth -= damage;
+        healthUI.SetHealth(Currenthealth);
+        canTakeaDamage = false;
+        fleashMaterialScript.FlashPoison();
     }
 
     public void TakeDamage(int damage)

@@ -360,6 +360,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   groundCheckRadius: 0.1
+  canJump: 1
 --- !u!114 &8396494798180540175
 MonoBehaviour:
   m_ObjectHideFlags: 0
