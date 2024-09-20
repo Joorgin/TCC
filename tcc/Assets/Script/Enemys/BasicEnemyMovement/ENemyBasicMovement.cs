@@ -35,6 +35,7 @@ public class ENemyBasicMovement : MonoBehaviour
     {
         PlayerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         Physics2D.IgnoreLayerCollision(6, 7, true);
+        Physics2D.IgnoreLayerCollision(6, 6, true);
     }
 
     private void FixedUpdate()

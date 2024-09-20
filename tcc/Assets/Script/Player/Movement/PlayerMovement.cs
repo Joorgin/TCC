@@ -76,6 +76,9 @@ public class PlayerMovement : MonoBehaviour
     // Define qual a chance do bau bom
     public static int chanceForAGoodChest;
 
+    // Tudo Sobre audio SFX
+    public AudioSource movingAudio;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -219,11 +222,20 @@ public class PlayerMovement : MonoBehaviour
             if (KBCounter <= 0)
             {
                 if (isDashing) return;
-                if (!isAttacking) rb.velocity = new Vector2(horizontalMove * Time.fixedDeltaTime, rb.velocity.y);
-                else if (isAttacking && isGrounded) rb.velocity = new Vector2(0, rb.velocity.y);
+                if (!isAttacking)
+                {
+                    rb.velocity = new Vector2(horizontalMove * Time.fixedDeltaTime, rb.velocity.y);
+                    bool moving = horizontalMove != 0 ? true : false;
+                    if (moving) movingAudio.Play();
+                    else movingAudio.Stop();
+
+                    Debug.Log("Audio : " + moving);
+                }
+                
             }
             else
             {
+                movingAudio.Stop();
                 if (KnockFromRight == true) rb.velocity = new Vector2(-KBForce, KBForce);
                 if (KnockFromRight == false) rb.velocity = new Vector2(KBForce, KBForce);
                 KBCounter -= Time.deltaTime;
@@ -233,6 +245,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator paixao()
     {
+        movingAudio.Stop();
         yield return new WaitForSeconds(tempoApaixonado);
         apaixonado = false;
         hasSetSide = false;
@@ -245,6 +258,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
+        movingAudio.Stop();
         anim.SetTrigger("IsJumping");
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
@@ -258,6 +272,7 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator Dash()
     {
+        movingAudio.Stop();
         canDash = false;
         isDashing = true;
         float originalGravity = rb.gravityScale;
