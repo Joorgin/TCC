@@ -23,6 +23,7 @@ public class PlayerAttack : MonoBehaviour
     [Space]
     [Header("CoolDown para atirar a flecha")]
     public static float cooldownForFlecha = 20f;
+    bool CanShoot;
 
     // Porcentagem sobre o crit do ataque do player
     public static int CritPercent;
@@ -36,6 +37,7 @@ public class PlayerAttack : MonoBehaviour
     float lastClickedTime = 0;
     public float maxComboDelay = 0.9f;
     public static bool canAtack = true;
+
     // freeze no momento do ataque
     [Space]
     [Header("Freeze When Attack")]
@@ -86,6 +88,7 @@ public class PlayerAttack : MonoBehaviour
     /// </summary>
     void Atacar(bool direcao)
     {
+        
         if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.X)) 
             && (enemiesToDamage != null || enemiesToDamage2 != null) && noOfClicks == 0 && canAtack)
         {
@@ -100,7 +103,7 @@ public class PlayerAttack : MonoBehaviour
                 {
                     case 0:
                         anim.SetBool("Attack1", true);
-                        //anim.SetTrigger("Attack");
+                        CanShoot = false;
                         PlayerMovement.isAttacking = true;
                         StartCoroutine(AttackHand1(direcao));
                         timeBtwAttack = startTimeBtwAttack;
@@ -113,7 +116,7 @@ public class PlayerAttack : MonoBehaviour
         else if((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.X)) &&
             (enemiesToDamage != null || enemiesToDamage2 != null) && noOfClicks == 1) noOfClicks++;
 
-        else if (Input.GetKey(KeyCode.Q) && !hasShoot)
+        else if (Input.GetKey(KeyCode.Q) && !hasShoot && CanShoot)
         {
             //enquanto nao houver animacao manter isAttacking comentado
             // PlayerMovement.isAttacking = true;
@@ -189,6 +192,7 @@ public class PlayerAttack : MonoBehaviour
             noOfClicks = 0;
             PlayerMovement.isAttacking = false;
             canAtack = true;
+            CanShoot = true;
         }
     }
     // Funcao para o segundo soco detectando quantos e quais inimigos estao na range do player
@@ -243,6 +247,7 @@ public class PlayerAttack : MonoBehaviour
         PlayerMovement.isAttacking = false;
         noOfClicks = 0;
         canAtack = true;
+        CanShoot = true;
     }
 
     public void Freeze()
