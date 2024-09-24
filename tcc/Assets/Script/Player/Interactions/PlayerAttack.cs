@@ -24,6 +24,7 @@ public class PlayerAttack : MonoBehaviour
     [Header("CoolDown para atirar a flecha")]
     public static float cooldownForFlecha = 20f;
     bool CanShoot;
+    public static bool isShooting;
 
     // Porcentagem sobre o crit do ataque do player
     public static int CritPercent;
@@ -255,6 +256,12 @@ public class PlayerAttack : MonoBehaviour
         _pendingFreezeDuration = durationFreeze;
     }
 
+    public void FreezeShootTime()
+    {
+        durationFreeze = 0.7f;
+        StartCoroutine(SetTimeForAtackEffect());
+    }
+
     public void SeeIfThereIsAMonster()
     {
         if (_isThereMonsters) Freeze();
@@ -276,8 +283,9 @@ public class PlayerAttack : MonoBehaviour
     public IEnumerator SHOOTARROW()
     {
         // toca a animacao de atirar a flecha
-        // anim.SetTrigger("Shoot");
-        yield return new WaitForSeconds(0.5f);
+        isShooting = true;
+        anim.SetBool("Shoot", true);
+        yield return new WaitForSeconds(0.6f);
         // Invoca a flecha
 
         if (PlayerMovement.verticalMove > 0 && !hasShoot)
@@ -290,10 +298,10 @@ public class PlayerAttack : MonoBehaviour
             Instantiate(Arrow, attackPos2.transform.position, Quaternion.identity);
             hasShoot = true;
         }
-
+        anim.SetBool("Shoot", false);
+        isShooting = false;
         yield return new WaitForSeconds(cooldownForFlecha);
         hasShoot = false;
-
     }
 
     public static void setHabilitStatus()

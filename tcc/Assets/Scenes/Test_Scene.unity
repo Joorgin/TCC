@@ -13541,9 +13541,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bird_Boss 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8482043281322009497, guid: 2f3d2e6cf996e7f4fabaef6cd3130d4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9033001578800357911, guid: 2f3d2e6cf996e7f4fabaef6cd3130d4f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
