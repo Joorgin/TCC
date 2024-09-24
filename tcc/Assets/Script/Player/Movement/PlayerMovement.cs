@@ -154,7 +154,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (PlayerHealth.isAlive && !apaixonado)
+        if (PlayerHealth.isAlive && !apaixonado && !PlayerAttack.isShooting)
         {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
@@ -167,27 +167,27 @@ public class PlayerMovement : MonoBehaviour
                 Downdash.Damage();
             }
 
-                if (isDashing) return;
+            if (isDashing) return;
 
-                if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))) Jump();
+            if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))) Jump();
 
-                if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
-                {
-                    anim.SetTrigger("Dash");
-                    StartCoroutine(Dash());
-                }
+            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+            {
+                anim.SetTrigger("Dash");
+                StartCoroutine(Dash());
+            }
 
-                horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
-                if (horizontalMove > 0f)
-                {
-                    verticalMove = 1;
-                    anim.SetInteger("VerticalMove", verticalMove);
-                }
-                else if (horizontalMove < 0f)
-                {
-                    verticalMove = -1;
-                    anim.SetInteger("VerticalMove", verticalMove);
-                }
+            horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
+            if (horizontalMove > 0f)
+            {
+                verticalMove = 1;
+                anim.SetInteger("VerticalMove", verticalMove);
+            }
+            else if (horizontalMove < 0f)
+            {
+                verticalMove = -1;
+                anim.SetInteger("VerticalMove", verticalMove);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -222,16 +222,13 @@ public class PlayerMovement : MonoBehaviour
             if (KBCounter <= 0)
             {
                 if (isDashing) return;
-                if (!isAttacking)
-                {
-                    rb.velocity = new Vector2(horizontalMove * Time.fixedDeltaTime, rb.velocity.y);
-                    bool moving = horizontalMove != 0 ? true : false;
-                    if (moving) movingAudio.Play();
-                    else movingAudio.Stop();
 
-                    Debug.Log("Audio : " + moving);
-                }
-                
+                rb.velocity = new Vector2(horizontalMove * Time.fixedDeltaTime, rb.velocity.y);
+                bool moving = horizontalMove != 0 ? true : false;
+                if (moving) movingAudio.Play();
+                else movingAudio.Stop();
+
+                Debug.Log("Audio : " + moving);
             }
             else
             {
