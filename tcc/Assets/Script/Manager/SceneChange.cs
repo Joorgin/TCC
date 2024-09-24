@@ -36,7 +36,7 @@ public class SceneChange : MonoBehaviour
             RandomScene = Random.Range(0, SceneNames.Length + 1);
             SceneToChange = SceneNames[RandomScene];
             Debug.Log("Maps Passed: " + GameManager.MapsPassed);
-            GameManager.MapsPassed++;
+            
             if(SceneToChange == GameManager.LastMapName)
             {
                 HasdefeatedBoss = false;
@@ -46,6 +46,7 @@ public class SceneChange : MonoBehaviour
                     SceneToChange = SceneNames[RandomScene];
                     SceneToChangeMusic = SceneToChange;
                     AudioManager.hasChangedscene = true;
+                    GameManager.MapsPassed++;
                     SceneManager.LoadScene(SceneToChange);
                 }
                 else if(RandomScene == 0)
@@ -54,6 +55,7 @@ public class SceneChange : MonoBehaviour
                     SceneToChange = SceneNames[RandomScene];
                     SceneToChangeMusic = SceneToChange;
                     AudioManager.hasChangedscene = true;
+                    GameManager.MapsPassed++;
                     SceneManager.LoadScene(SceneToChange);
                 }
                
@@ -63,6 +65,7 @@ public class SceneChange : MonoBehaviour
                 GameManager.LastMapName = SceneToChange;
                 SceneToChangeMusic = SceneToChange;
                 AudioManager.hasChangedscene = true;
+                GameManager.MapsPassed++;
                 SceneManager.LoadScene(SceneToChange);
             }
         } 

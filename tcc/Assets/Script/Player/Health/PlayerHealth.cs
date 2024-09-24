@@ -326,6 +326,7 @@ public class PlayerHealth : MonoBehaviour
         isAlive = false;
         GameManager.IsInMainScene = true;
         StartCoroutine(ShowUI("MainScene"));
+        GameManager.MapsPassed = 0;
     }
 
     public IEnumerator ShowUI(string scene)

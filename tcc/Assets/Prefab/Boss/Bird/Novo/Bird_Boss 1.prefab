@@ -607,7 +607,7 @@ GameObject:
   - component: {fileID: 3217544481906735209}
   m_Layer: 9
   m_Name: Bird_Boss 1
-  m_TagString: Enemy
+  m_TagString: EnemyBoby
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -669,9 +669,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Maxhealth: 20
   Currenthealth: 0
-  healthUI: {fileID: 0}
+  healthUI: {fileID: 2376055088945805272}
   Bracelete: {fileID: 4593072821139420700, guid: 1d43874d8c712d94fa30fed44bda0306, type: 3}
-  fleashMaterialScript: {fileID: 0}
+  fleashMaterialScript: {fileID: 3770605684840825859}
 --- !u!50 &7403540017452265924
 Rigidbody2D:
   serializedVersion: 4

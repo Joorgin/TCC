@@ -26,6 +26,8 @@ public class Chest : MonoBehaviour
 
         ChangeChanceOfAGoodChest();
 
+        Debug.Log("MapsPassed: " + GameManager.MapsPassed);
+
         switch (GameManager.MapsPassed)
         {
             case 1:
