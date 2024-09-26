@@ -91,7 +91,7 @@ public class PlayerAttack : MonoBehaviour
     {
         
         if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.X)) 
-            && (enemiesToDamage != null || enemiesToDamage2 != null) && noOfClicks == 0 && canAtack)
+            && (enemiesToDamage != null || enemiesToDamage2 != null) && noOfClicks == 0 && canAtack && !PlayerMovement.apaixonado)
         {
             
             lastClickedTime = Time.time;
@@ -117,7 +117,7 @@ public class PlayerAttack : MonoBehaviour
         else if((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.X)) &&
             (enemiesToDamage != null || enemiesToDamage2 != null) && noOfClicks == 1) noOfClicks++;
 
-        else if (Input.GetKey(KeyCode.Q) && !hasShoot && CanShoot)
+        else if (Input.GetKey(KeyCode.Q) && !hasShoot && CanShoot && !PlayerMovement.apaixonado)
         {
             //enquanto nao houver animacao manter isAttacking comentado
             // PlayerMovement.isAttacking = true;
