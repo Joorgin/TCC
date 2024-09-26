@@ -52,6 +52,16 @@ public class Flecha : MonoBehaviour
             {
                 collision.gameObject.GetComponent<ExplosiveEnemyHealth>().TakeDamage(damage);
             }
+
+            if(collision.gameObject.GetComponent<Sereia_Health>() != null) 
+            {
+                collision.gameObject.GetComponent<Sereia_Health>().TakeDamage(damage);
+            }
+
+            if(collision.gameObject.GetComponent<BIrd_Boss_Health>() != null) 
+            { 
+               collision.gameObject.GetComponent<BIrd_Boss_Health>().TakeDamage(damage);
+            }
         }
     }
 }

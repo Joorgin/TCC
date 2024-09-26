@@ -13427,6 +13427,71 @@ MonoBehaviour:
   MainCamera: {fileID: 0}
   cam: {fileID: 0}
   speedParalax: 0
+--- !u!1001 &1202067126
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3917587054133721150, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -133.15872
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917587054133721150, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.8261689
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917587054133721150, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917587054133721150, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917587054133721150, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917587054133721150, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917587054133721150, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917587054133721150, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917587054133721150, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917587054133721150, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318247904167069522, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
+      propertyPath: m_Name
+      value: Sereia
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318247904167069522, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7984668788361182892, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
 --- !u!1 &1218854821
 GameObject:
   m_ObjectHideFlags: 0
@@ -14044,6 +14109,10 @@ PrefabInstance:
     - target: {fileID: 4670437996926835159, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
       propertyPath: m_Name
       value: ChangeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670437996926835159, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8429073270123524718, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
       propertyPath: Boss.Array.size
@@ -16343,3 +16412,4 @@ SceneRoots:
   - {fileID: 1451388023}
   - {fileID: 109834891930234313}
   - {fileID: 1241504241}
+  - {fileID: 1202067126}

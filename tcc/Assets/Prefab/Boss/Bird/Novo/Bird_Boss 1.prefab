@@ -607,7 +607,7 @@ GameObject:
   - component: {fileID: 3217544481906735209}
   m_Layer: 9
   m_Name: Bird_Boss 1
-  m_TagString: Enemy
+  m_TagString: EnemyBoby
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
