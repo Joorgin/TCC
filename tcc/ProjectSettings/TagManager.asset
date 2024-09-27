@@ -20,6 +20,7 @@ TagManager:
   - Toggle
   - ItemUpgrade
   - OneWayPlataform
+  - Arena_De_Batalha
   layers:
   - Default
   - TransparentFX

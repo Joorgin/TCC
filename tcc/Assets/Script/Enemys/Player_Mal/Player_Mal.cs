@@ -19,10 +19,19 @@ public class Player_Mal : MonoBehaviour
     [Space]
     public float movementSpeed;
 
-    // Animação do Boss
+    // Animação de ataque do Boss
     [Space]
+    [Header("Animações e itens de ataque do Boss")]
     public Animator anim;
     public float animationTime;
+    public float animationTime2;
+    int RandomLanca;
+    public GameObject[] Lancas;
+    bool LevantouLanca;
+    bool AbaixouLanca;
+
+    // Animação do campo de batalha
+    public Animator batalhaArenaAnim;
 
     // Verifica o Raio de efeito do ataque 1
     [Space]
@@ -52,6 +61,7 @@ public class Player_Mal : MonoBehaviour
     void Start()
     {
         PlayerTransform = GameObject.FindGameObjectWithTag("Player");
+        batalhaArenaAnim = GameObject.FindGameObjectWithTag("Arena_De_Batalha").GetComponent<Animator>();
         states = States.Looking;
         tempoEntreAtaquesInterno = tempoEntreAtaques;
     }
@@ -119,7 +129,7 @@ public class Player_Mal : MonoBehaviour
         }
 
         if (Vector2.Distance(transform.position, PlayerTransform.transform.position) > 15f) states = States.Looking;
-        if (Vector2.Distance(transform.position, PlayerTransform.transform.position) < 5f && podeAtacar) states = States.Ataque1;
+        if (Vector2.Distance(transform.position, PlayerTransform.transform.position) < 5f && podeAtacar) states = States.Ataque2;
     }
 
     public void Ataque1()
@@ -150,7 +160,55 @@ public class Player_Mal : MonoBehaviour
 
     public void Ataque2()
     {
+        StartCoroutine(Ataque22());
+    }
 
+    IEnumerator Ataque22()
+    {
+        yield return new WaitForSeconds(animationTime2);
+        batalhaArenaAnim.SetBool("Levantar", true);
+        yield return new WaitForSeconds(3f);
+        StartCoroutine(LancasParaCima());
+    }
+
+    IEnumerator LancasParaCima()
+    {
+        if (!LevantouLanca)
+        {
+            RandomLanca = Random.Range(0, 4);
+            Debug.Log("Lança: " + RandomLanca);
+            Lancas[RandomLanca].GetComponent<Animator>().SetBool("Levantar", true);
+            LevantouLanca = true;
+            AbaixouLanca = false;
+        }
+
+        yield return new WaitForSeconds(1f);
+
+        if (!AbaixouLanca)
+        {
+            Lancas[RandomLanca].GetComponent<Animator>().SetBool("Levantar", false);
+            AbaixouLanca = true;
+        }
+
+        yield return new WaitForSeconds(10f);
+        LevantouLanca = false;
+        if (!LevantouLanca)
+        {
+            RandomLanca = Random.Range(0, 4);
+            Debug.Log("Lança: " + RandomLanca);
+            Lancas[RandomLanca].GetComponent<Animator>().SetBool("Levantar", true);
+            LevantouLanca = true;
+            AbaixouLanca = false;
+        }
+
+        yield return new WaitForSeconds(2f);
+
+        Lancas[RandomLanca].GetComponent<Animator>().SetBool("Levantar", false);
+        LevantouLanca = false;
+        AbaixouLanca = true;
+        batalhaArenaAnim.SetBool("Levantar", false);
+        states = States.Looking;
+        podeAtacar = false;
     }
 
     public void Dead()
