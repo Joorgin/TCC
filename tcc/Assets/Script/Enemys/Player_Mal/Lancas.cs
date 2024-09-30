@@ -5,12 +5,25 @@ using UnityEngine;
 public class Lancas : MonoBehaviour
 {
     public Animator anim;
+    public PlayerHealth playerHealth;
+    public int damage;
+
+    private void Start()
+    {
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+    }
 
     public void AbaixarLancas()
     {
-
         anim.SetBool("Levantar", false);
         Player_Mal.LevantouLanca = false;
-        Debug.Log("Levantar :" + gameObject.name);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            playerHealth.TakeDamage(damage);
+        }
     }
 }
