@@ -27,8 +27,9 @@ public class Player_Mal : MonoBehaviour
     public float animationTime2;
     int RandomLanca;
     public GameObject[] Lancas;
-    bool LevantouLanca;
-    bool AbaixouLanca;
+    public static bool LevantouLanca;
+    public static bool podeLevantarLanca;
+    public float TempoDeAtaqueDasLancas;
 
     // Animação do campo de batalha
     public Animator batalhaArenaAnim;
@@ -64,6 +65,13 @@ public class Player_Mal : MonoBehaviour
         batalhaArenaAnim = GameObject.FindGameObjectWithTag("Arena_De_Batalha").GetComponent<Animator>();
         states = States.Looking;
         tempoEntreAtaquesInterno = tempoEntreAtaques;
+
+        Physics2D.IgnoreLayerCollision(12, 11, true);
+        Physics2D.IgnoreLayerCollision(12, 10, true);
+        Physics2D.IgnoreLayerCollision(12, 9, true);
+        Physics2D.IgnoreLayerCollision(12, 8, true);
+        Physics2D.IgnoreLayerCollision(12, 7, true);
+        Physics2D.IgnoreLayerCollision(12, 6, true);
     }
 
     void Update()
@@ -87,15 +95,16 @@ public class Player_Mal : MonoBehaviour
                 break;
         }
 
-        if(!podeAtacar)
+        if (!podeAtacar)
         {
             tempoEntreAtaquesInterno -= Time.deltaTime;
-            if(tempoEntreAtaquesInterno <= 0)
+            if (tempoEntreAtaquesInterno <= 0)
             {
                 podeAtacar = true;
                 tempoEntreAtaquesInterno = tempoEntreAtaques;
             }
         }
+
     }
 
     public void Looking()
@@ -118,14 +127,14 @@ public class Player_Mal : MonoBehaviour
         if (transform.position.x > PlayerTransform.transform.position.x)
         {
             transform.position += Vector3.left * movementSpeed * Time.deltaTime;
-           // anim.SetBool("IDLE", false);
-           // anim.SetBool("WALK", true);
+            // anim.SetBool("IDLE", false);
+            // anim.SetBool("WALK", true);
         }
         if (transform.position.x < PlayerTransform.transform.position.x)
         {
             transform.position += Vector3.right * movementSpeed * Time.deltaTime;
-          //  anim.SetBool("IDLE", false);
-          //  anim.SetBool("WALK", true);
+            //  anim.SetBool("IDLE", false);
+            //  anim.SetBool("WALK", true);
         }
 
         if (Vector2.Distance(transform.position, PlayerTransform.transform.position) > 15f) states = States.Looking;
@@ -145,7 +154,7 @@ public class Player_Mal : MonoBehaviour
         //anim.SetBool("EsferaDeVida", playerIsInRange);
         yield return new WaitForSeconds(animationTime);
         //anim.SetBool("EsferaDeVida", false);
-        if(playerIsInRange && podeAtacar)
+        if (playerIsInRange && podeAtacar)
         {
             PlayerTransform.GetComponent<PlayerHealth>().TakeDamage(damage);
             podeAtacar = false;
@@ -173,39 +182,16 @@ public class Player_Mal : MonoBehaviour
 
     IEnumerator LancasParaCima()
     {
+        podeLevantarLanca = true;
         if (!LevantouLanca)
         {
             RandomLanca = Random.Range(0, 4);
             Debug.Log("Lança: " + RandomLanca);
             Lancas[RandomLanca].GetComponent<Animator>().SetBool("Levantar", true);
             LevantouLanca = true;
-            AbaixouLanca = false;
         }
-
-        yield return new WaitForSeconds(1f);
-
-        if (!AbaixouLanca)
-        {
-            Lancas[RandomLanca].GetComponent<Animator>().SetBool("Levantar", false);
-            AbaixouLanca = true;
-        }
-
-        yield return new WaitForSeconds(10f);
-        LevantouLanca = false;
-        if (!LevantouLanca)
-        {
-            RandomLanca = Random.Range(0, 4);
-            Debug.Log("Lança: " + RandomLanca);
-            Lancas[RandomLanca].GetComponent<Animator>().SetBool("Levantar", true);
-            LevantouLanca = true;
-            AbaixouLanca = false;
-        }
-
-        yield return new WaitForSeconds(2f);
-
-        Lancas[RandomLanca].GetComponent<Animator>().SetBool("Levantar", false);
-        LevantouLanca = false;
-        AbaixouLanca = true;
+        yield return new WaitForSeconds(TempoDeAtaqueDasLancas);
+        podeLevantarLanca = false;
         batalhaArenaAnim.SetBool("Levantar", false);
         states = States.Looking;
         podeAtacar = false;
