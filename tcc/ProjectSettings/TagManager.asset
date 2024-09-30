@@ -21,6 +21,7 @@ TagManager:
   - ItemUpgrade
   - OneWayPlataform
   - Arena_De_Batalha
+  - Lanca
   layers:
   - Default
   - TransparentFX
