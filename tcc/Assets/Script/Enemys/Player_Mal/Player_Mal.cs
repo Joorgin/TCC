@@ -164,8 +164,8 @@ public class Player_Mal : MonoBehaviour
         {
             PlayerTransform.GetComponent<PlayerHealth>().TakeDamage(damage);
             podeAtacar = false;
-            states = States.Looking;
         }
+        states = States.Looking;
     }
 
     private void OnDrawGizmos()

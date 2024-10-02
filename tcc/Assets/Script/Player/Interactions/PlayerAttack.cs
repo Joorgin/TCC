@@ -177,6 +177,8 @@ public class PlayerAttack : MonoBehaviour
             if (etd.GetComponent<BIrd_Boss_Health>() != null) etd.GetComponent<BIrd_Boss_Health>().TakeDamage(Damage);
 
             if (etd.GetComponent<Sereia_Movement>() != null) etd.GetComponent<Sereia_Health>().TakeDamage(Damage);
+
+            if (etd.GetComponent<Player_Mal>() != null) etd.GetComponent<Player_Mal_Health>().TakeDamage(Damage);
         }
 
         yield return new WaitForSeconds(0.5f);
@@ -236,6 +238,8 @@ public class PlayerAttack : MonoBehaviour
             if (etd.GetComponent<FlyingBirdboss>() != null) etd.GetComponent<BIrd_Boss_Health>().TakeDamage(Damage);
 
             if (etd.GetComponent<Sereia_Movement>() != null) etd.GetComponent<Sereia_Health>().TakeDamage(Damage);
+
+            if (etd.GetComponent<Player_Mal>() != null) etd.GetComponent<Player_Mal_Health>().TakeDamage(Damage);
         }
         if (Crited)
         {

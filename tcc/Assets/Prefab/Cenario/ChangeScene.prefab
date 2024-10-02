@@ -590,8 +590,9 @@ MonoBehaviour:
   - Cidade
   anim: {fileID: 5729284679151174628}
   Boss:
-  - {fileID: 8482043281322009497, guid: 2f3d2e6cf996e7f4fabaef6cd3130d4f, type: 3}
-  - {fileID: 6318247904167069522, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
+  - {fileID: 4764208713539784972, guid: f6d695f6b2a1ea748803a3281d21ecf8, type: 3}
+  - {fileID: 4764208713539784972, guid: f6d695f6b2a1ea748803a3281d21ecf8, type: 3}
+  - {fileID: 4764208713539784972, guid: f6d695f6b2a1ea748803a3281d21ecf8, type: 3}
   BossSpawn:
   - {fileID: 413371598691781626}
   isInMainScene: 0
