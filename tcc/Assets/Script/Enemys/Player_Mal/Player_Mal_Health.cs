@@ -71,8 +71,9 @@ public class Player_Mal_Health : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void RecuperarVida()
+    public void RecuperarVida(int damage)
     {
-
+        Currenthealth += damage;
+        healthUI.SetHealth(Currenthealth);
     }
 }

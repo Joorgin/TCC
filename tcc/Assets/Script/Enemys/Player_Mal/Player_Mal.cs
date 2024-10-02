@@ -48,6 +48,8 @@ public class Player_Mal : MonoBehaviour
     float tempoEntreAtaquesInterno;
     bool podeAtacar = true;
 
+    public Player_Mal_Health Player_Mal_Health;
+
 
     public enum States
     {
@@ -163,6 +165,7 @@ public class Player_Mal : MonoBehaviour
         if (playerIsInRange && podeAtacar)
         {
             PlayerTransform.GetComponent<PlayerHealth>().TakeDamage(damage);
+            Player_Mal_Health.RecuperarVida(damage);
             podeAtacar = false;
         }
         states = States.Looking;
