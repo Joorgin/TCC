@@ -460,6 +460,7 @@ MonoBehaviour:
     m_Bits: 128
   damage: 10
   tempoEntreAtaques: 5
+  Player_Mal_Health: {fileID: 2746700015898846270}
   states: 0
 --- !u!114 &2746700015898846270
 MonoBehaviour:
