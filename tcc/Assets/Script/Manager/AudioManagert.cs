@@ -7,8 +7,25 @@ public class AudioManagert : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip[] clip;
     
-    public void AudioShot()
+    public void AudioAndar()
     {
-        audioSource.PlayOneShot(clip[0]);
+        audioSource.clip = clip[0];
+        audioSource.Play();
+    }
+
+    public void AudioAndarStop()
+    {
+        audioSource.Stop();
+    }
+
+    public void SFXVolume(float volume)
+    {
+        audioSource.volume = volume;
+    }
+
+    public void ToggleSfx()
+    {
+        audioSource.mute = !audioSource.mute;
+       //AudioManager.isToggledSFX = !isToggledSFX;
     }
 }
