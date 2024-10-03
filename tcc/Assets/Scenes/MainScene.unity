@@ -726,6 +726,18 @@ PrefabInstance:
       propertyPath: isInMainScene
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8429073270123524718, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
+      propertyPath: SceneNames.Array.data[1]
+      value: Floresta
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429073270123524718, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
+      propertyPath: SceneNames.Array.data[2]
+      value: Floresta
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429073270123524718, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
+      propertyPath: SceneNames.Array.data[3]
+      value: Floresta
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4730,7 +4742,9 @@ MonoBehaviour:
   _musicSlider: {fileID: 1264690003}
   _sfxSlider: {fileID: 0}
   XTogglebutton: {fileID: 1504342960}
+  xToggleSFXbutton: {fileID: 0}
   XMusicOnToggler: {fileID: 1888977384}
+  xSFXOnToggler: {fileID: 0}
 --- !u!1 &1484959621
 GameObject:
   m_ObjectHideFlags: 0
@@ -12438,7 +12452,7 @@ Transform:
   m_GameObject: {fileID: 5198698456857328463}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.12311611, y: 0.124000005, z: -4}
+  m_LocalPosition: {x: 0.1031744, y: 0.124000005, z: -4}
   m_LocalScale: {x: 0.112569615, y: 0.106706604, z: 0.22703964}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12797,7 +12811,7 @@ Transform:
   m_GameObject: {fileID: 875346560260125800}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.12311611, y: 0.124000005, z: -4}
+  m_LocalPosition: {x: 0.1031744, y: 0.124000005, z: -4}
   m_LocalScale: {x: 0.17413507, y: 0.16506553, z: 0.3512099}
   m_ConstrainProportionsScale: 0
   m_Children: []
