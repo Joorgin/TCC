@@ -6,7 +6,17 @@ public class AudioManagert : MonoBehaviour
 {
     public AudioSource audioSource;
     public AudioClip[] clip;
-    
+
+
+    private void Start()
+    {
+        if (AudioManager.isToggledSFX)
+        {
+            Debug.Log("TogleSFX");
+            ToggleSfx();
+        }
+    }
+
     public void AudioAndar()
     {
         audioSource.clip = clip[0];
@@ -26,6 +36,5 @@ public class AudioManagert : MonoBehaviour
     public void ToggleSfx()
     {
         audioSource.mute = !audioSource.mute;
-       //AudioManager.isToggledSFX = !isToggledSFX;
     }
 }

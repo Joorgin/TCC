@@ -155,7 +155,7 @@ public class PlayerHealth : MonoBehaviour
             setMaxHealth = false;
         }
 
-       if(deadByStamina)
+       if(deadByStamina && PlayerMovement.isGrounded)
         {
             Dead();
         }

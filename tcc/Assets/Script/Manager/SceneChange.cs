@@ -33,7 +33,7 @@ public class SceneChange : MonoBehaviour
         // da Fade e escolhe o proximo mapa
         if (TimeToLoad >= 1)
         {
-            RandomScene = Random.Range(0, SceneNames.Length + 1);
+            RandomScene = Random.Range(0, SceneNames.Length);
             SceneToChange = SceneNames[RandomScene];
             Debug.Log("Maps Passed: " + GameManager.MapsPassed);
             GameManager.MapsPassed++;
