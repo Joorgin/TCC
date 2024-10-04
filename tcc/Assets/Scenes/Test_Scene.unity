@@ -1518,6 +1518,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnPortal (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4980021710462640345, guid: 6682675418034d943b5b5ca32a4c7c6d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7579251930500581411, guid: 6682675418034d943b5b5ca32a4c7c6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -184.37
@@ -1860,6 +1864,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tridente (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4384518963497001761, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7299354828872383045, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -143.41
@@ -2000,6 +2008,10 @@ PrefabInstance:
     - target: {fileID: 4384518963497001761, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
       propertyPath: m_Name
       value: Tridente (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384518963497001761, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7299354828872383045, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3089,6 +3101,10 @@ PrefabInstance:
     - target: {fileID: 4384518963497001761, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
       propertyPath: m_Name
       value: Tridente (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384518963497001761, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7299354828872383045, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13678,6 +13694,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tridente
       objectReference: {fileID: 0}
+    - target: {fileID: 4384518963497001761, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7299354828872383045, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -172.93925
@@ -16815,6 +16835,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tridente (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4384518963497001761, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7299354828872383045, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -161.91
@@ -17722,6 +17746,10 @@ PrefabInstance:
     - target: {fileID: 4384518963497001761, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
       propertyPath: m_Name
       value: Tridente (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384518963497001761, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7299354828872383045, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18729,6 +18757,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tridente (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4384518963497001761, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7299354828872383045, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -153.42
@@ -18972,6 +19004,10 @@ PrefabInstance:
     - target: {fileID: 4384518963497001761, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
       propertyPath: m_Name
       value: Tridente (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384518963497001761, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7299354828872383045, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21845,6 +21881,10 @@ PrefabInstance:
     - target: {fileID: 4384518963497001761, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
       propertyPath: m_Name
       value: Tridente (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384518963497001761, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7299354828872383045, guid: 894bdd5d98c38a84c8e8a03374ef39ca, type: 3}
       propertyPath: m_LocalPosition.x
