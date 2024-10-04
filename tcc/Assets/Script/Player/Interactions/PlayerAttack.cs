@@ -20,11 +20,10 @@ public class PlayerAttack : MonoBehaviour
     bool hasShoot;
 
     // Tudo sobre a flecha e sua relacao com dono
-    [Space]
-    [Header("CoolDown para atirar a flecha")]
     public static float cooldownForFlecha = 20f;
     bool CanShoot;
     public static bool isShooting;
+   
 
     // Porcentagem sobre o crit do ataque do player
     public static int CritPercent;
@@ -46,6 +45,12 @@ public class PlayerAttack : MonoBehaviour
     bool _isFrozen = false;
     float _pendingFreezeDuration = 0f;
     bool _isThereMonsters;
+
+    // Animator das habilidades
+    [Space]
+    [Header("Animator das UI Habilidades")]
+    public Animator UiFlechaAnim;
+    public static float CoolDownAnimationMultiplier = 1;
 
 
     private void Start()
@@ -296,23 +301,32 @@ public class PlayerAttack : MonoBehaviour
         {
             Instantiate(Arrow, attackPos.transform.position, Quaternion.identity);
             hasShoot = true;
+            UiFlechaAnim.SetFloat("SpeedAnimation", CoolDownAnimationMultiplier);
+            UiFlechaAnim.SetBool("HasShot", hasShoot);
         }
         if (PlayerMovement.verticalMove < 0 && !hasShoot)
         {
             Instantiate(Arrow, attackPos2.transform.position, Quaternion.identity);
             hasShoot = true;
+            UiFlechaAnim.SetFloat("SpeedAnimation", CoolDownAnimationMultiplier);
+            UiFlechaAnim.SetBool("HasShot", hasShoot);
         }
         anim.SetBool("Shoot", false);
         isShooting = false;
         yield return new WaitForSeconds(cooldownForFlecha);
         hasShoot = false;
+        UiFlechaAnim.SetBool("HasShot", hasShoot);
     }
 
     public static void setHabilitStatus()
     {
         float cooldownPercent = (cooldownForFlecha / 100) * 10;
 
-        if (cooldownForFlecha >= 14f) cooldownForFlecha -= cooldownPercent;
+        if (cooldownForFlecha >= 14f)
+        {
+            cooldownForFlecha -= cooldownPercent;
+            CoolDownAnimationMultiplier += 0.1f;
+        }
 
         Debug.Log("Time da flecha:" + cooldownForFlecha);
     }
