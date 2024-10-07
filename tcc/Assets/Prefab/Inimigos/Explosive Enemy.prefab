@@ -209,6 +209,7 @@ MonoBehaviour:
   healthUI: {fileID: 8490706888535432889}
   Bracelete: {fileID: 4593072821139420700, guid: 1d43874d8c712d94fa30fed44bda0306, type: 3}
   fleashMaterialScript: {fileID: -1659484679279558315}
+  stamina: 5
 --- !u!50 &682736896569056084
 Rigidbody2D:
   serializedVersion: 4
@@ -297,7 +298,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 10
   m_Sprite: {fileID: 647752556, guid: cab3b18916a76604394f0f918ba647a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

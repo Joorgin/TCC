@@ -18,6 +18,10 @@ public class BIrd_Boss_Health : MonoBehaviour
     // Onde se encaixa o flashSprite
     public FleashMaterial fleashMaterialScript;
 
+    // Quanto de stamina o inimigo consede
+    [Space]
+    public float stamina;
+
     private void Awake()
     {
         m_List.Add(this);
@@ -68,6 +72,7 @@ public class BIrd_Boss_Health : MonoBehaviour
         }
         //dá find e tira da lista
         SceneChange.HasdefeatedBoss = true;
+        Stamina.UpStamina(stamina);
         Destroy(gameObject);
     }
 }
