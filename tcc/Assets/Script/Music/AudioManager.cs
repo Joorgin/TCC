@@ -68,7 +68,7 @@ public class AudioManager : MonoBehaviour
                     PlaySfx("Night Forest Sfx");
                     hasChangedscene = false;
                     break;
-                case "MainScene":
+                case "Terreiro":
                     Debug.Log("Main scene");
                     PlayMusic("Music_Theme");
                     sfxSource.Stop();

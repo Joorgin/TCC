@@ -41,6 +41,11 @@ public class Player_Type_2_Movement : MonoBehaviour
     bool setactive;
 
     public static bool isInMainScene;
+
+    // Tudo Sobre audio SFX
+    public AudioManagert movingAudio;
+    bool IsMovingComAudio = true;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -54,7 +59,7 @@ public class Player_Type_2_Movement : MonoBehaviour
         GameManager.IsInMainScene = true;
         GameManager.MapsPassed = 0;
         AudioManager.hasChangedscene = true;
-        AudioManager.SceneToChangeMusic = "MainScene";
+        AudioManager.SceneToChangeMusic = "Terreiro";
     }
 
     void Update()
@@ -121,10 +126,7 @@ public class Player_Type_2_Movement : MonoBehaviour
     {
         if (KBCounter <= 0)
         {
-            if (isDashing)
-            {
-                return;
-            }
+            if (isDashing) return;
 
             if(DialogManager.instance.isDialogActive) 
             {
@@ -133,8 +135,19 @@ public class Player_Type_2_Movement : MonoBehaviour
             }
             else
             {
-                Vector2 movement = new Vector2(horizontalMove * Time.fixedDeltaTime, rb.velocity.y);
-                rb.velocity = movement;
+                rb.velocity = new Vector2(horizontalMove * Time.fixedDeltaTime, rb.velocity.y);
+                bool moving = horizontalMove != 0 ? true : false;
+                if (moving && IsMovingComAudio)
+                {
+                    IsMovingComAudio = false;
+                    movingAudio.AudioAndar();
+                }
+                else if (!moving || !isGrounded)
+                {
+                    Debug.Log("Andando com audio");
+                    IsMovingComAudio = true;
+                    movingAudio.AudioAndarStop();
+                }
             }
 
             
