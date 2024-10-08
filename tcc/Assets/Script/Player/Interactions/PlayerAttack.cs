@@ -52,6 +52,11 @@ public class PlayerAttack : MonoBehaviour
     public Animator UiFlechaAnim;
     public static float CoolDownAnimationMultiplier = 1;
 
+    //Audio para as Animacoes
+    [Space]
+    [Header("Audios De Animacoes")]
+    public AudioManagert audiomanagert;
+
 
     private void Start()
     {
@@ -109,6 +114,7 @@ public class PlayerAttack : MonoBehaviour
                 {
                     case 0:
                         anim.SetBool("Attack1", true);
+                        audiomanagert.Soco1();
                         CanShoot = false;
                         PlayerMovement.isAttacking = true;
                         StartCoroutine(AttackHand1(direcao));
@@ -206,7 +212,7 @@ public class PlayerAttack : MonoBehaviour
     // Funcao para o segundo soco detectando quantos e quais inimigos estao na range do player
     public IEnumerator AttackHand2(bool direcao)
     {
-
+        audiomanagert.Soco2();
         foreach (Collider2D etd in enemiesToDamage)
         {
 

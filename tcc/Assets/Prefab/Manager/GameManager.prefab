@@ -52,16 +52,16 @@ MonoBehaviour:
   - Name: Music Beach
     clip: {fileID: 8300000, guid: 7751100c251301449a0a8157c7c672cf, type: 3}
   - Name: Night Forest Music
-    clip: {fileID: 8300000, guid: 7751100c251301449a0a8157c7c672cf, type: 3}
+    clip: {fileID: 8300000, guid: 2e80552c5a0622640a16a0e45fa215f4, type: 3}
   - Name: Day Forest Music
-    clip: {fileID: 8300000, guid: 7751100c251301449a0a8157c7c672cf, type: 3}
+    clip: {fileID: 8300000, guid: 2e80552c5a0622640a16a0e45fa215f4, type: 3}
   - Name: City Music
     clip: {fileID: 8300000, guid: 7751100c251301449a0a8157c7c672cf, type: 3}
   - Name: Bird Boss Music
     clip: {fileID: 8300000, guid: 7751100c251301449a0a8157c7c672cf, type: 3}
   sfxSounds:
   - Name: Wave Sfx
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: a3147061a80682340ac9f826a5a6a6d3, type: 3}
   - Name: Day Forest Sfx
     clip: {fileID: 8300000, guid: 022eb924716caa9439255dbd78a25294, type: 3}
   - Name: Night Forest Sfx
