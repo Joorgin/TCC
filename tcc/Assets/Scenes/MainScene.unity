@@ -728,19 +728,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8429073270123524718, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
       propertyPath: SceneNames.Array.data[0]
-      value: Cidade
+      value: Floresta
       objectReference: {fileID: 0}
     - target: {fileID: 8429073270123524718, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
       propertyPath: SceneNames.Array.data[1]
-      value: Cidade
+      value: Floresta
       objectReference: {fileID: 0}
     - target: {fileID: 8429073270123524718, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
       propertyPath: SceneNames.Array.data[2]
-      value: Cidade
+      value: Floresta
       objectReference: {fileID: 0}
     - target: {fileID: 8429073270123524718, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
       propertyPath: SceneNames.Array.data[3]
-      value: Cidade
+      value: Floresta
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12794,6 +12794,7 @@ MonoBehaviour:
   noOfClicks: 0
   maxComboDelay: 0.9
   durationFreeze: 0.3
+  UiFlechaAnim: {fileID: 0}
 --- !u!114 &8995036777307724443
 MonoBehaviour:
   m_ObjectHideFlags: 3

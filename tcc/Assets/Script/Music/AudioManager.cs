@@ -53,7 +53,7 @@ public class AudioManager : MonoBehaviour
             {
                 case "Floresta":
                     Debug.Log("Play FlorestMusic");
-                    //PlayMusic("Night Forest Music");
+                    PlayMusic("Night Forest Music");
                     PlaySfx("Night Forest Sfx");
                     hasChangedscene = false;
                     break;
@@ -64,12 +64,13 @@ public class AudioManager : MonoBehaviour
                     break;
                 case "Mapa 4":
                     Debug.Log("Play FlorestMusic 2");
-                    //PlayMusic("Day Forest Music");
-                    PlaySfx("Day Forest Sfx");
+                    PlayMusic("Night Forest Music");
+                    PlaySfx("Night Forest Sfx");
                     hasChangedscene = false;
                     break;
                 case "MainScene":
                     Debug.Log("Main scene");
+                    PlayMusic("Music_Theme");
                     sfxSource.Stop();
                     hasChangedscene = false;
                     break;
