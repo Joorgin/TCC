@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/CutScene.unity
     guid: fad99ac091754f445966244f0a4a224b
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Scenes/Terreiro.unity
     guid: af1f32f2855e2274f8114dc6edebbc7c
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity

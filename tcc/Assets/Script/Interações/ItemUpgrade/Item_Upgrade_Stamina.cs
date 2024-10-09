@@ -9,6 +9,7 @@ public class Item_Upgrade_Stamina : MonoBehaviour
     public GameObject ItemFala;
     public TextMeshProUGUI text;
     public int almas;
+    public int AddAlmas;
     public Animator anim;
     bool inRange;
     bool Upgrade;
@@ -24,11 +25,11 @@ public class Item_Upgrade_Stamina : MonoBehaviour
             case 1:
                 break;
             case 2:
-                almas = 6;
+                almas = almas + (AddAlmas * GameManager.CurrentLevelItemStaminaUpgrade);
                 anim.SetBool("Level2", true);
                 break;
             case 3:
-                almas = 8;
+                almas = almas + (AddAlmas * GameManager.CurrentLevelItemStaminaUpgrade);
                 anim.SetBool("Level3", true);
                 break;
         }
@@ -40,7 +41,6 @@ public class Item_Upgrade_Stamina : MonoBehaviour
         if (inRange && Input.GetKeyDown(KeyCode.E))
         {
             Upgrade = GameManager.NumberOfSouls >= almas;
-            
         }
 
         if (Upgrade) UpgradeItem();
@@ -62,7 +62,7 @@ public class Item_Upgrade_Stamina : MonoBehaviour
                 anim.SetBool("Level2", true);
                 Contador_de_Almas.instance.DiminiurAlmas(almas);
                 Upgrade = false;
-                almas += 2;
+                almas += AddAlmas;
                 CurrentLevel++;
                 GameManager.CurrentLevelItemStaminaUpgrade++;
                 GameManager.UpgradeLevelStamina = false;
@@ -74,7 +74,7 @@ public class Item_Upgrade_Stamina : MonoBehaviour
                 anim.SetBool("Level3", true);
                 Contador_de_Almas.instance.DiminiurAlmas(almas);
                 Upgrade = false;
-                almas += 2;
+                almas += AddAlmas;
                 CurrentLevel++;
                 GameManager.CurrentLevelItemStaminaUpgrade++;
                 GameManager.UpgradeLevelStamina = false;
@@ -86,7 +86,7 @@ public class Item_Upgrade_Stamina : MonoBehaviour
                 //anim.SetBool("Level4", true);
                 Contador_de_Almas.instance.DiminiurAlmas(almas);
                 Upgrade = false;
-                almas += 2;
+                almas += AddAlmas;
                 CurrentLevel++;
                 GameManager.CurrentLevelItemStaminaUpgrade++;
                 GameManager.UpgradeLevelStamina = false;
