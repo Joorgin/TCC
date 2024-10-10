@@ -2659,6 +2659,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Aranha
       objectReference: {fileID: 0}
+    - target: {fileID: 1837690909385350117, guid: bfe9fd4b5a3815e4ba54bfbfd45e449f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2756708874513568668, guid: bfe9fd4b5a3815e4ba54bfbfd45e449f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -168.27689
@@ -2701,7 +2705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8049817099560948830, guid: bfe9fd4b5a3815e4ba54bfbfd45e449f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
