@@ -459,11 +459,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc6dbc55ce55eb4baa3fffc5d2bf76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Maxhealth: 200
+  Maxhealth: 1000
   Currenthealth: 0
   healthUI: {fileID: 4116037554311327390}
   Bracelete: {fileID: 4593072821139420700, guid: 1d43874d8c712d94fa30fed44bda0306, type: 3}
   fleashMaterialScript: {fileID: 393798130215917106}
+  stamina: 0
 --- !u!114 &3321254052188267970
 MonoBehaviour:
   m_ObjectHideFlags: 0

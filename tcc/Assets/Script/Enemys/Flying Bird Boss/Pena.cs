@@ -7,6 +7,7 @@ public class Pena : MonoBehaviour
     public Rigidbody2D rb;
     float time;
     PlayerHealth plH;
+    public int damage;
 
     void Start()
     {
@@ -27,7 +28,7 @@ public class Pena : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            plH.TakeDamage(15);
+            plH.TakeDamage(damage);
         }
     }
 }
