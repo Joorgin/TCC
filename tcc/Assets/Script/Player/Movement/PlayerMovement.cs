@@ -301,6 +301,7 @@ public class PlayerMovement : MonoBehaviour
         {
             IntemName = other.gameObject.name;
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)

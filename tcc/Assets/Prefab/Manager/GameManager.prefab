@@ -50,15 +50,15 @@ MonoBehaviour:
   - Name: Music_Theme
     clip: {fileID: 8300000, guid: 75b7a1c361dfc344d8f02af48d9dd055, type: 3}
   - Name: Music Beach
-    clip: {fileID: 8300000, guid: 7751100c251301449a0a8157c7c672cf, type: 3}
+    clip: {fileID: 8300000, guid: 9732296afcf99f349bd3ade09ea04881, type: 3}
   - Name: Night Forest Music
     clip: {fileID: 8300000, guid: 2e80552c5a0622640a16a0e45fa215f4, type: 3}
   - Name: Day Forest Music
     clip: {fileID: 8300000, guid: 2e80552c5a0622640a16a0e45fa215f4, type: 3}
   - Name: City Music
-    clip: {fileID: 8300000, guid: 7751100c251301449a0a8157c7c672cf, type: 3}
+    clip: {fileID: 8300000, guid: 2a64047ebcf533a4d8a9e3c583f00da4, type: 3}
   - Name: Bird Boss Music
-    clip: {fileID: 8300000, guid: 7751100c251301449a0a8157c7c672cf, type: 3}
+    clip: {fileID: 8300000, guid: 839d6a02aa4319a42807324d0226882e, type: 3}
   sfxSounds:
   - Name: Wave Sfx
     clip: {fileID: 8300000, guid: a3147061a80682340ac9f826a5a6a6d3, type: 3}
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 5801432149028732776}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -22,6 +22,7 @@ TagManager:
   - OneWayPlataform
   - Arena_De_Batalha
   - Lanca
+  - GameManager
   layers:
   - Default
   - TransparentFX

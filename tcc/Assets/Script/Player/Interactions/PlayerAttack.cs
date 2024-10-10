@@ -36,7 +36,7 @@ public class PlayerAttack : MonoBehaviour
     public int noOfClicks = 0;
     float lastClickedTime = 0;
     public float maxComboDelay = 0.9f;
-    public static bool canAtack = true;
+    public static bool canAtack;
 
     // freeze no momento do ataque
     [Space]
@@ -62,6 +62,7 @@ public class PlayerAttack : MonoBehaviour
     {
         Damage = 10;
         anim = GetComponent<Animator>();
+        canAtack = true;
     }
 
     private void Update()
@@ -70,6 +71,7 @@ public class PlayerAttack : MonoBehaviour
 
         if(!GameManager.IsInMainScene) direcaoVerticalMove = PlayerMovement.verticalMove == 1;
         else direcaoVerticalMove = Player_Type_2_Movement.verticalMove == 1;
+
 
         attackPos.gameObject.SetActive(direcaoVerticalMove);
         attackPos2.gameObject.SetActive(!direcaoVerticalMove);
@@ -99,13 +101,13 @@ public class PlayerAttack : MonoBehaviour
     /// </summary>
     void Atacar(bool direcao)
     {
-        
         if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.X)) 
             && (enemiesToDamage != null || enemiesToDamage2 != null) && noOfClicks == 0 && canAtack && !PlayerMovement.apaixonado)
         {
-            
             lastClickedTime = Time.time;
             noOfClicks++;
+
+            Debug.Log("Ataque 1");
 
             if (noOfClicks >= 1)
             {
