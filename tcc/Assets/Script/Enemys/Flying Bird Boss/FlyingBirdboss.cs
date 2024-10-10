@@ -32,6 +32,9 @@ public class FlyingBirdboss : MonoBehaviour
     public Animator anim;
     float Side = 1;
 
+    // Damage do Ataque
+    public int damage;
+
     public enum States
     {
         Appering,
@@ -203,7 +206,7 @@ public class FlyingBirdboss : MonoBehaviour
         {
             if (isAttacking && canMakeDamage)
             {
-                playerHealth.TakeDamage(20);
+                playerHealth.TakeDamage(damage);
                 canMakeDamage = false;
             }
         }
@@ -215,7 +218,7 @@ public class FlyingBirdboss : MonoBehaviour
         {
             if (isAttacking && canMakeDamage)
             {
-                playerHealth.TakeDamage(20);
+                playerHealth.TakeDamage(damage);
                 canMakeDamage = false;
             }
         }

@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5218662268605313915}
+  damage: 20
 --- !u!61 &7044708964438581113
 BoxCollider2D:
   m_ObjectHideFlags: 0
