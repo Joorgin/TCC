@@ -89,8 +89,8 @@ public class AudioManager : MonoBehaviour
                     hasChangedscene = false;
                     break;
                 case "Mapa 5":
-                    PlayMusic("Night Forest Music");
-                    PlaySfx("Night Forest Sfx");
+                    PlayMusic("Music Beach");
+                    PlaySfx("Wave Sfx");
                     hasChangedscene = false;
                     break;
             }
