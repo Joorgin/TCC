@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     #region Player 
     public static int PlayerMaxhealth = 100;
-    public static float PlayerStamina = 60;
+    public static float PlayerStamina = 180;
     #endregion
 
     public Transform pfDamagePopUp;
