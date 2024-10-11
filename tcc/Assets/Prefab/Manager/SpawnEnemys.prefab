@@ -57,7 +57,7 @@ MonoBehaviour:
   - {fileID: 5600738396192759090}
   - {fileID: 3659660435034210016}
   - {fileID: 3756130549814507599}
-  TimerToSpawn: 0
+  timeToSpawnEnemys: 10
 --- !u!1 &3659660435034210016
 GameObject:
   m_ObjectHideFlags: 0

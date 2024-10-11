@@ -81,7 +81,9 @@ public class PlayerHealth : MonoBehaviour
     public bool poisoned;
     public bool hasbeenPoisoned;
     public int HitsPoisoned;
-    
+    public int damageFromPoison;
+
+
 
     void Start()
     {
@@ -178,37 +180,36 @@ public class PlayerHealth : MonoBehaviour
     IEnumerator Poisoned()
     {
         int originalhitpoisoned = HitsPoisoned;
-        int damage = 2;
         poisoned = false;
-        TakeDamageFromPoison(damage);
+        TakeDamageFromPoison(damageFromPoison);
 
         yield return new WaitForSeconds(timeOfPoison);
 
         if (HitsPoisoned > originalhitpoisoned)
         {
-            damage += 3;
+            damageFromPoison += 3;
             originalhitpoisoned = HitsPoisoned;
         }
-        TakeDamageFromPoison(damage);
+        TakeDamageFromPoison(damageFromPoison);
 
         yield return new WaitForSeconds(timeOfPoison);
 
         if (HitsPoisoned > originalhitpoisoned)
         {
-            damage += 3;
+            damageFromPoison += 3;
             originalhitpoisoned = HitsPoisoned;
         }
-        TakeDamageFromPoison(damage);
+        TakeDamageFromPoison(damageFromPoison);
 
         yield return new WaitForSeconds(timeOfPoison);
 
         if (HitsPoisoned > originalhitpoisoned)
         {
-            damage += 3;
+            damageFromPoison += 3;
             originalhitpoisoned = HitsPoisoned;
         }
-        TakeDamageFromPoison(damage);
-        damage = 2;
+        TakeDamageFromPoison(damageFromPoison);
+        damageFromPoison = 2;
         HitsPoisoned = 0;
         hasbeenPoisoned = false;
     }

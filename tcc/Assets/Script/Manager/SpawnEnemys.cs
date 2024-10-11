@@ -6,12 +6,13 @@ public class SpawnEnemys : MonoBehaviour
 {
     public GameObject[] enemies;
     public GameObject[] SpawnPositions;
-    public float TimerToSpawn;
+    float TimerToSpawn;
+    public float timeToSpawnEnemys;
     void Update()
     {
         TimerToSpawn += Time.deltaTime;
 
-        if (TimerToSpawn > 10)
+        if (TimerToSpawn > timeToSpawnEnemys)
         {
             int RandomNumber = Random.Range(0, enemies.Length);
             int RandomSpawn = Random.Range(0, SpawnPositions.Length);

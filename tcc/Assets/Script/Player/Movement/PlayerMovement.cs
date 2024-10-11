@@ -25,7 +25,12 @@ public class PlayerMovement : MonoBehaviour
     public static bool isDashing;
     private float dashPower = 24f;
     private float dashingTime = 0.2f;
-    private float dashingCooldown = 1f;
+    private float dashingCooldown = 5f;
+
+    [Space]
+    [Header("Animator das UI Habilidades")]
+    public Animator animDash;
+    public static float CoolDownAnimationMultiplier = 1;
 
     // define tudo sobre knockback que o player sofre
     [Space]
@@ -280,12 +285,14 @@ public class PlayerMovement : MonoBehaviour
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         rb.velocity = new Vector2(verticalMove * dashPower, 0f);
+        animDash.SetFloat("SpeedAnimation", CoolDownAnimationMultiplier);
+        animDash.SetBool("Dashou", true);
         yield return new WaitForSeconds(dashingTime);
-
         rb.gravityScale = originalGravity;
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
 
+        animDash.SetBool("Dashou", false);
         canDash = true;
     }
 
