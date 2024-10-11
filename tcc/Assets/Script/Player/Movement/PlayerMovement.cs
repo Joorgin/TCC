@@ -291,7 +291,6 @@ public class PlayerMovement : MonoBehaviour
         rb.gravityScale = originalGravity;
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
-
         animDash.SetBool("Dashou", false);
         canDash = true;
     }
