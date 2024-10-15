@@ -1,0 +1,1460 @@
+fileFormatVersion: 2
+guid: 73516e15b3c05974ab7084e4dfc83790
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 61
+        width: 1481
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b543c55111e0b42977e3f8a4bf2b21
+      internalID: -1963007185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 0
+        width: 76
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4184bb4c27f9774e92677059bfdeadb
+      internalID: 833866026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 0
+        width: 75
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14752265e65092a45b12a4444510ec79
+      internalID: -411417954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 0
+        width: 73
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4a73f70d002db440b79c787a8977e1f
+      internalID: -1787720892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 0
+        width: 73
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2593539fa55fd0b4db3c6ff4409732fb
+      internalID: 1002418221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 0
+        width: 73
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a654b69405ca19947b21d6ef856bfddf
+      internalID: 1588844737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1951
+        y: 0
+        width: 75
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95735dc7260bc0b468cb6410aa256cf5
+      internalID: 585791539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 2078
+        y: 0
+        width: 76
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50472fb6900736d48bc6b449fd34eb2d
+      internalID: 1202800527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2209
+        y: 0
+        width: 72
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0b269ee3eecdb64d854deb177459fc0
+      internalID: -263288502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 0
+        width: 72
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9816849928ef25f47a5dbbaa97a306d1
+      internalID: 1316356037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2463
+        y: 0
+        width: 75
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e83524fdac47ba478704f84d394e7dd
+      internalID: 1198628600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2590
+        y: 0
+        width: 76
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4edac6f32de238744987266f735d0fb9
+      internalID: -744393371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 2721
+        y: 0
+        width: 72
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6039a18a01684e049bd9d155c49be8d0
+      internalID: -211408961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 2848
+        y: 0
+        width: 72
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3077166d6f7c06343b22afc6bec9ad82
+      internalID: -264192323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 2975
+        y: 0
+        width: 76
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f65120575bedd54b87c43af070084bd
+      internalID: -1213668443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3103
+        y: 0
+        width: 75
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9841b7248b560284ea8ed3f9452b1cba
+      internalID: 719693391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 3233
+        y: 0
+        width: 72
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e38c49d8caf2cd48917540ca31dbc7b
+      internalID: 1743450346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 0
+        width: 72
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef14044af397bd94a8a0cd0ca17a8591
+      internalID: -896279719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 3487
+        y: 0
+        width: 76
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a7154de741970c4ea670ae1fac34217
+      internalID: 2003414521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 3604
+        y: 0
+        width: 86
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2641caf84e9ccf74e861990cba4c57d2
+      internalID: -1384790333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 3738
+        y: 0
+        width: 79
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25b6936c3f30540418ec679de0d5060c
+      internalID: -710382534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 3866
+        y: 0
+        width: 79
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda6924da4ce20b4bbeaceba878fa6c4
+      internalID: 1347137434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 3993
+        y: 0
+        width: 81
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eec24cdb1bb8b7469dd677e30843f0e
+      internalID: 605315787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 4120
+        y: 0
+        width: 82
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09716e55c0111cd4e9497b5e9bc12b87
+      internalID: 49933875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 4250
+        y: 0
+        width: 79
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 495f3dec30a12a74cafc68246dfd04f4
+      internalID: 160114397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 4378
+        y: 0
+        width: 79
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 413db94566b231a449a7055cc15f6ac2
+      internalID: -940451446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 4505
+        y: 0
+        width: 79
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a3d5108abc4a6479d81ed5b7fc1149
+      internalID: 2045697662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 4632
+        y: 0
+        width: 82
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e81c718e61bb6f742a5040f4b1c4446d
+      internalID: -1740618495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 4763
+        y: 0
+        width: 79
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f44c57187a8821d48891c6e6f54e4e65
+      internalID: -212418829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 4890
+        y: 0
+        width: 79
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c535032c008c55a42a8a605e2f96dd0c
+      internalID: 794977396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 5017
+        y: 0
+        width: 86
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc13f1688998b9428cf52e5c4ca4f9d
+      internalID: 421719232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 5144
+        y: 0
+        width: 83
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73527c4a859fa864eb1a0cc4cabaf538
+      internalID: -1176670439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 5275
+        y: 0
+        width: 79
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bbc00f80c58c9945840f619c30fdfbf
+      internalID: -128416819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 5402
+        y: 0
+        width: 79
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e7f71aa1eb78494f999ba96265ffe77
+      internalID: -378294520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 5529
+        y: 0
+        width: 79
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94d2ea2e2228131448e2c6caced5c10a
+      internalID: 1637499919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 5657
+        y: 0
+        width: 82
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27ca942c87b470c44bc6d70e7c33a96a
+      internalID: -698868127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 5785
+        y: 0
+        width: 81
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6db59a88401154f4b818a3ec6fe1caef
+      internalID: 1367876531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 5914
+        y: 0
+        width: 79
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0621912deaffdc148a055b9f59018cb4
+      internalID: -116395437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 6041
+        y: 0
+        width: 79
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45db0223557fd2f4e9e8a00b3b3d12e9
+      internalID: -1041844780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 6169
+        y: 0
+        width: 81
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef478858a80a8ec4dbe4e16569e1310c
+      internalID: -339382309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 6296
+        y: 0
+        width: 82
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 912fea0ebeebe7a4ea5642df13b508cc
+      internalID: 1117397929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 6426
+        y: 0
+        width: 79
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66ad9846f8044a04e938b606eec55375
+      internalID: -1190679047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 6554
+        y: 0
+        width: 79
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6114f87c36464ce47ac9012eda9832b8
+      internalID: -60582197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 6681
+        y: 0
+        width: 80
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ce4e4e390dc284c96020b77b6942cd
+      internalID: -895433662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 6808
+        y: 0
+        width: 82
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e699fdd4771fa1345a371fd3dd542191
+      internalID: -1379726987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 6939
+        y: 0
+        width: 79
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7049f16cf2783224581299a04aee0113
+      internalID: 1473625161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 26
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8bb995337296544bd29a245f97109d
+      internalID: 1022883621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 26
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65c1c4e1303e7e4b92d51f4bb1f10de
+      internalID: -24618405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 23
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 203172af3eb336e478c75acba74f9941
+      internalID: -775297472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 23
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45875f3a933d273419771050ad71f3c7
+      internalID: 753691506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 0
+        width: 72
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2453d937666e46a4bb2b1cf435d316de
+      internalID: 1998003864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 72
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f84d3e41c483fd24f9a45174de432d4b
+      internalID: 807920193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 0
+        width: 72
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c84108155f1f76c4db23077a8614412c
+      internalID: -1021258848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 0
+        width: 72
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d613fcd04ab9849ba023aec3a6205b
+      internalID: 274011628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 0
+        width: 76
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d29e25834738cac44bf75233c4a322ad
+      internalID: 813246213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 0
+        width: 75
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cd27af08191846438b03252b318d11c
+      internalID: 944294521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 0
+        width: 72
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91d323ba30368af488dfdcb31a67cadf
+      internalID: 867663727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 72
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc5af4f8250d387459b7bb0f83bedd20
+      internalID: -659244604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 0
+        width: 76
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc61d7893b06a3b409d4a8db37af1092
+      internalID: -1383124845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estatua_Oxala_2-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 0
+        width: 76
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a32453a10f5e7147b5e2ab594fdcf36
+      internalID: 2092797868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Estatua_Oxala_2-Sheet_0: -1963007185
+      Estatua_Oxala_2-Sheet_1: 833866026
+      Estatua_Oxala_2-Sheet_10: 1198628600
+      Estatua_Oxala_2-Sheet_11: -744393371
+      Estatua_Oxala_2-Sheet_12: -211408961
+      Estatua_Oxala_2-Sheet_13: -264192323
+      Estatua_Oxala_2-Sheet_14: -1213668443
+      Estatua_Oxala_2-Sheet_15: 719693391
+      Estatua_Oxala_2-Sheet_16: 1743450346
+      Estatua_Oxala_2-Sheet_17: -896279719
+      Estatua_Oxala_2-Sheet_18: 2003414521
+      Estatua_Oxala_2-Sheet_19: -1384790333
+      Estatua_Oxala_2-Sheet_2: -411417954
+      Estatua_Oxala_2-Sheet_20: -710382534
+      Estatua_Oxala_2-Sheet_21: 1347137434
+      Estatua_Oxala_2-Sheet_22: 605315787
+      Estatua_Oxala_2-Sheet_23: 49933875
+      Estatua_Oxala_2-Sheet_24: 160114397
+      Estatua_Oxala_2-Sheet_25: -940451446
+      Estatua_Oxala_2-Sheet_26: 2045697662
+      Estatua_Oxala_2-Sheet_27: -1740618495
+      Estatua_Oxala_2-Sheet_28: -212418829
+      Estatua_Oxala_2-Sheet_29: 794977396
+      Estatua_Oxala_2-Sheet_3: -1787720892
+      Estatua_Oxala_2-Sheet_30: 421719232
+      Estatua_Oxala_2-Sheet_31: -1176670439
+      Estatua_Oxala_2-Sheet_32: -128416819
+      Estatua_Oxala_2-Sheet_33: -378294520
+      Estatua_Oxala_2-Sheet_34: 1637499919
+      Estatua_Oxala_2-Sheet_35: -698868127
+      Estatua_Oxala_2-Sheet_36: 1367876531
+      Estatua_Oxala_2-Sheet_37: -116395437
+      Estatua_Oxala_2-Sheet_38: -1041844780
+      Estatua_Oxala_2-Sheet_39: -339382309
+      Estatua_Oxala_2-Sheet_4: 1002418221
+      Estatua_Oxala_2-Sheet_40: 1117397929
+      Estatua_Oxala_2-Sheet_41: -1190679047
+      Estatua_Oxala_2-Sheet_42: -60582197
+      Estatua_Oxala_2-Sheet_43: -895433662
+      Estatua_Oxala_2-Sheet_44: -1379726987
+      Estatua_Oxala_2-Sheet_45: 1473625161
+      Estatua_Oxala_2-Sheet_46: 1022883621
+      Estatua_Oxala_2-Sheet_47: -24618405
+      Estatua_Oxala_2-Sheet_48: -775297472
+      Estatua_Oxala_2-Sheet_49: 753691506
+      Estatua_Oxala_2-Sheet_5: 1588844737
+      Estatua_Oxala_2-Sheet_50: 1998003864
+      Estatua_Oxala_2-Sheet_51: 807920193
+      Estatua_Oxala_2-Sheet_52: -1021258848
+      Estatua_Oxala_2-Sheet_53: 274011628
+      Estatua_Oxala_2-Sheet_54: 813246213
+      Estatua_Oxala_2-Sheet_55: 944294521
+      Estatua_Oxala_2-Sheet_56: 867663727
+      Estatua_Oxala_2-Sheet_57: -659244604
+      Estatua_Oxala_2-Sheet_58: -1383124845
+      Estatua_Oxala_2-Sheet_59: 2092797868
+      Estatua_Oxala_2-Sheet_6: 585791539
+      Estatua_Oxala_2-Sheet_7: 1202800527
+      Estatua_Oxala_2-Sheet_8: -263288502
+      Estatua_Oxala_2-Sheet_9: 1316356037
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
