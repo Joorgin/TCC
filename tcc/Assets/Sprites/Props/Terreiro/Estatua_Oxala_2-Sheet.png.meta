@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,9 +69,9 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -123,36 +123,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Estatua_Oxala_2-Sheet_0
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 61
-        width: 1481
-        height: 67
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a8b543c55111e0b42977e3f8a4bf2b21
-      internalID: -1963007185
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Estatua_Oxala_2-Sheet_1
       rect:
         serializedVersion: 2
         x: 799
         y: 0
         width: 76
-        height: 64
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -171,9 +150,9 @@ TextureImporter:
         x: 927
         y: 0
         width: 75
-        height: 67
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,7 +173,7 @@ TextureImporter:
         width: 73
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -215,7 +194,7 @@ TextureImporter:
         width: 73
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,7 +215,7 @@ TextureImporter:
         width: 73
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -257,7 +236,7 @@ TextureImporter:
         width: 75
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -278,7 +257,7 @@ TextureImporter:
         width: 76
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -299,7 +278,7 @@ TextureImporter:
         width: 72
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -320,7 +299,7 @@ TextureImporter:
         width: 72
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -341,7 +320,7 @@ TextureImporter:
         width: 75
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -362,7 +341,7 @@ TextureImporter:
         width: 76
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -383,7 +362,7 @@ TextureImporter:
         width: 72
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -404,7 +383,7 @@ TextureImporter:
         width: 72
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -425,7 +404,7 @@ TextureImporter:
         width: 76
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -446,7 +425,7 @@ TextureImporter:
         width: 75
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -467,7 +446,7 @@ TextureImporter:
         width: 72
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -488,7 +467,7 @@ TextureImporter:
         width: 72
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -509,7 +488,7 @@ TextureImporter:
         width: 76
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -525,12 +504,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_19
       rect:
         serializedVersion: 2
-        x: 3604
+        x: 3607
         y: 0
-        width: 86
+        width: 78
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -546,12 +525,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_20
       rect:
         serializedVersion: 2
-        x: 3738
+        x: 3741
         y: 0
-        width: 79
+        width: 78
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -567,12 +546,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_21
       rect:
         serializedVersion: 2
-        x: 3866
+        x: 3870
         y: 0
-        width: 79
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -588,12 +567,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_22
       rect:
         serializedVersion: 2
-        x: 3993
+        x: 3998
         y: 0
-        width: 81
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -609,12 +588,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_23
       rect:
         serializedVersion: 2
-        x: 4120
+        x: 4126
         y: 0
-        width: 82
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -630,12 +609,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_24
       rect:
         serializedVersion: 2
-        x: 4250
+        x: 4254
         y: 0
-        width: 79
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -651,12 +630,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_25
       rect:
         serializedVersion: 2
-        x: 4378
+        x: 4382
         y: 0
-        width: 79
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -672,12 +651,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_26
       rect:
         serializedVersion: 2
-        x: 4505
+        x: 4510
         y: 0
-        width: 79
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -693,12 +672,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_27
       rect:
         serializedVersion: 2
-        x: 4632
+        x: 4638
         y: 0
-        width: 82
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -714,12 +693,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_28
       rect:
         serializedVersion: 2
-        x: 4763
+        x: 4766
         y: 0
-        width: 79
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -735,12 +714,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_29
       rect:
         serializedVersion: 2
-        x: 4890
+        x: 4894
         y: 0
-        width: 79
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -756,12 +735,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_30
       rect:
         serializedVersion: 2
-        x: 5017
+        x: 5021
         y: 0
-        width: 86
+        width: 78
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -777,12 +756,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_31
       rect:
         serializedVersion: 2
-        x: 5144
+        x: 5150
         y: 0
-        width: 83
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -798,12 +777,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_32
       rect:
         serializedVersion: 2
-        x: 5275
+        x: 5278
         y: 0
-        width: 79
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -819,12 +798,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_33
       rect:
         serializedVersion: 2
-        x: 5402
+        x: 5406
         y: 0
-        width: 79
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -840,12 +819,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_34
       rect:
         serializedVersion: 2
-        x: 5529
+        x: 5534
         y: 0
-        width: 79
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -861,12 +840,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_35
       rect:
         serializedVersion: 2
-        x: 5657
+        x: 5662
         y: 0
-        width: 82
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -882,12 +861,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_36
       rect:
         serializedVersion: 2
-        x: 5785
+        x: 5790
         y: 0
-        width: 81
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -903,12 +882,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_37
       rect:
         serializedVersion: 2
-        x: 5914
+        x: 5918
         y: 0
-        width: 79
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -924,12 +903,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_38
       rect:
         serializedVersion: 2
-        x: 6041
+        x: 6046
         y: 0
-        width: 79
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -945,12 +924,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_39
       rect:
         serializedVersion: 2
-        x: 6169
+        x: 6174
         y: 0
-        width: 81
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -966,12 +945,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_40
       rect:
         serializedVersion: 2
-        x: 6296
+        x: 6302
         y: 0
-        width: 82
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -987,12 +966,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_41
       rect:
         serializedVersion: 2
-        x: 6426
+        x: 6430
         y: 0
-        width: 79
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1008,12 +987,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_42
       rect:
         serializedVersion: 2
-        x: 6554
+        x: 6558
         y: 0
-        width: 79
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1029,12 +1008,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_43
       rect:
         serializedVersion: 2
-        x: 6681
+        x: 6686
         y: 0
-        width: 80
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1050,12 +1029,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_44
       rect:
         serializedVersion: 2
-        x: 6808
+        x: 6814
         y: 0
-        width: 82
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1071,12 +1050,12 @@ TextureImporter:
       name: Estatua_Oxala_2-Sheet_45
       rect:
         serializedVersion: 2
-        x: 6939
+        x: 6942
         y: 0
-        width: 79
+        width: 77
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1089,99 +1068,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Estatua_Oxala_2-Sheet_46
-      rect:
-        serializedVersion: 2
-        x: 57
-        y: 26
-        width: 13
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e8bb995337296544bd29a245f97109d
-      internalID: 1022883621
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Estatua_Oxala_2-Sheet_47
-      rect:
-        serializedVersion: 2
-        x: 184
-        y: 26
-        width: 17
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e65c1c4e1303e7e4b92d51f4bb1f10de
-      internalID: -24618405
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Estatua_Oxala_2-Sheet_48
-      rect:
-        serializedVersion: 2
-        x: 311
-        y: 23
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 203172af3eb336e478c75acba74f9941
-      internalID: -775297472
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Estatua_Oxala_2-Sheet_49
-      rect:
-        serializedVersion: 2
-        x: 438
-        y: 23
-        width: 21
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 45875f3a933d273419771050ad71f3c7
-      internalID: 753691506
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Estatua_Oxala_2-Sheet_50
       rect:
         serializedVersion: 2
         x: 545
         y: 0
         width: 72
-        height: 47
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1200,9 +1095,9 @@ TextureImporter:
         x: 672
         y: 0
         width: 72
-        height: 50
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1221,9 +1116,9 @@ TextureImporter:
         x: 1057
         y: 0
         width: 72
-        height: 57
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1242,9 +1137,9 @@ TextureImporter:
         x: 1184
         y: 0
         width: 72
-        height: 57
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1263,9 +1158,9 @@ TextureImporter:
         x: 1311
         y: 0
         width: 76
-        height: 57
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1284,9 +1179,9 @@ TextureImporter:
         x: 1439
         y: 0
         width: 75
-        height: 57
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1305,9 +1200,9 @@ TextureImporter:
         x: 33
         y: 0
         width: 72
-        height: 22
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1326,9 +1221,9 @@ TextureImporter:
         x: 160
         y: 0
         width: 72
-        height: 22
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1347,9 +1242,9 @@ TextureImporter:
         x: 287
         y: 0
         width: 76
-        height: 22
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1368,9 +1263,9 @@ TextureImporter:
         x: 414
         y: 0
         width: 76
-        height: 22
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
