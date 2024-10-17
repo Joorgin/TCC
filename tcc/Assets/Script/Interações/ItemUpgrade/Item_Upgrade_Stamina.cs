@@ -32,6 +32,18 @@ public class Item_Upgrade_Stamina : MonoBehaviour
                 almas = almas + (AddAlmas * GameManager.CurrentLevelItemStaminaUpgrade);
                 anim.SetBool("Level3", true);
                 break;
+            case 4:
+                almas = almas + (AddAlmas * GameManager.CurrentLevelItemStaminaUpgrade);
+                anim.SetBool("Level4", true);
+                break;
+            case 5:
+                almas = almas + (AddAlmas * GameManager.CurrentLevelItemStaminaUpgrade);
+                anim.SetBool("Level5", true);
+                break;
+            case 6:
+                almas = almas + (AddAlmas * GameManager.CurrentLevelItemStaminaUpgrade);
+                anim.SetBool("Level6", true);
+                break;
         }
     }
 
@@ -83,7 +95,31 @@ public class Item_Upgrade_Stamina : MonoBehaviour
                 break;
             case 3:
                 GameManager.UpgradeLevelStamina = true;
-                //anim.SetBool("Level4", true);
+                anim.SetBool("Level4", true);
+                Contador_de_Almas.instance.DiminiurAlmas(almas);
+                Upgrade = false;
+                almas += AddAlmas;
+                CurrentLevel++;
+                GameManager.CurrentLevelItemStaminaUpgrade++;
+                GameManager.UpgradeLevelStamina = false;
+                GameManager.PlayerStamina += 60;
+                AtualizarNumeroDeAlmas();
+                break;
+            case 4:
+                GameManager.UpgradeLevelStamina = true;
+                anim.SetBool("Level5", true);
+                Contador_de_Almas.instance.DiminiurAlmas(almas);
+                Upgrade = false;
+                almas += AddAlmas;
+                CurrentLevel++;
+                GameManager.CurrentLevelItemStaminaUpgrade++;
+                GameManager.UpgradeLevelStamina = false;
+                GameManager.PlayerStamina += 60;
+                AtualizarNumeroDeAlmas();
+                break;
+            case 5:
+                GameManager.UpgradeLevelStamina = true;
+                anim.SetBool("Level6", true);
                 Contador_de_Almas.instance.DiminiurAlmas(almas);
                 Upgrade = false;
                 almas += AddAlmas;
