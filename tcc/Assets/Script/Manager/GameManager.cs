@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public static int LastMap, MapsPassed;
     public static bool LastMapPassed;
-    public static int NumberOfSouls = 3000;
+    public static int NumberOfSouls;
     public static bool upgradeLevel, UpgradeLevelStamina;
     public static int CurrentLevelItemUpgrade = 1, CurrentLevelItemStaminaUpgrade = 1;
     public static int BraceletesNecessariosPorBau;

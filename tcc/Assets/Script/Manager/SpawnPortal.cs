@@ -10,7 +10,7 @@ public class SpawnPortal : MonoBehaviour
 
     private void Awake()
     {
-        RandomIndex = Random.Range(0, 4);
+        RandomIndex = Random.Range(0, SpawnPositions.Length);
         Instantiate(Prefab, SpawnPositions[RandomIndex].transform.position, Quaternion.identity);
     }
 }
