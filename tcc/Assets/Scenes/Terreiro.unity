@@ -1398,7 +1398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3406034859945432956, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.77
+      value: 1.71
       objectReference: {fileID: 0}
     - target: {fileID: 3406034859945432956, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1446,19 +1446,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8429073270123524718, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
       propertyPath: SceneNames.Array.data[1]
-      value: Cidade
+      value: Floresta
       objectReference: {fileID: 0}
     - target: {fileID: 8429073270123524718, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
       propertyPath: SceneNames.Array.data[2]
-      value: Cidade
+      value: Praia 2
       objectReference: {fileID: 0}
     - target: {fileID: 8429073270123524718, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
       propertyPath: SceneNames.Array.data[3]
-      value: Cidade
+      value: Mapa 4
       objectReference: {fileID: 0}
     - target: {fileID: 8429073270123524718, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
       propertyPath: SceneNames.Array.data[4]
-      value: Cidade
+      value: Mapa 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22031,12 +22031,13 @@ GameObject:
   - component: {fileID: 8977738333160299765}
   - component: {fileID: 6942019303671207235}
   - component: {fileID: 4906495424304515015}
-  - component: {fileID: 6347502671312745619}
   - component: {fileID: 8977738333160299766}
   - component: {fileID: 3044246246274538483}
   - component: {fileID: 465859047673582102}
   - component: {fileID: 8977738333160299767}
   - component: {fileID: 8977738333160299768}
+  - component: {fileID: 8977738333160299770}
+  - component: {fileID: 8977738333160299769}
   m_Layer: 7
   m_Name: Player_Type_2
   m_TagString: Player
@@ -22515,41 +22516,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 13
   m_TargetDisplay: 0
---- !u!70 &6347502671312745619
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 148110851584413932}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 98be36ad80a81eb47bad575167a3ecdc, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0085611455, y: -0.04386395}
-  m_Size: {x: 0.22891402, y: 0.55258286}
-  m_Direction: 0
 --- !u!4 &6423152029407433463
 Transform:
   m_ObjectHideFlags: 0
@@ -22862,7 +22828,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  groundCheckRadius: 0.4
+  groundCheckRadius: 0.2
   KBForce: 6
   KBCounter: 0
   KBTotalTime: 0.2
@@ -22920,6 +22886,76 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 36ef55f458f5cca42966fdc0a7fc4a4b, type: 3}
   - {fileID: 8300000, guid: 85d74a811b0d6c840b78dc0dd05333b5, type: 3}
   - {fileID: 8300000, guid: e7a440586c43f8e4d9fe44944b11ef82, type: 3}
+--- !u!58 &8977738333160299769
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148110851584413932}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 98be36ad80a81eb47bad575167a3ecdc, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.21}
+  serializedVersion: 2
+  m_Radius: 0.1
+--- !u!58 &8977738333160299770
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148110851584413932}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 662e4662f855e3b4e84d57ce63dd22b2, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.13}
+  serializedVersion: 2
+  m_Radius: 0.14
 --- !u!114 &8995036777307724443
 MonoBehaviour:
   m_ObjectHideFlags: 3
