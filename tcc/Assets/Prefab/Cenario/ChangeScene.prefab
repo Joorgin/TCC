@@ -583,6 +583,7 @@ MonoBehaviour:
   changeScene: 0
   TimeToLoad: 0
   CounterPercent: 0
+  totalTimeToChargePortal: 13
   SceneNames:
   - Floresta
   - Mapa 5

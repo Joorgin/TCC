@@ -2145,6 +2145,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8429073270123524718, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
+      propertyPath: totalTimeToChargePortal
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429073270123524718, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
       propertyPath: SceneNames.Array.data[0]
       value: Cidade
       objectReference: {fileID: 0}

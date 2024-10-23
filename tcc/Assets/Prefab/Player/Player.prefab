@@ -980,9 +980,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6508982883699098929}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2769,7 +2769,7 @@ GameObject:
   - component: {fileID: 9163102898656633445}
   m_Layer: 7
   m_Name: UnderGroundCheck
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14627,7 +14627,7 @@ GameObject:
   - component: {fileID: 1968878901043093397}
   m_Layer: 7
   m_Name: DamageArea
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
