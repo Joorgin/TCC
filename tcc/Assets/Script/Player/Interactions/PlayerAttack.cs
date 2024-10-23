@@ -130,10 +130,10 @@ public class PlayerAttack : MonoBehaviour
         else if((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.X)) &&
             (enemiesToDamage != null || enemiesToDamage2 != null) && noOfClicks == 1) noOfClicks++;
 
-        else if (Input.GetKey(KeyCode.Q) && !hasShoot && CanShoot && !PlayerMovement.apaixonado && !GameManager.IsInMainScene)
+        else if (Input.GetKey(KeyCode.Q) && !hasShoot && !PlayerMovement.apaixonado && !GameManager.IsInMainScene)
         {
             //enquanto nao houver animacao manter isAttacking comentado
-            // PlayerMovement.isAttacking = true;
+            Debug.Log("Flecha");
             StartCoroutine(SHOOTARROW());
         }
         else
@@ -275,7 +275,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void FreezeShootTime()
     {
-        durationFreeze = 0.7f;
+        durationFreeze = 0.5f;
         StartCoroutine(SetTimeForAtackEffect());
     }
 
@@ -290,7 +290,7 @@ public class PlayerAttack : MonoBehaviour
     {
         _isFrozen = true;
         var original = Time.timeScale;
-        Time.timeScale = 0;
+        Time.timeScale = 0f;
         yield return new WaitForSecondsRealtime(durationFreeze);
         Time.timeScale = original;
         _pendingFreezeDuration = 0f;

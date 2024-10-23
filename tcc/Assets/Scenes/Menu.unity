@@ -4358,7 +4358,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2069790787}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
@@ -4586,7 +4586,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069790786}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b863cccee172c1243bbbdf4f85ece41d, type: 3}
   m_Name: 
@@ -4594,6 +4594,7 @@ MonoBehaviour:
   changeScene: 0
   TimeToLoad: 0
   CounterPercent: 0
+  totalTimeToChargePortal: 0
   SceneNames: []
   anim: {fileID: 0}
   Boss:

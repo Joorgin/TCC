@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
     public bool changeScene;
-    public float TimeToLoad = 0f, CounterPercent;
+    public float TimeToLoad = 0f, CounterPercent, totalTimeToChargePortal;
     public string[] SceneNames;
     string SceneToChange;
     public static string SceneToChangeMusic;
@@ -104,7 +104,7 @@ public class SceneChange : MonoBehaviour
 
         CounterPercent += isInRange && canCharge ? Time.deltaTime : 0 ;
        
-        if(CounterPercent >= 13)
+        if(CounterPercent >= totalTimeToChargePortal)
         {
             anim.SetBool("End_Portal", true);
             ContAnim();
