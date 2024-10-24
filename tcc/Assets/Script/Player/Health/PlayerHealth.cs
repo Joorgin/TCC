@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     public GameObject shield;
     float TimeToReDo;
     public static float TimeToShieldRemake = 20f;
+    public Animator shildHabilityAnimation;
 
     // tudo sobre o escudo e sua realcao com a vida
     public static bool hasArmorUp;
@@ -99,9 +100,15 @@ public class PlayerHealth : MonoBehaviour
     
     void Update()
     {
-        if(Input.GetKeyUp(KeyCode.R) && canShield && !shieldBroken) 
+        if(Input.GetKeyUp(KeyCode.R) && canShield && !shieldBroken && !hasShildUp) 
         { 
-          hasShildUp = true;
+            hasShildUp = true;
+            shildHabilityAnimation.SetBool("ResetShild", false);
+        }
+
+        if(canShield)
+        {
+            shildHabilityAnimation.SetBool("HasShild", true);
         }
 
         if(hasShildUp)
@@ -116,10 +123,12 @@ public class PlayerHealth : MonoBehaviour
         if(shieldBroken) 
         { 
             TimeToReDo += Time.deltaTime;
+            shildHabilityAnimation.SetBool("ResetShild", false);
 
-            if(TimeToReDo >= TimeToShieldRemake)
+            if (TimeToReDo >= TimeToShieldRemake)
             {
                 shieldBroken = false;
+                shildHabilityAnimation.SetBool("ResetShild", true);
                 TimeToReDo = 0;
             }
         }
