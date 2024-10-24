@@ -181,7 +181,6 @@ public class FlyingBirdboss : MonoBehaviour
         anim.SetBool("Rasante", true);
         canDash = false;
         isAttacking = true;
-        transform.Rotate(0, 0, 0);
         rb.velocity = new Vector2(transform.localScale.x * (dashPower * Side), 0f);
         yield return new WaitForSeconds(dashingTime);
         rb.velocity = new Vector2(0, 0);

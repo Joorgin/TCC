@@ -17,8 +17,6 @@ public class Chest : MonoBehaviour
     public TextMeshProUGUI CoinNecessaryText;
     int RarityChest;
 
-    public GameObject interactionButton;
-
     private void Awake()
     {
         ChestID = gameObject.name;
@@ -26,8 +24,6 @@ public class Chest : MonoBehaviour
         RarityChest = Random.Range(0, 100);
 
         ChangeChanceOfAGoodChest();
-
-        Debug.Log("MapsPassed: " + GameManager.MapsPassed);
 
         switch (GameManager.MapsPassed)
         {
@@ -122,13 +118,5 @@ public class Chest : MonoBehaviour
         Debug.Log("RARITYCHANCE: " + PlayerMovement.chanceForAGoodChest);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.CompareTag("Player")) interactionButton.SetActive(true);
-    }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player")) interactionButton.SetActive(false);
-    }
 }

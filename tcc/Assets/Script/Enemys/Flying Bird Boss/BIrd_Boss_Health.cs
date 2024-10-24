@@ -51,14 +51,14 @@ public class BIrd_Boss_Health : MonoBehaviour
         {
             Currenthealth -= damage;
             healthUI.SetHealth(Currenthealth);
-            timeToDie = 0.5f;
-            DamagePopUp.Create(gameObject.transform.position, damage);
-            fleashMaterialScript.Flash();
             if (Currenthealth <= 0 && isAlive)
             {
                 Death();
                 isAlive = false;
             }
+            timeToDie = 0.5f;
+            DamagePopUp.Create(gameObject.transform.position, damage);
+            fleashMaterialScript.Flash();
         }
     }
 

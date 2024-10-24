@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Flecha : MonoBehaviour
@@ -54,14 +53,14 @@ public class Flecha : MonoBehaviour
                 collision.gameObject.GetComponent<ExplosiveEnemyHealth>().TakeDamage(damage);
             }
 
-            if(collision.gameObject.GetComponent<BIrd_Boss_Health>() != null) 
-            {
-                collision.gameObject.GetComponent<BIrd_Boss_Health>().TakeDamage(damage);
-            }
-
-            if(collision.gameObject.GetComponent<Sereia_Health>() != null)
+            if(collision.gameObject.GetComponent<Sereia_Health>() != null) 
             {
                 collision.gameObject.GetComponent<Sereia_Health>().TakeDamage(damage);
+            }
+
+            if(collision.gameObject.GetComponent<BIrd_Boss_Health>() != null) 
+            { 
+               collision.gameObject.GetComponent<BIrd_Boss_Health>().TakeDamage(damage);
             }
         }
     }
