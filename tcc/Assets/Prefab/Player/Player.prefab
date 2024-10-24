@@ -177,9 +177,9 @@ RectTransform:
   - {fileID: 5258123141221849412}
   - {fileID: 680370860058278388}
   - {fileID: 4084164320763999780}
-  - {fileID: 4468874002798398671}
   - {fileID: 7821872404862997265}
   - {fileID: 5953424327606421831}
+  - {fileID: 4468874002798398671}
   m_Father: {fileID: 8977738332771123163}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2043,7 +2043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7284978427293777034
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2835,7 +2835,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.04
+  m_Radius: 0.01
 --- !u!1 &1252642745329749312
 GameObject:
   m_ObjectHideFlags: 0
