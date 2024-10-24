@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -284871806, guid: 1fa63999609af1a4ea5adef2b5cf7fbf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f982cb7b6f0c2f84cbf5348b53cc7644, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,7 +129,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.390625, y: 0.640625}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -164,7 +164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
-  PlayerTransform: {fileID: 0}
   isChansing: 0
   chaseDistance: 4
   anim: {fileID: 8337241252774572140}
@@ -181,6 +180,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   groundCheckRadius: 0.1
+  canJump: 0
 --- !u!114 &6907029225129602822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +198,7 @@ MonoBehaviour:
   healthUI: {fileID: 3732479468014770936}
   Bracelete: {fileID: 4593072821139420700, guid: 1d43874d8c712d94fa30fed44bda0306, type: 3}
   fleashMaterialScript: {fileID: 2638949441996999235}
+  stamina: 0
 --- !u!95 &8337241252774572140
 Animator:
   serializedVersion: 5
