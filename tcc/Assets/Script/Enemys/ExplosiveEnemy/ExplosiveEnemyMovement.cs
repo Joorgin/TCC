@@ -198,16 +198,16 @@ public class ExplosiveEnemyMovement : MonoBehaviour
 
     public void DeleteCharacter()
     {
-        if (PlayerHealth.hasShildUp == false)
+        if (playerHealth.hasShildUp == true)
+        {
+            playerHealth.shieldBroken = true;
+            playerHealth.hasShildUp = false;
+        }
+        else
         {
             playerHealth.TakeDamage(damage);
             playerMovement.TakeSlow(TimeOfSlow);
             Destroy(gameObject);
-        }
-        if (PlayerHealth.hasShildUp == true)
-        {
-            PlayerHealth.shieldBroken = true;
-            PlayerHealth.hasShildUp = false;
         }
 
         

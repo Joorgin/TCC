@@ -164,9 +164,16 @@ public class Player_Mal : MonoBehaviour
         //anim.SetBool("EsferaDeVida", false);
         if (playerIsInRange && podeAtacar)
         {
-            PlayerTransform.GetComponent<PlayerHealth>().TakeDamage(damage);
-            Player_Mal_Health.RecuperarVida(damage);
-            podeAtacar = false;
+            if (PlayerTransform.GetComponent<PlayerHealth>().hasShildUp == true)
+            {
+                PlayerTransform.GetComponent<PlayerHealth>().shieldBroken = true;
+                PlayerTransform.GetComponent<PlayerHealth>().hasShildUp = false;
+            }else
+            {
+                PlayerTransform.GetComponent<PlayerHealth>().TakeDamage(damage);
+                Player_Mal_Health.RecuperarVida(damage);
+                podeAtacar = false;
+            }
         }
         states = States.Looking;
     }

@@ -40,7 +40,7 @@ public class EnemyDamage : MonoBehaviour
                     playerMovement.KnockFromRight = false;
                 }
 
-                if (PlayerHealth.hasShildUp == false)
+                if (playerHealth.hasShildUp == false)
                 {
                     playerHealth.TakeDamage(damage);
                     if(PlayerHealth.hasMirrorUp)
@@ -50,10 +50,10 @@ public class EnemyDamage : MonoBehaviour
                         thisHealth.TakeDamage(DamagePercent);
                     }
                 }
-                if (PlayerHealth.hasShildUp == true)
+                if (playerHealth.hasShildUp == true)
                 {
-                    PlayerHealth.shieldBroken = true;
-                    PlayerHealth.hasShildUp = false;
+                    playerHealth.shieldBroken = true;
+                    playerHealth.hasShildUp = false;
                 }
                 isAttacking = false;
             }
