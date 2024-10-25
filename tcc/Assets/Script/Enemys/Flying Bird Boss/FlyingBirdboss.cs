@@ -206,8 +206,17 @@ public class FlyingBirdboss : MonoBehaviour
         {
             if (isAttacking && canMakeDamage)
             {
-                playerHealth.TakeDamage(damage);
-                canMakeDamage = false;
+                if (playerHealth.hasShildUp == true)
+                {
+                    playerHealth.shieldBroken = true;
+                    playerHealth.hasShildUp = false;
+                    canMakeDamage = false;
+                }
+                else
+                {
+                    playerHealth.TakeDamage(damage);
+                    canMakeDamage = false;
+                }
             }
         }
     }
@@ -218,8 +227,17 @@ public class FlyingBirdboss : MonoBehaviour
         {
             if (isAttacking && canMakeDamage)
             {
-                playerHealth.TakeDamage(damage);
-                canMakeDamage = false;
+                if (playerHealth.hasShildUp == true)
+                {
+                    playerHealth.shieldBroken = true;
+                    playerHealth.hasShildUp = false;
+                    canMakeDamage = false;
+                }
+                else
+                {
+                    playerHealth.TakeDamage(damage);
+                    canMakeDamage = false;
+                }
             }
         }
     }

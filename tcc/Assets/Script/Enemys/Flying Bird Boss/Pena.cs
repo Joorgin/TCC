@@ -8,6 +8,7 @@ public class Pena : MonoBehaviour
     float time;
     PlayerHealth plH;
     public int damage;
+    bool cantMakeDamage;
 
     void Start()
     {
@@ -26,9 +27,19 @@ public class Pena : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if(collision.CompareTag("Player") && !cantMakeDamage)
         {
-            plH.TakeDamage(damage);
+            if (plH.hasShildUp == true)
+            {
+                plH.shieldBroken = true;
+                plH.hasShildUp = false;
+                cantMakeDamage = true;
+            }
+            else
+            {
+                plH.TakeDamage(damage);
+                cantMakeDamage = true;
+            }
         }
     }
 }

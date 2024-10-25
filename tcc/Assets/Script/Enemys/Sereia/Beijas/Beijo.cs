@@ -48,9 +48,17 @@ public class Beijo : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            plH.TakeDamage(damage);
-            PlayerMovement.apaixonado = true;
-            Destroy(gameObject);
+            if (plH.hasShildUp == true)
+            {
+                plH.shieldBroken = true;
+                plH.hasShildUp = false;
+            }
+            else
+            {
+                plH.TakeDamage(damage);
+                PlayerMovement.apaixonado = true;
+                Destroy(gameObject);
+            }
         }
     }
 

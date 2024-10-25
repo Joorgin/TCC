@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
     public PlayerHealthUI healthUI;
 
     // Tudo sobre o shield e sua relacao com a vida
-    public static bool hasShildUp, canShield, shieldBroken;
+    public bool hasShildUp, canShield, shieldBroken, hasTakeShieldFirstTime;
     public GameObject shield;
     float TimeToReDo;
     public static float TimeToShieldRemake = 20f;
@@ -103,12 +103,13 @@ public class PlayerHealth : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.R) && canShield && !shieldBroken && !hasShildUp) 
         { 
             hasShildUp = true;
-            shildHabilityAnimation.SetBool("ResetShild", false);
         }
 
-        if(canShield)
+        if(canShield && !hasTakeShieldFirstTime)
         {
+            hasTakeShieldFirstTime = true;
             shildHabilityAnimation.SetBool("HasShild", true);
+            shildHabilityAnimation.SetBool("ResetShild", true);
         }
 
         if(hasShildUp)

@@ -23,7 +23,15 @@ public class Lancas : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            playerHealth.TakeDamage(damage);
+            if (playerHealth.hasShildUp == true)
+            {
+                playerHealth.shieldBroken = true;
+                playerHealth.hasShildUp = false;
+            }
+            else
+            {
+                playerHealth.TakeDamage(damage);
+            }
         }
     }
 }

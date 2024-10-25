@@ -16,8 +16,15 @@ public class OndaDamage : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("ONDA DAMAGE");
-            plH.TakeDamage(damage);
+            if (plH.hasShildUp == true)
+            {
+                plH.shieldBroken = true;
+                plH.hasShildUp = false;
+            }
+            else
+            {
+                plH.TakeDamage(damage);
+            }
         }
     }
 }

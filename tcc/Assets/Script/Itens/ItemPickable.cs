@@ -24,11 +24,18 @@ public class ItemPickable : MonoBehaviour
     public string Description;
     public TextMeshProUGUI descricao;
 
+    public PlayerHealth plh;
+
     private void Awake()
     {
         myCollider = GetComponent<CircleCollider2D>();
         myCollider.isTrigger = true;
         myCollider.radius = PickUpRadius;
+       
+    }
+    private void Start()
+    {
+        plh = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     }
 
     private void Update()
@@ -81,8 +88,8 @@ public class ItemPickable : MonoBehaviour
                     PlayerHealth.HealthRegen += 2;
                     break;
                 case 2:
-                    if(!PlayerHealth.canShield) PlayerHealth.canShield = true;
-                    if (PlayerHealth.canShield) PlayerHealth.TimeToShieldRemake -= 2;
+                    if(!plh.canShield) plh.canShield = true;
+                    if (plh.canShield) PlayerHealth.TimeToShieldRemake -= 2;
                     break;
                 case 3:
                     PlayerHealth.LibertarKiumbas();
