@@ -18,14 +18,17 @@ public class Stamina : MonoBehaviour
     }
     void Update()
     {
-        staminaStay -= Time.deltaTime;
-
-        staminaUI.SetStamina(staminaStay);
-
-        if (staminaStay <= 0)
+        if (GameManager.hasPassedTutorial)
         {
-            PlayerHealth.deadByStamina = true;
-            staminaStay = stamina;
+            staminaStay -= Time.deltaTime;
+
+            staminaUI.SetStamina(staminaStay);
+
+            if (staminaStay <= 0)
+            {
+                PlayerHealth.deadByStamina = true;
+                staminaStay = stamina;
+            }
         }
     }
 

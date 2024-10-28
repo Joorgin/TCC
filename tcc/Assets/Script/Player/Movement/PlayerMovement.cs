@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if(!GameManager.isInTutorial) DontDestroyOnLoad(gameObject);
 
         if (Instance == null) Instance = this;
         else if (isInFinalScene) Destroy(gameObject);
@@ -160,7 +160,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (PlayerHealth.isAlive && !apaixonado && !PlayerAttack.isShooting)
+        if (PlayerHealth.isAlive && !apaixonado && !PlayerAttack.isShooting && !GameManager.isInConversation)
         {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
@@ -223,7 +223,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (PlayerHealth.isAlive && !apaixonado && !Downdash._isDownDash)
+        if (PlayerHealth.isAlive && !apaixonado && !Downdash._isDownDash && !PlayerAttack.isShooting && !GameManager.isInConversation)
         {
             if (KBCounter <= 0)
             {

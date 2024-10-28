@@ -31,6 +31,7 @@ public class SceneChange : MonoBehaviour
           TimeToLoad += Time.deltaTime;
         }
         // da Fade e escolhe o proximo mapa
+
         if (TimeToLoad >= 1)
         {
             RandomScene = Random.Range(0, SceneNames.Length);
@@ -65,7 +66,7 @@ public class SceneChange : MonoBehaviour
                 AudioManager.hasChangedscene = true;
                 SceneManager.LoadScene(SceneToChange);
             }
-        } 
+        }
 
         if (isInRange && Input.GetKey(KeyCode.E) && !hasSpawnedBoss)
         {
@@ -76,24 +77,25 @@ public class SceneChange : MonoBehaviour
                 int RandomNumber = Random.Range(0, 2);
 
                 switch (RandomNumber)
-                { 
-                   case 0:
+                {
+                    case 0:
                         Instantiate(Boss[0], BossSpawn[0].transform.position, Quaternion.identity);
                         Debug.Log("Position 0 : " + BossSpawn[0].transform.position);
                         break;
-                   case 1:
+                    case 1:
                         Instantiate(Boss[1], BossSpawn[0].transform.position, Quaternion.identity);
                         Debug.Log("Position 1 : " + BossSpawn[0].transform.position);
                         break;
                 }
 
-                
+
                 hasSpawnedBoss = true;
             }
             else GameManager.IsInMainScene = false;
         }
-            
-        if(isInRange && canCharge) 
+       
+
+        if (isInRange && canCharge) 
         {
             anim.SetBool("Start_Portal", true);
             anim.speed = 1;
