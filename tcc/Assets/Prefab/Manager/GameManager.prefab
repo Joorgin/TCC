@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSounds:
   - Name: Music_Theme
-    clip: {fileID: 8300000, guid: 75b7a1c361dfc344d8f02af48d9dd055, type: 3}
+    clip: {fileID: 8300000, guid: 6cf2976709df2bf48978679da90651e0, type: 3}
   - Name: Music Beach
     clip: {fileID: 8300000, guid: 9732296afcf99f349bd3ade09ea04881, type: 3}
   - Name: Night Forest Music

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Jump_Void : MonoBehaviour
 {
     public Transform pointToReturn;
+    public int damage;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,7 +13,7 @@ public class Jump_Void : MonoBehaviour
         {
             collision.transform.position = pointToReturn.position;
             PlayerHealth plyheath = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-            plyheath.TakeDamage(10);
+            plyheath.TakeDamage(damage);
         }
     }
 }

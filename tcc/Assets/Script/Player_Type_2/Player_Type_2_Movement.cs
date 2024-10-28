@@ -58,6 +58,8 @@ public class Player_Type_2_Movement : MonoBehaviour
         Physics2D.IgnoreLayerCollision(6, 7, true);
         GameManager.IsInMainScene = true;
         GameManager.MapsPassed = 0;
+        GameManager.isInTutorial = false;
+        GameManager.hasPassedTutorial = true;
         AudioManager.hasChangedscene = true;
         AudioManager.SceneToChangeMusic = "Terreiro";
     }

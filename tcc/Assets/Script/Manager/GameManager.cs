@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public static int CurrentLevelItemUpgrade = 1, CurrentLevelItemStaminaUpgrade = 1;
     public static int BraceletesNecessariosPorBau;
     public static string LastMapName;
-    public static bool IsInMainScene;
+    public static bool IsInMainScene, isInConversation, isInTutorial, hasPassedTutorial;
 
     #region Player 
     public static int PlayerMaxhealth = 100;

@@ -46,6 +46,7 @@ public class Dialog : MonoBehaviour
             isInDialog = true;
             TriggerDialogue();
             StartCoroutine(hasStartedTalking());
+            GameManager.isInConversation = true;
         }
 
         if (Input.GetKey(KeyCode.Space) && inRange && isInDialog && hasStartTalking)

@@ -511,6 +511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scenename:
+  - Tutorial
   - Terreiro
 --- !u!1 &1108913846
 GameObject:
