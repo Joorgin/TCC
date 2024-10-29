@@ -707,7 +707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6400294398656106571, guid: 2f3d2e6cf996e7f4fabaef6cd3130d4f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8482043281322009497, guid: 2f3d2e6cf996e7f4fabaef6cd3130d4f, type: 3}
       propertyPath: m_Name
@@ -715,7 +715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8482043281322009497, guid: 2f3d2e6cf996e7f4fabaef6cd3130d4f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9033001578800357911, guid: 2f3d2e6cf996e7f4fabaef6cd3130d4f, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1412,7 +1412,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 170007471}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &170007471
 Animator:
@@ -22529,7 +22528,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 528990832}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &528990832
 Animator:
@@ -22646,7 +22644,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 538022714}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &538022714
 Animator:
@@ -23049,7 +23046,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 573876009}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &573876009
 Animator:
@@ -23449,7 +23445,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 681537397}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &681537397
 Animator:
@@ -23566,7 +23561,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 719051622}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &719051622
 Animator:
@@ -24103,7 +24097,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 827351039}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &827351039
 Animator:
@@ -24388,7 +24381,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 843610725}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &843610725
 Animator:
@@ -25929,7 +25921,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1027415054}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &1027415054
 Animator:
@@ -26704,7 +26695,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1178699271}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &1178699271
 Animator:
@@ -27465,7 +27455,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1309067162}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &1309067162
 Animator:
@@ -27626,11 +27615,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6318247904167069522, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7984668788361182892, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27731,7 +27720,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1365170472}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &1365170472
 Animator:
@@ -28119,7 +28107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1431931922}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &1431931922
 Animator:
@@ -28236,7 +28223,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1437908901}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &1437908901
 Animator:
@@ -29370,7 +29356,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1511386498}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &1511386498
 Animator:
@@ -29487,7 +29472,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1518604452}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &1518604452
 Animator:
@@ -30337,7 +30321,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1684418749}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &1684418749
 Animator:
@@ -31243,7 +31226,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1893280965}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &1893280965
 Animator:
@@ -31637,7 +31619,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1974685329}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &1974685329
 Animator:
@@ -31801,7 +31782,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1993617030}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &1993617030
 Animator:
@@ -32392,7 +32372,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 2120647793}
-  playerHealth: {fileID: 0}
   damage: 10
 --- !u!95 &2120647793
 Animator:
