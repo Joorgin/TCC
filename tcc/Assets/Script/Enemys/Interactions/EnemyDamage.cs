@@ -7,7 +7,6 @@ public class EnemyDamage : MonoBehaviour
     static List<EnemyDamage> m_List = new List<EnemyDamage>();
 
    public int damage;
-   public PlayerHealth playerHealth;
    public PlayerMovement playerMovement;
    public static bool isAttacking;
 
@@ -17,7 +16,6 @@ public class EnemyDamage : MonoBehaviour
 
     private void Start()
     {
-        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         m_List.Add(this);
     }
@@ -40,9 +38,9 @@ public class EnemyDamage : MonoBehaviour
                     playerMovement.KnockFromRight = false;
                 }
 
-                if (playerHealth.hasShildUp == false)
+                if (collision.GetComponent<PlayerHealth>().hasShildUp == false)
                 {
-                    playerHealth.TakeDamage(damage);
+                    collision.GetComponent<PlayerHealth>().TakeDamage(damage);
                     if(PlayerHealth.hasMirrorUp)
                     {
                         int DamagePercent = (damage * (30 + PercentOfDamage)) / 100;
@@ -50,10 +48,10 @@ public class EnemyDamage : MonoBehaviour
                         thisHealth.TakeDamage(DamagePercent);
                     }
                 }
-                if (playerHealth.hasShildUp == true)
+                if (collision.GetComponent<PlayerHealth>().hasShildUp == true)
                 {
-                    playerHealth.shieldBroken = true;
-                    playerHealth.hasShildUp = false;
+                    collision.GetComponent<PlayerHealth>().shieldBroken = true;
+                    collision.GetComponent<PlayerHealth>().hasShildUp = false;
                 }
                 isAttacking = false;
             }

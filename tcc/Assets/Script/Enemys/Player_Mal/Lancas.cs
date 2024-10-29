@@ -5,12 +5,10 @@ using UnityEngine;
 public class Lancas : MonoBehaviour
 {
     public Animator anim;
-    public PlayerHealth playerHealth;
     public int damage;
 
     private void Start()
     {
-        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     }
 
     public void AbaixarLancas()
@@ -23,14 +21,14 @@ public class Lancas : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            if (playerHealth.hasShildUp == true)
+            if (collision.GetComponent<PlayerHealth>().hasShildUp == true)
             {
-                playerHealth.shieldBroken = true;
-                playerHealth.hasShildUp = false;
+                collision.GetComponent<PlayerHealth>().shieldBroken = true;
+                collision.GetComponent<PlayerHealth>().hasShildUp = false;
             }
             else
             {
-                playerHealth.TakeDamage(damage);
+                collision.GetComponent<PlayerHealth>().TakeDamage(damage);
             }
         }
     }

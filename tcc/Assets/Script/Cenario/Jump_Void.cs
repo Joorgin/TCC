@@ -12,7 +12,7 @@ public class Jump_Void : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             collision.transform.position = pointToReturn.position;
-            PlayerHealth plyheath = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+            PlayerHealth plyheath = collision.GetComponent<PlayerHealth>();
             plyheath.TakeDamage(damage);
         }
     }

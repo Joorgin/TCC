@@ -4,26 +4,24 @@ using UnityEngine;
 
 public class OndaDamage : MonoBehaviour
 {
-    public PlayerHealth plH;
     public int damage;
 
     void Start()
     {
-        plH = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            if (plH.hasShildUp == true)
+            if (collision.GetComponent<PlayerHealth>().hasShildUp == true)
             {
-                plH.shieldBroken = true;
-                plH.hasShildUp = false;
+                collision.GetComponent<PlayerHealth>().shieldBroken = true;
+                collision.GetComponent<PlayerHealth>().hasShildUp = false;
             }
             else
             {
-                plH.TakeDamage(damage);
+                collision.GetComponent<PlayerHealth>().TakeDamage(damage);
             }
         }
     }

@@ -8,7 +8,6 @@ public class DialogueCharacter
 {
     public string name;
     public Sprite Icon;
-    //public Sprite Icon2;
 }
 
 [System.Serializable]
@@ -29,7 +28,6 @@ public class Dialogue
 public class Dialog : MonoBehaviour
 {
     public Dialogue Dialogue;
-    //public Dialogue Dialogue2;
     public static bool inRange;
     public static bool ReadyToTalk;
     public static bool isInDialog;
