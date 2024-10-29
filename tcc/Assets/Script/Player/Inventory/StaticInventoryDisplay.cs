@@ -12,14 +12,8 @@ public class StaticInventoryDisplay : InventoryDisplay
     {
         base.Start();
 
-        inventoryHolder = GameObject.FindGameObjectWithTag("Player").GetComponent<InventoryHolder>();
-
-        if (inventoryHolder != null)
-        {
-            inventorySystem = inventoryHolder.InventorySystem;
-            inventorySystem.OnInventorySlotChanged += updateSlot;
-        }
-        else Debug.LogWarning($"No inventory assigned to {this.gameObject}");
+        inventorySystem = inventoryHolder.InventorySystem;
+        inventorySystem.OnInventorySlotChanged += updateSlot;
 
         AssignSlot(inventorySystem);
     }
@@ -27,11 +21,6 @@ public class StaticInventoryDisplay : InventoryDisplay
     protected override void Update()
     {
         base.Update();
-
-        if (inventoryHolder == null) 
-        {
-            inventoryHolder = GameObject.FindGameObjectWithTag("Player").GetComponent<InventoryHolder>();
-        }
     }
     public override void AssignSlot(InventorySystem invToDisplay)
     {

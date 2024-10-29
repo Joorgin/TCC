@@ -36,6 +36,7 @@ public class Player_Type_2_Movement : MonoBehaviour
     public static string ChestName;
 
     public CinemachineConfiner cinemachine;
+    public PolygonCollider2D cameraContainer;
 
     public GameObject ConfigMenu;
     bool setactive;
@@ -51,8 +52,7 @@ public class Player_Type_2_Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
-        cinemachine = GameObject.FindGameObjectWithTag("Camera").GetComponent<CinemachineConfiner>();
-        cinemachine.m_BoundingShape2D = GameObject.FindGameObjectWithTag("CameraConfiner").GetComponent<PolygonCollider2D>();
+        cinemachine.m_BoundingShape2D = cameraContainer;
         PlayerMovement.isInFinalScene = false;
         isInMainScene = true;
         Physics2D.IgnoreLayerCollision(6, 7, true);

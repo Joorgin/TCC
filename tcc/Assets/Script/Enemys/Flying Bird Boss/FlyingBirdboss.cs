@@ -49,7 +49,6 @@ public class FlyingBirdboss : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         states = States.Looking;
     }
 
@@ -206,15 +205,15 @@ public class FlyingBirdboss : MonoBehaviour
         {
             if (isAttacking && canMakeDamage)
             {
-                if (playerHealth.hasShildUp == true)
+                if (collision.GetComponent<PlayerHealth>().hasShildUp == true)
                 {
-                    playerHealth.shieldBroken = true;
-                    playerHealth.hasShildUp = false;
+                    collision.GetComponent<PlayerHealth>().shieldBroken = true;
+                    collision.GetComponent<PlayerHealth>().hasShildUp = false;
                     canMakeDamage = false;
                 }
                 else
                 {
-                    playerHealth.TakeDamage(damage);
+                    collision.GetComponent<PlayerHealth>().TakeDamage(damage);
                     canMakeDamage = false;
                 }
             }
@@ -227,15 +226,15 @@ public class FlyingBirdboss : MonoBehaviour
         {
             if (isAttacking && canMakeDamage)
             {
-                if (playerHealth.hasShildUp == true)
+                if (collision.GetComponent<PlayerHealth>().hasShildUp == true)
                 {
-                    playerHealth.shieldBroken = true;
-                    playerHealth.hasShildUp = false;
+                    collision.GetComponent<PlayerHealth>().shieldBroken = true;
+                    collision.GetComponent<PlayerHealth>().hasShildUp = false;
                     canMakeDamage = false;
                 }
                 else
                 {
-                    playerHealth.TakeDamage(damage);
+                    collision.GetComponent<PlayerHealth>().TakeDamage(damage);
                     canMakeDamage = false;
                 }
             }

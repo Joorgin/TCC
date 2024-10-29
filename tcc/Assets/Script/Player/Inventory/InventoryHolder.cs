@@ -11,11 +11,15 @@ public class InventoryHolder : MonoBehaviour
     [SerializeField] protected InventorySystem inventorySystem;
 
     public InventorySystem InventorySystem => inventorySystem;
+    public static InventoryHolder Instance { get; private set; }
 
     public static UnityAction<InventorySystem> OnDynamicInventoryDisplayRequested;
 
     private void Awake()
     {
+        //inventorySystem = new InventorySystem(inventorySize);
+        if (Instance == null) Instance = this;
+        else if (Instance != this) Destroy(this);
         inventorySystem = new InventorySystem(inventorySize);
     }
 

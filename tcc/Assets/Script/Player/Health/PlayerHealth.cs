@@ -13,40 +13,46 @@ public class PlayerHealth : MonoBehaviour
 
     public PlayerHealthUI healthUI;
 
-    // Tudo sobre o shield e sua relacao com a vida
+    #region Tudo sobre o shield e sua relacao com a vida
     public bool hasShildUp, canShield, shieldBroken, hasTakeShieldFirstTime;
     public GameObject shield;
     float TimeToReDo;
     public static float TimeToShieldRemake = 20f;
     public Animator shildHabilityAnimation;
+    #endregion
 
-    // tudo sobre o escudo e sua realcao com a vida
+    #region tudo sobre o escudo e sua realcao com a vida
     public static bool hasArmorUp;
     public static int percentOfProtection;
+    #endregion
 
-    // tudo sobre o espelho e sua relacao com a vida
+    #region tudo sobre o espelho e sua relacao com a vida
     public static bool hasMirrorUp;
+    #endregion
 
-    // Tudo sobre Patua e como ele desvia o dano do adversario
+    #region Tudo sobre Patua e como ele desvia o dano do adversario
     bool hasPatuaUP;
     public static int chanceForLiving;
+    #endregion
 
-    // Tudo sobre Stamina e sua relacao com a vida
+    #region Tudo sobre Stamina e sua relacao com a vida
     public static bool deadByStamina;
+    #endregion
 
-    // Onde se encaixa o flashSprite
+    #region Onde se encaixa o flashSprite
     public FleashMaterial fleashMaterialScript;
+    #endregion
 
-
-    // freeze no momento do Dano
+    #region freeze no momento do Dano
     [Space]
     [Header("Freeze When Attacked")]
     public float durationFreeze;
     bool _isFrozen = false;
     float _pendingFreezeDuration = 0f;
     bool _isThereMonsters;
+    #endregion
 
-    //CineMachineCamera
+    #region CineMachineCamera
     [Space]
     [Header("Camera Shake")]
     public CinemachineVirtualCamera cinemachineVirtualCamera;
@@ -55,6 +61,7 @@ public class PlayerHealth : MonoBehaviour
     public float intencidadeDoShake;
     public float duracaoDoShake;
     public static bool shackCamera;
+    #endregion
 
     // bool que indica se foi atingido ou nem
     public static bool _HasbeenHit;
