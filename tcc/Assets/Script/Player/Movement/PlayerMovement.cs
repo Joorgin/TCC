@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public static int verticalMove;
 
     public float jumpForce = 10f;
+    bool hasDoubleJump;
     public Transform groundCheck;
     public LayerMask groundLayer, groundLayer2;
     public float groundCheckRadius = 0.1f;
@@ -175,6 +176,10 @@ public class PlayerMovement : MonoBehaviour
             if (isDashing) return;
 
             if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))) Jump();
+
+            if (!isGrounded && !hasDoubleJump && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))) { Jump(); hasDoubleJump = true; }
+
+            if (isGrounded) hasDoubleJump = false;
 
             if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
             {
