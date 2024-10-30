@@ -92,7 +92,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (Instance == null) Instance = this;
         else if (isInFinalScene) Destroy(gameObject);
-
         cinemachine.m_BoundingShape2D = GameObject.FindGameObjectWithTag("CameraConfiner").GetComponent<PolygonCollider2D>();
 
         Physics2D.IgnoreLayerCollision(6, 7, true);

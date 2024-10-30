@@ -38180,7 +38180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseInventoryItem: {fileID: 0}
-  inventoryHolder: {fileID: 0}
+  inventoryHolder: {fileID: 8934026236179958793}
   slots:
   - {fileID: 5142043750859802828}
   - {fileID: 6952713817734146264}
@@ -42197,7 +42197,7 @@ MonoBehaviour:
   KBTotalTime: 0.2
   KnockFromRight: 0
   anim: {fileID: 0}
-  cinemachine: {fileID: 0}
+  cinemachine: {fileID: 3232461271968811777}
   ConfigMenu: {fileID: 1011978120741657327}
   TimeToSetNormalSpeed: 0
   tempoApaixonado: 5
