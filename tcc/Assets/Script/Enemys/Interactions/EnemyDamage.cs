@@ -7,7 +7,6 @@ public class EnemyDamage : MonoBehaviour
     static List<EnemyDamage> m_List = new List<EnemyDamage>();
 
    public int damage;
-   public PlayerHealth playerHealth;
    public PlayerMovement playerMovement;
    public static bool isAttacking;
 
@@ -17,7 +16,6 @@ public class EnemyDamage : MonoBehaviour
 
     private void Start()
     {
-        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         m_List.Add(this);
     }
@@ -28,6 +26,7 @@ public class EnemyDamage : MonoBehaviour
         {
             if (isAttacking)
             {
+                Debug.Log("Sereia Attack");
                 playerMovement.KBCounter = playerMovement.KBTotalTime;
 
                 if (collision.transform.position.x <= transform.position.x)
@@ -39,20 +38,20 @@ public class EnemyDamage : MonoBehaviour
                     playerMovement.KnockFromRight = false;
                 }
 
-                if (PlayerHealth.hasShildUp == false)
+                if (collision.GetComponent<PlayerHealth>().hasShildUp == false)
                 {
-                    playerHealth.TakeDamage(damage);
+                    collision.GetComponent<PlayerHealth>().TakeDamage(damage);
                     if(PlayerHealth.hasMirrorUp)
                     {
-                        float DamagePercent = (damage * (30 + PercentOfDamage)) / 100;
+                        int DamagePercent = (damage * (30 + PercentOfDamage)) / 100;
                         Debug.Log("DOI :" + DamagePercent);
                         thisHealth.TakeDamage(DamagePercent);
                     }
                 }
-                if (PlayerHealth.hasShildUp == true)
+                if (collision.GetComponent<PlayerHealth>().hasShildUp == true)
                 {
-                    PlayerHealth.shieldBroken = true;
-                    PlayerHealth.hasShildUp = false;
+                    collision.GetComponent<PlayerHealth>().shieldBroken = true;
+                    collision.GetComponent<PlayerHealth>().hasShildUp = false;
                 }
                 isAttacking = false;
             }

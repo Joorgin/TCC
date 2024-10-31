@@ -1,0 +1,672 @@
+fileFormatVersion: 2
+guid: 095a85e8c8348d140a209473824c1128
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 0
+        width: 110
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def72d6542fef1f439c66a770df7e4d5
+      internalID: 1485285570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 0
+        width: 110
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 976b393d18b9bdf4ea149b3873ad6bc4
+      internalID: -1115441403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 0
+        width: 110
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb3819c0f6ce0d542aa69887daa6ab9b
+      internalID: -1488964858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 0
+        width: 110
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a46b824e63bbaeb45a9e9c8711420610
+      internalID: 369962844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 0
+        width: 115
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f5e2ae7c47bb5e49b3ff027d0763017
+      internalID: 1136236540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 0
+        width: 117
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a424f3d48e2a44aab0e56c1dd95262
+      internalID: 854226496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 0
+        width: 118
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b99b9579e862814085239d243e476f6
+      internalID: 2041370849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 0
+        width: 110
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fe795fa55df0a64ebb903cf3a605587
+      internalID: -2057768939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 0
+        width: 110
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1760e490c2bb60b45b28275e265fab83
+      internalID: 1240693930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 0
+        width: 115
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72036badb2b9466418c09d4aa0f19464
+      internalID: -26562345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1292
+        y: 0
+        width: 110
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0890aea25c9be81428f83225fccfa039
+      internalID: -874991128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 0
+        width: 109
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a010d9350da93bb47baac1f992c1163b
+      internalID: 1237037648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 0
+        width: 109
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c6b65626394b9941a8ed7989ab7e972
+      internalID: -2108399451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 0
+        width: 115
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b44713c8a74ef2041bf80ea544105d2e
+      internalID: 1860592324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1804
+        y: 0
+        width: 111
+        height: 127
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a168e09e498039f479dfa976b6f6a7c2
+      internalID: -1945899474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1932
+        y: 0
+        width: 111
+        height: 127
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df5a5fdba022ea84da27875eedd397de
+      internalID: 1071938700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 2060
+        y: 0
+        width: 111
+        height: 127
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5575027a357b14741b15129df0f6edf6
+      internalID: -433571168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 2181
+        y: 0
+        width: 118
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd80ab595382db345af5534c783483ae
+      internalID: 2122671458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 2309
+        y: 1
+        width: 117
+        height: 127
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ac70e670517c842a1ccd615727c6d5
+      internalID: -1660820202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 2439
+        y: 0
+        width: 115
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 152450f124c84da469f2bb251085f183
+      internalID: -187560448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 2575
+        y: 0
+        width: 107
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be7f6bd53dc07cf4998b72b2874a103a
+      internalID: -76343575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 2702
+        y: 0
+        width: 108
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610273a870ae0b64bbd0fa04f008b529
+      internalID: 1161005673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onda_ATK_Sereia-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 2830
+        y: 0
+        width: 108
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 727bb2e05ab88e94586d9bea9f1d4302
+      internalID: 1098955166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Onda_ATK_Sereia-Sheet_0: 1485285570
+      Onda_ATK_Sereia-Sheet_1: -1115441403
+      Onda_ATK_Sereia-Sheet_10: -874991128
+      Onda_ATK_Sereia-Sheet_11: 1237037648
+      Onda_ATK_Sereia-Sheet_12: -2108399451
+      Onda_ATK_Sereia-Sheet_13: 1860592324
+      Onda_ATK_Sereia-Sheet_14: -1945899474
+      Onda_ATK_Sereia-Sheet_15: 1071938700
+      Onda_ATK_Sereia-Sheet_16: -433571168
+      Onda_ATK_Sereia-Sheet_17: 2122671458
+      Onda_ATK_Sereia-Sheet_18: -1660820202
+      Onda_ATK_Sereia-Sheet_19: -187560448
+      Onda_ATK_Sereia-Sheet_2: -1488964858
+      Onda_ATK_Sereia-Sheet_20: -76343575
+      Onda_ATK_Sereia-Sheet_21: 1161005673
+      Onda_ATK_Sereia-Sheet_22: 1098955166
+      Onda_ATK_Sereia-Sheet_3: 369962844
+      Onda_ATK_Sereia-Sheet_4: 1136236540
+      Onda_ATK_Sereia-Sheet_5: 854226496
+      Onda_ATK_Sereia-Sheet_6: 2041370849
+      Onda_ATK_Sereia-Sheet_7: -2057768939
+      Onda_ATK_Sereia-Sheet_8: 1240693930
+      Onda_ATK_Sereia-Sheet_9: -26562345
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

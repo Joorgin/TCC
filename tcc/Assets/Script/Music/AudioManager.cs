@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
 
     public Music[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource;
+    public static float musicVolume;
+    public static bool isToggled, isToggledSFX;
 
     [Space]
     [Header("Bool for has changed Scene")]
@@ -16,12 +18,11 @@ public class AudioManager : MonoBehaviour
 
     [Space]
     [Header("Scenes Name")]
-    public string SceneToChangeMusic;
+    public static string SceneToChangeMusic;
 
     [Space]
     [Header("Name of the Boss")]
     public string[] bossName;
-
 
 
     private void Awake()
@@ -38,6 +39,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        musicVolume = 1.0f;
         PlayMusic("Music_Theme");
     }
 
@@ -47,23 +49,48 @@ public class AudioManager : MonoBehaviour
         {
             SceneToChangeMusic = SceneChange.SceneToChangeMusic;
 
+            Debug.Log("Scenechange: " + SceneToChangeMusic);
+
             switch(SceneToChangeMusic) 
             {
                 case "Floresta":
                     Debug.Log("Play FlorestMusic");
-                    //PlayMusic("Night Forest Music");
+                    PlayMusic("Night Forest Music");
                     PlaySfx("Night Forest Sfx");
                     hasChangedscene = false;
                     break;
-                case "Mapa 3":
+                case "Praia 2":
                     PlayMusic("Music Beach");
                     PlaySfx("Wave Sfx");
                     hasChangedscene = false;
                     break;
                 case "Mapa 4":
                     Debug.Log("Play FlorestMusic 2");
-                    //PlayMusic("Day Forest Music");
-                    PlaySfx("Day Forest Sfx");
+                    PlayMusic("Night Forest Music");
+                    PlaySfx("Night Forest Sfx");
+                    hasChangedscene = false;
+                    break;
+                case "Terreiro":
+                    Debug.Log("Main scene");
+                    PlayMusic("Music_Theme");
+                    sfxSource.Stop();
+                    hasChangedscene = false;
+                    break;
+                case "Menu":
+                    Debug.Log("Menu");
+                    PlayMusic("Music_Theme");
+                    sfxSource.Stop();
+                    hasChangedscene = false;
+                    break;
+                case "Cidade":
+                    Debug.Log("Play FlorestMusic 2");
+                    PlayMusic("City Music");
+                    sfxSource.Stop();
+                    hasChangedscene = false;
+                    break;
+                case "Mapa 5":
+                    PlayMusic("Music Beach");
+                    PlaySfx("Wave Sfx");
                     hasChangedscene = false;
                     break;
             }
@@ -103,16 +130,19 @@ public class AudioManager : MonoBehaviour
     public void ToggleMusic()
     {
         musicSource.mute = !musicSource.mute;
+        isToggled = !isToggled;
     }
 
     public void ToggleSfx() 
     {
-        sfxSource.mute = !sfxSource.mute; 
+        sfxSource.mute = !sfxSource.mute;
+        isToggledSFX = !isToggledSFX;
     }
 
     public void MusicVolume(float volume)
     {
         musicSource.volume = volume;
+        musicVolume = volume;
     }
 
     public void SFXVolume(float volume)

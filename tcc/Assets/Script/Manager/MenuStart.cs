@@ -5,26 +5,82 @@ using UnityEngine;
 public class MenuStart : MonoBehaviour
 {
     public Animator anim;
-    bool setanimTimer;
     public GameObject Menu;
-    float Timer;
+    public GameObject optionsButtons;
+    public GameObject musicOptionsMenu;
+    bool hasBeginMenu;
 
     // Update is called once per frame
     void Update()
     {
-       if(Input.anyKey)
+        if (Input.anyKey && !hasBeginMenu)
         {
-            anim.SetBool("open", true);
-            setanimTimer = true;
+            StartCoroutine(SetMenuButtons());
+            hasBeginMenu = true;
         }
+    }
 
-       if(setanimTimer)
-        {
-            Timer += Time.deltaTime;
-            if(Timer >= 1)
-            {
-                Menu.SetActive(true);
-            }
-        }
+    IEnumerator SetMenuButtons()
+    {
+        anim.SetBool("open", true);
+        yield return new WaitForSeconds(1f);
+        anim.SetBool("open", false);
+        Menu.SetActive(true);
+    }
+
+    public void SetOnOptionsMenu()
+    {
+        StartCoroutine(SetOnOptions());
+    }
+
+    IEnumerator SetOnOptions()
+    {
+        Menu.SetActive(false);
+        anim.SetBool("open", true);
+        yield return new WaitForSeconds(1f);
+        anim.SetBool("open", false);
+        optionsButtons.SetActive(true);
+    }
+
+    public void SetOffOptionsMenu()
+    {
+        StartCoroutine(SetOffOptions());
+    }
+
+    IEnumerator SetOffOptions()
+    {
+        optionsButtons.SetActive(false);
+        anim.SetBool("open", true);
+        yield return new WaitForSeconds(1f);
+        anim.SetBool("open", false);
+        Menu.SetActive(true);
+    }
+
+    public void SetOnMusicMenu()
+    {
+        StartCoroutine(SetOnMusic());
+    }
+
+    IEnumerator SetOnMusic()
+    {
+        optionsButtons.SetActive(false);
+        anim.SetBool("open", true);
+        yield return new WaitForSeconds(1f);
+        anim.SetBool("open", false);
+        musicOptionsMenu.SetActive(true);
+    }
+
+    public void SetOffMusicMenu() 
+    {
+       StartCoroutine(SetOffMusic());
+    }
+
+    IEnumerator SetOffMusic()
+    {
+        musicOptionsMenu.SetActive(false);
+        anim.SetBool("open", true);
+        yield return new WaitForSeconds(1f);
+        anim.SetBool("open", false);
+        optionsButtons.SetActive(true);
     }
 }

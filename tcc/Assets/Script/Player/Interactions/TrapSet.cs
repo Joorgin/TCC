@@ -8,6 +8,12 @@ public class TrapSet : MonoBehaviour
     public Transform LeftTrap;
     public Transform RightTrap;
     public static float CooldownFortrap = 10f;
+    bool canTrap = true;
+
+    [Space]
+    [Header("Animator das UI Habilidades")]
+    public Animator anim;
+    public static float CoolDownAnimationMultiplier = 1;
 
     private void Update()
     {
@@ -22,23 +28,32 @@ public class TrapSet : MonoBehaviour
 
     public IEnumerator SetTrapper()
     {
-        if (PlayerMovement.verticalMove > 0)
+        if (PlayerMovement.verticalMove > 0 && canTrap)
         {
             Debug.Log(PlayerMovement.verticalMove);
             Instantiate(trap, RightTrap.transform.position, Quaternion.identity);
+            canTrap = false;
         }
-        if (PlayerMovement.verticalMove < 0)
+        if (PlayerMovement.verticalMove < 0 && canTrap)
         {
             Debug.Log(PlayerMovement.verticalMove);
             Instantiate(trap, LeftTrap.transform.position, Quaternion.identity);
+            canTrap = false;
         }
+
+        anim.SetFloat("SpeedAnimation", CoolDownAnimationMultiplier);
+        anim.SetBool("HasLeftTrap", true);
         yield return new WaitForSeconds(CooldownFortrap);
+        anim.SetBool("HasLeftTrap", false);
+        canTrap = true;
     }
 
     public static void SetHabilitStatus()
     {
         float cooldownPercent = (CooldownFortrap / 100) * 10;
         if(CooldownFortrap > 5) CooldownFortrap -= cooldownPercent;
+
+        CoolDownAnimationMultiplier += 0.1f;
 
         Debug.Log("Time da trap: " + CooldownFortrap);
     }

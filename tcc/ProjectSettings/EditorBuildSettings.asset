@@ -12,19 +12,16 @@ EditorBuildSettings:
     path: Assets/Scenes/CutScene.unity
     guid: fad99ac091754f445966244f0a4a224b
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Scenes/Terreiro.unity
     guid: af1f32f2855e2274f8114dc6edebbc7c
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Mapas/Praia.unity
-    guid: a03fc305ab10f574b96e79dde5499bcc
-  - enabled: 1
     path: Assets/Scenes/Mapas/Floresta.unity
     guid: 818031311a67d194597ef10c676d1b51
   - enabled: 1
-    path: Assets/Scenes/Mapas/Mapa 3.unity
+    path: Assets/Scenes/Mapas/Praia 2.unity
     guid: 745ed552b1e5a8947959b445b7819c3c
   - enabled: 1
     path: Assets/Scenes/Mapas/Mapa 4.unity
@@ -33,24 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Mapas/Mapa 5.unity
     guid: 897c83fea234d7b4f9e41520b267f544
   - enabled: 1
-    path: Assets/Scenes/Mapas/Mapa 6.unity
-    guid: fd8b593c34262084caa0e1ab80be07ad
-  - enabled: 1
     path: Assets/Scenes/Mapas/Cidade.unity
     guid: f40f5087ac854e1478e9a03fbf076cc4
   - enabled: 1
-    path: Assets/Scenes/Mapas/Mapa 8.unity
+    path: Assets/Scenes/Mapas/Tutorial.unity
     guid: 207cd368cd3c69c45b70735937741dc9
-  - enabled: 1
-    path: Assets/Scenes/Mapas/Mapa 9.unity
-    guid: 1200a6b5038e05c45931498458e75b68
-  - enabled: 1
-    path: Assets/Scenes/Mapas/Mapa 10.unity
-    guid: 7f21544a6d405f44ea67a2ac80faf04b
-  - enabled: 1
-    path: Assets/Scenes/Mapas/Mapa 11.unity
-    guid: def25bc1de32dd3478c270c93ed8a584
-  - enabled: 1
-    path: Assets/Scenes/Mapas/Mapa 12.unity
-    guid: 541333f99ec300f4d81c482940d0184f
   m_configObjects: {}

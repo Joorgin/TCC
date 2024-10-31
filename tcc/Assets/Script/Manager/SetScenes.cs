@@ -12,6 +12,11 @@ public class SetScenes : MonoBehaviour
         FadeScript.HideUI();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E)) MainScene();
+    }
+
     public void MainScene()
     {
         StartCoroutine(mainScene());
@@ -21,6 +26,9 @@ public class SetScenes : MonoBehaviour
     {
         FadeScript.ShowUI();
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(Scenename[0]);
+        GameManager.isInTutorial = true;
+
+        if(!GameManager.hasPassedTutorial) SceneManager.LoadScene(Scenename[0]);
+        else SceneManager.LoadScene(Scenename[1]);
     }
 }

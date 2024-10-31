@@ -34,8 +34,6 @@ public class ToggleButton : MonoBehaviour
                 }
             }
 
-            Debug.Log(gameObjectUnderMouse);
-
             if (gameObjectUnderMouse != null)
             {
                 if (gameObjectUnderMouse.name == nameButton)

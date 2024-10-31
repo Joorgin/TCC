@@ -6,13 +6,13 @@ public class Pena : MonoBehaviour
 {
     public Rigidbody2D rb;
     float time;
-    PlayerHealth plH;
+    public int damage;
+    bool cantMakeDamage;
 
     void Start()
     {
         transform.Rotate(0, 0, Random.Range(-20f, 30f));
         rb.AddForce(transform.right * 2000);
-        plH = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame
@@ -25,9 +25,19 @@ public class Pena : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if(collision.CompareTag("Player") && !cantMakeDamage)
         {
-            plH.TakeDamage(15);
+            if (collision.GetComponent<PlayerHealth>().hasShildUp == true)
+            {
+                collision.GetComponent<PlayerHealth>().shieldBroken = true;
+                collision.GetComponent<PlayerHealth>().hasShildUp = false;
+                cantMakeDamage = true;
+            }
+            else
+            {
+                collision.GetComponent<PlayerHealth>().TakeDamage(damage);
+                cantMakeDamage = true;
+            }
         }
     }
 }

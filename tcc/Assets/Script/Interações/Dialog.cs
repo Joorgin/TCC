@@ -8,7 +8,6 @@ public class DialogueCharacter
 {
     public string name;
     public Sprite Icon;
-    //public Sprite Icon2;
 }
 
 [System.Serializable]
@@ -33,14 +32,19 @@ public class Dialog : MonoBehaviour
     public static bool ReadyToTalk;
     public static bool isInDialog;
     public static bool hasStartTalking;
+    public static int levelOfHealthTotem;
+    public string Name;
+    string gameObjectName;
+
     private void Update()
     {
-        if (Input.GetKey(KeyCode.E) && inRange && !isInDialog)
+        if (Input.GetKey(KeyCode.E) && inRange && !isInDialog && gameObjectName == Name)
         {
             ReadyToTalk = true;
             isInDialog = true;
             TriggerDialogue();
             StartCoroutine(hasStartedTalking());
+            GameManager.isInConversation = true;
         }
 
         if (Input.GetKey(KeyCode.Space) && inRange && isInDialog && hasStartTalking)
@@ -73,6 +77,8 @@ public class Dialog : MonoBehaviour
         if(collision.tag == "Player")
         {
             inRange = true;
+            gameObjectName = gameObject.name;
+            Debug.Log("Name : " + collision.gameObject.name);
         }
     }
 
@@ -81,6 +87,8 @@ public class Dialog : MonoBehaviour
         if (collision.tag == "Player")
         {
             inRange = false;
+            gameObjectName = null;
+            hasStartTalking = false;
         }
     }
 }

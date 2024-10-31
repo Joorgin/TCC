@@ -17,9 +17,9 @@ public class Contador_de_braceletes : MonoBehaviour
 
     void Start()
     {
+        currentCoins = 0;
         coinText.text = currentCoins.ToString();
     }
-
     public void AlmentarBraceletes(int v)
     {
         currentCoins += v;
@@ -29,5 +29,10 @@ public class Contador_de_braceletes : MonoBehaviour
     public void DiminuirBraceletes(int v)
     {
         coinText.text = currentCoins.ToString();
+    }
+
+    public static void SerarBraceletes()
+    {
+        currentCoins = 0;
     }
 }
