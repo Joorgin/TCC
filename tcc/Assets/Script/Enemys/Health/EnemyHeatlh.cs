@@ -81,7 +81,7 @@ public class EnemyHeatlh : MonoBehaviour
     {
         Contador_de_Almas.instance.AlmentarAlmas(1);
         Instantiate(Bracelete, gameObject.transform.position, Quaternion.identity);
-        Stamina.UpStamina(stamina);
+        Stamina.instance.UpStamina(stamina);
         Destroy(gameObject);
     }
 

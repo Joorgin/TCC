@@ -214,7 +214,7 @@ MonoBehaviour:
   healthUI: {fileID: 1594731083097581182}
   Bracelete: {fileID: 4593072821139420700, guid: 1d43874d8c712d94fa30fed44bda0306, type: 3}
   fleashMaterialScript: {fileID: 7869771875481603505}
-  stamina: 10
+  stamina: 30
 --- !u!114 &7283862240047750536
 MonoBehaviour:
   m_ObjectHideFlags: 0

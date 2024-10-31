@@ -20,14 +20,7 @@ public class Onda : MonoBehaviour
         {
             currentScale.x *= -1;
             gameObject.transform.localScale = currentScale;
-            esquerda = true;
         }
-        if (Sereia_Movement.RightSide)
-        {
-            
-            direita = true;
-        }
-
         Physics2D.IgnoreLayerCollision(10, 7, true);
         Physics2D.IgnoreLayerCollision(10, 6, true);
         Physics2D.IgnoreLayerCollision(10, 11, true);

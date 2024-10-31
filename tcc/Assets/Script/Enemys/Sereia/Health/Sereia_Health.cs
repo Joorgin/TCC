@@ -72,7 +72,7 @@ public class Sereia_Health : MonoBehaviour
         }
         //dá find e tira da lista
         SceneChange.HasdefeatedBoss = true;
-        Stamina.UpStamina(stamina);
+        Stamina.instance.UpStamina(stamina);
         Destroy(gameObject);
     }
 }

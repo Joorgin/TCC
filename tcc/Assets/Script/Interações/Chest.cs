@@ -10,6 +10,7 @@ public class Chest : MonoBehaviour
     public string Rarity;
     public GameObject[] ItemToDrop;
     public GameObject instantiatePlace;
+    public GameObject buttonInteraction;
 
     public static bool isInRange;
     bool isOpen;
@@ -118,5 +119,13 @@ public class Chest : MonoBehaviour
         Debug.Log("RARITYCHANCE: " + PlayerMovement.chanceForAGoodChest);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player")) buttonInteraction.SetActive(true);
+    }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player")) buttonInteraction.SetActive(false);
+    }
 }
