@@ -14,14 +14,14 @@ public class OndaDamage : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (collision.GetComponent<PlayerHealth>().hasShildUp == true)
+            if (PlayerHealth.Instance.hasShildUp == true)
             {
-                collision.GetComponent<PlayerHealth>().shieldBroken = true;
-                collision.GetComponent<PlayerHealth>().hasShildUp = false;
+                PlayerHealth.Instance.shieldBroken = true;
+                PlayerHealth.Instance.hasShildUp = false;
             }
             else
             {
-                collision.GetComponent<PlayerHealth>().TakeDamage(damage);
+                PlayerHealth.Instance.TakeDamage(damage);
             }
         }
     }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public static PlayerHealth Instance {  get; private set; }
+    public static PlayerHealth Instance {get; private set; }
 
     public static int Maxhealth;
     public int Currenthealth;
@@ -102,6 +102,7 @@ public class PlayerHealth : MonoBehaviour
         TimetoRegenarateHealth = 3.0f;
         healthUI.SetMaxHealth(Maxhealth);
         isAlive = true;
+        cinemachineVirtualCamera = GameObject.FindGameObjectWithTag("Camera").GetComponent<CinemachineVirtualCamera>();
     }
 
     
@@ -356,7 +357,7 @@ public class PlayerHealth : MonoBehaviour
         deadByStamina = false;
         SceneChange.SceneToChangeMusic = scene;
         AudioManager.hasChangedscene = true;
-        Destroy(gameObject);
         SceneManager.LoadScene(scene);
+        Destroy(gameObject);
     }
 }
