@@ -18,6 +18,10 @@ public class ExplosiveEnemyHealth : MonoBehaviour
     // Onde se encaixa o flashSprite
     public FleashMaterial fleashMaterialScript;
 
+    // Quanto de stamina o inimigo dá
+    [Space]
+    public float stamina;
+
     private void Awake()
     {
         m_List.Add(this);
@@ -76,7 +80,8 @@ public class ExplosiveEnemyHealth : MonoBehaviour
     {
         Contador_de_Almas.instance.AlmentarAlmas(1);
         Instantiate(Bracelete, gameObject.transform.position, Quaternion.identity);
-        //dá find e tira da lista
+        Stamina.instance.UpStamina(stamina);
         Destroy(gameObject);
+
     }
 }

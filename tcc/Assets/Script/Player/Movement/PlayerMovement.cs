@@ -16,8 +16,9 @@ public class PlayerMovement : MonoBehaviour
     public static int verticalMove;
 
     public float jumpForce = 10f;
+    bool hasDoubleJump;
     public Transform groundCheck;
-    public LayerMask groundLayer;
+    public LayerMask groundLayer, groundLayer2;
     public float groundCheckRadius = 0.1f;
 
     // Tudo sobre o dash do Player
@@ -25,7 +26,12 @@ public class PlayerMovement : MonoBehaviour
     public static bool isDashing;
     private float dashPower = 24f;
     private float dashingTime = 0.2f;
-    private float dashingCooldown = 1f;
+    private float dashingCooldown = 5f;
+
+    [Space]
+    [Header("Animator das UI Habilidades")]
+    public Animator animDash;
+    public static float CoolDownAnimationMultiplier = 1;
 
     // define tudo sobre knockback que o player sofre
     [Space]
@@ -49,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
     public static bool isAttacking;
 
     // configura o limite que a camera do player pode ir
-    public CinemachineConfiner cinemachine;
+    public GameObject cinemachine;
 
     // Item upgrade inteacoes
     public static string IntemName;
@@ -76,19 +82,25 @@ public class PlayerMovement : MonoBehaviour
     // Define qual a chance do bau bom
     public static int chanceForAGoodChest;
 
+    // Tudo Sobre audio SFX
+    public AudioManagert movingAudio;
+    bool IsMovingComAudio = true;
+
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if(!GameManager.isInTutorial) DontDestroyOnLoad(gameObject);
 
         if (Instance == null) Instance = this;
         else if (isInFinalScene) Destroy(gameObject);
 
-        cinemachine = GameObject.FindGameObjectWithTag("Camera").GetComponent<CinemachineConfiner>();
-        cinemachine.m_BoundingShape2D = GameObject.FindGameObjectWithTag("CameraConfiner").GetComponent<PolygonCollider2D>();
+        cinemachine = GameObject.FindGameObjectWithTag("Camera");
+        cinemachine.GetComponent<CinemachineVirtualCamera>().Follow = gameObject.transform;
+        cinemachine.GetComponent<CinemachineVirtualCamera>().LookAt = gameObject.transform;
+        cinemachine.GetComponent<CinemachineConfiner>().m_BoundingShape2D = GameObject.FindGameObjectWithTag("CameraConfiner").GetComponent<PolygonCollider2D>();
 
         Physics2D.IgnoreLayerCollision(6, 7, true);
         Physics2D.IgnoreLayerCollision(8, 7, true);
-        //Physics2D.IgnoreLayerCollision(7, 11, true);
+        Physics2D.IgnoreLayerCollision(7, 14, true);
     }
     private void Start()
     {
@@ -126,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (esquerda)
             {
-                transform.position += Vector3.right * moveSpeed / 100 * Time.deltaTime;
+                transform.position += Vector3.left * moveSpeed / 100 * Time.deltaTime;
                 verticalMove = -1;
                 anim.SetInteger("VerticalMove", verticalMove);
                 anim.SetFloat("RunDirection", verticalMove);
@@ -138,7 +150,7 @@ public class PlayerMovement : MonoBehaviour
             }
             if (direita)
             {
-                transform.position += Vector3.left * moveSpeed / 100 * Time.deltaTime;
+                transform.position += Vector3.right * moveSpeed / 100 * Time.deltaTime;
                 verticalMove = 1;
                 anim.SetInteger("VerticalMove", verticalMove);
                 anim.SetFloat("RunDirection", verticalMove);
@@ -151,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (PlayerHealth.isAlive && !apaixonado)
+        if (PlayerHealth.isAlive && !apaixonado && !PlayerAttack.isShooting && !GameManager.isInConversation)
         {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
@@ -164,29 +176,30 @@ public class PlayerMovement : MonoBehaviour
                 Downdash.Damage();
             }
 
-            if (!isAttacking)
+            if (isDashing) return;
+
+            if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))) Jump();
+
+            if (!isGrounded && !hasDoubleJump && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))) { Jump(); hasDoubleJump = true; }
+
+            if (isGrounded) hasDoubleJump = false;
+
+            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
             {
-                if (isDashing) return;
+                anim.SetTrigger("Dash");
+                StartCoroutine(Dash());
+            }
 
-                if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))) Jump();
-
-                if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
-                {
-                    anim.SetTrigger("Dash");
-                    StartCoroutine(Dash());
-                }
-
-                horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
-                if (horizontalMove > 0f)
-                {
-                    verticalMove = 1;
-                    anim.SetInteger("VerticalMove", verticalMove);
-                }
-                else if (horizontalMove < 0f)
-                {
-                    verticalMove = -1;
-                    anim.SetInteger("VerticalMove", verticalMove);
-                }
+            horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
+            if (horizontalMove > 0f)
+            {
+                verticalMove = 1;
+                anim.SetInteger("VerticalMove", verticalMove);
+            }
+            else if (horizontalMove < 0f)
+            {
+                verticalMove = -1;
+                anim.SetInteger("VerticalMove", verticalMove);
             }
         }
 
@@ -217,13 +230,25 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (PlayerHealth.isAlive && !apaixonado && !Downdash._isDownDash)
+        if (PlayerHealth.isAlive && !apaixonado && !Downdash._isDownDash && !PlayerAttack.isShooting && !GameManager.isInConversation)
         {
             if (KBCounter <= 0)
             {
                 if (isDashing) return;
-                if (!isAttacking) rb.velocity = new Vector2(horizontalMove * Time.fixedDeltaTime, rb.velocity.y);
-                else if (isAttacking && isGrounded) rb.velocity = new Vector2(0, rb.velocity.y);
+
+                rb.velocity = new Vector2(horizontalMove * Time.fixedDeltaTime, rb.velocity.y);
+                bool moving = horizontalMove != 0 ? true : false;
+                if (moving && IsMovingComAudio)
+                {
+                    IsMovingComAudio = false;
+                    movingAudio.AudioAndar();
+                }
+                else if(!moving || !isGrounded)
+                {
+                    Debug.Log("Andando com audio");
+                    IsMovingComAudio = true;
+                    movingAudio.AudioAndarStop();
+                }
             }
             else
             {
@@ -248,6 +273,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
+        movingAudio.AudioAndarStop();
         anim.SetTrigger("IsJumping");
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
@@ -266,12 +292,13 @@ public class PlayerMovement : MonoBehaviour
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         rb.velocity = new Vector2(verticalMove * dashPower, 0f);
+        animDash.SetFloat("SpeedAnimation", CoolDownAnimationMultiplier);
+        animDash.SetBool("Dashou", true);
         yield return new WaitForSeconds(dashingTime);
-
         rb.gravityScale = originalGravity;
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
-
+        animDash.SetBool("Dashou", false);
         canDash = true;
     }
 
@@ -287,6 +314,7 @@ public class PlayerMovement : MonoBehaviour
         {
             IntemName = other.gameObject.name;
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)

@@ -20,9 +20,10 @@ public class PlayerAttack : MonoBehaviour
     bool hasShoot;
 
     // Tudo sobre a flecha e sua relacao com dono
-    [Space]
-    [Header("CoolDown para atirar a flecha")]
     public static float cooldownForFlecha = 20f;
+    bool CanShoot;
+    public static bool isShooting;
+   
 
     // Porcentagem sobre o crit do ataque do player
     public static int CritPercent;
@@ -35,7 +36,8 @@ public class PlayerAttack : MonoBehaviour
     public int noOfClicks = 0;
     float lastClickedTime = 0;
     public float maxComboDelay = 0.9f;
-    public static bool canAtack = true;
+    public static bool canAtack;
+
     // freeze no momento do ataque
     [Space]
     [Header("Freeze When Attack")]
@@ -44,11 +46,23 @@ public class PlayerAttack : MonoBehaviour
     float _pendingFreezeDuration = 0f;
     bool _isThereMonsters;
 
+    // Animator das habilidades
+    [Space]
+    [Header("Animator das UI Habilidades")]
+    public Animator UiFlechaAnim;
+    public static float CoolDownAnimationMultiplier = 1;
+
+    //Audio para as Animacoes
+    [Space]
+    [Header("Audios De Animacoes")]
+    public AudioManagert audiomanagert;
+
 
     private void Start()
     {
         Damage = 10;
         anim = GetComponent<Animator>();
+        canAtack = true;
     }
 
     private void Update()
@@ -57,6 +71,7 @@ public class PlayerAttack : MonoBehaviour
 
         if(!GameManager.IsInMainScene) direcaoVerticalMove = PlayerMovement.verticalMove == 1;
         else direcaoVerticalMove = Player_Type_2_Movement.verticalMove == 1;
+
 
         attackPos.gameObject.SetActive(direcaoVerticalMove);
         attackPos2.gameObject.SetActive(!direcaoVerticalMove);
@@ -87,11 +102,12 @@ public class PlayerAttack : MonoBehaviour
     void Atacar(bool direcao)
     {
         if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.X)) 
-            && (enemiesToDamage != null || enemiesToDamage2 != null) && noOfClicks == 0 && canAtack)
+            && (enemiesToDamage != null || enemiesToDamage2 != null) && noOfClicks == 0 && canAtack && !PlayerMovement.apaixonado)
         {
-            
             lastClickedTime = Time.time;
             noOfClicks++;
+
+            Debug.Log("Ataque 1");
 
             if (noOfClicks >= 1)
             {
@@ -100,7 +116,8 @@ public class PlayerAttack : MonoBehaviour
                 {
                     case 0:
                         anim.SetBool("Attack1", true);
-                        //anim.SetTrigger("Attack");
+                        audiomanagert.Soco1();
+                        CanShoot = false;
                         PlayerMovement.isAttacking = true;
                         StartCoroutine(AttackHand1(direcao));
                         timeBtwAttack = startTimeBtwAttack;
@@ -113,10 +130,10 @@ public class PlayerAttack : MonoBehaviour
         else if((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.X)) &&
             (enemiesToDamage != null || enemiesToDamage2 != null) && noOfClicks == 1) noOfClicks++;
 
-        else if (Input.GetKey(KeyCode.Q) && !hasShoot)
+        else if (Input.GetKey(KeyCode.Q) && !hasShoot && !PlayerMovement.apaixonado && !GameManager.IsInMainScene)
         {
             //enquanto nao houver animacao manter isAttacking comentado
-            // PlayerMovement.isAttacking = true;
+            Debug.Log("Flecha");
             StartCoroutine(SHOOTARROW());
         }
         else
@@ -173,6 +190,8 @@ public class PlayerAttack : MonoBehaviour
             if (etd.GetComponent<BIrd_Boss_Health>() != null) etd.GetComponent<BIrd_Boss_Health>().TakeDamage(Damage);
 
             if (etd.GetComponent<Sereia_Movement>() != null) etd.GetComponent<Sereia_Health>().TakeDamage(Damage);
+
+            if (etd.GetComponent<Player_Mal>() != null) etd.GetComponent<Player_Mal_Health>().TakeDamage(Damage);
         }
 
         yield return new WaitForSeconds(0.5f);
@@ -189,12 +208,13 @@ public class PlayerAttack : MonoBehaviour
             noOfClicks = 0;
             PlayerMovement.isAttacking = false;
             canAtack = true;
+            CanShoot = true;
         }
     }
     // Funcao para o segundo soco detectando quantos e quais inimigos estao na range do player
     public IEnumerator AttackHand2(bool direcao)
     {
-
+        audiomanagert.Soco2();
         foreach (Collider2D etd in enemiesToDamage)
         {
 
@@ -231,6 +251,8 @@ public class PlayerAttack : MonoBehaviour
             if (etd.GetComponent<FlyingBirdboss>() != null) etd.GetComponent<BIrd_Boss_Health>().TakeDamage(Damage);
 
             if (etd.GetComponent<Sereia_Movement>() != null) etd.GetComponent<Sereia_Health>().TakeDamage(Damage);
+
+            if (etd.GetComponent<Player_Mal>() != null) etd.GetComponent<Player_Mal_Health>().TakeDamage(Damage);
         }
         if (Crited)
         {
@@ -243,11 +265,18 @@ public class PlayerAttack : MonoBehaviour
         PlayerMovement.isAttacking = false;
         noOfClicks = 0;
         canAtack = true;
+        CanShoot = true;
     }
 
     public void Freeze()
     {
         _pendingFreezeDuration = durationFreeze;
+    }
+
+    public void FreezeShootTime()
+    {
+        durationFreeze = 0.5f;
+        StartCoroutine(SetTimeForAtackEffect());
     }
 
     public void SeeIfThereIsAMonster()
@@ -261,7 +290,7 @@ public class PlayerAttack : MonoBehaviour
     {
         _isFrozen = true;
         var original = Time.timeScale;
-        Time.timeScale = 0;
+        Time.timeScale = 0f;
         yield return new WaitForSecondsRealtime(durationFreeze);
         Time.timeScale = original;
         _pendingFreezeDuration = 0f;
@@ -271,31 +300,41 @@ public class PlayerAttack : MonoBehaviour
     public IEnumerator SHOOTARROW()
     {
         // toca a animacao de atirar a flecha
-        // anim.SetTrigger("Shoot");
-        yield return new WaitForSeconds(0.5f);
+        isShooting = true;
+        anim.SetBool("Shoot", true);
+        yield return new WaitForSeconds(0.6f);
         // Invoca a flecha
 
         if (PlayerMovement.verticalMove > 0 && !hasShoot)
         {
             Instantiate(Arrow, attackPos.transform.position, Quaternion.identity);
             hasShoot = true;
+            UiFlechaAnim.SetFloat("SpeedAnimation", CoolDownAnimationMultiplier);
+            UiFlechaAnim.SetBool("HasShot", hasShoot);
         }
         if (PlayerMovement.verticalMove < 0 && !hasShoot)
         {
             Instantiate(Arrow, attackPos2.transform.position, Quaternion.identity);
             hasShoot = true;
+            UiFlechaAnim.SetFloat("SpeedAnimation", CoolDownAnimationMultiplier);
+            UiFlechaAnim.SetBool("HasShot", hasShoot);
         }
-
+        anim.SetBool("Shoot", false);
+        isShooting = false;
         yield return new WaitForSeconds(cooldownForFlecha);
         hasShoot = false;
-
+        UiFlechaAnim.SetBool("HasShot", hasShoot);
     }
 
     public static void setHabilitStatus()
     {
         float cooldownPercent = (cooldownForFlecha / 100) * 10;
 
-        if (cooldownForFlecha >= 14f) cooldownForFlecha -= cooldownPercent;
+        if (cooldownForFlecha >= 14f)
+        {
+            cooldownForFlecha -= cooldownPercent;
+            CoolDownAnimationMultiplier += 0.1f;
+        }
 
         Debug.Log("Time da flecha:" + cooldownForFlecha);
     }

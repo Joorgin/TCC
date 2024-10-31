@@ -9,6 +9,7 @@ public class Item_Upgrade : MonoBehaviour
     public GameObject ItemFala;
     public TextMeshProUGUI text;
     public int almas;
+    public int AddAlmas;
     public Animator anim;
     bool inRange;
     bool Upgrade;
@@ -25,14 +26,29 @@ public class Item_Upgrade : MonoBehaviour
                 break;
 
             case 2:
-                almas = 6;
+                almas = almas + (AddAlmas * GameManager.CurrentLevelItemStaminaUpgrade);
                 Debug.Log("Nivel Atual No Start: " + GameManager.CurrentLevelItemUpgrade);
                 anim.SetBool("Level2", true);
                 break;
             case 3:
-                almas = 8;
+                almas = almas + (AddAlmas * GameManager.CurrentLevelItemStaminaUpgrade);
                 Debug.Log("Nivel Atual No Start: " + GameManager.CurrentLevelItemUpgrade);
                 anim.SetBool("Level3", true);
+                break;
+            case 4:
+                almas = almas + (AddAlmas * GameManager.CurrentLevelItemStaminaUpgrade);
+                Debug.Log("Nivel Atual No Start: " + GameManager.CurrentLevelItemUpgrade);
+                anim.SetBool("Level4", true);
+                break;
+            case 5:
+                almas = almas + (AddAlmas * GameManager.CurrentLevelItemStaminaUpgrade);
+                Debug.Log("Nivel Atual No Start: " + GameManager.CurrentLevelItemUpgrade);
+                anim.SetBool("Level5", true);
+                break;
+            case 6:
+                almas = almas + (AddAlmas * GameManager.CurrentLevelItemStaminaUpgrade);
+                Debug.Log("Nivel Atual No Start: " + GameManager.CurrentLevelItemUpgrade);
+                anim.SetBool("Level6", true);
                 break;
         }
     }
@@ -64,7 +80,7 @@ public class Item_Upgrade : MonoBehaviour
                 anim.SetBool("Level2", GameManager.upgradeLevel);
                 Contador_de_Almas.instance.DiminiurAlmas(almas);
                 Upgrade = false;
-                almas += 2;
+                almas += AddAlmas;
                 CurrentLevel++;
                 GameManager.CurrentLevelItemUpgrade++;
                 GameManager.upgradeLevel = false;
@@ -76,68 +92,44 @@ public class Item_Upgrade : MonoBehaviour
                 anim.SetBool("Level3", GameManager.upgradeLevel);
                 Contador_de_Almas.instance.DiminiurAlmas(almas);
                 Upgrade = false;
-                almas += 2;
+                almas += AddAlmas;
                 CurrentLevel++;
                 GameManager.CurrentLevelItemUpgrade++;
                 GameManager.upgradeLevel = false;
                 GameManager.PlayerMaxhealth += 20;
                 break;
             case 3:
-                Debug.Log("Upgrade Health:" + CurrentLevel);
                 GameManager.upgradeLevel = true;
                 anim.SetBool("Level4", GameManager.upgradeLevel);
                 Contador_de_Almas.instance.DiminiurAlmas(almas);
                 Upgrade = false;
-                almas += 2;
+                almas += AddAlmas;
                 CurrentLevel++;
                 GameManager.CurrentLevelItemUpgrade++;
                 GameManager.upgradeLevel = false;
                 GameManager.PlayerMaxhealth += 20;
                 break;
-        }
-    }
-    public void SwitchStamina()
-    {
-        switch (GameManager.CurrentLevelItemStaminaUpgrade)
-        {
-            case 1:
-                Debug.Log("Upgrade stamina:" + CurrentLevel);
-                GameManager.UpgradeLevelStamina = true;
-                anim.SetBool("Level2", GameManager.upgradeLevel);
+            case 4:
+                GameManager.upgradeLevel = true;
+                anim.SetBool("Level5", GameManager.upgradeLevel);
                 Contador_de_Almas.instance.DiminiurAlmas(almas);
                 Upgrade = false;
-                almas += 2;
+                almas += AddAlmas;
                 CurrentLevel++;
                 GameManager.CurrentLevelItemUpgrade++;
-                GameManager.UpgradeLevelStamina = false;
-                GameManager.PlayerStamina += 60;
-                AtualizarNumeroDeAlmas();
+                GameManager.upgradeLevel = false;
+                GameManager.PlayerMaxhealth += 20;
                 break;
-            case 2:
-                Debug.Log("Upgrade stamina:" + CurrentLevel);
-                GameManager.UpgradeLevelStamina = true;
-                anim.SetBool("Level3", GameManager.upgradeLevel);
+            case 5:
+                GameManager.upgradeLevel = true;
+                anim.SetBool("Level6", GameManager.upgradeLevel);
                 Contador_de_Almas.instance.DiminiurAlmas(almas);
                 Upgrade = false;
-                almas += 2;
+                almas += AddAlmas;
                 CurrentLevel++;
                 GameManager.CurrentLevelItemUpgrade++;
-                GameManager.UpgradeLevelStamina = false;
-                GameManager.PlayerMaxhealth += 60;
-                AtualizarNumeroDeAlmas();
-                break;
-            case 3:
-                Debug.Log("Upgrade stamina:" + CurrentLevel);
-                GameManager.UpgradeLevelStamina = true;
-                // anim.SetBool("Level4", GameManager.upgradeLevel);
-                Contador_de_Almas.instance.DiminiurAlmas(almas);
-                Upgrade = false;
-                almas += 2;
-                CurrentLevel++;
-                GameManager.CurrentLevelItemUpgrade++;
-                GameManager.UpgradeLevelStamina = false;
-                GameManager.PlayerMaxhealth += 60;
-                AtualizarNumeroDeAlmas();
+                GameManager.upgradeLevel = false;
+                GameManager.PlayerMaxhealth += 20;
                 break;
         }
     }

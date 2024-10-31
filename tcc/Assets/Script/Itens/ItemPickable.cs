@@ -24,11 +24,18 @@ public class ItemPickable : MonoBehaviour
     public string Description;
     public TextMeshProUGUI descricao;
 
+    public PlayerHealth plh;
+
     private void Awake()
     {
         myCollider = GetComponent<CircleCollider2D>();
         myCollider.isTrigger = true;
         myCollider.radius = PickUpRadius;
+       
+    }
+    private void Start()
+    {
+        plh = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     }
 
     private void Update()
@@ -43,31 +50,29 @@ public class ItemPickable : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && isInRange) AddThing();
     }
+
     // Verifica se o player entra na range do item
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("InRange");
         if (collision.CompareTag("Player")) isInRange = true;
-        inventory = collision.transform.GetComponent<InventoryHolder>();
     }
+
     // Verifica se o player se mantem na range do item
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("InRange IN Stay"); 
         if (collision.CompareTag("Player")) isInRange = true;
-        inventory = collision.transform.GetComponent<InventoryHolder>();
     }
+
     // Verifica se o player saiu da range do item
     private void OnTriggerExit2D(Collider2D collision)
     {
         isInRange = false;
     }
+
     // Adiciona o item no inventário e adiciona seu efeito
     public void AddThing()
     {
-        if (!inventory) return;
-
-        if (inventory.InventorySystem.AddToInventory(ItemData, 1))
+        if (InventoryHolder.Instance.InventorySystem.AddToInventory(ItemData, 1))
         {
             switch (ItemID)
             {
@@ -78,8 +83,8 @@ public class ItemPickable : MonoBehaviour
                     PlayerHealth.HealthRegen += 2;
                     break;
                 case 2:
-                    if(!PlayerHealth.canShield) PlayerHealth.canShield = true;
-                    if (PlayerHealth.canShield) PlayerHealth.TimeToShieldRemake -= 2;
+                    if(!plh.canShield) plh.canShield = true;
+                    if (plh.canShield) PlayerHealth.TimeToShieldRemake -= 2;
                     break;
                 case 3:
                     PlayerHealth.LibertarKiumbas();
@@ -105,7 +110,6 @@ public class ItemPickable : MonoBehaviour
                     PlayerMovement.AddChanceOfAChest();
                     break;
             }
-            Debug.Log("Adicionou O Item");
             Destroy(this.gameObject);
         }
     }

@@ -82,6 +82,7 @@ public class DialogManager : MonoBehaviour
         Dialog.ReadyToTalk = false;
         Dialog.hasStartTalking = false;
         Interação.buttonOff = false;
+        GameManager.isInConversation = false;
         StartCoroutine(EndOfDialog());
     }
 

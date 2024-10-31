@@ -31,15 +31,28 @@ public class FleashMaterial : MonoBehaviour
     {
         if(flashRoutine != null) StopCoroutine(flashRoutine);
 
+        flashMaterial.color = Color.white;
+
+        flashRoutine = StartCoroutine(FlashRoutine());
+    }
+
+    public void FlashPoison()
+    {
+        if (flashRoutine != null) StopCoroutine(flashRoutine);
+
+        flashMaterial.color = Color.magenta;
+
         flashRoutine = StartCoroutine(FlashRoutine());
     }
 
 
     private IEnumerator FlashRoutine()
     {
+        
         spriteRenderer.material = flashMaterial;
 
         yield return new WaitForSeconds(duration);
+
 
         spriteRenderer.material = Originalmaterial;
 

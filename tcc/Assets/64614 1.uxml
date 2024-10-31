@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/3522521.uss?fileID=7433441132597879392&amp;guid=d87e3789d5f26f543851c3b27c30ccd3&amp;type=3#3522521" />
+    <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+        <ui:VisualElement style="flex-grow: 1; width: 50%;" />
+        <ui:VisualElement style="flex-grow: 1; width: 50%;">
+            <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=-1087164816274819069&amp;guid=064b7f36e4d8b2345be10a52387249f1&amp;type=3#arrow-right@2x&apos;);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

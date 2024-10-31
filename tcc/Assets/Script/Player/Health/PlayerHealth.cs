@@ -6,46 +6,53 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public static PlayerHealth Instance {  get; private set; }
+    public static PlayerHealth Instance {get; private set; }
 
     public static int Maxhealth;
     public int Currenthealth;
 
     public PlayerHealthUI healthUI;
 
-    // Tudo sobre o shield e sua relacao com a vida
-    public static bool hasShildUp, canShield, shieldBroken;
+    #region Tudo sobre o shield e sua relacao com a vida
+    public bool hasShildUp, canShield, shieldBroken, hasTakeShieldFirstTime;
     public GameObject shield;
     float TimeToReDo;
     public static float TimeToShieldRemake = 20f;
+    public Animator shildHabilityAnimation;
+    #endregion
 
-    // tudo sobre o escudo e sua realcao com a vida
+    #region tudo sobre o escudo e sua realcao com a vida
     public static bool hasArmorUp;
     public static int percentOfProtection;
+    #endregion
 
-    // tudo sobre o espelho e sua relacao com a vida
+    #region tudo sobre o espelho e sua relacao com a vida
     public static bool hasMirrorUp;
+    #endregion
 
-    // Tudo sobre Patua e como ele desvia o dano do adversario
+    #region Tudo sobre Patua e como ele desvia o dano do adversario
     bool hasPatuaUP;
     public static int chanceForLiving;
+    #endregion
 
-    // Tudo sobre Stamina e sua relacao com a vida
+    #region Tudo sobre Stamina e sua relacao com a vida
     public static bool deadByStamina;
+    #endregion
 
-    // Onde se encaixa o flashSprite
+    #region Onde se encaixa o flashSprite
     public FleashMaterial fleashMaterialScript;
+    #endregion
 
-
-    // freeze no momento do Dano
+    #region freeze no momento do Dano
     [Space]
     [Header("Freeze When Attacked")]
     public float durationFreeze;
     bool _isFrozen = false;
     float _pendingFreezeDuration = 0f;
     bool _isThereMonsters;
+    #endregion
 
-    //CineMachineCamera
+    #region CineMachineCamera
     [Space]
     [Header("Camera Shake")]
     public CinemachineVirtualCamera cinemachineVirtualCamera;
@@ -54,6 +61,7 @@ public class PlayerHealth : MonoBehaviour
     public float intencidadeDoShake;
     public float duracaoDoShake;
     public static bool shackCamera;
+    #endregion
 
     // bool que indica se foi atingido ou nem
     public static bool _HasbeenHit;
@@ -73,7 +81,17 @@ public class PlayerHealth : MonoBehaviour
 
     public static bool setMaxHealth;
 
-    
+    [Space]
+    public Animator anim;
+
+    [Space]
+    public float timeOfPoison;
+    public bool poisoned;
+    public bool hasbeenPoisoned;
+    public int HitsPoisoned;
+    public int damageFromPoison;
+
+
 
     void Start()
     {
@@ -84,14 +102,22 @@ public class PlayerHealth : MonoBehaviour
         TimetoRegenarateHealth = 3.0f;
         healthUI.SetMaxHealth(Maxhealth);
         isAlive = true;
+        cinemachineVirtualCamera = GameObject.FindGameObjectWithTag("Camera").GetComponent<CinemachineVirtualCamera>();
     }
 
     
     void Update()
     {
-        if(Input.GetKeyUp(KeyCode.R) && canShield && !shieldBroken) 
+        if(Input.GetKeyUp(KeyCode.R) && canShield && !shieldBroken && !hasShildUp) 
         { 
-          hasShildUp = true;
+            hasShildUp = true;
+        }
+
+        if(canShield && !hasTakeShieldFirstTime)
+        {
+            hasTakeShieldFirstTime = true;
+            shildHabilityAnimation.SetBool("HasShild", true);
+            shildHabilityAnimation.SetBool("ResetShild", true);
         }
 
         if(hasShildUp)
@@ -106,10 +132,12 @@ public class PlayerHealth : MonoBehaviour
         if(shieldBroken) 
         { 
             TimeToReDo += Time.deltaTime;
+            shildHabilityAnimation.SetBool("ResetShild", false);
 
-            if(TimeToReDo >= TimeToShieldRemake)
+            if (TimeToReDo >= TimeToShieldRemake)
             {
                 shieldBroken = false;
+                shildHabilityAnimation.SetBool("ResetShild", true);
                 TimeToReDo = 0;
             }
         }
@@ -147,7 +175,7 @@ public class PlayerHealth : MonoBehaviour
             setMaxHealth = false;
         }
 
-       if(deadByStamina)
+       if(deadByStamina && PlayerMovement.isGrounded)
         {
             Dead();
         }
@@ -164,6 +192,53 @@ public class PlayerHealth : MonoBehaviour
             shackCamera = false;
         }
 
+        if (poisoned) StartCoroutine(Poisoned());
+    }
+
+    IEnumerator Poisoned()
+    {
+        int originalhitpoisoned = HitsPoisoned;
+        poisoned = false;
+        TakeDamageFromPoison(damageFromPoison);
+
+        yield return new WaitForSeconds(timeOfPoison);
+
+        if (HitsPoisoned > originalhitpoisoned)
+        {
+            damageFromPoison += 3;
+            originalhitpoisoned = HitsPoisoned;
+        }
+        TakeDamageFromPoison(damageFromPoison);
+
+        yield return new WaitForSeconds(timeOfPoison);
+
+        if (HitsPoisoned > originalhitpoisoned)
+        {
+            damageFromPoison += 3;
+            originalhitpoisoned = HitsPoisoned;
+        }
+        TakeDamageFromPoison(damageFromPoison);
+
+        yield return new WaitForSeconds(timeOfPoison);
+
+        if (HitsPoisoned > originalhitpoisoned)
+        {
+            damageFromPoison += 3;
+            originalhitpoisoned = HitsPoisoned;
+        }
+        TakeDamageFromPoison(damageFromPoison);
+        damageFromPoison = 2;
+        HitsPoisoned = 0;
+        hasbeenPoisoned = false;
+    }
+
+    public void TakeDamageFromPoison(int damage)
+    {
+        Debug.Log("POsion : " + damage);
+        Currenthealth -= damage;
+        healthUI.SetHealth(Currenthealth);
+        canTakeaDamage = false;
+        fleashMaterialScript.FlashPoison();
     }
 
     public void TakeDamage(int damage)
@@ -176,6 +251,8 @@ public class PlayerHealth : MonoBehaviour
 
             if (canTakeaDamage && !hasPatuaUP)
             {
+                anim.SetBool("Attack1", false);
+                anim.SetBool("Attack2", false);
                 if (hasArmorUp)
                 {
                     int damageReflet = (damage / 100) * percentOfProtection;
@@ -267,7 +344,8 @@ public class PlayerHealth : MonoBehaviour
     {
         isAlive = false;
         GameManager.IsInMainScene = true;
-        StartCoroutine(ShowUI("MainScene"));
+        StartCoroutine(ShowUI("Terreiro"));
+        GameManager.MapsPassed = 0;
     }
 
     public IEnumerator ShowUI(string scene)
@@ -279,7 +357,7 @@ public class PlayerHealth : MonoBehaviour
         deadByStamina = false;
         SceneChange.SceneToChangeMusic = scene;
         AudioManager.hasChangedscene = true;
-        Destroy(gameObject);
         SceneManager.LoadScene(scene);
+        Destroy(gameObject);
     }
 }

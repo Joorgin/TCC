@@ -35,22 +35,36 @@ public class Player_Type_2_Movement : MonoBehaviour
 
     public static string ChestName;
 
-    public CinemachineConfiner cinemachine;
+    public GameObject cinemachine;
 
     public GameObject ConfigMenu;
     bool setactive;
 
     public static bool isInMainScene;
+
+    // Tudo Sobre audio SFX
+    public AudioManagert movingAudio;
+    bool IsMovingComAudio = true;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
-        cinemachine = GameObject.FindGameObjectWithTag("Camera").GetComponent<CinemachineConfiner>();
-        cinemachine.m_BoundingShape2D = GameObject.FindGameObjectWithTag("CameraConfiner").GetComponent<PolygonCollider2D>();
         PlayerMovement.isInFinalScene = false;
         isInMainScene = true;
         Physics2D.IgnoreLayerCollision(6, 7, true);
+        GameManager.IsInMainScene = true;
+        GameManager.MapsPassed = 0;
+        GameManager.isInTutorial = false;
+        GameManager.hasPassedTutorial = true;
+        AudioManager.hasChangedscene = true;
+        AudioManager.SceneToChangeMusic = "Terreiro";
+
+        cinemachine = GameObject.FindGameObjectWithTag("Camera");
+        cinemachine.GetComponent<CinemachineVirtualCamera>().Follow = gameObject.transform;
+        cinemachine.GetComponent<CinemachineVirtualCamera>().LookAt = gameObject.transform;
+        cinemachine.GetComponent<CinemachineConfiner>().m_BoundingShape2D = GameObject.FindGameObjectWithTag("CameraConfiner").GetComponent<PolygonCollider2D>();
     }
 
     void Update()
@@ -117,10 +131,7 @@ public class Player_Type_2_Movement : MonoBehaviour
     {
         if (KBCounter <= 0)
         {
-            if (isDashing)
-            {
-                return;
-            }
+            if (isDashing) return;
 
             if(DialogManager.instance.isDialogActive) 
             {
@@ -129,8 +140,19 @@ public class Player_Type_2_Movement : MonoBehaviour
             }
             else
             {
-                Vector2 movement = new Vector2(horizontalMove * Time.fixedDeltaTime, rb.velocity.y);
-                rb.velocity = movement;
+                rb.velocity = new Vector2(horizontalMove * Time.fixedDeltaTime, rb.velocity.y);
+                bool moving = horizontalMove != 0 ? true : false;
+                if (moving && IsMovingComAudio)
+                {
+                    IsMovingComAudio = false;
+                    movingAudio.AudioAndar();
+                }
+                else if (!moving || !isGrounded)
+                {
+                    Debug.Log("Andando com audio");
+                    IsMovingComAudio = true;
+                    movingAudio.AudioAndarStop();
+                }
             }
 
             

@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     public Slider _musicSlider, _sfxSlider;
-    public GameObject XTogglebutton;
-    public GameObject XMusicOnToggler;
+    public GameObject XTogglebutton, xToggleSFXbutton;
+    public GameObject XMusicOnToggler, xSFXOnToggler;
 
     private void Start()
     {
@@ -27,6 +27,8 @@ public class UIController : MonoBehaviour
     public void ToggleSFX()
     {
         AudioManager.Instance.ToggleSfx();
+        xToggleSFXbutton.SetActive(AudioManager.isToggledSFX);
+        xSFXOnToggler.SetActive(!AudioManager.isToggledSFX);
     }
 
     public void MusicVolume()
@@ -51,5 +53,7 @@ public class UIController : MonoBehaviour
         SceneChange.SceneToChangeMusic = "Menu";
         AudioManager.hasChangedscene = true;   
         SceneManager.LoadScene("Menu");
+        GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        gameManager.Menu();
     }
 }

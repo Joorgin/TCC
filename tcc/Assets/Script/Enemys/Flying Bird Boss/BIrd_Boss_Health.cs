@@ -15,6 +15,13 @@ public class BIrd_Boss_Health : MonoBehaviour
     public static bool isAlive;
     float timeToDie;
 
+    // Onde se encaixa o flashSprite
+    public FleashMaterial fleashMaterialScript;
+
+    // Quanto de stamina o inimigo consede
+    [Space]
+    public float stamina;
+
     private void Awake()
     {
         m_List.Add(this);
@@ -38,7 +45,7 @@ public class BIrd_Boss_Health : MonoBehaviour
 
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         if (timeToDie <= 0)
         {
@@ -50,6 +57,8 @@ public class BIrd_Boss_Health : MonoBehaviour
                 isAlive = false;
             }
             timeToDie = 0.5f;
+            DamagePopUp.Create(gameObject.transform.position, damage);
+            fleashMaterialScript.Flash();
         }
     }
 
@@ -63,6 +72,7 @@ public class BIrd_Boss_Health : MonoBehaviour
         }
         //dá find e tira da lista
         SceneChange.HasdefeatedBoss = true;
+        Stamina.instance.UpStamina(stamina);
         Destroy(gameObject);
     }
 }

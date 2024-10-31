@@ -6,12 +6,13 @@ public class PlayerOndeWayPPlataform : MonoBehaviour
 {
     private GameObject currentOneWayPlataform;
 
-    [SerializeField] private CapsuleCollider2D playerCollider;
+    [SerializeField] private CircleCollider2D playerCollider;
+    [SerializeField] private CircleCollider2D playerCollider2;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.Space))
         {
             if (currentOneWayPlataform != null)
             {
@@ -41,7 +42,9 @@ public class PlayerOndeWayPPlataform : MonoBehaviour
         BoxCollider2D plataformCollider = currentOneWayPlataform.GetComponent<BoxCollider2D>();
 
         Physics2D.IgnoreCollision(playerCollider, plataformCollider);
-        yield return new WaitForSeconds(1f);
+        Physics2D.IgnoreCollision(playerCollider2, plataformCollider);
+        yield return new WaitForSeconds(2f);
         Physics2D.IgnoreCollision(playerCollider, plataformCollider, false);
+        Physics2D.IgnoreCollision(playerCollider2, plataformCollider, false);
     }
 }

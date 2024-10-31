@@ -9,6 +9,8 @@ public class Chest : MonoBehaviour
     public string ChestID;
     public string Rarity;
     public GameObject[] ItemToDrop;
+    public GameObject instantiatePlace;
+    public GameObject buttonInteraction;
 
     public static bool isInRange;
     bool isOpen;
@@ -58,15 +60,15 @@ public class Chest : MonoBehaviour
                     {
                         case "Normal":
                             int RandomNumber = Random.Range(0, 3);
-                            Instantiate(ItemToDrop[RandomNumber], gameObject.transform.position, Quaternion.identity);
+                            Instantiate(ItemToDrop[RandomNumber], instantiatePlace.transform.position, Quaternion.identity);
                             break;
                         case "Rare":
                             int RandomNumber2 = Random.Range(3, 6);
-                            Instantiate(ItemToDrop[RandomNumber2], gameObject.transform.position, Quaternion.identity);
+                            Instantiate(ItemToDrop[RandomNumber2], instantiatePlace.transform.position, Quaternion.identity);
                             break;
                         case "Legendary":
                             int RandomNumber3 = Random.Range(6, 8);
-                            Instantiate(ItemToDrop[RandomNumber3], gameObject.transform.position, Quaternion.identity);
+                            Instantiate(ItemToDrop[RandomNumber3], instantiatePlace.transform.position, Quaternion.identity);
                             break;
                     }
 
@@ -117,5 +119,13 @@ public class Chest : MonoBehaviour
         Debug.Log("RARITYCHANCE: " + PlayerMovement.chanceForAGoodChest);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player")) buttonInteraction.SetActive(true);
+    }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player")) buttonInteraction.SetActive(false);
+    }
 }

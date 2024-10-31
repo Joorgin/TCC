@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
     public bool changeScene;
-    public float TimeToLoad = 0f, CounterPercent;
+    public float TimeToLoad = 0f, CounterPercent, totalTimeToChargePortal;
     public string[] SceneNames;
     string SceneToChange;
     public static string SceneToChangeMusic;
     public Animator anim;
     bool isInRange, portalReady, canCharge, hasSpawnedBoss;
-    public GameObject Boss, BossSpawn;
+    public GameObject[] Boss, BossSpawn;
     public bool isInMainScene;
     int RandomScene;
     public GameObject buttonInteraction;
@@ -31,9 +31,10 @@ public class SceneChange : MonoBehaviour
           TimeToLoad += Time.deltaTime;
         }
         // da Fade e escolhe o proximo mapa
+
         if (TimeToLoad >= 1)
         {
-            RandomScene = Random.Range(0, SceneNames.Length + 1);
+            RandomScene = Random.Range(0, SceneNames.Length);
             SceneToChange = SceneNames[RandomScene];
             Debug.Log("Maps Passed: " + GameManager.MapsPassed);
             GameManager.MapsPassed++;
@@ -65,7 +66,7 @@ public class SceneChange : MonoBehaviour
                 AudioManager.hasChangedscene = true;
                 SceneManager.LoadScene(SceneToChange);
             }
-        } 
+        }
 
         if (isInRange && Input.GetKey(KeyCode.E) && !hasSpawnedBoss)
         {
@@ -73,13 +74,28 @@ public class SceneChange : MonoBehaviour
 
             if (!isInMainScene)
             {
-                Instantiate(Boss, BossSpawn.transform.position, Quaternion.identity);
+                int RandomNumber = Random.Range(0, 2);
+
+                switch (RandomNumber)
+                {
+                    case 0:
+                        Instantiate(Boss[0], BossSpawn[0].transform.position, Quaternion.identity);
+                        Debug.Log("Position 0 : " + BossSpawn[0].transform.position);
+                        break;
+                    case 1:
+                        Instantiate(Boss[1], BossSpawn[0].transform.position, Quaternion.identity);
+                        Debug.Log("Position 1 : " + BossSpawn[0].transform.position);
+                        break;
+                }
+
+
                 hasSpawnedBoss = true;
             }
             else GameManager.IsInMainScene = false;
         }
-            
-        if(isInRange && canCharge) 
+       
+
+        if (isInRange && canCharge) 
         {
             anim.SetBool("Start_Portal", true);
             anim.speed = 1;
@@ -87,7 +103,7 @@ public class SceneChange : MonoBehaviour
 
         CounterPercent += isInRange && canCharge ? Time.deltaTime : 0 ;
        
-        if(CounterPercent >= 13)
+        if(CounterPercent >= totalTimeToChargePortal)
         {
             anim.SetBool("End_Portal", true);
             ContAnim();
