@@ -82,10 +82,6 @@ public class PlayerMovement : MonoBehaviour
     // Define qual a chance do bau bom
     public static int chanceForAGoodChest;
 
-    // Tudo Sobre audio SFX
-    public AudioManagert movingAudio;
-    bool IsMovingComAudio = true;
-
     private void Awake()
     {
         if(!GameManager.isInTutorial) DontDestroyOnLoad(gameObject);
@@ -238,17 +234,6 @@ public class PlayerMovement : MonoBehaviour
 
                 rb.velocity = new Vector2(horizontalMove * Time.fixedDeltaTime, rb.velocity.y);
                 bool moving = horizontalMove != 0 ? true : false;
-                if (moving && IsMovingComAudio)
-                {
-                    IsMovingComAudio = false;
-                    movingAudio.AudioAndar();
-                }
-                else if(!moving || !isGrounded)
-                {
-                    Debug.Log("Andando com audio");
-                    IsMovingComAudio = true;
-                    movingAudio.AudioAndarStop();
-                }
             }
             else
             {
@@ -273,7 +258,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        movingAudio.AudioAndarStop();
         anim.SetTrigger("IsJumping");
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }

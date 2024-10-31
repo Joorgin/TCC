@@ -24615,7 +24615,6 @@ MonoBehaviour:
   anim: {fileID: 465859047673582102}
   cinemachine: {fileID: 0}
   ConfigMenu: {fileID: 2119372870}
-  movingAudio: {fileID: 8977738333160299768}
 --- !u!114 &8977738333160299767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24662,7 +24661,7 @@ MonoBehaviour:
   audioSource: {fileID: 765575469}
   OtherSources: {fileID: 1389187145}
   clip:
-  - {fileID: 8300000, guid: 36ef55f458f5cca42966fdc0a7fc4a4b, type: 3}
+  - {fileID: 0}
   - {fileID: 8300000, guid: 85d74a811b0d6c840b78dc0dd05333b5, type: 3}
   - {fileID: 8300000, guid: e7a440586c43f8e4d9fe44944b11ef82, type: 3}
 --- !u!58 &8977738333160299769
