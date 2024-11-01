@@ -25,7 +25,7 @@ public class Paralax : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float rePOs = cam.transform.position.x * (1 - speedParalax);
+        float rePOs = (cam.transform.position.x * (1 - speedParalax));
         float dist = (cam.transform.position.x * speedParalax);
         transform.position = new Vector3(startPos + dist ,transform.position.y, transform.position.z);
 
