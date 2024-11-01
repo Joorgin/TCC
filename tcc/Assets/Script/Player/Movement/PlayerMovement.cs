@@ -118,6 +118,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (apaixonado)
         {
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+            anim.SetBool("Apaixonado", true);
             Sereia = GameObject.FindGameObjectWithTag("Chefe");
             StartCoroutine(paixao());
 
@@ -157,7 +159,7 @@ public class PlayerMovement : MonoBehaviour
                     anim.SetBool("Apaixonado", true);
                 }
             }
-        }
+        }else anim.SetBool("Apaixonado", false);
 
         if (PlayerHealth.isAlive && !apaixonado && !PlayerAttack.isShooting && !GameManager.isInConversation)
         {
