@@ -56510,6 +56510,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1065416678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1065416679}
+  m_Layer: 0
+  m_Name: Barreira do Tutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1065416679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065416678}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 27.59718, y: -9.8625345, z: -0.1627941}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1069504626
 GameObject:
   m_ObjectHideFlags: 0
@@ -120709,7 +120740,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 300
   rb: {fileID: 4906495424076109018}
-  jumpForce: 15
+  jumpForce: 7
+  JumpMaxTime: 0.3
   groundCheck: {fileID: 6508982884291769602}
   groundLayer:
     serializedVersion: 2
@@ -127656,3 +127688,4 @@ SceneRoots:
   - {fileID: 1311254142}
   - {fileID: 612114478}
   - {fileID: 768651041}
+  - {fileID: 1065416679}
