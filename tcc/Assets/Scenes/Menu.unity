@@ -254,7 +254,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 336, y: 232}
+  m_AnchoredPosition: {x: 457, y: 232}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &49768465
@@ -411,7 +411,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: AUDIO
+  m_text: Voltar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff33c664f855bcd4ea692c525b8a9c1f, type: 2}
   m_sharedMaterial: {fileID: 7326757873254282378, guid: ff33c664f855bcd4ea692c525b8a9c1f, type: 2}
@@ -902,6 +902,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2995241}
+  - {fileID: 1374856588}
   m_Father: {fileID: 2018339088}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1073,7 +1074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _musicSlider: {fileID: 1540833085}
-  _sfxSlider: {fileID: 0}
+  _sfxSlider: {fileID: 1834583109}
   XTogglebutton: {fileID: 1716161610}
   xToggleSFXbutton: {fileID: 1478547234}
   XMusicOnToggler: {fileID: 428696954}
@@ -1750,7 +1751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35.149994, y: -77.4}
+  m_AnchoredPosition: {x: 32.5, y: -72.1}
   m_SizeDelta: {x: 148.4189, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &718151683
@@ -1773,9 +1774,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'MENU
-
-'
+  m_text: Creditos
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff33c664f855bcd4ea692c525b8a9c1f, type: 2}
   m_sharedMaterial: {fileID: 7326757873254282378, guid: ff33c664f855bcd4ea692c525b8a9c1f, type: 2}
@@ -1802,8 +1801,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 16.21
+  m_fontSizeBase: 16.21
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18.26
@@ -2189,7 +2188,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 175, y: 39.299988}
+  m_AnchoredPosition: {x: 296, y: 39.299988}
   m_SizeDelta: {x: 80.1201, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &914134113
@@ -2608,7 +2607,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 175, y: 186}
+  m_AnchoredPosition: {x: 296, y: 186}
   m_SizeDelta: {x: 80.1201, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1111119568
@@ -3239,15 +3238,15 @@ RectTransform:
   m_GameObject: {fileID: 1374856587}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.05, y: 4, z: 1}
+  m_LocalScale: {x: 1, y: 4.301075, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2018339088}
+  m_Father: {fileID: 444707716}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 173.45, y: 119.598015}
-  m_SizeDelta: {x: 148.4189, y: 50}
+  m_AnchoredPosition: {x: -1.5238037, y: 0.000015258789}
+  m_SizeDelta: {x: 83.2941, y: 19.3034}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1374856589
 MonoBehaviour:
@@ -3332,7 +3331,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 68.42203, w: 34.840813}
+  m_margin: {x: 0, y: 18.95831, z: -0.24369812, w: 19.329475}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3651,7 +3650,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 394, y: 186}
+  m_AnchoredPosition: {x: 515, y: 186}
   m_SizeDelta: {x: 500, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1540833085
@@ -3923,7 +3922,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 336, y: 90}
+  m_AnchoredPosition: {x: 457, y: 90}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1664725033
@@ -4590,7 +4589,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 394, y: 42.299988}
+  m_AnchoredPosition: {x: 515, y: 42.299988}
   m_SizeDelta: {x: 500, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1834583109
@@ -5201,7 +5200,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 444707716}
-  - {fileID: 1374856588}
   m_Father: {fileID: 1929016535}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -5266,7 +5264,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "OP\xC7\xD5ES"
+  m_text: VOltar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff33c664f855bcd4ea692c525b8a9c1f, type: 2}
   m_sharedMaterial: {fileID: 7326757873254282378, guid: ff33c664f855bcd4ea692c525b8a9c1f, type: 2}

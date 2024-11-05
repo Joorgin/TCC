@@ -555,7 +555,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 300
   rb: {fileID: 4906495423345566953}
-  jumpForce: 10
+  jumpForce: 7
+  JumpMaxTime: 0.3
   groundCheck: {fileID: 6508982883699098929}
   groundLayer:
     serializedVersion: 2
@@ -806,7 +807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidBody: {fileID: 4906495423345566953}
-  dashPower: 3
+  dashPower: 1.5
   DamageArea: {fileID: 8430587424359373240}
 --- !u!58 &7330042899597215213
 CircleCollider2D:
@@ -1778,7 +1779,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7284978427293777034
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7350,7 +7351,7 @@ RectTransform:
   m_GameObject: {fileID: 4267991061264825740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4154, y: 1.4154, z: 1.4154}
+  m_LocalScale: {x: 0.7774085, y: 0.7774085, z: 0.7774085}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9115267931724583834}
@@ -7361,7 +7362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.2236, y: -433}
+  m_AnchoredPosition: {x: -648, y: -480}
   m_SizeDelta: {x: 355.5026, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5218007831311140325

@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
 
     public float jumpForce = 10f;
     bool hasDoubleJump;
+    bool jumping = false;
+    public float JumpMaxTime = 1;
+    float jumpTime = 1;
     public Transform groundCheck;
     public LayerMask groundLayer, groundLayer2;
     public float groundCheckRadius = 0.1f;
@@ -176,11 +179,27 @@ public class PlayerMovement : MonoBehaviour
 
             if (isDashing) return;
 
-            if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))) Jump();
+            //if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))) Jump();
+            if (isGrounded && !jumping)
+            {
+                jumpTime = JumpMaxTime;
+            }
 
-            if (!isGrounded && !hasDoubleJump && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))) { Jump(); hasDoubleJump = true; }
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)){
+                
+                jumping = true;
+                anim.SetTrigger("IsJumping");
+            }
 
-            if (isGrounded) hasDoubleJump = false;
+            if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.UpArrow))
+            {
+               jumping = false;
+            }
+
+           
+           // if (!isGrounded && !hasDoubleJump && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))) { Jump(); hasDoubleJump = true; }
+
+           // if (isGrounded) hasDoubleJump = false;
 
             if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
             {
@@ -189,6 +208,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
+            
             if (horizontalMove > 0f)
             {
                 verticalMove = 1;
@@ -199,6 +219,7 @@ public class PlayerMovement : MonoBehaviour
                 verticalMove = -1;
                 anim.SetInteger("VerticalMove", verticalMove);
             }
+            
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -244,6 +265,14 @@ public class PlayerMovement : MonoBehaviour
                 KBCounter -= Time.deltaTime;
             }
         }
+        if (jumping)
+        {
+            jumpTime -= Time.fixedDeltaTime;
+            jumpTime = Mathf.Clamp(jumpTime, 0, JumpMaxTime);
+          
+            Jump(jumpTime);
+        }
+
     }
 
     IEnumerator paixao()
@@ -258,10 +287,13 @@ public class PlayerMovement : MonoBehaviour
         isAttacking = false;
     }
 
-    void Jump()
+
+
+    void Jump(float force)
     {
-        anim.SetTrigger("IsJumping");
-        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        //rb.velocity = new Vector2(rb.velocity.x, jumpForce * force);
+       
+        rb.AddForce(new Vector2(0, jumpForce * force),ForceMode2D.Impulse);
     }
 
     public void AnimatorControllers()
