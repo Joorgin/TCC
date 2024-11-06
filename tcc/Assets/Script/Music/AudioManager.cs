@@ -149,4 +149,16 @@ public class AudioManager : MonoBehaviour
     {
         sfxSource.volume = volume;
     }
+
+    public void SetVolumeForCutScene(float volume)
+    {
+        if (musicSource.mute) return;
+        else if (musicSource.volume >= 0.4f) musicSource.volume = volume;
+
+    }
+
+    public void ReturnVolumeToNormal()
+    {
+        musicSource.volume = musicVolume;
+    }
 }
