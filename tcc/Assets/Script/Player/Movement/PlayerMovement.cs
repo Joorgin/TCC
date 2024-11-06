@@ -188,7 +188,7 @@ public class PlayerMovement : MonoBehaviour
 
             if(!isGrounded && !jumping && !hasDoubleJump && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
             {
-                jumpTime = JumpMaxTime;
+                jumpTime = JumpMaxTime - 0.5f;
                 hasDoubleJump = true;
                 jumping = true;
             }
