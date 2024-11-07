@@ -84,7 +84,7 @@ public class PlayerAttack : MonoBehaviour
             noOfClicks = 0;
         }
 
-        if (PlayerHealth.isAlive || Player_Type_2_Movement.isInMainScene)
+        if ((PlayerHealth.isAlive || Player_Type_2_Movement.isInMainScene) && !PlayerMovement.Instance.setactive)
         {
             Atacar(direcaoVerticalMove);
         }
