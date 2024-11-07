@@ -21205,6 +21205,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChangeScene
       objectReference: {fileID: 0}
+    - target: {fileID: 8429073270123524718, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
+      propertyPath: isInMainScene
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

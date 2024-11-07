@@ -38,6 +38,7 @@ public class SceneChange : MonoBehaviour
             SceneToChange = SceneNames[RandomScene];
             Debug.Log("Maps Passed: " + GameManager.MapsPassed);
             GameManager.MapsPassed++;
+            PlayerHealth.Instance.setMaxHealthAfterChangeScene();
             if(SceneToChange == GameManager.LastMapName)
             {
                 HasdefeatedBoss = false;

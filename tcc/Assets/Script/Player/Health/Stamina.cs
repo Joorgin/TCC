@@ -60,4 +60,10 @@ public class Stamina : MonoBehaviour
     {
         staminaStay += stamina;
     }
+
+    public void SetMaxStainaAfterSceneChange()
+    {
+        staminaStay = stamina;
+        staminaUI.SetStamina(staminaStay);
+    }
 }
