@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     [Header("Config do Menu")]
     public GameObject ConfigMenu;
-    bool setactive;
+    public bool setactive;
 
     // Configura o slow que o inimigo explosivo ou qualquer outro inimigo que aplique o mesmo efeito
     float TimeOfSlow;
@@ -164,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }else anim.SetBool("Apaixonado", false);
 
-        if (PlayerHealth.isAlive && !apaixonado && !PlayerAttack.isShooting && !GameManager.isInConversation)
+        if (PlayerHealth.isAlive && !apaixonado && !PlayerAttack.isShooting && !GameManager.isInConversation && !setactive)
         {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
@@ -257,7 +257,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (PlayerHealth.isAlive && !apaixonado && !Downdash._isDownDash && !PlayerAttack.isShooting && !GameManager.isInConversation)
+        if (PlayerHealth.isAlive && !apaixonado && !Downdash._isDownDash && !PlayerAttack.isShooting && !GameManager.isInConversation && !setactive)
         {
             if (KBCounter <= 0)
             {

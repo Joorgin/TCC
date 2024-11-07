@@ -15,7 +15,7 @@ public class Bueiro : MonoBehaviour
             {
                 bueiroObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 bueiroObject.GetComponent<BoxCollider2D>().enabled = false;
-                bueiroObject.GetComponent<Rigidbody2D>().mass = 0.1f;
+                bueiroObject.GetComponent<Rigidbody2D>().mass = 1.5f;
                 StartCoroutine(Destroy());
             }
         }
