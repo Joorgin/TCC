@@ -8,13 +8,19 @@ public class Pula_Pula : MonoBehaviour
     public Animator anim;
     public float jumpForce;
     bool cantTouch;
+    public Base_Pula_Pula basePulaPula;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!cantTouch)
+        if (!cantTouch && !basePulaPula.vemDeBaixo)
         {
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * jumpForce);
-            Debug.Log("LAUNCH");
+            // anim.SetTrigger("Jump");
+            cantTouch = true;
+        }
+        else if (!cantTouch && basePulaPula.vemDeBaixo)
+        {
+           // collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * (jumpForce / 2));
             // anim.SetTrigger("Jump");
             cantTouch = true;
         }
