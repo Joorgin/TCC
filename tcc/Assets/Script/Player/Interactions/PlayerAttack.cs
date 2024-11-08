@@ -84,7 +84,7 @@ public class PlayerAttack : MonoBehaviour
             noOfClicks = 0;
         }
 
-        if ((PlayerHealth.isAlive || Player_Type_2_Movement.isInMainScene) && !PlayerMovement.Instance.setactive)
+        if ((PlayerHealth.isAlive || Player_Type_2_Movement.isInMainScene) && !PlayerMovement.Instance.setactive && !GameManager.isInConversation)
         {
             Atacar(direcaoVerticalMove);
         }
@@ -161,9 +161,9 @@ public class PlayerAttack : MonoBehaviour
             if (etd.GetComponent<ENemyBasicMovement>() != null)
             {
                 etd.GetComponent<EnemyHeatlh>().TakeDamage(Damage);
-                etd.GetComponent<ENemyBasicMovement>().KBCounter = etd.GetComponent<ENemyBasicMovement>().KBTotalTime;
-                etd.GetComponent<ENemyBasicMovement>().KBForce = 1;
-                etd.GetComponent<ENemyBasicMovement>().KnockFromRight = !direcao;//inverte pq direcao foi feito com PlayerMovement.verticalMove == 1
+                //etd.GetComponent<ENemyBasicMovement>().KBCounter = etd.GetComponent<ENemyBasicMovement>().KBTotalTime;
+                //etd.GetComponent<ENemyBasicMovement>().KBForce = 1;
+                //etd.GetComponent<ENemyBasicMovement>().KnockFromRight = !direcao;//inverte pq direcao foi feito com PlayerMovement.verticalMove == 1
                 _isThereMonsters = true;
                 durationFreeze = 0.1f;
             }
@@ -172,9 +172,9 @@ public class PlayerAttack : MonoBehaviour
             if (etd.GetComponent<ExplosiveEnemyMovement>() != null)
             {
                 etd.GetComponent<ExplosiveEnemyHealth>().TakeDamage(Damage);
-                etd.GetComponent<ExplosiveEnemyMovement>().KBCounter = etd.GetComponent<ExplosiveEnemyMovement>().KBTotalTime;
-                etd.GetComponent<ExplosiveEnemyMovement>().KBForce = 1;
-                etd.GetComponent<ExplosiveEnemyMovement>().KnockFromRight = !direcao;
+               // etd.GetComponent<ExplosiveEnemyMovement>().KBCounter = etd.GetComponent<ExplosiveEnemyMovement>().KBTotalTime;
+               // etd.GetComponent<ExplosiveEnemyMovement>().KBForce = 1;
+              //  etd.GetComponent<ExplosiveEnemyMovement>().KnockFromRight = !direcao;
                 _isThereMonsters = true;
                 durationFreeze = 0.1f;
             }
@@ -270,12 +270,12 @@ public class PlayerAttack : MonoBehaviour
 
     public void Freeze()
     {
-        _pendingFreezeDuration = durationFreeze;
+       // _pendingFreezeDuration = durationFreeze;
     }
 
     public void FreezeShootTime()
     {
-        durationFreeze = 0.5f;
+        //durationFreeze = 0.5f;
         StartCoroutine(SetTimeForAtackEffect());
     }
 
