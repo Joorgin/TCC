@@ -17,9 +17,15 @@ public class SpawnEnemys : MonoBehaviour
             int RandomNumber = Random.Range(0, enemies.Length);
             int RandomSpawn = Random.Range(0, SpawnPositions.Length);
 
-            GameObject temp = Instantiate(enemies[RandomNumber], SpawnPositions[RandomSpawn].transform.position, Quaternion.identity);
-            temp.transform.SetParent(null);
-            TimerToSpawn = 0;
+            string spawnName = SpawnPositions[RandomSpawn].name;
+
+            if (spawnName == CheckWalls.instance.name && CheckWalls.instance.isInWall) return;
+            else
+            {
+                GameObject temp = Instantiate(enemies[RandomNumber], SpawnPositions[RandomSpawn].transform.position, Quaternion.identity);
+                temp.transform.SetParent(null);
+                TimerToSpawn = 0;
+            }
         }
 
     }
