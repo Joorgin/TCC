@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckWalls : MonoBehaviour
 {
-    public static CheckWalls instance;
+    public static CheckWalls instance { get; private set; }
     public string Name;
     public bool isInWall;
     public float Radius;
