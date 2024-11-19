@@ -21,7 +21,7 @@ public class Downdash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.S) && !PlayerMovement.isGrounded && CanDownDash && PlayerHealth.isAlive) StartCoroutine(DashDown());
+        if(Input.GetKeyDown(KeyCode.S) && !PlayerMovement.isGrounded && CanDownDash && PlayerHealth.Instance.isAlive) StartCoroutine(DashDown());
 
         if(HitGround) StartCoroutine(HitedGround());
     }
