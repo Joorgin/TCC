@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class CheckWalls : MonoBehaviour
 {
-    public static CheckWalls instance { get; private set; }
-    public string Name;
-    public bool isInWall;
+    public static string Name;
+    public static bool isInWall;
     public float Radius;
     public LayerMask groundLayer;
 
     private void Start()
     {
-        instance = this;
     }
 
     private void Update()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnEnemys : MonoBehaviour
 {
@@ -19,7 +20,10 @@ public class SpawnEnemys : MonoBehaviour
 
             string spawnName = SpawnPositions[RandomSpawn].name;
 
-            if (spawnName == CheckWalls.instance.name && CheckWalls.instance.isInWall) return;
+            Scene scene = SceneManager.GetActiveScene();
+
+            if ((spawnName == CheckWalls.Name && CheckWalls.isInWall) || scene.name == "Menu" 
+                || scene.name == "CutScene" || scene.name == "Tutorial" || scene.name == "Terreiro") return;
             else
             {
                 GameObject temp = Instantiate(enemies[RandomNumber], SpawnPositions[RandomSpawn].transform.position, Quaternion.identity);
