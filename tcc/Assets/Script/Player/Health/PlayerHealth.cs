@@ -67,7 +67,7 @@ public class PlayerHealth : MonoBehaviour
     public static bool _HasbeenHit;
 
 
-    public static bool isAlive;
+    public bool isAlive;
 
     [Space]
     public GameObject DeathPanel;

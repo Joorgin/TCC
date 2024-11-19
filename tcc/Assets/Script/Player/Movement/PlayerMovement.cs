@@ -164,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }else anim.SetBool("Apaixonado", false);
 
-        if (PlayerHealth.isAlive && !apaixonado && !PlayerAttack.isShooting && !GameManager.isInConversation && !setactive)
+        if (PlayerHealth.Instance.isAlive && !apaixonado && !PlayerAttack.isShooting && !GameManager.isInConversation && !setactive)
         {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
@@ -261,7 +261,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(GameManager.isInConversation) rb.velocity = new Vector2(0, rb.velocity.y);
 
-        if (PlayerHealth.isAlive && !apaixonado && !Downdash._isDownDash && !PlayerAttack.isShooting && !GameManager.isInConversation && !setactive)
+        if (PlayerHealth.Instance.isAlive && !apaixonado && !Downdash._isDownDash && !PlayerAttack.isShooting && !GameManager.isInConversation && !setactive)
         {
             if (KBCounter <= 0)
             {
@@ -308,7 +308,7 @@ public class PlayerMovement : MonoBehaviour
     {
         anim.SetBool("isGrounded", isGrounded);
         if (isGrounded && !apaixonado && !GameManager.isInConversation) anim.SetFloat("RunDirection", Input.GetAxisRaw("Horizontal"));
-        if (PlayerHealth.isAlive == false && isGrounded) anim.SetBool("Dead", true);
+        if (PlayerHealth.Instance.isAlive == false && isGrounded) anim.SetBool("Dead", true);
     }
 
     private IEnumerator Dash()
