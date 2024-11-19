@@ -9,17 +9,20 @@ public class Paralax : MonoBehaviour
     public Transform cam;
     private float lenght, startPos;
     public float speedParalax;
-   
-   
-    // Start is called before the first frame update
-    void Start()
+
+
+    private void Awake()
     {
         startPos = transform.position.x;
-        
+
         lenght = GetComponent<SpriteRenderer>().bounds.size.x;
         MainCamera = GameObject.Find("MainCamera");
 
         cam = MainCamera.transform;
+    }
+    void Start()
+    {
+        
     }
    
     // Update is called once per frame
