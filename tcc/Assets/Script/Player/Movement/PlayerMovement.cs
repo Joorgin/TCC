@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     [Header("Config do Menu")]
     public GameObject ConfigMenu;
-    bool setactive;
+    public bool setactive;
 
     // Configura o slow que o inimigo explosivo ou qualquer outro inimigo que aplique o mesmo efeito
     float TimeOfSlow;
@@ -164,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }else anim.SetBool("Apaixonado", false);
 
-        if (PlayerHealth.isAlive && !apaixonado && !PlayerAttack.isShooting && !GameManager.isInConversation)
+        if (PlayerHealth.isAlive && !apaixonado && !PlayerAttack.isShooting && !GameManager.isInConversation && !setactive)
         {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
@@ -184,11 +184,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 jumpTime = JumpMaxTime;
                 hasDoubleJump = false;
+                jumpForce = 7f;
             }
 
             if(!isGrounded && !jumping && !hasDoubleJump && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 jumpTime = JumpMaxTime;
+                rb.velocity = new Vector2(rb.velocity.x, 0f);
                 hasDoubleJump = true;
                 jumping = true;
             }
@@ -257,7 +259,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (PlayerHealth.isAlive && !apaixonado && !Downdash._isDownDash && !PlayerAttack.isShooting && !GameManager.isInConversation)
+        if(GameManager.isInConversation) rb.velocity = new Vector2(0, rb.velocity.y);
+
+        if (PlayerHealth.isAlive && !apaixonado && !Downdash._isDownDash && !PlayerAttack.isShooting && !GameManager.isInConversation && !setactive)
         {
             if (KBCounter <= 0)
             {
@@ -295,19 +299,15 @@ public class PlayerMovement : MonoBehaviour
         isAttacking = false;
     }
 
-
-
     void Jump(float force)
     {
-        //rb.velocity = new Vector2(rb.velocity.x, jumpForce * force);
-       
         rb.AddForce(new Vector2(0, jumpForce * force),ForceMode2D.Impulse);
     }
 
     public void AnimatorControllers()
     {
         anim.SetBool("isGrounded", isGrounded);
-        if (isGrounded && !apaixonado) anim.SetFloat("RunDirection", Input.GetAxisRaw("Horizontal"));
+        if (isGrounded && !apaixonado && !GameManager.isInConversation) anim.SetFloat("RunDirection", Input.GetAxisRaw("Horizontal"));
         if (PlayerHealth.isAlive == false && isGrounded) anim.SetBool("Dead", true);
     }
 

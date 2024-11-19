@@ -13,8 +13,10 @@ public class UIController : MonoBehaviour
     private void Start()
     {
         _musicSlider.value = AudioManager.musicVolume;
+        _sfxSlider.value = AudioManager.sfxVolume;
         XTogglebutton.SetActive(AudioManager.isToggled);
         XMusicOnToggler.SetActive(!AudioManager.isToggled);
+
     }
 
     public void ToggleMusic()

@@ -22,11 +22,6 @@ public class Stamina : MonoBehaviour
         staminaStay = stamina;
         staminaUI.SetMaxStamina(staminaStay);
     }
-    private void Start()
-    {
-
-        Debug.Log("Stamina: " + staminaStay);
-    }
     void Update()
     {
         if (GameManager.hasPassedTutorial)
@@ -59,5 +54,11 @@ public class Stamina : MonoBehaviour
     public void UpStamina(float stamina)
     {
         staminaStay += stamina;
+    }
+
+    public void SetMaxStainaAfterSceneChange()
+    {
+        staminaStay = stamina;
+        staminaUI.SetStamina(staminaStay);
     }
 }

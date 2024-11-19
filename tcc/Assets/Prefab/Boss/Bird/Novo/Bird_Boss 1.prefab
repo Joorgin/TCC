@@ -669,7 +669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb84ce3088e16da4189ad50601e315f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Maxhealth: 300
+  Maxhealth: 500
   Currenthealth: 0
   healthUI: {fileID: 1541689579155151001}
   Bracelete: {fileID: 4593072821139420700, guid: 1d43874d8c712d94fa30fed44bda0306, type: 3}
