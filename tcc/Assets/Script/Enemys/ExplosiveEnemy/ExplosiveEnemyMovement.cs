@@ -111,7 +111,7 @@ public class ExplosiveEnemyMovement : MonoBehaviour
             Flip();
         }
 
-        if (!isTrapped && PlayerHealth.isAlive)
+        if (!isTrapped && PlayerHealth.Instance.isAlive)
         {
 
             if (isChasing)

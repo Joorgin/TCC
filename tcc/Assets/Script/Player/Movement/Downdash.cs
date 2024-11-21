@@ -21,13 +21,14 @@ public class Downdash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.S) && !PlayerMovement.isGrounded && CanDownDash && PlayerHealth.isAlive) StartCoroutine(DashDown());
+        if(Input.GetKeyDown(KeyCode.S) && !PlayerMovement.isGrounded && CanDownDash && PlayerHealth.Instance.isAlive) StartCoroutine(DashDown());
 
         if(HitGround) StartCoroutine(HitedGround());
     }
 
     public IEnumerator DashDown()
     {
+        EnemyDamage.canTouchPlayer = false;
         playerRigidBody.velocity = Vector2.zero;
         CanDownDash = false;
         yield return new WaitForSeconds(0.6f);
@@ -46,5 +47,6 @@ public class Downdash : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         HitGround = false;
         DamageArea.SetActive(false);
+        EnemyDamage.canTouchPlayer = true;
     }
 }

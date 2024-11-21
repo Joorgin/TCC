@@ -1,5 +1,55 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &394422464756192974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8454683866399686329}
+  - component: {fileID: 9005646034605040159}
+  m_Layer: 0
+  m_Name: Pontos de Spawn (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8454683866399686329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394422464756192974}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -26.829485, y: -0.14793803, z: 17.377851}
+  m_LocalScale: {x: 3.5534077, y: 3.7485473, z: 1.7618041}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5110655229637633356}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9005646034605040159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394422464756192974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e372df6c561523c46a3b9be54a57a17d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  isInWall: 0
+  Radius: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &1149576414990982422
 GameObject:
   m_ObjectHideFlags: 0
@@ -33,6 +83,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6726733311616607519}
+  - {fileID: 7318814568598085573}
+  - {fileID: 8454683866399686329}
   m_Father: {fileID: 1135049959006584015}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3692232857316677028
@@ -125,6 +177,7 @@ GameObject:
   - component: {fileID: 814928697364811648}
   - component: {fileID: 344747015434258303}
   - component: {fileID: 8269365093392904682}
+  - component: {fileID: 7201471071114947221}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -284,6 +337,30 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &7201471071114947221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2316104542272502478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_AssetsPPU: 64
+  m_RefResolutionX: 1920
+  m_RefResolutionY: 1080
+  m_CropFrame: 0
+  m_GridSnapping: 0
+  m_FilterMode: 0
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &2735083532453659005
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,8 +430,8 @@ MonoBehaviour:
   m_ScreenX: 0.48904163
   m_ScreenY: 0.5
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.167
-  m_DeadZoneHeight: 0.079
+  m_DeadZoneWidth: 0.014
+  m_DeadZoneHeight: 0.07
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.8
@@ -390,6 +467,56 @@ MonoBehaviour:
   m_AmplitudeGain: 0
   m_FrequencyGain: 5
   mNoiseOffsets: {x: 469.7623, y: 697.0082, z: -586.83997}
+--- !u!1 &3141417684792227744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7318814568598085573}
+  - component: {fileID: 4903530441542380862}
+  m_Layer: 0
+  m_Name: Pontos de Spawn (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7318814568598085573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3141417684792227744}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 27.253384, y: -0.14793803, z: 17.377851}
+  m_LocalScale: {x: 3.5534077, y: 3.7485473, z: 1.7618041}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5110655229637633356}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4903530441542380862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3141417684792227744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e372df6c561523c46a3b9be54a57a17d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  isInWall: 0
+  Radius: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &6899002583590011628
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +861,7 @@ GameObject:
   - component: {fileID: 1135049959006584015}
   - component: {fileID: 5801432149028732776}
   - component: {fileID: 6063914968169089542}
+  - component: {fileID: 1235237884231198977}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -784,3 +912,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8bd82ca395f5d429c1a8da4c3de695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1235237884231198977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8796749238498861309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063821a12ce333143a719b47620887cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 1837690909385350117, guid: bfe9fd4b5a3815e4ba54bfbfd45e449f, type: 3}
+  - {fileID: 4566653886737648308, guid: 6bc23b4da6d487a44b1967d7a9ff227e, type: 3}
+  - {fileID: 2775723029833481024, guid: 53b8a9f562224e34ba52fd8feb2d0ccb, type: 3}
+  SpawnPositions:
+  - {fileID: 3141417684792227744}
+  - {fileID: 394422464756192974}
+  timeToSpawnEnemys: 10

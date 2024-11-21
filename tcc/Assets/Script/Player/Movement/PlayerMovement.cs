@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
 
     public float jumpForce = 10f;
     bool hasDoubleJump;
+    bool jumping = false;
+    public float JumpMaxTime = 1;
+    float jumpTime = 1;
     public Transform groundCheck;
     public LayerMask groundLayer, groundLayer2;
     public float groundCheckRadius = 0.1f;
@@ -64,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     [Header("Config do Menu")]
     public GameObject ConfigMenu;
-    bool setactive;
+    public bool setactive;
 
     // Configura o slow que o inimigo explosivo ou qualquer outro inimigo que aplique o mesmo efeito
     float TimeOfSlow;
@@ -81,10 +84,6 @@ public class PlayerMovement : MonoBehaviour
 
     // Define qual a chance do bau bom
     public static int chanceForAGoodChest;
-
-    // Tudo Sobre audio SFX
-    public AudioManagert movingAudio;
-    bool IsMovingComAudio = true;
 
     private void Awake()
     {
@@ -122,6 +121,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (apaixonado)
         {
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+            anim.SetBool("Apaixonado", true);
             Sereia = GameObject.FindGameObjectWithTag("Chefe");
             StartCoroutine(paixao());
 
@@ -161,9 +162,9 @@ public class PlayerMovement : MonoBehaviour
                     anim.SetBool("Apaixonado", true);
                 }
             }
-        }
+        }else anim.SetBool("Apaixonado", false);
 
-        if (PlayerHealth.isAlive && !apaixonado && !PlayerAttack.isShooting && !GameManager.isInConversation)
+        if (PlayerHealth.Instance.isAlive && !apaixonado && !PlayerAttack.isShooting && !GameManager.isInConversation && !setactive)
         {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
@@ -178,11 +179,37 @@ public class PlayerMovement : MonoBehaviour
 
             if (isDashing) return;
 
-            if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))) Jump();
+            //if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))) Jump();
+            if (isGrounded && !jumping)
+            {
+                jumpTime = JumpMaxTime;
+                hasDoubleJump = false;
+                jumpForce = 7f;
+            }
 
-            if (!isGrounded && !hasDoubleJump && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))) { Jump(); hasDoubleJump = true; }
+            if(!isGrounded && !jumping && !hasDoubleJump && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                jumpTime = JumpMaxTime;
+                rb.velocity = new Vector2(rb.velocity.x, 0f);
+                hasDoubleJump = true;
+                jumping = true;
+            }
 
-            if (isGrounded) hasDoubleJump = false;
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)){
+                
+                jumping = true;
+                anim.SetTrigger("IsJumping");
+            }
+
+            if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.UpArrow))
+            {
+               jumping = false;
+            }
+
+           
+           // if (!isGrounded && !hasDoubleJump && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))) { Jump(); hasDoubleJump = true; }
+
+           // if (isGrounded) hasDoubleJump = false;
 
             if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
             {
@@ -191,6 +218,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
+            
             if (horizontalMove > 0f)
             {
                 verticalMove = 1;
@@ -201,6 +229,7 @@ public class PlayerMovement : MonoBehaviour
                 verticalMove = -1;
                 anim.SetInteger("VerticalMove", verticalMove);
             }
+            
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -230,7 +259,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (PlayerHealth.isAlive && !apaixonado && !Downdash._isDownDash && !PlayerAttack.isShooting && !GameManager.isInConversation)
+        if(GameManager.isInConversation) rb.velocity = new Vector2(0, rb.velocity.y);
+
+        if (PlayerHealth.Instance.isAlive && !apaixonado && !Downdash._isDownDash && !PlayerAttack.isShooting && !GameManager.isInConversation && !setactive)
         {
             if (KBCounter <= 0)
             {
@@ -238,17 +269,6 @@ public class PlayerMovement : MonoBehaviour
 
                 rb.velocity = new Vector2(horizontalMove * Time.fixedDeltaTime, rb.velocity.y);
                 bool moving = horizontalMove != 0 ? true : false;
-                if (moving && IsMovingComAudio)
-                {
-                    IsMovingComAudio = false;
-                    movingAudio.AudioAndar();
-                }
-                else if(!moving || !isGrounded)
-                {
-                    Debug.Log("Andando com audio");
-                    IsMovingComAudio = true;
-                    movingAudio.AudioAndarStop();
-                }
             }
             else
             {
@@ -257,6 +277,14 @@ public class PlayerMovement : MonoBehaviour
                 KBCounter -= Time.deltaTime;
             }
         }
+        if (jumping)
+        {
+            jumpTime -= Time.fixedDeltaTime;
+            jumpTime = Mathf.Clamp(jumpTime, 0, JumpMaxTime);
+          
+            Jump(jumpTime);
+        }
+
     }
 
     IEnumerator paixao()
@@ -271,18 +299,16 @@ public class PlayerMovement : MonoBehaviour
         isAttacking = false;
     }
 
-    void Jump()
+    void Jump(float force)
     {
-        movingAudio.AudioAndarStop();
-        anim.SetTrigger("IsJumping");
-        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        rb.AddForce(new Vector2(0, jumpForce * force),ForceMode2D.Impulse);
     }
 
     public void AnimatorControllers()
     {
         anim.SetBool("isGrounded", isGrounded);
-        if (isGrounded && !apaixonado) anim.SetFloat("RunDirection", Input.GetAxisRaw("Horizontal"));
-        if (PlayerHealth.isAlive == false && isGrounded) anim.SetBool("Dead", true);
+        if (isGrounded && !apaixonado && !GameManager.isInConversation) anim.SetFloat("RunDirection", Input.GetAxisRaw("Horizontal"));
+        if (PlayerHealth.Instance.isAlive == false && isGrounded) anim.SetBool("Dead", true);
     }
 
     private IEnumerator Dash()

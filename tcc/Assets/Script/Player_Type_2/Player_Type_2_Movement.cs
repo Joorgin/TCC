@@ -42,10 +42,6 @@ public class Player_Type_2_Movement : MonoBehaviour
 
     public static bool isInMainScene;
 
-    // Tudo Sobre audio SFX
-    public AudioManagert movingAudio;
-    bool IsMovingComAudio = true;
-
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -142,17 +138,6 @@ public class Player_Type_2_Movement : MonoBehaviour
             {
                 rb.velocity = new Vector2(horizontalMove * Time.fixedDeltaTime, rb.velocity.y);
                 bool moving = horizontalMove != 0 ? true : false;
-                if (moving && IsMovingComAudio)
-                {
-                    IsMovingComAudio = false;
-                    movingAudio.AudioAndar();
-                }
-                else if (!moving || !isGrounded)
-                {
-                    Debug.Log("Andando com audio");
-                    IsMovingComAudio = true;
-                    movingAudio.AudioAndarStop();
-                }
             }
 
             

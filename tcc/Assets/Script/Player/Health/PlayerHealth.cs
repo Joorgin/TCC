@@ -67,7 +67,7 @@ public class PlayerHealth : MonoBehaviour
     public static bool _HasbeenHit;
 
 
-    public static bool isAlive;
+    public bool isAlive;
 
     [Space]
     public GameObject DeathPanel;
@@ -183,7 +183,7 @@ public class PlayerHealth : MonoBehaviour
         if (_pendingFreezeDuration > 0f && !_isFrozen)
         {
 
-            StartCoroutine(SetTimeForAtackEffect());
+            //StartCoroutine(SetTimeForAtackEffect());
         }
 
         if(shackCamera)
@@ -359,5 +359,11 @@ public class PlayerHealth : MonoBehaviour
         AudioManager.hasChangedscene = true;
         SceneManager.LoadScene(scene);
         Destroy(gameObject);
+    }
+
+    public void setMaxHealthAfterChangeScene()
+    {
+        Currenthealth = Maxhealth;
+        healthUI.SetHealth(Currenthealth);
     }
 }

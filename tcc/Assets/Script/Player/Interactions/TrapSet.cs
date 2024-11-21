@@ -17,7 +17,7 @@ public class TrapSet : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerHealth.isAlive)
+        if (PlayerHealth.Instance.isAlive)
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
