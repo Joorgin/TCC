@@ -20,7 +20,8 @@ public class Onda : MonoBehaviour
         {
             currentScale.x *= -1;
             gameObject.transform.localScale = currentScale;
-        }
+            esquerda = true;
+        }else direita = true;
         Physics2D.IgnoreLayerCollision(10, 7, true);
         Physics2D.IgnoreLayerCollision(10, 6, true);
         Physics2D.IgnoreLayerCollision(10, 11, true);
@@ -32,18 +33,6 @@ public class Onda : MonoBehaviour
         time += Time.deltaTime;
 
         if (time > timeToDestroy) Destroy(gameObject);
-
-        if (Sereia_Movement.RightSide && hasSetSide)
-        {
-            direita = true;
-            hasSetSide = false;
-        }
-        // Vira a flecha para a esquerda 
-        if (!Sereia_Movement.RightSide && hasSetSide)
-        {
-            esquerda = true;
-            hasSetSide = false;
-        }
 
         if (esquerda) transform.position += Vector3.left * movementSpeed * Time.deltaTime;
         if (direita) transform.position += Vector3.right * movementSpeed * Time.deltaTime;

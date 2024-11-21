@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
 
     public Music[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource;
-    public static float musicVolume;
+    public static float musicVolume, sfxVolume;
     public static bool isToggled, isToggledSFX;
 
     [Space]
@@ -40,6 +40,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         musicVolume = 1.0f;
+        sfxVolume = 1.0f;
         PlayMusic("Music_Theme");
     }
 
@@ -148,5 +149,18 @@ public class AudioManager : MonoBehaviour
     public void SFXVolume(float volume)
     {
         sfxSource.volume = volume;
+        sfxVolume = volume;
+    }
+
+    public void SetVolumeForCutScene(float volume)
+    {
+        if (musicSource.mute) return;
+        else if (musicSource.volume >= 0.4f) musicSource.volume = volume;
+
+    }
+
+    public void ReturnVolumeToNormal()
+    {
+        musicSource.volume = musicVolume;
     }
 }

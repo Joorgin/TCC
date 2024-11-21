@@ -22,29 +22,24 @@ public class Stamina : MonoBehaviour
         staminaStay = stamina;
         staminaUI.SetMaxStamina(staminaStay);
     }
-    private void Start()
-    {
-        
-        Debug.Log("Stamina: " + staminaStay);
-    }
     void Update()
     {
-       // if (GameManager.hasPassedTutorial)
-       // {
+        if (GameManager.hasPassedTutorial)
+        {
             staminaStay -= Time.deltaTime;
 
             staminaUI.SetStamina(staminaStay);
 
             if (staminaStay <= 0) timeToDie -= Time.time;
 
-        if (timeToDie <= 0 && !hasEndStamina)
-        {
-           StartCoroutine(DamageHealth(damageInHealth)); 
-            hasEndStamina = true;
-        }
+            if (timeToDie <= 0 && !hasEndStamina)
+            {
+                StartCoroutine(DamageHealth(damageInHealth));
+                hasEndStamina = true;
+            }
 
             Debug.Log("PublicTImeTOdie: " + timeToDie);
-       // }
+        }
     }
 
     public IEnumerator DamageHealth(int damage)
@@ -59,5 +54,11 @@ public class Stamina : MonoBehaviour
     public void UpStamina(float stamina)
     {
         staminaStay += stamina;
+    }
+
+    public void SetMaxStainaAfterSceneChange()
+    {
+        staminaStay = stamina;
+        staminaUI.SetStamina(staminaStay);
     }
 }

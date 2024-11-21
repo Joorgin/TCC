@@ -31,13 +31,13 @@ public class ENemyBasicMovement : MonoBehaviour
     [Space]
     public bool canJump;
 
-    private void Start()
+
+    private void Awake()
     {
         PlayerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         Physics2D.IgnoreLayerCollision(6, 7, true);
         Physics2D.IgnoreLayerCollision(6, 6, true);
     }
-
     private void FixedUpdate()
     {
         if (TimeToAttack <= 0)
@@ -61,7 +61,9 @@ public class ENemyBasicMovement : MonoBehaviour
 
         if(Vector2.Distance(transform.position, PlayerTransform.position) > 15f) isChansing = false;
 
-        if (!isTrapped && PlayerHealth.isAlive && isChansing)
+        Debug.Log(gameObject.name + "PlayerIsAlive: " + PlayerHealth.Instance.isAlive);
+
+        if (!isTrapped && PlayerHealth.Instance.isAlive && isChansing)
         {
             if(canJump) isgrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 

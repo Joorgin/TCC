@@ -15,5 +15,7 @@ public class Jump_Void : MonoBehaviour
             PlayerHealth plyheath = collision.GetComponent<PlayerHealth>();
             plyheath.TakeDamage(damage);
         }
+
+        if (collision.CompareTag("EnemyBoby")) Destroy(collision.gameObject);
     }
 }
