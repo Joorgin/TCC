@@ -8,11 +8,11 @@ public class Base_Pula_Pula : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        vemDeBaixo = false;
+       if(collision.CompareTag("Player")) vemDeBaixo = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        vemDeBaixo = true;
+        if (collision.CompareTag("Player")) vemDeBaixo = true;
     }
 }
