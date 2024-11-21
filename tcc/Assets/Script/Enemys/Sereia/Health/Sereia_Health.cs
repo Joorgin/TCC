@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Sereia_Health : MonoBehaviour
 {
+    public static Sereia_Health Instance;
     static List<Sereia_Health> m_List = new List<Sereia_Health>();
 
     public int Maxhealth;
@@ -24,6 +25,7 @@ public class Sereia_Health : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
         m_List.Add(this);
     }
 

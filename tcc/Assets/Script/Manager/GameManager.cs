@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -20,14 +21,16 @@ public class GameManager : MonoBehaviour
     public static float PlayerStamina = 180;
     #endregion
 
+    #region camera
+    // configura o limite que a camera do player pode ir
+    public GameObject cinemachine;
+    #endregion
+
     public Transform pfDamagePopUp;
 
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-
-       // if(LastMapPassed)
-       //     Destroy(gameObject);
 
         if (instance == null)
         {
@@ -50,5 +53,13 @@ public class GameManager : MonoBehaviour
     public void Menu()
     {
         // Salvar Jogo
+    }
+
+    public void SetCamera()
+    {
+        cinemachine = GameObject.FindGameObjectWithTag("Camera");
+        cinemachine.GetComponent<CinemachineVirtualCamera>().Follow = GameObject.FindGameObjectWithTag("Player").transform;
+        cinemachine.GetComponent<CinemachineVirtualCamera>().LookAt = GameObject.FindGameObjectWithTag("Player").transform;
+        cinemachine.GetComponent<CinemachineConfiner>().m_BoundingShape2D = GameObject.FindGameObjectWithTag("CameraConfiner").GetComponent<PolygonCollider2D>();
     }
 }

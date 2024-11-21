@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyHeatlh : MonoBehaviour
@@ -22,6 +23,8 @@ public class EnemyHeatlh : MonoBehaviour
     [Space]
     public float stamina;
 
+    public static bool canGrowHealth;
+
     private void Awake()
     {
         m_List.Add(this);
@@ -29,20 +32,11 @@ public class EnemyHeatlh : MonoBehaviour
 
     void Start()
     {
-        switch (Contador_De_Tempo.DificuldadePorTempo)
+        if(canGrowHealth) 
         {
-            case 1:
-                Maxhealth = 130;
-                Debug.Log("Enemy MaxHealth: " + Maxhealth);
-                break;
-            case 2:
-                Maxhealth = 160;
-                Debug.Log("Enemy MaxHealth: " + Maxhealth);
-                break;
-            case 3:
-                Maxhealth = 200;
-                Debug.Log("Enemy MaxHealth: " + Maxhealth);
-                break;
+            Maxhealth += 30;
+            canGrowHealth = false;
+            Debug.Log("EnemyMaxHealth: " + Maxhealth);
         }
         Currenthealth = Maxhealth;
         healthUI.SetMaxHealth(Maxhealth);

@@ -57,8 +57,7 @@ public class PlayerMovement : MonoBehaviour
     // Define se a movimentacao do player deve ou não parar para atacar
     public static bool isAttacking;
 
-    // configura o limite que a camera do player pode ir
-    public GameObject cinemachine;
+    
 
     // Item upgrade inteacoes
     public static string IntemName;
@@ -92,10 +91,7 @@ public class PlayerMovement : MonoBehaviour
         if (Instance == null) Instance = this;
         else if (isInFinalScene) Destroy(gameObject);
 
-        cinemachine = GameObject.FindGameObjectWithTag("Camera");
-        cinemachine.GetComponent<CinemachineVirtualCamera>().Follow = gameObject.transform;
-        cinemachine.GetComponent<CinemachineVirtualCamera>().LookAt = gameObject.transform;
-        cinemachine.GetComponent<CinemachineConfiner>().m_BoundingShape2D = GameObject.FindGameObjectWithTag("CameraConfiner").GetComponent<PolygonCollider2D>();
+        
 
         Physics2D.IgnoreLayerCollision(6, 7, true);
         Physics2D.IgnoreLayerCollision(8, 7, true);
