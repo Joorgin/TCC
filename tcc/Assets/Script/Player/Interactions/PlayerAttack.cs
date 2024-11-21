@@ -5,6 +5,8 @@ using UnityEngine.UIElements;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public static PlayerAttack instance;
+
     public float timeBtwAttack, startTimeBtwAttack;//para manipular o tempo de ataque
     public Transform attackPos, attackPos2;//para as direções de ataque
     public float attackRange;
@@ -60,6 +62,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
+        instance = this;
         Damage = 10;
         anim = GetComponent<Animator>();
         canAtack = true;
@@ -355,6 +358,6 @@ public class PlayerAttack : MonoBehaviour
     public static void SacrificarKiumbas()
     {
         Damage += 10;
-        Debug.Log(Damage);
+        Flecha.instance.damage += 30;
     }
 }

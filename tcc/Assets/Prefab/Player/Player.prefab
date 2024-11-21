@@ -611,7 +611,7 @@ MonoBehaviour:
   poisoned: 0
   hasbeenPoisoned: 0
   HitsPoisoned: 0
-  damageFromPoison: 7
+  damageFromPoison: 10
 --- !u!114 &5525976261446797557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3331,8 +3331,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.360882, y: 10.7}
-  m_SizeDelta: {x: 126.33547, y: 82.358}
+  m_AnchoredPosition: {x: 16.324062, y: 11.473193}
+  m_SizeDelta: {x: 126.12261, y: 75.481}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7981548049087014108
 CanvasRenderer:
@@ -14826,7 +14826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeInGame: 0
   WatchText: {fileID: 9070367524098420867}
-  anim: {fileID: 0}
+  minutesBefore: 0
   totalAnimationFrames: 0
 --- !u!1 &8453745880182319896
 GameObject:
