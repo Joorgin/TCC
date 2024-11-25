@@ -26,8 +26,6 @@ public class EnemyDamage : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Cantouch:" + canTouchPlayer);
-
             if (isAttacking && canTouchPlayer)
             {
                 playerMovement.KBCounter = playerMovement.KBTotalTime;

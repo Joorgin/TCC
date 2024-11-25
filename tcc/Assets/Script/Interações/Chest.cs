@@ -26,7 +26,7 @@ public class Chest : MonoBehaviour
 
         ChangeChanceOfAGoodChest();
 
-        switch (GameManager.MapsPassed)
+        switch (GameManager.instance.MapsPassed)
         {
             case 1:
                 NumberNecesseryOfBraceletsToOpen = 2;
@@ -54,7 +54,6 @@ public class Chest : MonoBehaviour
                 {
                     Contador_de_braceletes.currentCoins -= NumberNecesseryOfBraceletsToOpen;
                     Contador_de_braceletes.instance.DiminuirBraceletes(NumberNecesseryOfBraceletsToOpen);
-                    Debug.Log("Raridade deste bau: Nome: " + ChestID + " Raridade : " + Rarity);
 
                     switch (Rarity)
                     {
@@ -115,8 +114,6 @@ public class Chest : MonoBehaviour
                 break;
         
         }
-
-        Debug.Log("RARITYCHANCE: " + PlayerMovement.chanceForAGoodChest);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

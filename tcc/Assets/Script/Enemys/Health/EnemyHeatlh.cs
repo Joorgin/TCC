@@ -36,7 +36,6 @@ public class EnemyHeatlh : MonoBehaviour
         {
             Maxhealth += 30;
             canGrowHealth = false;
-            Debug.Log("EnemyMaxHealth: " + Maxhealth);
         }
         Currenthealth = Maxhealth;
         healthUI.SetMaxHealth(Maxhealth);

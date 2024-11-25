@@ -6,8 +6,6 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public class FlyingBirdboss : MonoBehaviour
 {
-    public static FlyingBirdboss instance;
-
     private GameObject player;
     bool facingRight = true;
     bool TimeToAttack;
@@ -50,7 +48,7 @@ public class FlyingBirdboss : MonoBehaviour
 
     void Start()
     {
-        instance = this;
+        damage = GameManager.instance.BirdBossdamage;
         player = GameObject.FindGameObjectWithTag("Player");
         states = States.Looking;
     }

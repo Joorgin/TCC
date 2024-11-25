@@ -7,14 +7,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public static int LastMap, MapsPassed;
-    public static bool LastMapPassed;
-    public static int NumberOfSouls;
-    public static bool upgradeLevel, UpgradeLevelStamina;
-    public static int CurrentLevelItemUpgrade = 1, CurrentLevelItemStaminaUpgrade = 1;
-    public static int BraceletesNecessariosPorBau;
-    public static string LastMapName;
-    public static bool IsInMainScene, isInConversation, isInTutorial, hasPassedTutorial;
+    public int LastMap, MapsPassed;
+    public bool LastMapPassed;
+    public int NumberOfSouls;
+    public bool upgradeLevel, UpgradeLevelStamina;
+    public int CurrentLevelItemUpgrade = 1, CurrentLevelItemStaminaUpgrade = 1;
+    public int BraceletesNecessariosPorBau;
+    public string LastMapName;
+    public bool IsInMainScene, isInConversation, isInTutorial, hasPassedTutorial;
 
     #region Player 
     public static int PlayerMaxhealth = 100;
@@ -24,6 +24,14 @@ public class GameManager : MonoBehaviour
     #region camera
     // configura o limite que a camera do player pode ir
     public GameObject cinemachine;
+    #endregion
+
+    #region Bosses
+    public int BirdBossdamage = 40;
+    public int BirdMaxHealth = 500;
+    public int BirdPenaDamage = 20;
+    public int SereiaMaxHealth = 600;
+    public int OndaDamage = 20;
     #endregion
 
     public Transform pfDamagePopUp;
@@ -39,7 +47,6 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            Debug.Log("GAME MANAGER");
         }
     }
 

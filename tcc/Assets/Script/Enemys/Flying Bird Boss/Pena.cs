@@ -11,6 +11,7 @@ public class Pena : MonoBehaviour
 
     void Start()
     {
+        damage = GameManager.instance.BirdPenaDamage;
         transform.Rotate(0, 0, Random.Range(-20f, 30f));
         rb.AddForce(transform.right * 2000);
     }

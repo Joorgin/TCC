@@ -343,9 +343,9 @@ public class PlayerHealth : MonoBehaviour
     public void Dead()
     {
         isAlive = false;
-        GameManager.IsInMainScene = true;
+        GameManager.instance.IsInMainScene = true;
         StartCoroutine(ShowUI("Terreiro"));
-        GameManager.MapsPassed = 0;
+        GameManager.instance.MapsPassed = 0;
     }
 
     public IEnumerator ShowUI(string scene)
