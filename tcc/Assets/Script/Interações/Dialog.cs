@@ -44,7 +44,7 @@ public class Dialog : MonoBehaviour
             isInDialog = true;
             TriggerDialogue();
             StartCoroutine(hasStartedTalking());
-            GameManager.isInConversation = true;
+            GameManager.instance.isInConversation = true;
         }
 
         if (Input.GetKey(KeyCode.Space) && inRange && isInDialog && hasStartTalking)
@@ -78,7 +78,6 @@ public class Dialog : MonoBehaviour
         {
             inRange = true;
             gameObjectName = gameObject.name;
-            Debug.Log("Name : " + collision.gameObject.name);
         }
     }
 

@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        if(!GameManager.isInTutorial) DontDestroyOnLoad(gameObject);
+        if(!GameManager.instance.isInTutorial) DontDestroyOnLoad(gameObject);
 
         if (Instance == null) Instance = this;
         else if (isInFinalScene) Destroy(gameObject);
@@ -160,7 +160,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }else anim.SetBool("Apaixonado", false);
 
-        if (PlayerHealth.Instance.isAlive && !apaixonado && !PlayerAttack.isShooting && !GameManager.isInConversation && !setactive)
+        if (PlayerHealth.Instance.isAlive && !apaixonado && !PlayerAttack.isShooting && !GameManager.instance.isInConversation && !setactive)
         {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
@@ -255,9 +255,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(GameManager.isInConversation) rb.velocity = new Vector2(0, rb.velocity.y);
+        if(GameManager.instance.isInConversation) rb.velocity = new Vector2(0, rb.velocity.y);
 
-        if (PlayerHealth.Instance.isAlive && !apaixonado && !Downdash._isDownDash && !PlayerAttack.isShooting && !GameManager.isInConversation && !setactive)
+        if (PlayerHealth.Instance.isAlive && !apaixonado && !Downdash._isDownDash && !PlayerAttack.isShooting && !GameManager.instance.isInConversation && !setactive)
         {
             if (KBCounter <= 0)
             {
@@ -303,7 +303,7 @@ public class PlayerMovement : MonoBehaviour
     public void AnimatorControllers()
     {
         anim.SetBool("isGrounded", isGrounded);
-        if (isGrounded && !apaixonado && !GameManager.isInConversation) anim.SetFloat("RunDirection", Input.GetAxisRaw("Horizontal"));
+        if (isGrounded && !apaixonado && !GameManager.instance.isInConversation) anim.SetFloat("RunDirection", Input.GetAxisRaw("Horizontal"));
         if (PlayerHealth.Instance.isAlive == false && isGrounded) anim.SetBool("Dead", true);
     }
 

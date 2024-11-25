@@ -28,7 +28,6 @@ public class Traps : MonoBehaviour
         if(collision.gameObject.CompareTag("EnemyBoby") && !armed)
         {
             enemyName = collision.gameObject;
-            Debug.Log(enemyName);
             StartCoroutine(Trapped());
         }
     }

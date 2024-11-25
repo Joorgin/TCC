@@ -24,7 +24,7 @@ public class Stamina : MonoBehaviour
     }
     void Update()
     {
-        if (GameManager.hasPassedTutorial)
+        if (GameManager.instance.hasPassedTutorial)
         {
             staminaStay -= Time.deltaTime;
 
@@ -37,8 +37,6 @@ public class Stamina : MonoBehaviour
                 StartCoroutine(DamageHealth(damageInHealth));
                 hasEndStamina = true;
             }
-
-            Debug.Log("PublicTImeTOdie: " + timeToDie);
         }
     }
 

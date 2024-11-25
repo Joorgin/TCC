@@ -30,13 +30,11 @@ public class TrapSet : MonoBehaviour
     {
         if (PlayerMovement.verticalMove > 0 && canTrap)
         {
-            Debug.Log(PlayerMovement.verticalMove);
             Instantiate(trap, RightTrap.transform.position, Quaternion.identity);
             canTrap = false;
         }
         if (PlayerMovement.verticalMove < 0 && canTrap)
         {
-            Debug.Log(PlayerMovement.verticalMove);
             Instantiate(trap, LeftTrap.transform.position, Quaternion.identity);
             canTrap = false;
         }

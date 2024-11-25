@@ -31,6 +31,7 @@ public class Sereia_Health : MonoBehaviour
 
     void Start()
     {
+        Maxhealth = GameManager.instance.SereiaMaxHealth;
         Currenthealth = Maxhealth;
         healthUI.SetMaxHealth(Maxhealth);
         isAlive = true;

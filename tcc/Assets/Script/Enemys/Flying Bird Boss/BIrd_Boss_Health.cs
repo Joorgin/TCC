@@ -31,10 +31,10 @@ public class BIrd_Boss_Health : MonoBehaviour
 
     void Start()
     {
+        Maxhealth = GameManager.instance.BirdMaxHealth;
         Currenthealth = Maxhealth;
         healthUI.SetMaxHealth(Maxhealth);
         isAlive = true;
-
     }
 
     private void FixedUpdate()
@@ -43,8 +43,6 @@ public class BIrd_Boss_Health : MonoBehaviour
             return;
         else
             timeToDie -= Time.deltaTime;
-
-
     }
 
     public void TakeDamage(int damage)

@@ -82,7 +82,7 @@ public class DialogManager : MonoBehaviour
         Dialog.ReadyToTalk = false;
         Dialog.hasStartTalking = false;
         Interação.buttonOff = false;
-        GameManager.isInConversation = false;
+        GameManager.instance.isInConversation = false;
         StartCoroutine(EndOfDialog());
     }
 

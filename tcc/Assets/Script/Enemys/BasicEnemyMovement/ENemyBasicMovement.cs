@@ -61,8 +61,6 @@ public class ENemyBasicMovement : MonoBehaviour
 
         if(Vector2.Distance(transform.position, PlayerTransform.position) > 15f) isChansing = false;
 
-        Debug.Log(gameObject.name + "PlayerIsAlive: " + PlayerHealth.Instance.isAlive);
-
         if (!isTrapped && PlayerHealth.Instance.isAlive && isChansing)
         {
             if(canJump) isgrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
@@ -74,7 +72,6 @@ public class ENemyBasicMovement : MonoBehaviour
             {
                 if (Vector2.Distance(transform.position, PlayerTransform.position) < 1f)
                 {
-                    Debug.Log("ATTACAR");
                     anim.SetBool("IDLE", true);
                     anim.SetBool("WALK", false);
                     CountToDamage();
@@ -102,12 +99,10 @@ public class ENemyBasicMovement : MonoBehaviour
                 if (KnockFromRight == true)
                 {
                     rb.velocity = new Vector2(-KBForce, 0);
-                    Debug.Log(KnockFromRight);
                 }
                 if (KnockFromRight == false)
                 {
                     rb.velocity = new Vector2(KBForce, 0);
-                    Debug.Log(KnockFromRight);
                 }
                 KBCounter -= Time.deltaTime;
             }
