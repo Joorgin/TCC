@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1c482c13a20ec2944b5d5bbd630c7309
+guid: 50322ef538f750e44a148d41af05b028
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -132,161 +132,9 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Livro_Animation_Esq_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1303
-        height: 1384
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be4471b26ffff4a46819ba24eafda097
-      internalID: 1965085897
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Livro_Animation_Esq_1
-      rect:
-        serializedVersion: 2
-        x: 1306
-        y: 8
-        width: 1303
-        height: 1384
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ffaab163a2becaf48aa394dc9976b856
-      internalID: -1617354288
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Livro_Animation_Esq_2
-      rect:
-        serializedVersion: 2
-        x: 2612
-        y: 8
-        width: 1303
-        height: 1384
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c964576a0dcbd194bb1908d5e928fdaa
-      internalID: -674599339
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Livro_Animation_Esq_3
-      rect:
-        serializedVersion: 2
-        x: 3915
-        y: 8
-        width: 1303
-        height: 1384
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd5eed7f8a2c6364bb2d3200ca07d271
-      internalID: -1836164862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Livro_Animation_Esq_4
-      rect:
-        serializedVersion: 2
-        x: 5216
-        y: 8
-        width: 1303
-        height: 1384
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bdc0b9f3f3262e548bb6f2eb7242f8a3
-      internalID: 1306593695
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Livro_Animation_Esq_5
-      rect:
-        serializedVersion: 2
-        x: 6521
-        y: 8
-        width: 1303
-        height: 1384
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea50de0a408798a47a0ea844ecac9e6c
-      internalID: -1627958809
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -297,13 +145,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Livro_Animation_Esq_0: 1965085897
-      Livro_Animation_Esq_1: -1617354288
-      Livro_Animation_Esq_2: -674599339
-      Livro_Animation_Esq_3: -1836164862
-      Livro_Animation_Esq_4: 1306593695
-      Livro_Animation_Esq_5: -1627958809
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
