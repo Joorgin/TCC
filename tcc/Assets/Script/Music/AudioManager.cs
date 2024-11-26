@@ -50,12 +50,9 @@ public class AudioManager : MonoBehaviour
         {
             SceneToChangeMusic = SceneChange.SceneToChangeMusic;
 
-            Debug.Log("Scenechange: " + SceneToChangeMusic);
-
             switch(SceneToChangeMusic) 
             {
                 case "Floresta":
-                    Debug.Log("Play FlorestMusic");
                     PlayMusic("Night Forest Music");
                     PlaySfx("Night Forest Sfx");
                     hasChangedscene = false;
@@ -66,25 +63,21 @@ public class AudioManager : MonoBehaviour
                     hasChangedscene = false;
                     break;
                 case "Mapa 4":
-                    Debug.Log("Play FlorestMusic 2");
                     PlayMusic("Night Forest Music");
                     PlaySfx("Night Forest Sfx");
                     hasChangedscene = false;
                     break;
                 case "Terreiro":
-                    Debug.Log("Main scene");
                     PlayMusic("Music_Theme");
                     sfxSource.Stop();
                     hasChangedscene = false;
                     break;
                 case "Menu":
-                    Debug.Log("Menu");
                     PlayMusic("Music_Theme");
                     sfxSource.Stop();
                     hasChangedscene = false;
                     break;
                 case "Cidade":
-                    Debug.Log("Play FlorestMusic 2");
                     PlayMusic("City Music");
                     sfxSource.Stop();
                     hasChangedscene = false;

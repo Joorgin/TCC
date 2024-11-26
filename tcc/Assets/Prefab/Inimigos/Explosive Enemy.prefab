@@ -184,7 +184,7 @@ MonoBehaviour:
     m_Bits: 8
   groundCheckRadius: 0.1
   bodyPosition: {fileID: 7464922761044198775}
-  bodyRadius: 0.5
+  bodyRadius: 0.56
   PlayerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -235,7 +235,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &5984036346307016660
 Animator:

@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class OndaDamage : MonoBehaviour
 {
-    public int damage;
+    public static int damage;
     bool canDamage;
+
+    private void Start()
+    {
+        damage = GameManager.instance.OndaDamage;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

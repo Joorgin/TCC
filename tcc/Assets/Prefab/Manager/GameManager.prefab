@@ -44,8 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e372df6c561523c46a3b9be54a57a17d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
-  isInWall: 0
   Radius: 0.1
   groundLayer:
     serializedVersion: 2
@@ -511,8 +509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e372df6c561523c46a3b9be54a57a17d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
-  isInWall: 0
   Radius: 0.1
   groundLayer:
     serializedVersion: 2
@@ -931,4 +927,4 @@ MonoBehaviour:
   SpawnPositions:
   - {fileID: 3141417684792227744}
   - {fileID: 394422464756192974}
-  timeToSpawnEnemys: 10
+  timeToSpawnEnemys: 20

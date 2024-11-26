@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80c2e2764011034cb3abc39f56b0722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfChests: 2
+  NumberOfChests: 5
   prefabToInstantiate: {fileID: 9068599671840484210, guid: febb7371749542c458961d7ef5a9f3c3, type: 3}
   spawnPositions:
   - {fileID: 3299802600368956379}

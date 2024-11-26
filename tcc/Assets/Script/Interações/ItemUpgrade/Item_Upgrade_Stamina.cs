@@ -20,28 +20,28 @@ public class Item_Upgrade_Stamina : MonoBehaviour
 
     private void Start()
     {
-        switch (GameManager.CurrentLevelItemStaminaUpgrade)
+        switch (GameManager.instance.CurrentLevelItemStaminaUpgrade)
         {
             case 1:
                 break;
             case 2:
-                almas = almas + (AddAlmas * GameManager.CurrentLevelItemStaminaUpgrade);
+                almas = almas + (AddAlmas * GameManager.instance.CurrentLevelItemStaminaUpgrade);
                 anim.SetBool("Level2", true);
                 break;
             case 3:
-                almas = almas + (AddAlmas * GameManager.CurrentLevelItemStaminaUpgrade);
+                almas = almas + (AddAlmas * GameManager.instance.CurrentLevelItemStaminaUpgrade);
                 anim.SetBool("Level3", true);
                 break;
             case 4:
-                almas = almas + (AddAlmas * GameManager.CurrentLevelItemStaminaUpgrade);
+                almas = almas + (AddAlmas * GameManager.instance.CurrentLevelItemStaminaUpgrade);
                 anim.SetBool("Level4", true);
                 break;
             case 5:
-                almas = almas + (AddAlmas * GameManager.CurrentLevelItemStaminaUpgrade);
+                almas = almas + (AddAlmas * GameManager.instance.CurrentLevelItemStaminaUpgrade);
                 anim.SetBool("Level5", true);
                 break;
             case 6:
-                almas = almas + (AddAlmas * GameManager.CurrentLevelItemStaminaUpgrade);
+                almas = almas + (AddAlmas * GameManager.instance.CurrentLevelItemStaminaUpgrade);
                 anim.SetBool("Level6", true);
                 break;
         }
@@ -52,7 +52,7 @@ public class Item_Upgrade_Stamina : MonoBehaviour
     {
         if (inRange && Input.GetKeyDown(KeyCode.E))
         {
-            Upgrade = GameManager.NumberOfSouls >= almas;
+            Upgrade = GameManager.instance.NumberOfSouls >= almas;
         }
 
         if (Upgrade) UpgradeItem();
@@ -67,65 +67,65 @@ public class Item_Upgrade_Stamina : MonoBehaviour
 
     public void SwitchStamina()
     {
-        switch (GameManager.CurrentLevelItemStaminaUpgrade)
+        switch (GameManager.instance.CurrentLevelItemStaminaUpgrade)
         {
             case 1:
-                GameManager.UpgradeLevelStamina = true;
+                GameManager.instance.UpgradeLevelStamina = true;
                 anim.SetBool("Level2", true);
                 Contador_de_Almas.instance.DiminiurAlmas(almas);
                 Upgrade = false;
                 almas += AddAlmas;
                 CurrentLevel++;
-                GameManager.CurrentLevelItemStaminaUpgrade++;
-                GameManager.UpgradeLevelStamina = false;
+                GameManager.instance.CurrentLevelItemStaminaUpgrade++;
+                GameManager.instance.UpgradeLevelStamina = false;
                 GameManager.PlayerStamina += 60;
                 AtualizarNumeroDeAlmas();
                 break;
             case 2:
-                GameManager.UpgradeLevelStamina = true;
+                GameManager.instance.UpgradeLevelStamina = true;
                 anim.SetBool("Level3", true);
                 Contador_de_Almas.instance.DiminiurAlmas(almas);
                 Upgrade = false;
                 almas += AddAlmas;
                 CurrentLevel++;
-                GameManager.CurrentLevelItemStaminaUpgrade++;
-                GameManager.UpgradeLevelStamina = false;
+                GameManager.instance.CurrentLevelItemStaminaUpgrade++;
+                GameManager.instance.UpgradeLevelStamina = false;
                 GameManager.PlayerStamina += 60;
                 AtualizarNumeroDeAlmas();
                 break;
             case 3:
-                GameManager.UpgradeLevelStamina = true;
+                GameManager.instance.UpgradeLevelStamina = true;
                 anim.SetBool("Level4", true);
                 Contador_de_Almas.instance.DiminiurAlmas(almas);
                 Upgrade = false;
                 almas += AddAlmas;
                 CurrentLevel++;
-                GameManager.CurrentLevelItemStaminaUpgrade++;
-                GameManager.UpgradeLevelStamina = false;
+                GameManager.instance.CurrentLevelItemStaminaUpgrade++;
+                GameManager.instance.UpgradeLevelStamina = false;
                 GameManager.PlayerStamina += 60;
                 AtualizarNumeroDeAlmas();
                 break;
             case 4:
-                GameManager.UpgradeLevelStamina = true;
+                GameManager.instance.UpgradeLevelStamina = true;
                 anim.SetBool("Level5", true);
                 Contador_de_Almas.instance.DiminiurAlmas(almas);
                 Upgrade = false;
                 almas += AddAlmas;
                 CurrentLevel++;
-                GameManager.CurrentLevelItemStaminaUpgrade++;
-                GameManager.UpgradeLevelStamina = false;
+                GameManager.instance.CurrentLevelItemStaminaUpgrade++;
+                GameManager.instance.UpgradeLevelStamina = false;
                 GameManager.PlayerStamina += 60;
                 AtualizarNumeroDeAlmas();
                 break;
             case 5:
-                GameManager.UpgradeLevelStamina = true;
+                GameManager.instance.UpgradeLevelStamina = true;
                 anim.SetBool("Level6", true);
                 Contador_de_Almas.instance.DiminiurAlmas(almas);
                 Upgrade = false;
                 almas += AddAlmas;
                 CurrentLevel++;
-                GameManager.CurrentLevelItemStaminaUpgrade++;
-                GameManager.UpgradeLevelStamina = false;
+                GameManager.instance.CurrentLevelItemStaminaUpgrade++;
+                GameManager.instance.UpgradeLevelStamina = false;
                 GameManager.PlayerStamina += 60;
                 AtualizarNumeroDeAlmas();
                 break;

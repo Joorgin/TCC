@@ -50,10 +50,10 @@ public class Player_Type_2_Movement : MonoBehaviour
         PlayerMovement.isInFinalScene = false;
         isInMainScene = true;
         Physics2D.IgnoreLayerCollision(6, 7, true);
-        GameManager.IsInMainScene = true;
-        GameManager.MapsPassed = 0;
-        GameManager.isInTutorial = false;
-        GameManager.hasPassedTutorial = true;
+        GameManager.instance.IsInMainScene = true;
+        GameManager.instance.MapsPassed = 0;
+        GameManager.instance.isInTutorial = false;
+        GameManager.instance.hasPassedTutorial = true;
         AudioManager.hasChangedscene = true;
         AudioManager.SceneToChangeMusic = "Terreiro";
 

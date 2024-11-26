@@ -45,6 +45,7 @@ public class ExplosiveEnemyMovement : MonoBehaviour
     bool hasJumped;
     bool CanExplode;
     bool playerIsInRange;
+    bool explosion;
     #endregion
 
     private void Start()
@@ -114,7 +115,7 @@ public class ExplosiveEnemyMovement : MonoBehaviour
         if (!isTrapped && PlayerHealth.Instance.isAlive)
         {
 
-            if (isChasing)
+            if (isChasing && !explosion)
             {
 
                 isgrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
@@ -187,6 +188,7 @@ public class ExplosiveEnemyMovement : MonoBehaviour
 
     public void Explosion() 
     {
+        explosion = true;
        playerIsInRange = Physics2D.OverlapCircle(bodyPosition.position, bodyRadius, PlayerMask);
 
         if (playerIsInRange)
@@ -198,19 +200,27 @@ public class ExplosiveEnemyMovement : MonoBehaviour
 
     public void DeleteCharacter()
     {
-        if (playerHealth.hasShildUp == true)
+        playerIsInRange = Physics2D.OverlapCircle(bodyPosition.position, bodyRadius, PlayerMask);
+
+        if (playerIsInRange)
         {
-            playerHealth.shieldBroken = true;
-            playerHealth.hasShildUp = false;
+            if (playerHealth.hasShildUp == true)
+            {
+                playerHealth.shieldBroken = true;
+                playerHealth.hasShildUp = false;
+                Destroy(gameObject);
+            }
+            else
+            {
+                playerHealth.TakeDamage(damage);
+                playerMovement.TakeSlow(TimeOfSlow);
+                Destroy(gameObject);
+            }
         }
         else
         {
-            playerHealth.TakeDamage(damage);
-            playerMovement.TakeSlow(TimeOfSlow);
             Destroy(gameObject);
         }
-
-        
     }
 
     void Flip()
@@ -238,5 +248,11 @@ public class ExplosiveEnemyMovement : MonoBehaviour
         isTrapped = true;
         yield return new WaitForSeconds(temp0);
         isTrapped = false;
+    }
+
+    private void OnDrawGizmos()
+    {
+       Gizmos.color = Color.black;
+       Gizmos.DrawSphere(bodyPosition.position, bodyRadius);
     }
 }

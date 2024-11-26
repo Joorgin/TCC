@@ -21,8 +21,8 @@ public class SceneChange : MonoBehaviour
     {
         canCharge = false;
         FadeScript.HideUI();
-        Debug.Log(GameManager.LastMapName);
         Physics.IgnoreLayerCollision(0, 7, true);
+        GameManager.instance.SetCamera();
     }
     private void Update()
     {
@@ -34,13 +34,15 @@ public class SceneChange : MonoBehaviour
 
         if (TimeToLoad >= 1)
         {
+            // almenta os status dos boses
+            AlmentarBossStatus();
+
             RandomScene = Random.Range(0, SceneNames.Length);
             SceneToChange = SceneNames[RandomScene];
-            Debug.Log("Maps Passed: " + GameManager.MapsPassed);
-            GameManager.MapsPassed++;
+            GameManager.instance.MapsPassed++;
             PlayerHealth.Instance.setMaxHealthAfterChangeScene();
             Stamina.instance.SetMaxStainaAfterSceneChange();
-            if(SceneToChange == GameManager.LastMapName)
+            if(SceneToChange == GameManager.instance.LastMapName)
             {
                 HasdefeatedBoss = false;
                 if(RandomScene == 2)
@@ -63,7 +65,7 @@ public class SceneChange : MonoBehaviour
             }else
             {
                 HasdefeatedBoss = false;
-                GameManager.LastMapName = SceneToChange;
+                GameManager.instance.LastMapName = SceneToChange;
                 SceneToChangeMusic = SceneToChange;
                 AudioManager.hasChangedscene = true;
                 SceneManager.LoadScene(SceneToChange);
@@ -93,7 +95,7 @@ public class SceneChange : MonoBehaviour
 
                 hasSpawnedBoss = true;
             }
-            else GameManager.IsInMainScene = false;
+            else GameManager.instance.IsInMainScene = false;
         }
        
 
@@ -157,6 +159,18 @@ public class SceneChange : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void AlmentarBossStatus()
+    {
+        //FlyingBirdboss.instance.damage += 10;
+        //BIrd_Boss_Health.instance.Maxhealth += 100;
+        //Sereia_Health.Instance.Maxhealth += 100;
+        //OndaDamage.damage += 10;
+        GameManager.instance.BirdBossdamage += 10;
+        GameManager.instance.BirdMaxHealth += 100;
+        GameManager.instance.SereiaMaxHealth += 100;
+        GameManager.instance.OndaDamage += 10;
     }
 }
 
