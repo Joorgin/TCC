@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
 
     public static bool isGrounded;
-    private float horizontalMove = 0f;
+    public float horizontalMove = 0f;
 
     public static int verticalMove;
 
