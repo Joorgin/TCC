@@ -36,8 +36,7 @@ public class SceneChange : MonoBehaviour
         {
             // almenta os status dos boses
             AlmentarBossStatus();
-
-            RandomScene = Random.Range(0, SceneNames.Length);
+            RandomScene = Random.Range(0, SceneNames.Length + 1);
             SceneToChange = SceneNames[RandomScene];
             GameManager.instance.MapsPassed++;
             PlayerHealth.Instance.setMaxHealthAfterChangeScene();
