@@ -5,6 +5,8 @@ using UnityEngine.UIElements;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public static PlayerAttack instance;
+
     public float timeBtwAttack, startTimeBtwAttack;//para manipular o tempo de ataque
     public Transform attackPos, attackPos2;//para as direções de ataque
     public float attackRange;
@@ -60,6 +62,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
+        instance = this;
         Damage = 10;
         anim = GetComponent<Animator>();
         canAtack = true;
@@ -69,7 +72,7 @@ public class PlayerAttack : MonoBehaviour
     {
         bool direcaoVerticalMove;
 
-        if(!GameManager.IsInMainScene) direcaoVerticalMove = PlayerMovement.verticalMove == 1;
+        if(!GameManager.instance.IsInMainScene) direcaoVerticalMove = PlayerMovement.verticalMove == 1;
         else direcaoVerticalMove = Player_Type_2_Movement.verticalMove == 1;
 
 
@@ -84,7 +87,8 @@ public class PlayerAttack : MonoBehaviour
             noOfClicks = 0;
         }
 
-        if ((PlayerHealth.Instance.isAlive || Player_Type_2_Movement.isInMainScene) && !PlayerMovement.Instance.setactive && !GameManager.isInConversation)
+        if ((PlayerHealth.Instance.isAlive || Player_Type_2_Movement.isInMainScene) 
+            && !PlayerMovement.Instance.setactive && !GameManager.instance.isInConversation && PlayerMovement.Instance.horizontalMove == 0)
         {
             Atacar(direcaoVerticalMove);
         }
@@ -107,8 +111,6 @@ public class PlayerAttack : MonoBehaviour
             lastClickedTime = Time.time;
             noOfClicks++;
 
-            Debug.Log("Ataque 1");
-
             if (noOfClicks >= 1)
             {
 
@@ -130,10 +132,9 @@ public class PlayerAttack : MonoBehaviour
         else if((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.X)) &&
             (enemiesToDamage != null || enemiesToDamage2 != null) && noOfClicks == 1) noOfClicks++;
 
-        else if (Input.GetKey(KeyCode.Q) && !hasShoot && !PlayerMovement.apaixonado && !GameManager.IsInMainScene)
+        else if (Input.GetKey(KeyCode.Q) && !hasShoot && !PlayerMovement.apaixonado && !GameManager.instance.IsInMainScene)
         {
             //enquanto nao houver animacao manter isAttacking comentado
-            Debug.Log("Flecha");
             StartCoroutine(SHOOTARROW());
         }
         else
@@ -355,6 +356,6 @@ public class PlayerAttack : MonoBehaviour
     public static void SacrificarKiumbas()
     {
         Damage += 10;
-        Debug.Log(Damage);
+        Flecha.instance.damage += 30;
     }
 }

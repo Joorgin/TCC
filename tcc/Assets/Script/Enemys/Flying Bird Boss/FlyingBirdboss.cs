@@ -48,6 +48,7 @@ public class FlyingBirdboss : MonoBehaviour
 
     void Start()
     {
+        damage = GameManager.instance.BirdBossdamage;
         player = GameObject.FindGameObjectWithTag("Player");
         states = States.Looking;
     }

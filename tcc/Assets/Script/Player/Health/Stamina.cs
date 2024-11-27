@@ -5,7 +5,7 @@ using UnityEngine;
 public class Stamina : MonoBehaviour
 {
     // Stamina do Player
-    public static float stamina;
+    public static float estamina;
     public static float staminaStay;
     // Ui Da Stamina
     public Stamina_UI staminaUI;
@@ -18,13 +18,13 @@ public class Stamina : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        stamina = GameManager.PlayerStamina;
-        staminaStay = stamina;
+        estamina = GameManager.PlayerStamina;
+        staminaStay = estamina;
         staminaUI.SetMaxStamina(staminaStay);
     }
     void Update()
     {
-        if (GameManager.hasPassedTutorial)
+        if (GameManager.instance.hasPassedTutorial)
         {
             staminaStay -= Time.deltaTime;
 
@@ -37,8 +37,6 @@ public class Stamina : MonoBehaviour
                 StartCoroutine(DamageHealth(damageInHealth));
                 hasEndStamina = true;
             }
-
-            Debug.Log("PublicTImeTOdie: " + timeToDie);
         }
     }
 
@@ -54,11 +52,12 @@ public class Stamina : MonoBehaviour
     public void UpStamina(float stamina)
     {
         staminaStay += stamina;
+        if (staminaStay > estamina) staminaStay = estamina;
     }
 
     public void SetMaxStainaAfterSceneChange()
     {
-        staminaStay = stamina;
+        staminaStay = estamina;
         staminaUI.SetStamina(staminaStay);
     }
 }

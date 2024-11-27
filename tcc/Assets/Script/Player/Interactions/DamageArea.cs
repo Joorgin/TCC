@@ -13,7 +13,6 @@ public class DamageArea : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log("DownDash");
         Vector3 ataquePosicao = attackPos.position;
 
         enemiesToDamage = Physics2D.OverlapCircleAll(ataquePosicao, attackRange, WhatIsEnemies);

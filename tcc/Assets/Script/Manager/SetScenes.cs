@@ -27,10 +27,10 @@ public class SetScenes : MonoBehaviour
     {
         FadeScript.ShowUI();
         yield return new WaitForSeconds(1f);
-        GameManager.isInTutorial = true;
+        GameManager.instance.isInTutorial = true;
         AudioManager.Instance.ReturnVolumeToNormal();
 
-        if(!GameManager.hasPassedTutorial) SceneManager.LoadScene(Scenename[0]);
+        if(!GameManager.instance.hasPassedTutorial) SceneManager.LoadScene(Scenename[0]);
         else SceneManager.LoadScene(Scenename[1]);
     }
 }

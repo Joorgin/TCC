@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BIrd_Boss_Health : MonoBehaviour
 {
+    public static BIrd_Boss_Health instance;
     static List<BIrd_Boss_Health> m_List = new List<BIrd_Boss_Health>();
 
     public int Maxhealth;
@@ -25,14 +26,15 @@ public class BIrd_Boss_Health : MonoBehaviour
     private void Awake()
     {
         m_List.Add(this);
+        instance = this;
     }
 
     void Start()
     {
+        Maxhealth = GameManager.instance.BirdMaxHealth;
         Currenthealth = Maxhealth;
         healthUI.SetMaxHealth(Maxhealth);
         isAlive = true;
-
     }
 
     private void FixedUpdate()
@@ -41,8 +43,6 @@ public class BIrd_Boss_Health : MonoBehaviour
             return;
         else
             timeToDie -= Time.deltaTime;
-
-
     }
 
     public void TakeDamage(int damage)

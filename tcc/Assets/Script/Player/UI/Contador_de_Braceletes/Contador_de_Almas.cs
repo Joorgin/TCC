@@ -13,7 +13,7 @@ public class Contador_de_Almas : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        currentCoins = GameManager.NumberOfSouls;
+        currentCoins = GameManager.instance.NumberOfSouls;
     }
 
     void Start()
@@ -25,14 +25,14 @@ public class Contador_de_Almas : MonoBehaviour
     {
         currentCoins += v;
         coinText.text = currentCoins.ToString();
-        GameManager.NumberOfSouls += v;
+        GameManager.instance.NumberOfSouls += v;
     }
 
     public void DiminiurAlmas(int v) 
     {
         currentCoins -= v;
         coinText.text = currentCoins.ToString();
-        GameManager.NumberOfSouls -= v;
+        GameManager.instance.NumberOfSouls -= v;
     }
 
     public void ZerarAlmas()

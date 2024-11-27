@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Flecha : MonoBehaviour
 {
+    public static Flecha instance;
+
     public Rigidbody2D rb;
     float time;
     [Header("Item Damage")]
@@ -15,6 +17,7 @@ public class Flecha : MonoBehaviour
 
     void Start()
     {
+        instance = this;
         Vector3 currentScale = gameObject.transform.localScale;
         // Vira a flecha para a direita
         if (PlayerMovement.verticalMove > 0)
