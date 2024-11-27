@@ -30,6 +30,7 @@ public class Player_Mal : MonoBehaviour
     public static bool LevantouLanca;
     public float TempoDeAtaqueDasLancas;
     bool usouAtaque1;
+    public GameObject esferaDaVida;
 
     // Animação do campo de batalha
     public Animator batalhaArenaAnim;
@@ -129,15 +130,24 @@ public class Player_Mal : MonoBehaviour
     {
         if (transform.position.x > PlayerTransform.transform.position.x)
         {
+            Vector3 currentScale = gameObject.transform.localScale;
+            currentScale.x = 1.3f;
+            gameObject.transform.localScale = currentScale;
             transform.position += Vector3.left * movementSpeed * Time.deltaTime;
-            // anim.SetBool("IDLE", false);
-            // anim.SetBool("WALK", true);
-        }
-        if (transform.position.x < PlayerTransform.transform.position.x)
+             anim.SetBool("IDLE", false);
+             anim.SetBool("WALK", true);
+        }else if (transform.position.x < PlayerTransform.transform.position.x)
         {
+            Vector3 currentScale = gameObject.transform.localScale;
+            currentScale.x = -1.3f;
+            gameObject.transform.localScale = currentScale;
             transform.position += Vector3.right * movementSpeed * Time.deltaTime;
-            //  anim.SetBool("IDLE", false);
-            //  anim.SetBool("WALK", true);
+            anim.SetBool("IDLE", false);
+            anim.SetBool("WALK", true);
+        }else
+        {
+            anim.SetBool("IDLE", true);
+            anim.SetBool("WALK", false);
         }
 
         if (Vector2.Distance(transform.position, PlayerTransform.transform.position) > 15f) states = States.Looking;
@@ -150,8 +160,6 @@ public class Player_Mal : MonoBehaviour
 
     public void Ataque1()
     {
-        Debug.Log("Ataque 1");
-
         playerIsInRange = Physics2D.OverlapCircle(transform.position, bodyRadius, PlayerMask);
         StartCoroutine(Ataque11());
     }
@@ -159,9 +167,11 @@ public class Player_Mal : MonoBehaviour
     IEnumerator Ataque11()
     {
         usouAtaque1 = true;
-        //anim.SetBool("EsferaDeVida", playerIsInRange);
+        anim.SetBool("EsferaDeVida", playerIsInRange);
+        esferaDaVida.SetActive(true);
         yield return new WaitForSeconds(animationTime);
-        //anim.SetBool("EsferaDeVida", false);
+        esferaDaVida.SetActive(false);
+        anim.SetBool("EsferaDeVida", false);
         if (playerIsInRange && podeAtacar)
         {
             if (PlayerTransform.GetComponent<PlayerHealth>().hasShildUp == true)
@@ -180,7 +190,8 @@ public class Player_Mal : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), bodyRadius);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(gameObject.transform.position, bodyRadius);
     }
 
     public void Ataque2()
@@ -192,6 +203,9 @@ public class Player_Mal : MonoBehaviour
     {
         yield return new WaitForSeconds(animationTime2);
         batalhaArenaAnim.SetBool("Levantar", true);
+        anim.SetBool("LancasLevantar", true);
+        anim.SetBool("WALK", false);
+        anim.SetBool("IDLE", false);
         yield return new WaitForSeconds(3f);
         StartCoroutine(LancasParaCima());
     }
@@ -200,13 +214,15 @@ public class Player_Mal : MonoBehaviour
     {
         if (!LevantouLanca)
         {
-            RandomLanca = Random.Range(0, 4);
+            RandomLanca = Random.Range(0, lancas.Length);
             Debug.Log("Lança: " + RandomLanca);
             lancas[RandomLanca].GetComponent<Animator>().SetBool("Levantar", true);
             LevantouLanca = true;
         }
         yield return new WaitForSeconds(TempoDeAtaqueDasLancas);
         batalhaArenaAnim.SetBool("Levantar", false);
+        anim.SetBool("LancasLevantar", false);
+        anim.SetBool("IDLE", true);
         states = States.Looking;
         podeAtacar = false;
         usouAtaque1 = false;
