@@ -89,6 +89,10 @@ public class SceneChange : MonoBehaviour
                         Instantiate(Boss[1], BossSpawn[0].transform.position, Quaternion.identity);
                         Debug.Log("Position 1 : " + BossSpawn[0].transform.position);
                         break;
+                    case 2:
+                        Instantiate(Boss[2], BossSpawn[0].transform.position, Quaternion.identity);
+                        Debug.Log("Position 1 : " + BossSpawn[0].transform.position);
+                        break;
                 }
 
 
