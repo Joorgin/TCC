@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2698211a82c4a0b4e9d872d09b6a7ba1
+guid: 186392afe02154b428d915ad5caf5b7f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Atk_base_boss_clone-Sheet_0
+      name: Lanca_atk_boss_clone-Sheet_0
       rect:
         serializedVersion: 2
-        x: 23
+        x: 173
         y: 0
-        width: 22
-        height: 40
+        width: 39
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d28ed407556a50e45a1c52a93ee03f54
-      internalID: -1287696170
+      spriteID: 056de30e4f414e14ca7a1c69dd2e9d41
+      internalID: -803183611
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atk_base_boss_clone-Sheet_1
+      name: Lanca_atk_boss_clone-Sheet_1
       rect:
         serializedVersion: 2
-        x: 87
+        x: 1069
         y: 0
-        width: 22
-        height: 40
+        width: 39
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8939367b5c72a24193e6b544a89ff8e
-      internalID: -399775115
+      spriteID: 2018204682563814caca3c68362b2920
+      internalID: -1231317363
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atk_base_boss_clone-Sheet_2
+      name: Lanca_atk_boss_clone-Sheet_2
       rect:
         serializedVersion: 2
-        x: 150
+        x: 1198
         y: 0
-        width: 22
-        height: 40
+        width: 39
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3daa6fe3aab2956448d10f3084991090
-      internalID: 1517650193
+      spriteID: c189e84b03810904187912ae9a37a2a8
+      internalID: -805788576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atk_base_boss_clone-Sheet_3
+      name: Lanca_atk_boss_clone-Sheet_3
       rect:
         serializedVersion: 2
-        x: 214
+        x: 1325
         y: 0
-        width: 22
-        height: 40
+        width: 39
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca28c7ebe1421ad4eb428d5281acc393
-      internalID: 1802163628
+      spriteID: 66d7328c1c1af3041b452b779c32a643
+      internalID: 92367907
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atk_base_boss_clone-Sheet_4
+      name: Lanca_atk_boss_clone-Sheet_4
       rect:
         serializedVersion: 2
-        x: 279
+        x: 1453
         y: 0
-        width: 22
-        height: 40
+        width: 39
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b8f4258a5b7898489ea6cb6e0047908
-      internalID: 662186761
+      spriteID: 706feeecd0ae3f442a270e0f4c37ea35
+      internalID: -919242616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atk_base_boss_clone-Sheet_5
+      name: Lanca_atk_boss_clone-Sheet_6
       rect:
         serializedVersion: 2
-        x: 343
+        x: 1582
         y: 0
-        width: 22
-        height: 40
+        width: 39
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a280f34ea5a76d544852fe81e1ba474b
-      internalID: 575938290
+      spriteID: 04e08037cb6406d4b8fb96ec679699a7
+      internalID: 2070738285
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atk_base_boss_clone-Sheet_6
+      name: Lanca_atk_boss_clone-Sheet_7
       rect:
         serializedVersion: 2
-        x: 407
+        x: 1709
         y: 0
-        width: 22
-        height: 40
+        width: 39
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,8 +263,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae03c13979e08604f809cba1c508b655
-      internalID: 702635706
+      spriteID: bb83477eff115de44a18d4250869bb94
+      internalID: -94788140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lanca_atk_boss_clone-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 0
+        width: 39
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1c3b8c830a387478f8b19204abcb83
+      internalID: -1388672030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lanca_atk_boss_clone-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 0
+        width: 39
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2528236e2c9c54441968b99504b37045
+      internalID: 707394629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lanca_atk_boss_clone-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 0
+        width: 39
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d30097569143d2949b856b1d7840d9d3
+      internalID: 816844002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lanca_atk_boss_clone-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 0
+        width: 39
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0692e96dfe5b704c9d60c7ea0fbd5e3
+      internalID: -671505806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lanca_atk_boss_clone-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 0
+        width: 39
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 962da1ff1e4443a4593cad58760c38bf
+      internalID: -567620966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lanca_atk_boss_clone-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 0
+        width: 39
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a9381b576bd7e40a4b61928c3ef672
+      internalID: -204230044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lanca_atk_boss_clone-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 0
+        width: 39
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e6fef2dc3357548a782c810ba6d2c7
+      internalID: -1878565587
       vertices: []
       indices: 
       edges: []
@@ -280,13 +427,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Atk_base_boss_clone-Sheet_0: -1287696170
-      Atk_base_boss_clone-Sheet_1: -399775115
-      Atk_base_boss_clone-Sheet_2: 1517650193
-      Atk_base_boss_clone-Sheet_3: 1802163628
-      Atk_base_boss_clone-Sheet_4: 662186761
-      Atk_base_boss_clone-Sheet_5: 575938290
-      Atk_base_boss_clone-Sheet_6: 702635706
+      Lanca_atk_boss_clone-Sheet_0: -803183611
+      Lanca_atk_boss_clone-Sheet_1: -1231317363
+      Lanca_atk_boss_clone-Sheet_10: 816844002
+      Lanca_atk_boss_clone-Sheet_11: -671505806
+      Lanca_atk_boss_clone-Sheet_12: -567620966
+      Lanca_atk_boss_clone-Sheet_13: -204230044
+      Lanca_atk_boss_clone-Sheet_14: -1878565587
+      Lanca_atk_boss_clone-Sheet_2: -805788576
+      Lanca_atk_boss_clone-Sheet_3: 92367907
+      Lanca_atk_boss_clone-Sheet_4: -919242616
+      Lanca_atk_boss_clone-Sheet_5: -2074977477
+      Lanca_atk_boss_clone-Sheet_6: 2070738285
+      Lanca_atk_boss_clone-Sheet_7: -94788140
+      Lanca_atk_boss_clone-Sheet_8: -1388672030
+      Lanca_atk_boss_clone-Sheet_9: 707394629
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

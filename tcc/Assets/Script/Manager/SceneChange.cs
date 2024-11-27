@@ -77,7 +77,7 @@ public class SceneChange : MonoBehaviour
 
             if (!isInMainScene)
             {
-                int RandomNumber = Random.Range(0, 2);
+                int RandomNumber = Random.Range(0, Boss.Length);
 
                 switch (RandomNumber)
                 {
