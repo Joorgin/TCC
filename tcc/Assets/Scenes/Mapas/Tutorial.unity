@@ -1449,7 +1449,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &198051486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1530,7 +1530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.03087616, y: 0.51474}
+  m_AnchoredPosition: {x: -0.03087616, y: 0.711}
   m_SizeDelta: {x: 5.3769, y: 5.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &209059650
@@ -57944,7 +57944,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0, y: 0.38850403}
+  m_AnchoredPosition: {x: -0, y: 0.751}
   m_SizeDelta: {x: 5.3769, y: 5.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &934700802
@@ -114284,6 +114284,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChangeScene
       objectReference: {fileID: 0}
+    - target: {fileID: 4670437996926835159, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8429073270123524718, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
       propertyPath: isInMainScene
       value: 1
@@ -114570,7 +114574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2058079775
 RectTransform:
   m_ObjectHideFlags: 0
@@ -125378,6 +125382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 300
   rb: {fileID: 4906495424076109018}
+  horizontalMove: 0
   jumpForce: 7
   JumpMaxTime: 0.3
   groundCheck: {fileID: 6508982884291769602}
@@ -125394,7 +125399,6 @@ MonoBehaviour:
   KBTotalTime: 0.2
   KnockFromRight: 0
   anim: {fileID: 0}
-  cinemachine: {fileID: 0}
   ConfigMenu: {fileID: 1011978120741657327}
   setactive: 0
   TimeToSetNormalSpeed: 0
@@ -128253,7 +128257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeInGame: 0
   WatchText: {fileID: 9070367524844290224}
-  anim: {fileID: 0}
+  minutesBefore: 0
   totalAnimationFrames: 0
 --- !u!114 &6842015527904397557
 MonoBehaviour:
