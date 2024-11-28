@@ -9,6 +9,7 @@ public class LogoShow : MonoBehaviour
     public Image[] images;          // Array of Images to fade in and out
     public float fadeDuration = 1f; // Time it takes to fade in or out
     public float waitDuration = 1f; // Time to wait before fading out
+    int QueueCount;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class LogoShow : MonoBehaviour
     {
         foreach (Image image in images)
         {
+            image.gameObject.SetActive(true);
             // Fade In
             yield return StartCoroutine(FadeImage(image, 0f, 1f));
 
@@ -27,12 +29,16 @@ public class LogoShow : MonoBehaviour
 
             // Fade Out
             yield return StartCoroutine(FadeImage(image, 1f, 0f));
-            SceneManager.LoadScene("Menu");
+            image.gameObject.SetActive(false);
+            QueueCount++;
         }
+
+        if (QueueCount == images.Length) SceneManager.LoadScene("Menu");
     }
 
     private IEnumerator FadeImage(Image image, float startAlpha, float endAlpha)
     {
+        
         float elapsedTime = 0f;
         Color color = image.color;
 
