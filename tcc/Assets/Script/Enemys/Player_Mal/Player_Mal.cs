@@ -50,7 +50,7 @@ public class Player_Mal : MonoBehaviour
     bool podeAtacar = true;
 
     public Player_Mal_Health Player_Mal_Health;
-
+    public Rigidbody2D rb;
 
     public enum States
     {
@@ -133,15 +133,15 @@ public class Player_Mal : MonoBehaviour
             Vector3 currentScale = gameObject.transform.localScale;
             currentScale.x = 1.3f;
             gameObject.transform.localScale = currentScale;
-            transform.position += Vector3.left * movementSpeed * Time.deltaTime;
-             anim.SetBool("IDLE", false);
-             anim.SetBool("WALK", true);
+            rb.velocity = new Vector2(-movementSpeed, rb.velocity.y);
+            anim.SetBool("IDLE", false);
+            anim.SetBool("WALK", true);
         }else if (transform.position.x < PlayerTransform.transform.position.x)
         {
             Vector3 currentScale = gameObject.transform.localScale;
             currentScale.x = -1.3f;
             gameObject.transform.localScale = currentScale;
-            transform.position += Vector3.right * movementSpeed * Time.deltaTime;
+            rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
             anim.SetBool("IDLE", false);
             anim.SetBool("WALK", true);
         }else
@@ -160,6 +160,7 @@ public class Player_Mal : MonoBehaviour
 
     public void Ataque1()
     {
+        rb.velocity = new Vector2(0, rb.velocity.y);
         playerIsInRange = Physics2D.OverlapCircle(transform.position, bodyRadius, PlayerMask);
         StartCoroutine(Ataque11());
     }
@@ -168,6 +169,7 @@ public class Player_Mal : MonoBehaviour
     {
         usouAtaque1 = true;
         anim.SetBool("EsferaDeVida", playerIsInRange);
+        rb.velocity = new Vector2(0, rb.velocity.y);
         esferaDaVida.SetActive(true);
         yield return new WaitForSeconds(animationTime);
         esferaDaVida.SetActive(false);
@@ -182,6 +184,7 @@ public class Player_Mal : MonoBehaviour
             {
                 PlayerTransform.GetComponent<PlayerHealth>().TakeDamage(damage);
                 Player_Mal_Health.RecuperarVida(damage);
+                tempoEntreAtaquesInterno = tempoEntreAtaques;
                 podeAtacar = false;
             }
         }
@@ -196,6 +199,7 @@ public class Player_Mal : MonoBehaviour
 
     public void Ataque2()
     {
+        rb.velocity = new Vector2(0, rb.velocity.y);
         StartCoroutine(Ataque22());
     }
 
