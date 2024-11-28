@@ -36,8 +36,7 @@ public class SceneChange : MonoBehaviour
         {
             // almenta os status dos boses
             AlmentarBossStatus();
-
-            RandomScene = Random.Range(0, SceneNames.Length);
+            RandomScene = Random.Range(0, SceneNames.Length + 1);
             SceneToChange = SceneNames[RandomScene];
             GameManager.instance.MapsPassed++;
             PlayerHealth.Instance.setMaxHealthAfterChangeScene();
@@ -78,7 +77,7 @@ public class SceneChange : MonoBehaviour
 
             if (!isInMainScene)
             {
-                int RandomNumber = Random.Range(0, 2);
+                int RandomNumber = Random.Range(0, Boss.Length);
 
                 switch (RandomNumber)
                 {
@@ -88,6 +87,10 @@ public class SceneChange : MonoBehaviour
                         break;
                     case 1:
                         Instantiate(Boss[1], BossSpawn[0].transform.position, Quaternion.identity);
+                        Debug.Log("Position 1 : " + BossSpawn[0].transform.position);
+                        break;
+                    case 2:
+                        Instantiate(Boss[2], BossSpawn[0].transform.position, Quaternion.identity);
                         Debug.Log("Position 1 : " + BossSpawn[0].transform.position);
                         break;
                 }
