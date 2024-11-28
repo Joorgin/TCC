@@ -34,9 +34,13 @@ public class ENemyBasicMovement : MonoBehaviour
 
     private void Awake()
     {
-        PlayerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         Physics2D.IgnoreLayerCollision(6, 7, true);
         Physics2D.IgnoreLayerCollision(6, 6, true);
+    }
+
+    private void Start()
+    {
+        PlayerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
     private void FixedUpdate()
     {
