@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     #region Player 
     public static int PlayerMaxhealth = 100;
     public static float PlayerStamina = 180;
+    public int flechaDamage = 60;
     #endregion
 
     #region camera
