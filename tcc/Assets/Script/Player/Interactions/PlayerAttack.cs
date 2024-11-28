@@ -356,6 +356,6 @@ public class PlayerAttack : MonoBehaviour
     public static void SacrificarKiumbas()
     {
         Damage += 10;
-        Flecha.instance.damage += 30;
+        GameManager.instance.flechaDamage += 30;
     }
 }

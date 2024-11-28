@@ -18,6 +18,7 @@ public class Flecha : MonoBehaviour
     void Start()
     {
         instance = this;
+        damage = GameManager.instance.flechaDamage;
         Vector3 currentScale = gameObject.transform.localScale;
         // Vira a flecha para a direita
         if (PlayerMovement.verticalMove > 0)
