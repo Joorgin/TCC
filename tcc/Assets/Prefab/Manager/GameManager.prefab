@@ -630,7 +630,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -895,6 +895,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22c7dd316b396545b348d9d2be73311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LastMap: 0
+  MapsPassed: 0
+  LastMapPassed: 0
+  NumberOfSouls: 0
+  upgradeLevel: 0
+  UpgradeLevelStamina: 0
+  CurrentLevelItemUpgrade: 1
+  CurrentLevelItemStaminaUpgrade: 1
+  BraceletesNecessariosPorBau: 0
+  LastMapName: 
+  IsInMainScene: 0
+  isInConversation: 0
+  isInTutorial: 0
+  hasPassedTutorial: 0
+  cinemachine: {fileID: 0}
+  BirdBossdamage: 40
+  BirdMaxHealth: 500
+  BirdPenaDamage: 20
+  SereiaMaxHealth: 600
+  OndaDamage: 20
   pfDamagePopUp: {fileID: 6373987102492257084, guid: 66a005f6b2047794ba4380a41e09323f, type: 3}
 --- !u!114 &6063914968169089542
 MonoBehaviour:
