@@ -28,6 +28,7 @@ public class Downdash : MonoBehaviour
 
     public IEnumerator DashDown()
     {
+        PlayerMovement.Instance.anim.SetBool("DownDash", true);
         EnemyDamage.canTouchPlayer = false;
         playerRigidBody.velocity = Vector2.zero;
         CanDownDash = false;
@@ -43,6 +44,7 @@ public class Downdash : MonoBehaviour
 
     IEnumerator HitedGround()
     {
+        PlayerMovement.Instance.anim.SetBool("DownDash", false);
         DamageArea.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         HitGround = false;
