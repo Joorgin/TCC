@@ -3624,9 +3624,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Creditos a todos que fizeram esse JOJO\n\nProgramador: Felipe dos Santos
-    Moraes\nGame Designer: Jo\xE3o Motta\nArtista: Jo\xE3o \n\nMusicas: Uma Dupla
-    de Doidos"
+  m_text: "Programador: Felipe dos Santos Moraes\nArtista de personagem e game designer:
+    Jo\xE3o Vitor Motta Mendes\nArtista de ambiente e UI/UX designer: Jo\xE3o Victor
+    Marques\nVozes: Gabriela Cortez\nM\xFAsica: Acsel Copque e Nicolas Denuzzo"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
