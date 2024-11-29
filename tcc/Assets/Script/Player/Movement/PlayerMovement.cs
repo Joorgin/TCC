@@ -118,7 +118,6 @@ public class PlayerMovement : MonoBehaviour
         if (apaixonado)
         {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-            anim.SetBool("Apaixonado", true);
             Sereia = GameObject.FindGameObjectWithTag("Chefe");
             StartCoroutine(paixao());
 
@@ -139,6 +138,7 @@ public class PlayerMovement : MonoBehaviour
                 verticalMove = -1;
                 anim.SetInteger("VerticalMove", verticalMove);
                 anim.SetFloat("RunDirection", verticalMove);
+                anim.SetBool("Apaixonado", true);
                 if (Vector2.Distance(transform.position, Sereia.transform.position) <= 3.5f)
                 {
                     esquerda = false;
@@ -151,6 +151,7 @@ public class PlayerMovement : MonoBehaviour
                 verticalMove = 1;
                 anim.SetInteger("VerticalMove", verticalMove);
                 anim.SetFloat("RunDirection", verticalMove);
+                anim.SetBool("Apaixonado", true);
 
                 if (Vector2.Distance(transform.position, Sereia.transform.position) <= 3.5f)
                 {
