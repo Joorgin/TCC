@@ -56,6 +56,7 @@ public class UIController : MonoBehaviour
         AudioManager.hasChangedscene = true;   
         SceneManager.LoadScene("Menu");
         GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        gameManager.SaveGame();
         gameManager.Menu();
     }
 }

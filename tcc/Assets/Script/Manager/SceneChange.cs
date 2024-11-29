@@ -150,6 +150,7 @@ public class SceneChange : MonoBehaviour
         StartCoroutine(ShowUI(scene));
         SceneChange.SceneToChangeMusic = scene;
         AudioManager.hasChangedscene = true;
+        GameManager.instance.LoadGame();
     }
 
     public IEnumerator ShowUI(string scene)

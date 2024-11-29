@@ -70,4 +70,25 @@ public class GameManager : MonoBehaviour
         cinemachine.GetComponent<CinemachineVirtualCamera>().LookAt = GameObject.FindGameObjectWithTag("Player").transform;
         cinemachine.GetComponent<CinemachineConfiner>().m_BoundingShape2D = GameObject.FindGameObjectWithTag("CameraConfiner").GetComponent<PolygonCollider2D>();
     }
+
+    public void SaveGame()
+    {
+        Sistema_De_Salvamento.SaveGameManager(this);
+    }
+
+    public void LoadGame()
+    {
+        GameData data = Sistema_De_Salvamento.LoadGame();
+
+        hasPassedTutorial = data.passouDoTutorial;
+        CurrentLevelItemStaminaUpgrade = data.estatuaLevel;
+        NumberOfSouls = data.numeroDeAlmas;
+    }
+
+    public void DeleteGameData()
+    {
+        CurrentLevelItemStaminaUpgrade = 0;
+        NumberOfSouls = 0;
+        SaveGame();
+    }
 }
