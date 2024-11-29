@@ -84,9 +84,11 @@ public class PlayerMovement : MonoBehaviour
     // Define qual a chance do bau bom
     public static int chanceForAGoodChest;
 
+    public bool isinTutorial;
+
     private void Awake()
     {
-        if(!GameManager.instance.isInTutorial) DontDestroyOnLoad(gameObject);
+        if(!isinTutorial) DontDestroyOnLoad(gameObject);
 
         if (Instance == null) Instance = this;
         else if (isInFinalScene) Destroy(gameObject);
@@ -363,5 +365,8 @@ public class PlayerMovement : MonoBehaviour
 
         Debug.Log("RARITYCHANCE: " + PlayerMovement.chanceForAGoodChest);
     }
+
+
+    
 
 }

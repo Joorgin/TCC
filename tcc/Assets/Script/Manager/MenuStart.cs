@@ -8,6 +8,7 @@ public class MenuStart : MonoBehaviour
     public GameObject Menu;
     public GameObject optionsButtons;
     public GameObject musicOptionsMenu;
+    public GameObject CreaditsAndStuffMenu;
     bool hasBeginMenu;
 
     // Update is called once per frame
@@ -82,5 +83,38 @@ public class MenuStart : MonoBehaviour
         yield return new WaitForSeconds(1f);
         anim.SetBool("open", false);
         optionsButtons.SetActive(true);
+    }
+
+    public void SetSaveMenu()
+    {
+        StartCoroutine(setSaveMenu());
+    }
+
+    IEnumerator setSaveMenu()
+    {
+        optionsButtons.SetActive(false);
+        anim.SetBool("open", true);
+        yield return new WaitForSeconds(1f);
+        anim.SetBool("open", false);
+        CreaditsAndStuffMenu.SetActive(true);
+    }
+
+    public void SetOffSaveMenu()
+    {
+        StartCoroutine(setOffSaveMenu());
+    }
+
+    IEnumerator setOffSaveMenu()
+    {
+        CreaditsAndStuffMenu.SetActive(false);
+        anim.SetBool("open", true);
+        yield return new WaitForSeconds(1f);
+        anim.SetBool("open", false);
+        optionsButtons.SetActive(true);
+    }
+
+    public void DeletarSave()
+    {
+        GameManager.instance.DeleteGameData();
     }
 }
