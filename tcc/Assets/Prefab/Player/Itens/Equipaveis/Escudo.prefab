@@ -469,7 +469,7 @@ MonoBehaviour:
   DescriptionObject: {fileID: 2322410898279894195}
   Icon: {fileID: 2356596884205626481}
   IconReference: {fileID: -488257716, guid: 708f01e6428af274386a1e832a5cdec8, type: 3}
-  Description: Aumenta a defesa do player em 2%
+  Description: Aumenta a defesa em 2%
   descricao: {fileID: 5300613069378460175}
   plh: {fileID: 0}
 --- !u!1 &6868077928272260175

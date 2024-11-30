@@ -469,7 +469,7 @@ MonoBehaviour:
   DescriptionObject: {fileID: 2322410898279894195}
   Icon: {fileID: 2356596884205626481}
   IconReference: {fileID: 21300000, guid: 18a6e3f3072af4a4eb1c92dc8a8d0038, type: 3}
-  Description: Aumenta a vida do jogador em +25
+  Description: Aumenta a vida em +25
   descricao: {fileID: 5300613069378460175}
   plh: {fileID: 0}
 --- !u!1 &6868077928272260175

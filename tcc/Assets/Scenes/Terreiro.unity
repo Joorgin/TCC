@@ -10590,17 +10590,17 @@ MonoBehaviour:
     - character:
         name: "Nan\xE3"
         Icon: {fileID: 0}
-      line: "Por favor meu filho, v\xE1 ao mundo espiritual e busque almas para aben\xE7oar
-        a est\xE1tua e recontru\xED-la.... "
+      line: "Por favor meu filho, v\xE1 ao mundo espiritual e busque recursos para
+        aben\xE7oar a est\xE1tua e recontru\xED-la.... "
     - character:
         name: "Nan\xE3"
         Icon: {fileID: 0}
       line: "L\xE1 em baixo h\xE1 espa\xE7o para voc\xEA treinar um pouco, mas lembre-se
-        aqui voc\xEA n\xE3o posui os mesmos poderes do mundo espiritual...."
+        aqui voc\xEA n\xE3o possui os mesmos poderes do mundo espiritual...."
     - character:
         name: "Nan\xE3"
         Icon: {fileID: 0}
-      line: "N\xE3o se esque\xE7a que sempre estarei com vc."
+      line: "N\xE3o se esque\xE7a que sempre estarei com voc\xEA."
   Name: "M\xE3e de santo"
 --- !u!1 &1813999448
 GameObject:
