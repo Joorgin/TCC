@@ -84,16 +84,11 @@ public class PlayerMovement : MonoBehaviour
     // Define qual a chance do bau bom
     public static int chanceForAGoodChest;
 
-    public bool isinTutorial;
-
     private void Awake()
     {
-        if(!isinTutorial) DontDestroyOnLoad(gameObject);
 
         if (Instance == null) Instance = this;
         else if (isInFinalScene) Destroy(gameObject);
-
-        
 
         Physics2D.IgnoreLayerCollision(6, 7, true);
         Physics2D.IgnoreLayerCollision(8, 7, true);
@@ -110,12 +105,6 @@ public class PlayerMovement : MonoBehaviour
         AnimatorControllers();
 
         rb.sharedMaterial.friction = isGrounded ? 0.24f : 0f;
-
-        if (isInFinalScene)
-        {
-            Destroy(gameObject);
-            isInFinalScene = false;
-        }
 
         if (apaixonado)
         {

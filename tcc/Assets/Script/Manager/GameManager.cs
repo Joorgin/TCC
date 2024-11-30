@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour
     {
         CurrentLevelItemStaminaUpgrade = 0;
         NumberOfSouls = 0;
+        hasPassedTutorial = false;
         SaveGame();
     }
 }
