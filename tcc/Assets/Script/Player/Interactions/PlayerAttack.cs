@@ -87,10 +87,18 @@ public class PlayerAttack : MonoBehaviour
             noOfClicks = 0;
         }
 
-        if ((PlayerHealth.Instance.isAlive || Player_Type_2_Movement.isInMainScene) 
-            && !PlayerMovement.Instance.setactive && !GameManager.instance.isInConversation && PlayerMovement.Instance.horizontalMove == 0)
+        if(Player_Type_2_Movement.isInMainScene)
         {
             Atacar(direcaoVerticalMove);
+        }
+
+        if (PlayerHealth.Instance != null)
+        {
+            if (PlayerHealth.Instance.isAlive && !PlayerMovement.Instance.setactive &&
+                !GameManager.instance.isInConversation && PlayerMovement.Instance.horizontalMove == 0)
+            {
+                Atacar(direcaoVerticalMove);
+            }
         }
 
         if (_pendingFreezeDuration > 0f && !_isFrozen)

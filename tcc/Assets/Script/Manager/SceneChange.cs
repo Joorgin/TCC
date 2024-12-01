@@ -41,8 +41,11 @@ public class SceneChange : MonoBehaviour
             RandomScene = Random.Range(0, SceneNames.Length);
             SceneToChange = SceneNames[RandomScene];
             GameManager.instance.MapsPassed++;
-            PlayerHealth.Instance.setMaxHealthAfterChangeScene();
-            Stamina.instance.SetMaxStainaAfterSceneChange();
+            if (PlayerHealth.Instance != null)
+            {
+                PlayerHealth.Instance.setMaxHealthAfterChangeScene();
+                Stamina.instance.SetMaxStainaAfterSceneChange();
+            }
             if(SceneToChange == GameManager.instance.LastMapName)
             {
                 HasdefeatedBoss = false;

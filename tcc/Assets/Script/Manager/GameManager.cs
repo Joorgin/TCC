@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
 
     public void DeleteGameData()
     {
-        CurrentLevelItemStaminaUpgrade = 0;
+        CurrentLevelItemStaminaUpgrade = 1;
         NumberOfSouls = 0;
         hasPassedTutorial = false;
         SaveGame();
