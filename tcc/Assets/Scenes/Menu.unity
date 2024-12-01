@@ -7861,7 +7861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!225 &2037330896
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -8003,6 +8003,7 @@ MonoBehaviour:
   - {fileID: 0}
   isInMainScene: 0
   buttonInteraction: {fileID: 0}
+  sr: {fileID: 0}
 --- !u!114 &2069790788
 MonoBehaviour:
   m_ObjectHideFlags: 0
