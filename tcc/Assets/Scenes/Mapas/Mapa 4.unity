@@ -10868,6 +10868,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CampoDeBatalha (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 118980117982457617, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 662729158722953144, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
       propertyPath: Id
       value: 1
@@ -17181,6 +17185,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CampoDeBatalha
       objectReference: {fileID: 0}
+    - target: {fileID: 118980117982457617, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3588588289449179181, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 247.75
@@ -18297,6 +18305,10 @@ PrefabInstance:
     - target: {fileID: 118980117982457617, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
       propertyPath: m_Name
       value: CampoDeBatalha (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 118980117982457617, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 662729158722953144, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
       propertyPath: Id
@@ -19761,6 +19773,10 @@ PrefabInstance:
     - target: {fileID: 118980117982457617, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
       propertyPath: m_Name
       value: CampoDeBatalha (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 118980117982457617, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 662729158722953144, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
       propertyPath: Id

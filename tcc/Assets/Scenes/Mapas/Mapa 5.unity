@@ -3021,7 +3021,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 8
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -45531,6 +45531,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CampoDeBatalha (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 118980117982457617, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 662729158722953144, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
       propertyPath: Id
       value: 2
@@ -56597,6 +56601,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CampoDeBatalha (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 118980117982457617, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 662729158722953144, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
       propertyPath: Id
       value: 0
@@ -58591,7 +58599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9045978332239479246, guid: 6682675418034d943b5b5ca32a4c7c6d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.9
+      value: -1.66
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -62455,6 +62463,10 @@ PrefabInstance:
     - target: {fileID: 118980117982457617, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
       propertyPath: m_Name
       value: CampoDeBatalha (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 118980117982457617, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 662729158722953144, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
       propertyPath: Id
@@ -127701,6 +127713,10 @@ PrefabInstance:
     - target: {fileID: 118980117982457617, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
       propertyPath: m_Name
       value: CampoDeBatalha (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 118980117982457617, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 662729158722953144, guid: cf8d445729137e546b49aac008d0fa6d, type: 3}
       propertyPath: Id

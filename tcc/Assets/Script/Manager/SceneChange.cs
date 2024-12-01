@@ -17,6 +17,8 @@ public class SceneChange : MonoBehaviour
     int RandomScene;
     public GameObject buttonInteraction;
     public static bool HasdefeatedBoss;
+
+    public AudioSource sr;
     private void Start()
     {
         canCharge = false;
@@ -70,6 +72,8 @@ public class SceneChange : MonoBehaviour
                 SceneManager.LoadScene(SceneToChange);
             }
         }
+
+        if (isInMainScene || (isInRange && Input.GetKey(KeyCode.E))) sr.mute = true;
 
         if (isInRange && Input.GetKey(KeyCode.E) && !hasSpawnedBoss)
         {
