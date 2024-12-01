@@ -21329,9 +21329,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sereia
       objectReference: {fileID: 0}
+    - target: {fileID: 6318247904167069522, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7984668788361182892, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22380,6 +22384,54 @@ PrefabInstance:
       propertyPath: Boss.Array.data[0]
       value: 
       objectReference: {fileID: 4764208713539784972, guid: f6d695f6b2a1ea748803a3281d21ecf8, type: 3}
+    - target: {fileID: 8705118737020928797, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705118737020928797, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
+      propertyPath: MaxDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705118737020928797, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
+      propertyPath: rolloffMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705118737020928797, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705118737020928797, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].value
+      value: 0.7035713
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705118737020928797, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705118737020928797, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inSlope
+      value: -1.0204082
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705118737020928797, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705118737020928797, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705118737020928797, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outSlope
+      value: -1.0204082
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705118737020928797, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705118737020928797, guid: 9cba62d693fb10a448a96c42872bf93b, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outWeight
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
