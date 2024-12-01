@@ -578,7 +578,7 @@ MonoBehaviour:
   - Name: Day Forest Sfx
     clip: {fileID: 8300000, guid: 022eb924716caa9439255dbd78a25294, type: 3}
   - Name: Night Forest Sfx
-    clip: {fileID: 8300000, guid: be51863596b0a1d42bf699b0093c94e6, type: 3}
+    clip: {fileID: 0}
   musicSource: {fileID: 6717796945851018648}
   sfxSource: {fileID: 2940314296959092758}
   bossName: []

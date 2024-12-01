@@ -595,11 +595,11 @@ MonoBehaviour:
   Boss:
   - {fileID: 8482043281322009497, guid: 2f3d2e6cf996e7f4fabaef6cd3130d4f, type: 3}
   - {fileID: 6318247904167069522, guid: 3ffe90d0878614846894dbc4577fac99, type: 3}
-  - {fileID: 4764208713539784972, guid: f6d695f6b2a1ea748803a3281d21ecf8, type: 3}
   BossSpawn:
   - {fileID: 413371598691781626}
   isInMainScene: 0
   buttonInteraction: {fileID: 8076718802352818213}
+  sr: {fileID: 8705118737020928797}
 --- !u!50 &7447462916878958189
 Rigidbody2D:
   serializedVersion: 4
@@ -682,7 +682,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 601f755dfd0f8d44d98aaccb1510ef35, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5f74d2072d3a0ae499fb147645284648, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
